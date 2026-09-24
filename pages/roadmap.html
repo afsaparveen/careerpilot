@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/roadmap.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .roadmap-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-icon, .next-action-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .summary-icon svg, .next-action-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .summary-card:nth-child(1) .summary-icon { color: #0284c7; }
+        .summary-card:nth-child(2) .summary-icon { color: #0d9488; }
+        .summary-card:nth-child(3) .summary-icon { color: #6366f1; }
+        .summary-card:nth-child(4) .summary-icon { color: #d97706; }
+        .next-action-icon { color: #2563eb; }
+    </style>
+</head>
+
+<body>
+
+<header class="roadmap-navbar">
+
+    <!-- CAREERPILOT LOGO -->
+
+    <a
+        href="dashboard.html"
+        class="roadmap-brand"
+        aria-label="CareerPilot Home">
+
+        <div class="brand-mark">
+
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <polygon
+                    points="12 2 19 21 12 17 5 21 12 2">
+                </polygon>
+
+            </svg>
+
+        </div>
+
+        <div>
+
+            <strong>
+                CareerPilot
+            </strong>
+
+            <span>
+                Career Roadmap
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav class="roadmap-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a
+            href="roadmap.html"
+            class="active">
+            Roadmap
+        </a>
+
+        <a href="dsa-learning.html">
+            DSA
+        </a>
+
+        <a href="aptitude.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a href="companies.html">
+            Companies
+        </a>
+
+    </nav>
+
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+
+    <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <nav class="mobile-nav-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a
+            href="roadmap.html"
+            class="active">
+            Roadmap
+        </a>
+
+        <a href="dsa-learning.html">
+            DSA
+        </a>
+
+        <a href="aptitude.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a href="companies.html">
+            Companies
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="roadmap-page">
+
+    <!-- HERO -->
+    <section class="roadmap-hero">
+
+        <div class="roadmap-hero-copy">
+            <div class="section-label">
+                PERSONALIZED PLACEMENT ROADMAP
+            </div>
+
+            <h1>
+                Build your career step by step.
+            </h1>
+
+            <p>
+                Your roadmap updates using your resume,
+                verified skills, projects and learning progress.
+            </p>
+
+            <div class="hero-role">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;">
+                        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    Target Role
+                </span>
+                <strong id="targetRole">Loading...</strong>
+            </div>
+        </div>
+
+        <div class="roadmap-health">
+            <div class="roadmap-ring" id="roadmapRing">
+                <strong id="overallProgress">0%</strong>
+            </div>
+            <span>Overall Progress</span>
+        </div>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+    <section class="roadmap-summary">
+
+        <div class="summary-card">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+            </div>
+            <div>
+                <span>Resume</span>
+                <strong id="resumeProgress">0%</strong>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+            </div>
+            <div>
+                <span>Verified Skills</span>
+                <strong id="skillsProgress">0</strong>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+            </div>
+            <div>
+                <span>Projects</span>
+                <strong id="projectsProgress">0</strong>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+            </div>
+            <div>
+                <span>Career XP</span>
+                <strong id="careerXP">0</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
+    <section class="roadmap-section">
+
+        <div class="section-heading">
+            <div>
+                <div class="section-label">YOUR JOURNEY</div>
+                <h2>Placement Roadmap</h2>
+                <p>Complete each stage to strengthen your placement preparation.</p>
+            </div>
+        </div>
+
+        <div id="roadmapList" class="roadmap-list"></div>
+
+    </section>
+
+
+    <!-- TECHNICAL PROGRESS -->
+    <section class="technical-section">
+
+        <div class="section-heading">
+            <div>
+                <div class="section-label">TECHNICAL PREPARATION</div>
+                <h2>Subject Progress</h2>
+            </div>
+            <a href="technical.html" class="section-link">
+                Open Technical →
+            </a>
+        </div>
+
+        <div id="technicalProgress" class="technical-progress-grid"></div>
+
+    </section>
+
+
+    <!-- NEXT ACTION -->
+    <section class="next-action-card">
+
+        <div class="next-action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+            </svg>
+        </div>
+
+        <div>
+            <div class="section-label">NEXT RECOMMENDED STEP</div>
+            <h2 id="nextActionTitle">Build your profile</h2>
+            <p id="nextActionText">Start with your resume and skills evidence.</p>
+        </div>
+
+        <a id="nextActionButton" href="resume.html" class="next-action-button">
+            Continue →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER ACTIONS -->
+    <section class="roadmap-actions">
+        <a href="dashboard.html" class="secondary-button">
+            ← Dashboard
+        </a>
+        <a href="progress.html" class="primary-button">
+            View Career Twin →
+        </a>
+    </section>
+
+</main>
+
+<script
+    type="module"
+    src="../js/roadmap/roadmap.js">
+</script>
+
+<script
+    src="../js/mobile-nav.js">
+</script>
+
+</body>
+
+</html>

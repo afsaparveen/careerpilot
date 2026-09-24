@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Profile | CareerPilot
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/profile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<header class="profile-navbar">
+
+    <div class="profile-logo">
+        CareerPilot
+        <span>AI</span>
+    </div>
+
+
+    <nav class="profile-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa-learning.html">
+            DSA
+        </a>
+
+        <a href="aptitude-learning.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a href="companies.html">
+            Companies
+        </a>
+
+    </nav>
+
+
+    <a
+        href="settings.html"
+        class="settings-nav-button"
+    >
+        ⚙ Settings
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="profile-container">
+
+
+    <!-- =================================================
+         PROFILE HERO
+    ================================================== -->
+
+    <section class="profile-hero">
+
+        <div class="profile-avatar-large">
+            <span id="profileInitials">
+                AP
+            </span>
+        </div>
+
+
+        <div class="profile-hero-info">
+
+            <span class="profile-label">
+                CAREERPILOT PROFILE
+            </span>
+
+            <h1 id="profileName">
+                Loading...
+            </h1>
+
+            <p id="profileEmail">
+                Loading...
+            </p>
+
+            <span
+                id="profileRole"
+                class="profile-role"
+            >
+                Target role
+            </span>
+
+        </div>
+
+
+        <a
+            href="settings.html"
+            class="edit-profile-button"
+        >
+            ⚙ Account Settings
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROFILE CONTENT
+    ================================================== -->
+
+    <section class="profile-grid">
+
+
+        <!-- =============================================
+             PERSONAL INFORMATION
+        ============================================== -->
+
+        <div class="profile-card">
+
+            <div class="profile-card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PERSONAL INFORMATION
+                    </span>
+
+                    <h2>
+                        Your Profile
+                    </h2>
+
+                </div>
+
+                <span class="profile-card-icon">
+                    👤
+                </span>
+
+            </div>
+
+
+            <form id="profileForm">
+
+
+                <div class="profile-form-grid">
+
+
+                    <div class="profile-field">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            id="fullName"
+                            type="text"
+                            placeholder="Your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            readonly
+                        >
+
+                        <small>
+                            Email can be changed from Settings.
+                        </small>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label for="targetRole">
+                            Target Role
+                        </label>
+
+                        <input
+                            id="targetRole"
+                            type="text"
+                            placeholder="Example: Software Developer"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label for="dailyStudyTime">
+                            Daily Study Time
+                        </label>
+
+                        <select id="dailyStudyTime">
+
+                            <option value="">
+                                Select study time
+                            </option>
+
+                            <option value="1 hour">
+                                1 hour
+                            </option>
+
+                            <option value="2 hours">
+                                2 hours
+                            </option>
+
+                            <option value="3 hours">
+                                3 hours
+                            </option>
+
+                            <option value="4 hours">
+                                4 hours
+                            </option>
+
+                            <option value="5+ hours">
+                                5+ hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label for="placementTimeline">
+                            Placement Timeline
+                        </label>
+
+                        <select id="placementTimeline">
+
+                            <option value="">
+                                Select timeline
+                            </option>
+
+                            <option value="Within 1 month">
+                                Within 1 month
+                            </option>
+
+                            <option value="1-3 months">
+                                1-3 months
+                            </option>
+
+                            <option value="3-6 months">
+                                3-6 months
+                            </option>
+
+                            <option value="6-12 months">
+                                6-12 months
+                            </option>
+
+                            <option value="12+ months">
+                                12+ months
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label for="learningPriority">
+                            Learning Priority
+                        </label>
+
+                        <select id="learningPriority">
+
+                            <option value="">
+                                Select priority
+                            </option>
+
+                            <option value="DSA">
+                                DSA
+                            </option>
+
+                            <option value="Technical">
+                                Technical
+                            </option>
+
+                            <option value="Aptitude">
+                                Aptitude
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Resume">
+                                Resume
+                            </option>
+
+                            <option value="Balanced">
+                                Balanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="profile-field full-field">
+
+                        <label for="targetCompanies">
+                            Target Companies
+                        </label>
+
+                        <input
+                            id="targetCompanies"
+                            type="text"
+                            placeholder="Example: TCS, Infosys, Zoho, Accenture"
+                        >
+
+                        <small>
+                            Separate companies using commas.
+                        </small>
+
+                    </div>
+
+
+                    <div class="profile-field full-field">
+
+                        <label for="currentSkills">
+                            Current Skills
+                        </label>
+
+                        <textarea
+                            id="currentSkills"
+                            rows="4"
+                            placeholder="Example: Java, HTML, CSS, SQL, React"
+                        ></textarea>
+
+                        <small>
+                            Separate skills using commas.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    id="profileMessage"
+                    class="profile-message"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    class="save-profile-button"
+                    id="saveProfileBtn"
+                >
+                    Save Profile
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =============================================
+             CAREER INFORMATION
+        ============================================== -->
+
+        <div class="profile-card career-info-card">
+
+            <div class="profile-card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CAREER INFORMATION
+                    </span>
+
+                    <h2>
+                        Career Overview
+                    </h2>
+
+                </div>
+
+                <span class="profile-card-icon">
+                    🚀
+                </span>
+
+            </div>
+
+
+            <div class="career-info-list">
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Target Role
+                    </span>
+
+                    <strong id="careerRole">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Target Companies
+                    </span>
+
+                    <strong id="careerCompanies">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Current Skills
+                    </span>
+
+                    <strong id="careerSkills">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Daily Study
+                    </span>
+
+                    <strong id="careerStudyTime">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Placement Timeline
+                    </span>
+
+                    <strong id="careerTimeline">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="career-info-item">
+
+                    <span>
+                        Learning Priority
+                    </span>
+
+                    <strong id="careerPriority">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         LEARNING STATISTICS
+    ================================================== -->
+
+    <section class="profile-card statistics-card">
+
+        <div class="profile-card-heading">
+
+            <div>
+
+                <span class="section-label">
+                    LEARNING ACTIVITY
+                </span>
+
+                <h2>
+                    Your Career Statistics
+                </h2>
+
+            </div>
+
+            <span class="profile-card-icon">
+                📊
+            </span>
+
+        </div>
+
+
+        <div class="statistics-grid">
+
+
+            <div class="stat-box purple-stat">
+
+                <span class="stat-icon">
+                    🔥
+                </span>
+
+                <div>
+
+                    <strong id="profileStreak">
+                        0
+                    </strong>
+
+                    <span>
+                        Day Streak
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-box blue-stat">
+
+                <span class="stat-icon">
+                    🧩
+                </span>
+
+                <div>
+
+                    <strong id="dsaCompleted">
+                        0
+                    </strong>
+
+                    <span>
+                        DSA Problems
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-box green-stat">
+
+                <span class="stat-icon">
+                    📚
+                </span>
+
+                <div>
+
+                    <strong id="dbmsCompleted">
+                        0
+                    </strong>
+
+                    <span>
+                        DBMS Topics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-box pink-stat">
+
+                <span class="stat-icon">
+                    🎤
+                </span>
+
+                <div>
+
+                    <strong id="interviewCompleted">
+                        0
+                    </strong>
+
+                    <span>
+                        Interview Questions
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACCOUNT INFORMATION
+    ================================================== -->
+
+    <section class="profile-card account-card">
+
+        <div class="profile-card-heading">
+
+            <div>
+
+                <span class="section-label">
+                    ACCOUNT
+                </span>
+
+                <h2>
+                    Account Information
+                </h2>
+
+            </div>
+
+            <span class="profile-card-icon">
+                🔐
+            </span>
+
+        </div>
+
+
+        <div class="account-info">
+
+            <div>
+
+                <span>
+                    Account ID
+                </span>
+
+                <strong id="accountUid">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Account Created
+                </span>
+
+                <strong id="accountCreated">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Authentication
+                </span>
+
+                <strong id="authProvider">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="settings.html"
+            class="settings-link"
+        >
+            Manage account settings →
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="../js/profile/profile.js"
+></script>
+
+
+</body>
+
+</html>

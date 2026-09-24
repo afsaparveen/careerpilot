@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Readiness | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/readiness.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .readiness-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-icon, .next-action-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .summary-icon svg, .next-action-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .purple-summary .summary-icon { color: #6366f1; }
+        .blue-summary .summary-icon { color: #0284c7; }
+        .pink-summary .summary-icon { color: #e11d48; }
+        .green-summary .summary-icon { color: #059669; }
+
+        .overall-progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        .next-action-icon { color: #2563eb; }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="readiness-navbar">
+
+    <div class="readiness-brand">
+        <div class="readiness-brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+            </svg>
+        </div>
+
+        <div>
+            <strong>CareerPilot</strong>
+            <span>Placement Readiness</span>
+        </div>
+    </div>
+
+    <nav class="readiness-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dsa-learning.html">DSA</a>
+        <a href="aptitude-learning.html">Aptitude</a>
+        <a href="technical.html">Technical</a>
+        <a href="interview.html">Interview</a>
+        <a href="companies.html">Companies</a>
+        <a href="readiness.html" class="active">Readiness</a>
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="readiness-page">
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+    <section class="readiness-hero">
+
+        <div class="readiness-hero-copy">
+            <span class="readiness-eyebrow">
+                PLACEMENT PREPARATION
+            </span>
+
+            <h1>
+                See your complete
+                <span>placement readiness.</span>
+            </h1>
+
+            <p>
+                CareerPilot combines your learning,
+                evidence, interview practice and company
+                preparation into one progress view.
+            </p>
+
+            <div class="readiness-role">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;">
+                        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    Target Role
+                </span>
+                <strong id="targetRole">Loading...</strong>
+            </div>
+        </div>
+
+        <div class="readiness-score-card">
+            <div class="readiness-score-ring">
+                <div>
+                    <strong id="readinessScore">0%</strong>
+                    <span>Readiness</span>
+                </div>
+            </div>
+
+            <p id="readinessMessage">
+                Building your placement profile...
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================== -->
+    <section class="readiness-summary">
+
+        <div class="summary-card purple-summary">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+            </div>
+            <div>
+                <span>Learning</span>
+                <strong id="learningScore">0%</strong>
+            </div>
+        </div>
+
+        <div class="summary-card blue-summary">
+            <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0

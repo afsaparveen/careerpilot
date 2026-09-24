@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Systems | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/os.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .os-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .guide-icon, .os-sidebar-icon, .os-empty-icon, .card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guide-icon svg, .card-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
+        .os-sidebar-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+            color: #2563eb;
+        }
+
+        .os-empty-icon svg {
+            width: 42px;
+            height: 42px;
+            stroke-width: 1.8;
+            color: #64748b;
+        }
+
+        .guide-step.pink .step-number { background: #e0e7ff; color: #4338ca; }
+        .guide-step.blue .step-number { background: #e0f2fe; color: #0369a1; }
+        .guide-step.green .step-number { background: #dcfce7; color: #15803d; }
+        .guide-step.orange .step-number { background: #fef3c7; color: #b45309; }
+        .guide-step.purple .step-number { background: #f3e8ff; color: #7e22ce; }
+
+        .learn-card .card-icon { color: #0284c7; }
+        .example-card .card-icon { color: #d97706; }
+        .key-card .card-icon { color: #059669; }
+        .self-check-card .card-icon { color: #6366f1; }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="os-navbar">
+
+    <div class="os-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        CareerPilot
+        <span>
+            / Operating Systems
+        </span>
+    </div>
+
+    <div class="os-nav-actions">
+        <a href="technical.html">
+            Technical Subjects
+        </a>
+        <button id="logoutBtn">
+            Logout
+        </button>
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN PAGE
+===================================================== -->
+
+<main class="os-page">
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+    <section class="os-hero">
+
+        <div>
+            <span class="os-eyebrow">
+                TECHNICAL PREPARATION
+            </span>
+
+            <h1>
+                Operating Systems
+            </h1>
+
+            <p>
+                Learn OS concepts chapter by chapter,
+                complete the assessment,
+                and unlock the next chapter.
+            </p>
+        </div>
+
+        <div class="os-completion-box">
+            <div id="coursePercent" class="os-percent">
+                0%
+            </div>
+
+            <div>
+                <strong>Module Progress</strong>
+                <span id="chapterCount">
+                    0 of 9 chapters completed
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         LEARNING INSTRUCTIONS
+    ================================================== -->
+    <section class="os-learning-guide">
+
+        <div class="guide-title">
+            <span class="guide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </span>
+
+            <div>
+                <h2>How to Use This Module</h2>
+                <p>Learn → Practice → Test → Unlock</p>
+            </div>
+        </div>
+
+        <div class="guide-steps">
+
+            <div class="guide-step pink">
+                <div class="step-number">1</div>
+                <h3>Select a Chapter</h3>
+                <p>Start with Chapter 1. Complete chapters in order.</p>
+            </div>
+
+            <div class="guide-step blue">
+                <div class="step-number">2</div>
+                <h3>Study the Topics</h3>
+                <p>Read the explanation, example and key points.</p>
+            </div>
+
+            <div class="guide-step green">
+                <div class="step-number">3</div>
+                <h3>Complete Topics</h3>
+                <p>Write your self-check and complete every topic.</p>
+            </div>
+
+            <div class="guide-step orange">
+                <div class="step-number">4</div>
+                <h3>Take Assessment</h3>
+                <p>Score at least 75% to unlock the next chapter.</p>
+            </div>
+
+            <div class="guide-step purple">
+                <div class="step-number">5</div>
+                <h3>Track Progress</h3>
+                <p>Your learning progress is saved automatically.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MAIN LEARNING AREA
+    ================================================== -->
+    <section class="os-layout">
+
+        <!-- =============================================
+             LEFT CHAPTER PANEL
+        ============================================== -->
+        <aside class="os-sidebar">
+
+            <div class="os-sidebar-header">
+                <div class="os-sidebar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <h2>OS Curriculum</h2>
+                    <span>9 Chapters</span>
+                </div>
+            </div>
+
+            <div id="chapterList" class="os-chapter-list"></div>
+
+        </aside>
+
+
+
+        <!-- =============================================
+             RIGHT LEARNING PANEL
+        ============================================== -->
+        <section class="os-content">
+
+            <!-- Error -->
+            <div id="loadError" class="os-error" hidden></div>
+
+            <!-- Initial message -->
+            <div id="emptyState" class="os-empty">
+                <div class="os-empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+
+                <h2>Start Learning Operating Systems</h2>
+                <p>Select Chapter 1 from the curriculum to begin learning.</p>
+            </div>
+
+            <!-- Actual course -->
+            <div id="courseView" hidden>
+
+                <!-- Chapter / Topic Header -->
+                <div class="os-topic-head">
+                    <div>
+                        <span id="chapterBadge" class="os-badge"></span>
+                        <h2 id="chapterTitle"></h2>
+                        <p id="topicTitle"></p>
+                    </div>
+
+                    <div id="topicCounter" class="os-topic-counter"></div>
+                </div>
+
+                <!-- Topic Navigation -->
+                <div id="topicNav" class="os-topic-nav"></div>
+
+                <!-- Learn -->
+                <article class="os-card learn-card">
+                    <div class="card-heading">
+                        <span class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </span>
+                        <h3>Learn</h3>
+                    </div>
+                    <p id="learnText"></p>
+                </article>
+
+                <!-- Example -->
+                <article class="os-card example-card">
+                    <div class="card-heading">
+                        <span class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="2" x2="12" y2="6"/>
+                                <line x1="12" y1="18" x2="12" y2="22"/>
+                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+                                <line x1="2" y1="12" x2="6" y2="12"/>
+                                <line x1="18" y1="12" x2="22" y2="12"/>
+                                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
+                                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+                            </svg>
+                        </span>
+                        <h3>Example</h3>
+                    </div>
+                    <p id="exampleText"></p>
+                </article>
+
+                <!-- Key Points -->
+                <article class="os-card key-card">
+                    <div class="card-heading">
+                        <span class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 14 14"/>
+                            </svg>
+                        </span>
+                        <h3>Key Points</h3>
+                    </div>
+                    <ul id="keyPoints"></ul>
+                </article>
+
+                <!-- Self Check -->
+                <article class="os-card self-check-card">
+                    <div class="card-heading">
+                        <span class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </span>
+                        <h3>Self Check</h3>
+                    </div>
+
+                    <p>Explain what you learned in your own words.</p>
+
+                    <textarea
+                        id="selfCheck"
+                        placeholder="Write what you understood about this topic..."
+                    ></textarea>
+
+                    <div class="os-self-check-meta">
+                        <span id="selfCheckCount">0 characters</span>
+                        <button id="completeTopicBtn" class="os-primary-btn">
+                            Complete Topic
+                        </button>
+                    </div>
+
+                    <p id="completeMessage" class="os-message"></p>
+                </article>
+
+                <!-- Bottom buttons -->
+                <div class="os-bottom-actions">
+                    <button id="prevTopicBtn" class="os-secondary-btn">
+                        ← Previous
+                    </button>
+
+                    <button id="nextTopicBtn" class="os-primary-btn">
+                        Next Topic →
+                    </button>
+
+                    <button id="assessmentBtn" class="os-assessment-btn" hidden>
+                        Take Chapter Assessment →
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/os.js"></script>
+
+</body>
+
+</html>

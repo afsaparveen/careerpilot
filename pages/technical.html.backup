@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPilot | Technical</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/technical.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .dashboard-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .technical-card-emoji, .subject-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .technical-card-emoji svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .technical-subject svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <div class="dashboard-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        CareerPilot
+    </div>
+
+    <nav class="dashboard-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dsa.html">DSA</a>
+        <a href="aptitude.html">Aptitude</a>
+        <a href="technical.html" class="active">Technical</a>
+        <a href="interview.html">Interview</a>
+    </nav>
+
+    <div class="dashboard-profile">
+        <span id="userInitials">CP</span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+</header>
+
+
+<main class="technical-container">
+
+    <section class="technical-header">
+
+        <div>
+            <span class="section-label">TECHNICAL PREPARATION</span>
+            <h1>Technical Subjects</h1>
+            <p>
+                Learn the concepts commonly used in placement assessments and technical interviews.
+            </p>
+        </div>
+
+        <div class="technical-role-card">
+            <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                </svg>
+                TARGET ROLE
+            </span>
+            <strong id="targetRole">Loading...</strong>
+        </div>
+
+    </section>
+
+
+    <section class="technical-progress-card">
+
+        <div class="technical-progress-top">
+            <div>
+                <span class="section-label">OVERALL PROGRESS</span>
+                <h2>Technical Readiness</h2>
+            </div>
+            <strong id="technicalProgress">0%</strong>
+        </div>
+
+        <div class="technical-progress-track">
+            <div id="technicalProgressBar" style="width:0%;"></div>
+        </div>
+
+        <p id="technicalProgressMessage">Start with one technical subject.</p>
+
+    </section>
+
+
+    <section class="technical-card">
+
+        <div class="technical-card-heading">
+            <div>
+                <span class="section-label">SUBJECTS</span>
+                <h2>Core Technical Subjects</h2>
+            </div>
+            <span class="technical-card-emoji">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+            </span>
+        </div>
+
+        <div class="technical-subject-grid">
+
+            <button type="button" class="technical-subject active" data-subject="dbms">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+                <strong>DBMS</strong>
+                <small>Core</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="os">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <strong>Operating Systems</strong>
+                <small>Core</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="cn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <strong>Computer Networks</strong>
+                <small>Core</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="oop">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                <strong>OOP</strong>
+                <small>Core</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="sql">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+                <strong>SQL</strong>
+                <small>Practical</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="javascript">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                <strong>JavaScript</strong>
+                <small>Development</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="git">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="3" x2="6" y2="15"/>
+                    <circle cx="18" cy="6" r="3"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <path d="M18 9a9 9 0 0 1-9 9"/>
+                </svg>
+                <strong>Git & GitHub</strong>
+                <small>Development</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="rest">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+                <strong>REST APIs</strong>
+                <small>Development</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="linux">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5"/>
+                    <line x1="12" y1="19" x2="20" y2="19"/>
+                </svg>
+                <strong>Linux</strong>
+                <small>Practical</small>
+            </button>
+
+            <button type="button" class="technical-subject" data-subject="system-design">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <strong>System Design</strong>
+                <small>Advanced</small>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="technical-card">
+
+        <div class="technical-card-heading">
+            <div>
+                <span class="section-label">CURRENT SUBJECT</span>
+                <h2 id="subjectTitle">DBMS</h2>
+            </div>
+            <span class="technical-card-emoji">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                </svg>
+            </span>
+        </div>
+
+        <div class="technical-lesson">
+            <span class="section-label">CONCEPT</span>
+            <h3 id="conceptTitle">Loading...</h3>
+            <p id="conceptExplanation">Loading...</p>
+        </div>
+
+        <div class="technical-lesson">
+            <span class="section-label">IMPORTANT POINTS</span>
+            <ul id="importantPoints"></ul>
+        </div>
+
+        <div class="technical-example">
+            <span class="section-label">INTERVIEW EXAMPLE</span>
+            <h3 id="exampleQuestion">Loading...</h3>
+            <p id="exampleAnswer">Loading...</p>
+        </div>
+
+        <button id="markSubjectComplete" class="technical-button" type="button">
+            Mark Subject Complete
+        </button>
+
+        <p id="technicalMessage"></p>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/technical.js"></script>
+
+</body>
+
+</html>

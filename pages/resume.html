@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPilot | Resume</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/resume.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .resume-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .upload-icon, .current-resume-icon, .summary-icon, .evidence-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .summary-icon svg, .evidence-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
+        .upload-icon svg {
+            color: #64748b;
+        }
+
+        .current-resume-icon svg {
+            color: #2563eb;
+        }
+
+        .purple-audit .summary-icon { color: #6366f1; }
+        .blue-audit .summary-icon { color: #0284c7; }
+        .green-audit .summary-icon { color: #059669; }
+        .orange-audit .summary-icon { color: #d97706; }
+
+        .evidence-card:nth-child(1) .evidence-icon { color: #6366f1; }
+        .evidence-card:nth-child(2) .evidence-icon { color: #0284c7; }
+        .evidence-card:nth-child(3) .evidence-icon { color: #0d9488; }
+        .evidence-card:nth-child(4) .evidence-icon { color: #d97706; }
+
+        .upload-progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="resume-navbar">
+
+        <div class="resume-logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+            </svg>
+            CareerPilot
+        </div>
+
+        <nav class="resume-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="dsa.html">DSA</a>
+            <a href="aptitude.html">Aptitude</a>
+            <a href="technical.html">Technical</a>
+            <a href="interview.html">Interview</a>
+        </nav>
+
+        <div class="resume-profile">
+            <span id="userInitials">CP</span>
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="resume-container">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <section class="resume-hero">
+
+            <div>
+                <span class="hero-label">RESUME INTELLIGENCE</span>
+                <h1>Build a stronger resume</h1>
+                <p>
+                    Upload your resume and CareerPilot will inspect
+                    its structure, content coverage and placement
+                    readiness.
+                </p>
+            </div>
+
+            <div class="resume-score-card">
+                <span>Resume Score</span>
+                <strong id="resumeScore">0</strong>
+                <small>/ 100</small>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPLOAD
+        ================================================== -->
+
+        <section class="resume-upload-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">01 · UPLOAD</span>
+                    <h2>Upload your latest resume</h2>
+                </div>
+            </div>
+
+            <div class="upload-box" id="uploadBox">
+
+                <div class="upload-icon">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <path d="M12 18v-6"/>
+                        <path d="m9 15 3-3 3 3"/>
+                    </svg>
+                </div>
+
+                <h3>Drop your resume here</h3>
+                <p>PDF or DOCX · Maximum 10 MB</p>
+
+                <label for="resumeFile" class="upload-button">
+                    Choose Resume
+                </label>
+
+                <input
+                    type="file"
+                    id="resumeFile"
+                    accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    hidden
+                >
+
+                <div class="selected-file hidden" id="selectedFile">
+                    <span id="selectedFileName">No file selected</span>
+                    <button type="button" id="removeFileBtn">Remove</button>
+                </div>
+
+            </div>
+
+            <div class="upload-actions hidden" id="uploadActions">
+                <button type="button" class="primary-button" id="analyzeResumeBtn">
+                    Analyze Resume →
+                </button>
+            </div>
+
+            <div class="upload-progress hidden" id="uploadProgress">
+
+                <div class="upload-progress-top">
+                    <span id="uploadStatus">Preparing...</span>
+                    <strong id="uploadPercent">0%</strong>
+                </div>
+
+                <div class="upload-progress-bar">
+                    <div id="uploadProgressFill" class="upload-progress-fill"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CURRENT RESUME
+        ================================================== -->
+
+        <section class="current-resume-section hidden" id="currentResumeSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">02 · CURRENT RESUME</span>
+                    <h2>Saved Resume</h2>
+                </div>
+            </div>
+
+            <div class="current-resume-card">
+
+                <div class="current-resume-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                </div>
+
+                <div class="current-resume-info">
+                    <strong id="currentResumeName">Resume.pdf</strong>
+                    <span id="currentResumeMeta">Uploaded recently</span>
+                </div>
+
+                <a href="#" id="openResumeLink" target="_blank" rel="noopener" class="secondary-button">
+                    Open Resume
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AUDIT
+        ================================================== -->
+
+        <section class="audit-section hidden" id="auditSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">03 · AUDIT</span>
+                    <h2>Resume Audit</h2>
+                </div>
+                <span class="audit-status" id="auditStatus">Ready</span>
+            </div>
+
+            <!-- Summary -->
+            <div class="audit-summary-grid">
+
+                <div class="audit-summary-card purple-audit">
+                    <span class="summary-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <small>Overall Score</small>
+                        <strong id="summaryScore">0</strong>
+                    </div>
+                </div>
+
+                <div class="audit-summary-card blue-audit">
+                    <span class="summary-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <small>Sections Found</small>
+                        <strong id="summarySections">0</strong>
+                    </div>
+                </div>
+
+                <div class="audit-summary-card green-audit">
+                    <span class="summary-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <small>Passed Checks</small>
+                        <strong id="summaryPassed">0</strong>
+                    </div>
+                </div>
+
+                <div class="audit-summary-card orange-audit">
+                    <span class="summary-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <small>Improvements</small>
+                        <strong id="summaryWarnings">0</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Checks -->
+            <div class="audit-checks" id="auditChecks"></div>
+
+            <!-- Skills -->
+            <div class="detected-skills-section">
+                <div class="mini-heading">
+                    <div>
+                        <span class="section-label">DETECTED CONTENT</span>
+                        <h3>Skills found in your resume</h3>
+                    </div>
+                </div>
+                <div class="skill-chip-list" id="detectedSkills"></div>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="suggestions-section">
+                <div class="mini-heading">
+                    <div>
+                        <span class="section-label">RECOMMENDATIONS</span>
+                        <h3>Improve your resume</h3>
+                    </div>
+                </div>
+                <div class="suggestion-list" id="suggestionList"></div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EVIDENCE
+        ================================================== -->
+
+        <section class="evidence-section hidden" id="evidenceSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">04 · CAREER EVIDENCE</span>
+                    <h2>What CareerPilot can verify</h2>
+                </div>
+            </div>
+
+            <div class="evidence-grid">
+
+                <div class="evidence-card">
+                    <span class="evidence-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6"/>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>Skills</strong>
+                        <p id="evidenceSkills">No detected skills yet.</p>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <span class="evidence-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>Projects</strong>
+                        <p id="evidenceProjects">No project evidence detected yet.</p>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <span class="evidence-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>Experience</strong>
+                        <p id="evidenceExperience">No experience evidence detected yet.</p>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <span class="evidence-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>Education</strong>
+                        <p id="evidenceEducation">No education evidence detected yet.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NEXT
+        ================================================== -->
+
+        <section class="next-step-section hidden" id="nextStepSection">
+
+            <div>
+                <span class="section-label">NEXT STEP</span>
+                <h2>Turn your resume into preparation evidence</h2>
+                <p>
+                    Your detected skills can now be compared
+                    with your learning and verification progress.
+                </p>
+            </div>
+
+            <a href="skills.html" class="primary-button">
+                Verify Skills →
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PDF.JS
+    ====================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"
+        type="module"
+    ></script>
+
+    <script
+        type="module"
+        src="../js/resume/resume.js"
+    ></script>
+
+</body>
+
+</html>

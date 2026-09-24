@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Operating Systems Completed | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os.css" />
+
+  <style>
+    .os-complete-page {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.08), transparent 40%),
+        #f8fafc;
+    }
+
+    .os-complete-card {
+      width: min(740px, 100%);
+      padding: 48px 32px;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .completion-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid #dbeafe;
+    }
+
+    .completion-circle {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+    }
+
+    .completion-circle svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .os-complete-card h1 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .os-complete-card p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #64748b;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .completion-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .completion-stat {
+      padding: 20px 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .completion-stat strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 26px;
+      color: #0f172a;
+    }
+
+    .completion-stat span {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .completion-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .completion-actions a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .os-complete-card {
+        padding: 32px 20px;
+      }
+
+      .completion-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="os-complete-page">
+
+    <section class="os-complete-card">
+
+      <div class="completion-badge">
+        Operating Systems
+      </div>
+
+      <div class="completion-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <h1>Operating Systems Completed!</h1>
+
+      <p>
+        You have successfully completed all nine Operating Systems
+        learning chapters and passed their chapter assessments.
+        Your OS progress is saved to your CareerPilot profile.
+      </p>
+
+      <div class="completion-stats">
+
+        <div class="completion-stat">
+          <strong>9</strong>
+          <span>Chapters Completed</span>
+        </div>
+
+        <div class="completion-stat">
+          <strong>100%</strong>
+          <span>Course Progress</span>
+        </div>
+
+        <div class="completion-stat">
+          <strong>OS</strong>
+          <span>Technical Skill</span>
+        </div>
+
+      </div>
+
+      <div class="completion-actions">
+
+        <a
+          href="technical.html"
+          class="btn btn-primary"
+        >
+          Back to Technical
+        </a>
+
+        <a
+          href="dashboard.html"
+          class="btn btn-secondary"
+        >
+          Go to Dashboard
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

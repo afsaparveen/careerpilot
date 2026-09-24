@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disk Management Assessment | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+
+  <!-- Subtle professional UI enhancements -->
+  <style>
+    .result-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #059669;
+      margin-bottom: 8px;
+    }
+
+    .result-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+    }
+
+    .assessment-progress-bar {
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="assessment-page">
+
+    <section class="assessment-hero">
+      <div class="assessment-hero-content">
+        <span class="assessment-badge">Chapter 9</span>
+
+        <h1>Disk Management Assessment</h1>
+
+        <p>
+          Test your understanding of disk management, disk structure,
+          seek time and disk scheduling algorithms.
+        </p>
+
+        <div class="assessment-stats">
+          <div class="assessment-stat">
+            <strong>10</strong>
+            <span>Questions</span>
+          </div>
+
+          <div class="assessment-stat">
+            <strong>75%</strong>
+            <span>Pass Mark</span>
+          </div>
+
+          <div class="assessment-stat">
+            <strong>8/10</strong>
+            <span>To Pass</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="assessment-container">
+
+      <div class="assessment-progress-wrapper">
+        <div class="assessment-progress-text">
+          <span id="progressText">Question 1 of 10</span>
+          <span id="answeredText">0 answered</span>
+        </div>
+
+        <div class="assessment-progress">
+          <div
+            id="progressBar"
+            class="assessment-progress-bar"
+            style="width: 5%;"
+          ></div>
+        </div>
+      </div>
+
+      <form id="assessmentForm">
+        <div id="questionsContainer"></div>
+
+        <div class="assessment-actions">
+          <button
+            type="button"
+            id="submitBtn"
+            class="btn btn-primary"
+          >
+            Submit Assessment
+          </button>
+
+          <button
+            type="button"
+            id="backBtn"
+            class="btn btn-secondary"
+          >
+            Back to OS
+          </button>
+        </div>
+      </form>
+
+      <div id="resultBox" class="result-card" hidden>
+        <div class="result-icon" id="resultIcon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+
+        <h2 id="resultTitle">Assessment Complete</h2>
+
+        <p id="resultMessage"></p>
+
+        <div class="result-stats">
+          <div>
+            <strong id="scoreValue">0/10</strong>
+            <span>Score</span>
+          </div>
+
+          <div>
+            <strong id="percentageValue">0%</strong>
+            <span>Percentage</span>
+          </div>
+
+          <div>
+            <strong id="passValue">8/10</strong>
+            <span>Required</span>
+          </div>
+        </div>
+
+        <div class="assessment-actions">
+          <button
+            type="button"
+            id="continueBtn"
+            class="btn btn-primary"
+          >
+            Back to OS Course
+          </button>
+
+          <button
+            type="button"
+            id="retryBtn"
+            class="btn btn-secondary"
+          >
+            Retry Assessment
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="errorBox"
+        class="assessment-error"
+        hidden
+      ></div>
+
+    </section>
+  </main>
+
+  <script
+    type="module"
+    src="../js/technical/os-disk-management-assessment.js"
+  ></script>
+</body>
+</html>

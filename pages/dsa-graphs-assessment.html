@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Graphs Assessment | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+</head>
+
+<body>
+
+  <div class="assessment-page">
+
+    <header class="assessment-header">
+
+      <div>
+        <span class="assessment-eyebrow">
+          CAREERPILOT • DSA LEARNING
+        </span>
+
+        <h1>Graphs Assessment</h1>
+
+        <p>
+          Test your understanding of graph basics,
+          representations, BFS, DFS, shortest paths,
+          topological sorting and MSTs.
+        </p>
+      </div>
+
+      
+        href="dsa-learning.html"
+        class="back-btn"
+      >
+        ← Back to DSA Learning
+      </a>
+
+    </header>
+
+
+    <main class="assessment-container">
+
+      <section class="assessment-info-card">
+
+        <div class="info-item">
+          <span>Questions</span>
+          <strong>6</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Pass Mark</span>
+          <strong>5 / 6</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Attempts</span>
+          <strong>Unlimited</strong>
+        </div>
+
+      </section>
+
+
+      <form id="assessmentForm">
+
+        <!-- QUESTION 1 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 1
+          </div>
+
+          <h2>
+            What are the two fundamental components of a graph?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="A"
+            />
+            <span>
+              Arrays and linked lists
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="B"
+            />
+            <span>
+              Vertices and edges
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="C"
+            />
+            <span>
+              Stacks and queues
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="D"
+            />
+            <span>
+              Roots and leaves
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 2 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 2
+          </div>
+
+          <h2>
+            Which graph representation stores the neighbours
+            of each vertex directly?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="A"
+            />
+            <span>
+              Adjacency list
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="B"
+            />
+            <span>
+              Stack table
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="C"
+            />
+            <span>
+              Binary heap
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="D"
+            />
+            <span>
+              Prefix array
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 3 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 3
+          </div>
+
+          <h2>
+            Which data structure is commonly used by
+            Breadth-First Search?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="A"
+            />
+            <span>
+              Queue
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="B"
+            />
+            <span>
+              Stack only
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="C"
+            />
+            <span>
+              Heap only
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="D"
+            />
+            <span>
+              Hash table only
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 4 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 4
+          </div>
+
+          <h2>
+            Which approach is most closely associated with
+            Depth-First Search?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="A"
+            />
+            <span>
+              Exploring as far as possible before backtracking
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="B"
+            />
+            <span>
+              Always visiting the highest-weight edge first
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="C"
+            />
+            <span>
+              Sorting every vertex before traversal
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="D"
+            />
+            <span>
+              Removing all edges before searching
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 5 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 5
+          </div>
+
+          <h2>
+            What is a common use of BFS in an unweighted graph?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="A"
+            />
+            <span>
+              Finding a shortest path in terms of number of edges
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="B"
+            />
+            <span>
+              Sorting an array in O(1)
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="C"
+            />
+            <span>
+              Creating a binary heap automatically
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="D"
+            />
+            <span>
+              Removing all duplicate vertices
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 6 -->
+
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 6
+          </div>
+
+          <h2>
+            Which statement about topological sorting is correct?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q6"
+              value="A"
+            />
+            <span>
+              It is applicable to directed acyclic graphs
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q6"
+              value="B"
+            />
+            <span>
+              It can only be used on arrays
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q6"
+              value="C"
+            />
+            <span>
+              It requires every graph to contain cycles
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q6"
+              value="D"
+            />
+            <span>
+              It is the same as binary search
+            </span>
+          </label>
+
+        </section>
+
+
+        <div class="submit-section">
+
+          <button
+            type="submit"
+            id="submitBtn"
+            class="primary-btn"
+          >
+            Submit Assessment
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <section
+        id="resultSection"
+        class="result-section"
+        style="display: none;"
+      >
+
+        <div id="resultIcon"></div>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultMessage"></p>
+
+        <div class="score-display">
+
+          <span>Your Score</span>
+
+          <strong id="scoreDisplay">
+            0 / 6
+          </strong>
+
+        </div>
+
+        <div class="result-actions">
+
+          <button
+            id="retryBtn"
+            class="secondary-btn"
+          >
+            Try Again
+          </button>
+
+          <button
+            id="backLearningBtn"
+            class="primary-btn"
+          >
+            Back to DSA Learning
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script
+    type="module"
+    src="../js/technical/dsa-graphs-assessment.js"
+  ></script>
+
+</body>
+</html>

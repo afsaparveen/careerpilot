@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CareerPilot | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+
+        .dashboard-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-icon,
+        .module-icon,
+        .task-icon,
+        .card-emoji {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-icon svg,
+        .module-icon svg,
+        .task-icon svg,
+        .card-emoji svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
+        .purple-card .stat-icon {
+            color: #6366f1;
+        }
+
+        .pink-card .stat-icon {
+            color: #0284c7;
+        }
+
+        .blue-card .stat-icon {
+            color: #0d9488;
+        }
+
+        .orange-card .stat-icon {
+            color: #d97706;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="dashboard-navbar">
+
+
+        <!-- CAREERPILOT LOGO -->
+
+        <a
+            href="dashboard.html"
+            class="careerpilot-logo"
+            aria-label="CareerPilot Home">
+
+            <span class="careerpilot-logo-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+                        d="M12 3L4.5 20L12 16L19.5 20L12 3Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linejoin="round">
+                    </path>
+
+                    <path
+                        d="M12 3L12 17"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round">
+                    </path>
+
+                </svg>
+
+            </span>
+
+            <span class="careerpilot-logo-text">
+                Career<span>Pilot</span>
+            </span>
+
+        </a>
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- MOBILE MENU -->
+
+        <nav class="mobile-nav-menu">
+
+            <a
+                href="dashboard.html"
+                class="active">
+                Dashboard
+            </a>
+
+            <a href="roadmap.html">
+                Roadmap
+            </a>
+
+            <a href="dsa.html">
+                DSA
+            </a>
+
+            <a href="aptitude.html">
+                Aptitude
+            </a>
+
+            <a href="technical.html">
+                Technical
+            </a>
+
+            <a href="interview.html">
+                Interview
+            </a>
+
+            <a href="companies.html">
+                Companies
+            </a>
+
+        </nav>
+        <!-- NAVIGATION -->
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="active">
+                Dashboard
+            </a>
+
+            <a href="roadmap.html">
+                Roadmap
+            </a>
+
+            <a href="dsa.html">
+                DSA
+            </a>
+
+            <a href="aptitude.html">
+                Aptitude
+            </a>
+
+            <a href="technical.html">
+                Technical
+            </a>
+
+            <a href="interview.html">
+                Interview
+            </a>
+
+        </nav>
+
+
+        <!-- PROFILE -->
+
+        <div class="dashboard-profile">
+
+            <details class="profile-dropdown">
+
+                <summary
+                    id="userInitials"
+                    title="Open profile menu">
+
+                    AP
+
+                </summary>
+
+
+                <div class="profile-dropdown-menu">
+
+
+                    <!-- PROFILE HEADER -->
+
+                    <div class="profile-menu-header">
+
+                        <div
+                            class="profile-menu-avatar"
+                            id="menuInitials">
+
+                            AP
+
+                        </div>
+
+
+                        <div>
+
+                            <strong id="menuUserName">
+                                CareerPilot User
+                            </strong>
+
+                            <span>
+                                Career Profile
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-menu-divider"></div>
+
+
+                    <!-- PROFILE -->
+
+                    <a href="profile.html">
+
+                        <span>
+                            👤
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Profile
+                            </strong>
+
+                            <small>
+                                View and edit your details
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- SETTINGS -->
+
+                    <a href="settings.html">
+
+                        <span>
+                            ⚙
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Settings
+                            </strong>
+
+                            <small>
+                                Account and preferences
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- DASHBOARD -->
+
+                    <a href="dashboard.html">
+
+                        <span>
+                            🏠
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Dashboard
+                            </strong>
+
+                            <small>
+                                Back to your career dashboard
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="profile-menu-divider"></div>
+
+
+                    <!-- SIGN OUT -->
+
+                    <button
+                        id="logoutBtn"
+                        type="button">
+
+                        <span>
+                            ↪
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Sign Out
+                            </strong>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </details>
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =========================================
+         DASHBOARD
+    ========================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <p class="welcome-small">
+                    Welcome back,
+                </p>
+
+                <h1>
+
+                    <span id="userName">
+                        Career Explorer
+                    </span>
+
+                </h1>
+
+                <p class="welcome-description">
+                    Your personalized placement journey continues today.
+                </p>
+
+            </div>
+
+
+            <div class="target-role-card">
+
+                <span>
+
+                    <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="vertical-align: -1px; margin-right: 4px;">
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="10"/>
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="6"/>
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="2"/>
+
+                    </svg>
+
+                    Target Role
+
+                </span>
+
+                <strong id="targetRole">
+                    Loading...
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LIVE CAREER STATS
+        ====================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- CAREER PROGRESS -->
+
+            <div class="stat-card purple-card">
+
+                <div class="stat-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <polyline
+                            points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+
+                        <polyline
+                            points="17 6 23 6 23 12"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Career Progress
+                    </small>
+
+                    <h2 id="careerProgress">
+                        0%
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDY STREAK -->
+
+            <div class="stat-card pink-card">
+
+                <div class="stat-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Study Streak
+                    </small>
+
+                    <h2>
+                        <span id="streak">
+                            0
+                        </span>
+                        days
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- VERIFIED SKILLS -->
+
+            <div class="stat-card blue-card">
+
+                <div class="stat-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <circle
+                            cx="12"
+                            cy="8"
+                            r="6"/>
+
+                        <path
+                            d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Verified Skills
+                    </small>
+
+                    <h2 id="verifiedSkills">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAREER XP -->
+
+            <div class="stat-card orange-card">
+
+                <div class="stat-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <polygon
+                            points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        Career XP
+                    </small>
+
+                    <h2 id="careerXP">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             TODAY
+        ====================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- DAILY PLAN -->
+
+            <div class="dashboard-card today-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            TODAY
+                        </span>
+
+                        <h2>
+                            Your Daily Plan
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-emoji">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
+                                rx="2"
+                                ry="2"/>
+
+                            <line
+                                x1="16"
+                                y1="2"
+                                x2="16"
+                                y2="6"/>
+
+                            <line
+                                x1="8"
+                                y1="2"
+                                x2="8"
+                                y2="6"/>
+
+                            <line
+                                x1="3"
+                                y1="10"
+                                x2="21"
+                                y2="10"/>
+
+                        </svg>
+
+                    </span>
+
+                </div>
+
+
+                <div class="task-list">
+
+
+                    <!-- DSA -->
+
+                    <div class="task-item">
+
+                        <div class="task-icon dsa-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <polyline
+                                    points="16 18 22 12 16 6"/>
+
+                                <polyline
+                                    points="8 6 2 12 8 18"/>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="task-content">
+
+                            <strong>
+                                DSA Practice
+                            </strong>
+
+                            <p>
+                                Practice 3 pattern-based problems
+                            </p>
+
+                        </div>
+
+
+                        <span class="task-time">
+                            45 min
+                        </span>
+
+                    </div>
+
+
+                    <!-- APTITUDE -->
+
+                    <div class="task-item">
+
+                        <div class="task-icon aptitude-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <line
+                                    x1="4"
+                                    y1="9"
+                                    x2="20"
+                                    y2="9"/>
+
+                                <line
+                                    x1="4"
+                                    y1="15"
+                                    x2="20"
+                                    y2="15"/>
+
+                                <line
+                                    x1="10"
+                                    y1="3"
+                                    x2="8"
+                                    y2="21"/>
+
+                                <line
+                                    x1="16"
+                                    y1="3"
+                                    x2="14"
+                                    y2="21"/>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="task-content">
+
+                            <strong>
+                                Aptitude
+                            </strong>
+
+                            <p>
+                                Learn + solve today's topic
+                            </p>
+
+                        </div>
+
+
+                        <span class="task-time">
+                            30 min
+                        </span>
+
+                    </div>
+
+
+                    <!-- TECHNICAL -->
+
+                    <div class="task-item">
+
+                        <div class="task-icon technical-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <rect
+                                    x="2"
+                                    y="2"
+                                    width="20"
+                                    height="8"
+                                    rx="2"
+                                    ry="2"/>
+
+                                <rect
+                                    x="2"
+                                    y="14"
+                                    width="20"
+                                    height="8"
+                                    rx="2"
+                                    ry="2"/>
+
+                                <line
+                                    x1="6"
+                                    y1="6"
+                                    x2="6.01"
+                                    y2="6"/>
+
+                                <line
+                                    x1="6"
+                                    y1="18"
+                                    x2="6.01"
+                                    y2="18"/>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="task-content">
+
+                            <strong>
+                                Technical Subject
+                            </strong>
+
+                            <p>
+                                Continue your current topic
+                            </p>
+
+                        </div>
+
+
+                        <span class="task-time">
+                            45 min
+                        </span>
+
+                    </div>
+
+
+                    <!-- INTERVIEW -->
+
+                    <div class="task-item">
+
+                        <div class="task-icon interview-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <path
+                                    d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+
+                                <path
+                                    d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+
+                                <line
+                                    x1="12"
+                                    y1="19"
+                                    x2="12"
+                                    y2="23"/>
+
+                                <line
+                                    x1="8"
+                                    y1="23"
+                                    x2="16"
+                                    y2="23"/>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="task-content">
+
+                            <strong>
+                                AI Interview
+                            </strong>
+
+                            <p>
+                                Explain what you learned today
+                            </p>
+
+                        </div>
+
+
+                        <span class="task-time">
+                            20 min
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <a
+                    href="daily-plan.html"
+                    class="view-plan-btn">
+
+                    View Today's Full Plan →
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 LIVE SKILLS
+            ================================== -->
+
+            <div class="dashboard-card skills-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            LIVE LEARNING
+                        </span>
+
+                        <h2>
+                            Skills You Are Building
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-emoji">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <polygon
+                                points="12 2 2 7 12 12 22 7 12 2"/>
+
+                            <polyline
+                                points="2 17 12 22 22 17"/>
+
+                            <polyline
+                                points="2 12 12 17 22 12"/>
+
+                        </svg>
+
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="liveSkillsContainer"
+                    class="skill-progress">
+
+                    <div class="skills-loading">
+                        Loading your learning progress...
+                    </div>
+
+                </div>
+
+
+                <div class="skill-summary">
+
+                    <span>
+
+                        <strong id="skillsLearnedCount">
+                            0
+                        </strong>
+
+                        skills tracked
+
+                    </span>
+
+                    <span>
+                        Updated live
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="skills.html"
+                    class="card-link">
+
+                    View My Skills →
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             CAREER MODULES
+        ====================================== -->
+
+        <section class="modules-section">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="section-label">
+                        PREPARATION
+                    </span>
+
+                    <h2>
+                        Your Career Modules
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Learn, practice and improve every day.
+                </p>
+
+            </div>
+
+
+            <div class="module-grid">
+
+
+                <!-- DSA -->
+
+                <a
+                    href="dsa.html"
+                    class="module-card dsa-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <polyline
+                                points="16 18 22 12 16 6"/>
+
+                            <polyline
+                                points="8 6 2 12 8 18"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            DSA
+                        </h3>
+
+                        <p>
+                            Patterns → Problems → Company Practice
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- DSA LEARNING -->
+
+                <a
+                    href="dsa-learning.html"
+                    class="module-card dsa-learning-dashboard-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+
+                            <path
+                                d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            DSA Learning
+                        </h3>
+
+                        <p>
+                            6 modules → 37 topics → Assessments
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- APTITUDE -->
+
+                <a
+                    href="aptitude.html"
+                    class="module-card aptitude-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"/>
+
+                            <line
+                                x1="12"
+                                y1="6"
+                                x2="12"
+                                y2="12"/>
+
+                            <line
+                                x1="12"
+                                y1="12"
+                                x2="16"
+                                y2="14"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            Aptitude
+                        </h3>
+
+                        <p>
+                            Learn concepts and practice company questions
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- TECHNICAL -->
+
+                <a
+                    href="technical.html"
+                    class="module-card technical-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <rect
+                                x="2"
+                                y="2"
+                                width="20"
+                                height="8"
+                                rx="2"
+                                ry="2"/>
+
+                            <rect
+                                x="2"
+                                y="14"
+                                width="20"
+                                height="8"
+                                rx="2"
+                                ry="2"/>
+
+                            <line
+                                x1="6"
+                                y1="6"
+                                x2="6.01"
+                                y2="6"/>
+
+                            <line
+                                x1="6"
+                                y1="18"
+                                x2="6.01"
+                                y2="18"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            Technical
+                        </h3>
+
+                        <p>
+                            DBMS, OS, CN, OOP, SQL and more
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- INTERVIEW -->
+
+                <a
+                    href="interview.html"
+                    class="module-card interview-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+
+                            <path
+                                d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+
+                            <line
+                                x1="12"
+                                y1="19"
+                                x2="12"
+                                y2="23"/>
+
+                            <line
+                                x1="8"
+                                y1="23"
+                                x2="16"
+                                y2="23"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            AI Interview
+                        </h3>
+
+                        <p>
+                            Practice technical and HR interviews
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- RESUME -->
+
+                <a
+                    href="resume.html"
+                    class="module-card resume-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+
+                            <polyline
+                                points="14 2 14 8 20 8"/>
+
+                            <line
+                                x1="16"
+                                y1="13"
+                                x2="8"
+                                y2="13"/>
+
+                            <line
+                                x1="16"
+                                y1="17"
+                                x2="8"
+                                y2="17"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            Resume
+                        </h3>
+
+                        <p>
+                            Analyze and verify your resume skills
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- ROADMAP -->
+
+                <a
+                    href="roadmap.html"
+                    class="module-card roadmap-module">
+
+                    <div class="module-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"/>
+
+                            <polygon
+                                points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="module-info">
+
+                        <h3>
+                            Career Roadmap
+                        </h3>
+
+                        <p>
+                            Follow your personalized learning journey
+                        </p>
+
+                    </div>
+
+
+                    <span class="module-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             BOTTOM
+        ====================================== -->
+
+        <section class="bottom-grid">
+
+
+            <!-- CAREER TWIN -->
+
+            <div class="dashboard-card career-twin-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI PROFILE
+                        </span>
+
+                        <h2>
+                            Your Career Twin
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-emoji">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+
+                            <circle
+                                cx="12"
+                                cy="7"
+                                r="4"/>
+
+                        </svg>
+
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Your Career Twin updates as you learn,
+                    practice, complete assessments and improve
+                    your interview performance.
+
+                </p>
+
+
+                <div class="twin-status">
+
+                    <span class="status-dot"></span>
+
+                    <strong id="careerTwinStatus">
+                        Profile building
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="progress.html"
+                    class="card-link">
+
+                    View Career Twin →
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 LIVE RESUME
+            ================================== -->
+
+            <div class="dashboard-card resume-status-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            RESUME
+                        </span>
+
+                        <h2>
+                            Resume Match
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-emoji">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+
+                            <polyline
+                                points="14 2 14 8 20 8"/>
+
+                            <path
+                                d="m9 15 2 2 4-4"/>
+
+                        </svg>
+
+                    </span>
+
+                </div>
+
+
+                <div class="resume-status">
+
+                    <div
+                        id="resumeMatchCircle"
+                        class="resume-circle">
+
+                        --
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="resumeMatchTitle">
+                            Resume not analyzed
+                        </strong>
+
+                        <p id="resumeMatchText">
+
+                            Upload your resume to see how well it matches your target role.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="resumeMatchDetails"
+                    class="resume-match-details">
+                </div>
+
+
+                <a
+                    href="resume.html"
+                    class="card-link">
+
+                    View Resume Analysis →
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script
+    type="module"
+    src="../js/dashboard/dashboard.js">
+</script>
+
+
+<script
+    src="../js/mobile-nav.js">
+</script>
+
+</body>
+
+</html>

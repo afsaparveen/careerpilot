@@ -1,0 +1,1251 @@
+{
+  "course": {
+    "id": "computer-networks",
+    "title": "Computer Networks",
+    "description": "A structured Computer Networks course based on the Computer Networks Notes PDF.",
+    "totalChapters": 10
+  },
+
+  "chapters": [
+    {
+      "id": "cn-introduction",
+      "title": "Introduction",
+      "description": "Fundamentals of computer networks, protocols, network types, topologies and switching.",
+      "sourcePages": "3-9",
+      "topics": [
+        {
+          "id": "what-is-network",
+          "title": "What is a Computer Network?",
+          "learn": "A computer network is a group of interconnected nodes or devices that share resources and information through communication links.",
+          "example": "A laptop, smartphone and printer connected through a network can exchange data and share resources.",
+          "keyPoints": [
+            "Networks contain interconnected devices.",
+            "Communication links carry data.",
+            "Networks allow resource and information sharing."
+          ]
+        },
+        {
+          "id": "network-node",
+          "title": "Nodes",
+          "learn": "A node is a device capable of sending and receiving data. End nodes include PCs, printers, servers and smartphones. Intermediary nodes include routers, bridges and modems.",
+          "example": "A laptop can act as an end node while a router works as an intermediary node.",
+          "keyPoints": [
+            "End nodes participate at the edge of communication.",
+            "Intermediary nodes help move or manage network traffic."
+          ]
+        },
+        {
+          "id": "communication-links",
+          "title": "Communication Links",
+          "learn": "A communication link is the medium used to transfer data between devices. Links may be wired or wireless.",
+          "example": "Ethernet or coaxial cable is a wired link, while Wi-Fi and Bluetooth are wireless links.",
+          "keyPoints": [
+            "Wired links use physical cables.",
+            "Wireless links use radio or other wireless communication."
+          ]
+        },
+        {
+          "id": "network-uses",
+          "title": "Uses and Services of Networks",
+          "learn": "Computer networks support communication, resource sharing, remote access and collaboration. They also provide services such as email, instant messaging, video telephony, storage, web browsing, file sharing and VoIP.",
+          "example": "Google Drive-style storage and online meetings depend on network communication.",
+          "keyPoints": [
+            "Communication",
+            "Resource sharing",
+            "Remote access",
+            "Collaboration",
+            "Online services"
+          ]
+        },
+        {
+          "id": "network-characteristics",
+          "title": "Characteristics of Computer Networks",
+          "learn": "Important characteristics include fault tolerance, scalability, quality of service and security.",
+          "example": "A scalable network can add devices without significantly degrading performance.",
+          "keyPoints": [
+            "Fault tolerance",
+            "Scalability",
+            "Quality of Service",
+            "Security"
+          ]
+        },
+        {
+          "id": "protocol-basics",
+          "title": "Protocols",
+          "learn": "A protocol is a set of rules followed by communicating devices. Protocol information includes sender, receiver and communication media.",
+          "example": "HTTP defines rules used between web browsers and web servers.",
+          "keyPoints": [
+            "Protocols provide communication rules.",
+            "Sender and receiver must follow compatible rules."
+          ]
+        },
+        {
+          "id": "protocol-elements",
+          "title": "Elements of a Protocol",
+          "learn": "Protocol elements include message encoding, message formatting and encapsulation, message timing, message size and message delivery options.",
+          "example": "A protocol can define how data is formatted before transmission and when it should be sent.",
+          "keyPoints": [
+            "Message encoding",
+            "Formatting and encapsulation",
+            "Timing",
+            "Message size",
+            "Delivery options"
+          ]
+        },
+        {
+          "id": "data-flow-modes",
+          "title": "Simplex, Half Duplex and Full Duplex",
+          "learn": "Simplex supports one-way communication. Half duplex supports two-way communication but only one direction at a time. Full duplex supports simultaneous two-way communication.",
+          "example": "A keyboard-to-CPU path represents simplex, a walkie-talkie represents half duplex, and a telephone call represents full duplex.",
+          "keyPoints": [
+            "Simplex = one direction",
+            "Half duplex = both directions, one at a time",
+            "Full duplex = both directions simultaneously"
+          ]
+        },
+        {
+          "id": "network-types",
+          "title": "PAN, LAN, CAN, MAN and WAN",
+          "learn": "Networks can be classified by geographic range and use. The notes cover PAN, LAN, CAN, MAN and WAN.",
+          "example": "A LAN can connect computers within an office, while a WAN can connect networks across cities or countries.",
+          "keyPoints": [
+            "PAN",
+            "LAN",
+            "CAN",
+            "MAN",
+            "WAN"
+          ]
+        },
+        {
+          "id": "client-server-p2p",
+          "title": "Client-Server and Peer-to-Peer Networks",
+          "learn": "A client-server model uses dedicated servers for centralized services and resource management. In a peer-to-peer network, systems can function as both clients and servers.",
+          "example": "An enterprise database commonly follows a client-server architecture, while file-sharing networks can use peer-to-peer communication.",
+          "keyPoints": [
+            "Client-server = centralized",
+            "P2P = decentralized",
+            "Client-server provides centralized access control",
+            "P2P does not require a dedicated server"
+          ]
+        },
+        {
+          "id": "network-topology-basics",
+          "title": "Network Topology",
+          "learn": "Topology describes the layout and arrangement of nodes in a network. It can refer to physical placement or logical data flow.",
+          "example": "Two networks can have different physical arrangements while using similar logical communication behavior.",
+          "keyPoints": [
+            "Physical topology",
+            "Logical topology",
+            "Bus",
+            "Ring",
+            "Star",
+            "Mesh",
+            "Tree",
+            "Hybrid"
+          ]
+        },
+        {
+          "id": "topology-types",
+          "title": "Bus, Ring, Star, Mesh, Tree and Hybrid",
+          "learn": "The notes cover the structure, working, advantages, disadvantages and typical uses of six topology types.",
+          "example": "In star topology, devices connect to a central hub or switch. In mesh topology, devices have multiple direct paths.",
+          "keyPoints": [
+            "Bus uses a shared central cable.",
+            "Ring forms a closed loop.",
+            "Star uses a central device.",
+            "Mesh provides multiple paths.",
+            "Tree provides hierarchical structure.",
+            "Hybrid combines multiple topology types."
+          ]
+        },
+        {
+          "id": "switching",
+          "title": "Switching",
+          "learn": "Switching is a method of transmitting data between devices by selecting an available path. The notes cover circuit switching, message switching and packet switching.",
+          "example": "Traditional telephone networks use circuit switching, while modern data networks commonly use packet switching.",
+          "keyPoints": [
+            "Circuit switching",
+            "Message switching",
+            "Packet switching",
+            "Store-and-forward"
+          ]
+        },
+        {
+          "id": "packet-switching-types",
+          "title": "Datagram and Virtual Circuit Approaches",
+          "learn": "The datagram approach is connectionless and allows packets to take different routes. The virtual circuit approach establishes a path before data transfer and keeps packets on the established route.",
+          "example": "The notes associate IP with the datagram approach and ATM/Frame Relay with the virtual circuit approach.",
+          "keyPoints": [
+            "Datagram = connectionless",
+            "Virtual circuit = connection-oriented",
+            "Datagrams can take different routes",
+            "Virtual circuits use an established route"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-devices",
+      "title": "Devices",
+      "description": "Network cables and important networking devices from the Physical, Data Link and Network layers.",
+      "sourcePages": "10-14",
+      "topics": [
+        {
+          "id": "network-cables",
+          "title": "Network Cables",
+          "learn": "The notes cover Unshielded Twisted Pair, coaxial cable and fiber optic cable.",
+          "example": "Fiber optic communication sends data using light signals and supports long distances.",
+          "keyPoints": [
+            "UTP",
+            "Coaxial cable",
+            "Fiber optic cable"
+          ]
+        },
+        {
+          "id": "repeater",
+          "title": "Repeater",
+          "learn": "A repeater works at the Physical Layer and restores signal strength after attenuation. It forwards the signal without filtering it.",
+          "example": "A repeater can be placed along a long cable to regenerate a weakened signal.",
+          "keyPoints": [
+            "Physical Layer",
+            "Signal regeneration",
+            "No filtering",
+            "Two-port device"
+          ]
+        },
+        {
+          "id": "repeater-vs-amplifier",
+          "title": "Repeater vs Amplifier",
+          "learn": "The notes distinguish a repeater, which restores the signal, from an amplifier, which boosts signal power and also amplifies noise.",
+          "example": "An amplifier can increase both the desired signal and existing noise.",
+          "keyPoints": [
+            "Repeater restores signal strength.",
+            "Amplifier boosts signal power.",
+            "Amplifier also amplifies noise."
+          ]
+        },
+        {
+          "id": "hub",
+          "title": "Hub",
+          "learn": "A hub works at the Physical Layer and acts as a multiport repeater. It broadcasts received data to connected devices.",
+          "example": "If a hub receives a frame on one port, it forwards the signal to the other connected ports.",
+          "keyPoints": [
+            "Physical Layer",
+            "Multiport repeater",
+            "Broadcasts data",
+            "No packet filtering",
+            "Collisions can occur"
+          ]
+        },
+        {
+          "id": "bridge",
+          "title": "Bridge",
+          "learn": "A bridge works at the Data Link Layer and connects LAN segments. It uses MAC addresses and can filter traffic between segments.",
+          "example": "A bridge can avoid forwarding traffic to another segment when the destination is known to be on the same segment.",
+          "keyPoints": [
+            "Data Link Layer",
+            "Uses MAC addresses",
+            "Connects LAN segments",
+            "Filters traffic"
+          ]
+        },
+        {
+          "id": "static-dynamic-bridge",
+          "title": "Static and Dynamic Bridges",
+          "learn": "Static bridges use manually configured MAC address tables, while dynamic or transparent bridges learn addresses automatically.",
+          "example": "A transparent bridge can learn the location of devices from observed traffic.",
+          "keyPoints": [
+            "Static = manual",
+            "Dynamic = self-learning",
+            "MAC address table"
+          ]
+        },
+        {
+          "id": "switch",
+          "title": "Switch",
+          "learn": "A switch operates at the Data Link Layer and functions like an advanced multiport bridge. It creates separate communication paths and supports full-duplex communication.",
+          "example": "A laptop, desktop and printer can communicate through separate switch ports.",
+          "keyPoints": [
+            "Layer 2",
+            "Multiport bridge",
+            "Full duplex",
+            "Separate collision domain per port"
+          ]
+        },
+        {
+          "id": "router",
+          "title": "Router",
+          "learn": "A router operates at the Network Layer and forwards packets between networks using IP addresses and routing tables.",
+          "example": "A router can forward packets from a local network toward an Internet destination.",
+          "keyPoints": [
+            "Layer 3",
+            "IP addressing",
+            "Routing table",
+            "Connects networks"
+          ]
+        },
+        {
+          "id": "gateway",
+          "title": "Gateway",
+          "learn": "A gateway connects different networks and can translate between different network protocols. It can work across multiple OSI layers depending on the translation required.",
+          "example": "A VoIP gateway can connect IP-based networks with traditional telephone networks.",
+          "keyPoints": [
+            "Protocol translation",
+            "Connects different networks",
+            "May operate across multiple layers"
+          ]
+        },
+        {
+          "id": "firewall",
+          "title": "Firewall",
+          "learn": "A firewall monitors and controls network traffic between trusted and untrusted networks using predefined rules.",
+          "example": "A firewall can filter traffic based on IP address, port or protocol.",
+          "keyPoints": [
+            "Security device",
+            "Traffic filtering",
+            "IP, port and protocol rules",
+            "Hardware, software or both"
+          ]
+        },
+        {
+          "id": "ids",
+          "title": "Intrusion Detection System",
+          "learn": "An IDS monitors network or system activity to identify suspicious behavior and generate alerts. The notes cover NIDS and HIDS.",
+          "example": "A NIDS can monitor traffic across a network while a HIDS monitors an individual host.",
+          "keyPoints": [
+            "Detects suspicious activity",
+            "Generates alerts",
+            "NIDS",
+            "HIDS"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-physical-layer",
+      "title": "Physical Layer",
+      "description": "The lowest OSI layer, transmission media, signaling and communication modes.",
+      "sourcePages": "15-16",
+      "topics": [
+        {
+          "id": "physical-layer-basics",
+          "title": "Physical Layer Basics",
+          "learn": "The Physical Layer is the first layer from the bottom of the OSI model and handles transmission of raw bits.",
+          "example": "A cable can carry the bit stream between network devices.",
+          "keyPoints": [
+            "OSI Layer 1",
+            "Data form = bits",
+            "Physical transmission"
+          ]
+        },
+        {
+          "id": "physical-layer-devices",
+          "title": "Physical Layer Devices",
+          "learn": "The notes identify cables, hubs and repeaters as devices associated with the Physical Layer.",
+          "example": "A repeater regenerates weakened signals on a physical medium.",
+          "keyPoints": [
+            "Cables",
+            "Hub",
+            "Repeater"
+          ]
+        },
+        {
+          "id": "encoding-signaling",
+          "title": "Encoding, Decoding and Signal Transmission",
+          "learn": "Encoding converts data into signals suitable for transmission, while decoding converts received signals into data. Signals can travel through wires, fiber optics or air.",
+          "example": "Digital data can be encoded into an electrical or optical signal for transmission.",
+          "keyPoints": [
+            "Encoding",
+            "Decoding",
+            "Analog signals",
+            "Digital signals",
+            "Signal transmission"
+          ]
+        },
+        {
+          "id": "modulation-demodulation",
+          "title": "Modulation and Demodulation",
+          "learn": "Modulation changes a carrier signal to encode data, while demodulation recovers the original information. A modem performs these operations.",
+          "example": "A modem converts data between suitable carrier signals and original data.",
+          "keyPoints": [
+            "Modulation",
+            "Demodulation",
+            "Modem"
+          ]
+        },
+        {
+          "id": "point-to-point-multipoint",
+          "title": "Point-to-Point and Multipoint Connections",
+          "learn": "A point-to-point connection directly connects two devices. A multipoint connection allows multiple devices to share one communication link.",
+          "example": "A direct connection between two devices is point-to-point, while several devices sharing a communication medium form a multipoint arrangement.",
+          "keyPoints": [
+            "Point-to-point = two devices",
+            "Multipoint = shared link"
+          ]
+        },
+        {
+          "id": "network-communication-modes",
+          "title": "Unicast, Anycast, Multicast and Broadcast",
+          "learn": "The notes describe communication from one source to one node, any one node, a subset of nodes, or all nodes respectively.",
+          "example": "Broadcast sends information to all nodes in a network, while multicast targets a selected group.",
+          "keyPoints": [
+            "Unicast",
+            "Anycast",
+            "Multicast",
+            "Broadcast"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-data-link-layer",
+      "title": "Data Link Layer",
+      "description": "Frames, MAC addressing, flow control, error control, multiple access and Ethernet.",
+      "sourcePages": "17-27",
+      "topics": [
+        {
+          "id": "data-link-basics",
+          "title": "Data Link Layer Basics",
+          "learn": "The Data Link Layer is the second layer from the bottom of the OSI model and works with frames.",
+          "example": "Packets received from the Network Layer are encapsulated into frames.",
+          "keyPoints": [
+            "OSI Layer 2",
+            "Data form = frames",
+            "Node-to-node delivery"
+          ]
+        },
+        {
+          "id": "llc-mac",
+          "title": "LLC and MAC Sublayers",
+          "learn": "The Logical Link Control sublayer handles flow control and multiplexing, while the MAC sublayer manages access to the physical medium and frame addressing.",
+          "example": "MAC addressing identifies source and destination devices on a local network.",
+          "keyPoints": [
+            "LLC",
+            "MAC",
+            "Flow control",
+            "Frame addressing"
+          ]
+        },
+        {
+          "id": "data-link-services",
+          "title": "Data Link Layer Services",
+          "learn": "The notes cover framing, MAC addressing, flow control, error control and access control.",
+          "example": "A frame contains source and destination MAC addresses for local delivery.",
+          "keyPoints": [
+            "Framing",
+            "Physical/MAC addressing",
+            "Flow control",
+            "Error control",
+            "Access control"
+          ]
+        },
+        {
+          "id": "framing",
+          "title": "Framing",
+          "learn": "Framing groups raw bits into frames and provides boundaries for node-to-node delivery. Frames contain a flag, header, payload and trailer.",
+          "example": "The header can contain source and destination MAC addresses while the trailer can contain error-checking information.",
+          "keyPoints": [
+            "Flag",
+            "Header",
+            "Payload",
+            "Trailer"
+          ]
+        },
+        {
+          "id": "framing-methods",
+          "title": "Fixed and Variable Size Framing",
+          "learn": "Fixed-size frames use a constant size, while variable-size frames use methods such as length fields or delimiters. Byte stuffing and bit stuffing help avoid delimiter ambiguity.",
+          "example": "Byte stuffing inserts an extra byte so a data byte is not confused with a control delimiter.",
+          "keyPoints": [
+            "Fixed-size framing",
+            "Variable-size framing",
+            "Length field",
+            "End delimiter",
+            "Byte stuffing",
+            "Bit stuffing"
+          ]
+        },
+        {
+          "id": "mac-addressing",
+          "title": "MAC Addressing and NIC",
+          "learn": "A Network Interface Card connects a device to a network, and the MAC address is the hardware identifier associated with the NIC.",
+          "example": "A laptop's network interface has a MAC address used for local network identification.",
+          "keyPoints": [
+            "NIC",
+            "Wired and wireless NICs",
+            "MAC address",
+            "WAP"
+          ]
+        },
+        {
+          "id": "stop-and-wait",
+          "title": "Stop-and-Wait Flow Control",
+          "learn": "Stop-and-Wait uses a window size of one. The sender sends one frame and waits for an acknowledgment before sending the next.",
+          "example": "A sender transmits one frame, waits for ACK and then transmits the next frame.",
+          "keyPoints": [
+            "Window size = 1",
+            "ACK after each frame",
+            "Simple",
+            "Can be inefficient"
+          ]
+        },
+        {
+          "id": "go-back-n",
+          "title": "Go-Back-N",
+          "learn": "Go-Back-N is a sliding-window flow and error control protocol. The sender can send multiple frames, while the receiver sends cumulative acknowledgments.",
+          "example": "If frame 2 is lost, the sender can retransmit frame 2 and subsequent frames after timeout.",
+          "keyPoints": [
+            "Sliding window",
+            "Cumulative ACK",
+            "Retransmission from missing frame onward"
+          ]
+        },
+        {
+          "id": "selective-repeat",
+          "title": "Selective Repeat ARQ",
+          "learn": "Selective Repeat allows multiple frames to be transmitted and acknowledged while retransmitting only lost or damaged frames.",
+          "example": "If only frame 4 is corrupted, frame 4 can be retransmitted without retransmitting correctly received frames.",
+          "keyPoints": [
+            "Multiple frames in transit",
+            "Individual acknowledgments",
+            "Buffers out-of-order frames",
+            "Retransmits only missing or corrupted frames"
+          ]
+        },
+        {
+          "id": "error-detection",
+          "title": "Error Detection",
+          "learn": "The notes cover single-bit parity, checksum and Cyclic Redundancy Check for detecting transmission errors.",
+          "example": "CRC uses polynomial division to generate a check value.",
+          "keyPoints": [
+            "Parity",
+            "Checksum",
+            "CRC"
+          ]
+        },
+        {
+          "id": "error-correction",
+          "title": "Error Correction and Hamming Code",
+          "learn": "Backward Error Correction requests retransmission after detecting an error, while Forward Error Correction uses extra information to correct errors without retransmission. Hamming Code is covered as an error-correction technique.",
+          "example": "Hamming parity bits can help identify the position of an incorrect bit.",
+          "keyPoints": [
+            "Backward Error Correction",
+            "Forward Error Correction",
+            "Hamming Code",
+            "Parity positions"
+          ]
+        },
+        {
+          "id": "random-access-protocols",
+          "title": "Random Access Protocols",
+          "learn": "Random access protocols allow stations to compete for the shared medium. The notes cover ALOHA, Slotted ALOHA and CSMA variants.",
+          "example": "Two stations transmitting at the same time can produce a collision.",
+          "keyPoints": [
+            "ALOHA",
+            "Slotted ALOHA",
+            "CSMA"
+          ]
+        },
+        {
+          "id": "csma-variants",
+          "title": "1-Persistent, 0-Persistent and P-Persistent CSMA",
+          "learn": "The three CSMA access modes differ in how a station behaves when the medium is idle or busy.",
+          "example": "P-Persistent CSMA transmits with probability p when the channel is idle.",
+          "keyPoints": [
+            "1-Persistent",
+            "0-Persistent",
+            "P-Persistent"
+          ]
+        },
+        {
+          "id": "csma-cd-ca",
+          "title": "CSMA/CD and CSMA/CA",
+          "learn": "CSMA/CD detects collisions during transmission, while CSMA/CA uses sensing, interframe spacing, contention windows and acknowledgments to reduce collisions.",
+          "example": "CSMA/CA uses a random backoff period before transmission.",
+          "keyPoints": [
+            "Collision Detection",
+            "Collision Avoidance",
+            "Jam signal",
+            "Backoff",
+            "ACK"
+          ]
+        },
+        {
+          "id": "controlled-access",
+          "title": "Controlled Access Protocols",
+          "learn": "Controlled access regulates who can transmit on a shared channel using reservation, polling or token passing.",
+          "example": "In token passing, only the device holding the token transmits.",
+          "keyPoints": [
+            "Reservation",
+            "Polling",
+            "Token passing"
+          ]
+        },
+        {
+          "id": "channelization",
+          "title": "FDMA, TDMA and CDMA",
+          "learn": "Channelization divides the shared medium using frequency, time or unique codes.",
+          "example": "FDMA allocates different frequency bands while TDMA allocates time slots.",
+          "keyPoints": [
+            "FDMA",
+            "TDMA",
+            "CDMA"
+          ]
+        },
+        {
+          "id": "ethernet-frame",
+          "title": "Ethernet Frame Format",
+          "learn": "The Ethernet frame includes preamble, Start Frame Delimiter, destination address, source address, length/type information, payload and CRC.",
+          "example": "The destination address identifies the receiving MAC address while CRC checks for corruption.",
+          "keyPoints": [
+            "Preamble",
+            "SFD",
+            "Destination MAC",
+            "Source MAC",
+            "Data/Payload",
+            "CRC"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-network-layer",
+      "title": "Network Layer",
+      "description": "IP addressing, subnetting, IPv4/IPv6, routing, ARP and NAT.",
+      "sourcePages": "28-37",
+      "topics": [
+        {
+          "id": "network-layer-basics",
+          "title": "Network Layer Basics",
+          "learn": "The Network Layer is the third layer from the bottom and works with packets. It handles routing, logical addressing, forwarding and packet-related operations.",
+          "example": "A router uses destination IP information to forward packets toward another network.",
+          "keyPoints": [
+            "OSI Layer 3",
+            "Data form = packets",
+            "Routing",
+            "Logical addressing",
+            "Forwarding"
+          ]
+        },
+        {
+          "id": "ip-addressing",
+          "title": "IP Addressing",
+          "learn": "IP addresses identify devices on networks. The notes cover IPv4 and IPv6, along with public and private addressing.",
+          "example": "An IPv4 address contains 32 bits divided into four 8-bit octets.",
+          "keyPoints": [
+            "IPv4 = 32-bit",
+            "IPv6 = 128-bit",
+            "Public IP",
+            "Private IP"
+          ]
+        },
+        {
+          "id": "classful-addressing",
+          "title": "Classful Addressing",
+          "learn": "Classful IPv4 addressing divides addresses into classes A, B, C, D and E based on the first octet and uses fixed network and host portions.",
+          "example": "Class C uses the first three octets as the network portion according to the notes.",
+          "keyPoints": [
+            "Class A",
+            "Class B",
+            "Class C",
+            "Class D",
+            "Class E"
+          ]
+        },
+        {
+          "id": "subnet-mask-network-id",
+          "title": "Subnet Masks, Network ID and Broadcast Address",
+          "learn": "A subnet mask identifies the network portion of an IP address. The first address is the network ID and the last address can be the broadcast address.",
+          "example": "For 192.168.1.0/24, the notes identify 192.168.1.0 as the network ID and 192.168.1.255 as the broadcast address.",
+          "keyPoints": [
+            "Subnet mask",
+            "Network ID",
+            "Broadcast address",
+            "Network bits",
+            "Host bits"
+          ]
+        },
+        {
+          "id": "classless-addressing-cidr",
+          "title": "Classless Addressing and CIDR",
+          "learn": "CIDR improves IP allocation by assigning blocks according to actual requirements rather than fixed classes.",
+          "example": "192.168.1.0/28 contains 28 network bits and 4 host bits.",
+          "keyPoints": [
+            "CIDR",
+            "CIDR block",
+            "Power-of-two block size",
+            "Contiguous addresses"
+          ]
+        },
+        {
+          "id": "subnetting",
+          "title": "Subnetting",
+          "learn": "Subnetting divides a larger network into smaller networks. Routers can connect different subnets, and host bits can be borrowed to create subnet IDs.",
+          "example": "Borrowing two bits creates four subnets according to the notes.",
+          "keyPoints": [
+            "Subnet ID",
+            "Broadcast ID",
+            "Borrowed bits",
+            "Hosts per subnet"
+          ]
+        },
+        {
+          "id": "flsm-vlsm",
+          "title": "FLSM and VLSM",
+          "learn": "FLSM uses the same subnet mask for all subnets, while VLSM uses different masks based on host requirements.",
+          "example": "VLSM can create larger and smaller subnets from the same address space according to need.",
+          "keyPoints": [
+            "FLSM",
+            "VLSM",
+            "IP efficiency",
+            "Variable subnet sizes"
+          ]
+        },
+        {
+          "id": "ipv4-header",
+          "title": "IPv4 Header",
+          "learn": "The IPv4 header includes version, header length, service information, total length, identification, flags, fragment offset, TTL, protocol, checksum and source/destination addresses.",
+          "example": "TTL limits packet lifetime and helps prevent indefinite routing loops.",
+          "keyPoints": [
+            "Version",
+            "TTL",
+            "Protocol",
+            "Header checksum",
+            "Source address",
+            "Destination address"
+          ]
+        },
+        {
+          "id": "ipv6-header",
+          "title": "IPv6 Header",
+          "learn": "The IPv6 header uses 128-bit addresses and includes fields such as version, traffic class, flow label, payload length, next header and hop limit.",
+          "example": "IPv6 uses a 128-bit source and destination address.",
+          "keyPoints": [
+            "128-bit addresses",
+            "Traffic Class",
+            "Flow Label",
+            "Next Header",
+            "Hop Limit",
+            "Extension Headers"
+          ]
+        },
+        {
+          "id": "routing",
+          "title": "Routing and Routing Tables",
+          "learn": "Routing selects a path for packets from source to destination. Routing tables contain paths used by routers.",
+          "example": "A router examines its routing table to choose a next hop.",
+          "keyPoints": [
+            "Best path",
+            "Routing table",
+            "Static routing",
+            "Dynamic routing"
+          ]
+        },
+        {
+          "id": "routing-protocols",
+          "title": "RIP, OSPF and Path Vector Routing",
+          "learn": "The notes cover distance-vector routing using RIP, link-state routing using OSPF and path-vector routing for inter-domain communication.",
+          "example": "RIP uses hop count as its metric.",
+          "keyPoints": [
+            "RIP",
+            "Distance Vector",
+            "OSPF",
+            "Link State",
+            "Path Vector"
+          ]
+        },
+        {
+          "id": "arp",
+          "title": "Address Resolution Protocol",
+          "learn": "ARP maps an IP address to a corresponding MAC address within a local network.",
+          "example": "A device can broadcast an ARP request when the destination MAC address is not present in its cache.",
+          "keyPoints": [
+            "ARP cache",
+            "ARP request",
+            "ARP reply",
+            "IP-to-MAC mapping"
+          ]
+        },
+        {
+          "id": "nat",
+          "title": "Network Address Translation",
+          "learn": "NAT allows multiple private IP addresses to share public addressing for Internet access by translating IP and port information.",
+          "example": "A router can translate a private source address into a public address before sending traffic to the Internet.",
+          "keyPoints": [
+            "Private IP",
+            "Public IP",
+            "IP translation",
+            "Port translation",
+            "NAT table"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-transport-layer",
+      "title": "Transport Layer",
+      "description": "Ports, sockets, TCP, UDP, flow control, congestion control and connection management.",
+      "sourcePages": "38-44",
+      "topics": [
+        {
+          "id": "transport-layer-basics",
+          "title": "Transport Layer Basics",
+          "learn": "The Transport Layer provides end-to-end, process-to-process communication and works with segments.",
+          "example": "Port numbers allow transport-layer data to reach the correct application.",
+          "keyPoints": [
+            "OSI Layer 4",
+            "Data form = segments",
+            "End-to-end delivery",
+            "Port numbers"
+          ]
+        },
+        {
+          "id": "socket-address",
+          "title": "Socket Address",
+          "learn": "A socket address combines an IP address and a port number so that both the destination device and application can be identified.",
+          "example": "192.168.1.10:80 identifies a web service on a particular device.",
+          "keyPoints": [
+            "IP address",
+            "Port number",
+            "Device identification",
+            "Application identification"
+          ]
+        },
+        {
+          "id": "tcp-features",
+          "title": "TCP Features",
+          "learn": "TCP is connection-oriented and provides reliable, ordered delivery with acknowledgments, retransmissions, flow control, congestion control and error detection.",
+          "example": "TCP can retransmit lost data after detecting that delivery was unsuccessful.",
+          "keyPoints": [
+            "Reliable",
+            "Connection-oriented",
+            "Byte stream",
+            "Full duplex",
+            "Flow control",
+            "Congestion control"
+          ]
+        },
+        {
+          "id": "tcp-header",
+          "title": "TCP Header",
+          "learn": "The TCP header contains source and destination ports, sequence and acknowledgment numbers, header length, control flags, window size, checksum, urgent pointer and options.",
+          "example": "The SYN flag is used during connection setup, while ACK confirms receipt.",
+          "keyPoints": [
+            "Sequence number",
+            "Acknowledgment number",
+            "Window size",
+            "Checksum",
+            "SYN",
+            "ACK",
+            "FIN",
+            "RST"
+          ]
+        },
+        {
+          "id": "tcp-handshake",
+          "title": "TCP Three-Way Handshake",
+          "learn": "TCP establishes a connection using SYN, SYN-ACK and ACK.",
+          "example": "The client sends SYN, the server responds with SYN-ACK, and the client sends the final ACK.",
+          "keyPoints": [
+            "SYN",
+            "SYN-ACK",
+            "ACK",
+            "Connection establishment"
+          ]
+        },
+        {
+          "id": "tcp-data-transfer",
+          "title": "TCP Data Transfer and Acknowledgment",
+          "learn": "TCP uses sequence numbers and acknowledgment numbers to track transmitted and expected bytes. Piggybacking combines data with acknowledgments when possible.",
+          "example": "An acknowledgment number indicates the next byte expected by the receiver.",
+          "keyPoints": [
+            "Sequence number",
+            "Acknowledgment number",
+            "Pure ACK",
+            "Piggybacking"
+          ]
+        },
+        {
+          "id": "tcp-window-mss",
+          "title": "TCP Window Size and MSS",
+          "learn": "The receiver window represents the amount of data that can be sent without waiting for acknowledgment. MSS represents the maximum data size in a TCP segment.",
+          "example": "If the window is 18,000 bytes and MSS is 1,800 bytes, the notes calculate 10 segments.",
+          "keyPoints": [
+            "Window size",
+            "MSS",
+            "Segments needed"
+          ]
+        },
+        {
+          "id": "tcp-termination",
+          "title": "TCP Connection Termination",
+          "learn": "The notes describe TCP connection termination using FIN and ACK messages and explain both three-step and four-step termination sequences.",
+          "example": "A client can send FIN, the server acknowledges it, later sends its own FIN, and the client sends the final ACK.",
+          "keyPoints": [
+            "FIN",
+            "ACK",
+            "Half-close",
+            "Connection termination"
+          ]
+        },
+        {
+          "id": "udp",
+          "title": "UDP",
+          "learn": "UDP is connectionless, lightweight and fast. It provides no handshake, delivery guarantee, ordering guarantee, flow control or congestion control according to the notes.",
+          "example": "UDP is associated with time-sensitive, loss-tolerant applications such as streaming, calls and online games.",
+          "keyPoints": [
+            "Connectionless",
+            "Low overhead",
+            "Fast",
+            "No retransmission",
+            "No flow control",
+            "No congestion control"
+          ]
+        },
+        {
+          "id": "tcp-vs-udp",
+          "title": "TCP vs UDP",
+          "learn": "The notes compare TCP and UDP in connection orientation, reliability, error checking, acknowledgments, speed, retransmission, header size and use cases.",
+          "example": "Web browsing and file transfer are listed with TCP, while video calls, online games, streaming and DNS are associated with UDP.",
+          "keyPoints": [
+            "TCP = reliable",
+            "UDP = lightweight",
+            "TCP uses acknowledgments",
+            "UDP does not retransmit lost packets"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-session-layer",
+      "title": "Session Layer",
+      "description": "Session establishment, synchronization, dialog management and resynchronization.",
+      "sourcePages": "45",
+      "topics": [
+        {
+          "id": "session-basics",
+          "title": "Session Layer Basics",
+          "learn": "The Session Layer is responsible for establishing, managing and terminating communication sessions.",
+          "example": "A session keeps communication between two participating systems organized.",
+          "keyPoints": [
+            "OSI Layer 5",
+            "Establishes sessions",
+            "Maintains sessions",
+            "Terminates sessions"
+          ]
+        },
+        {
+          "id": "session-synchronization",
+          "title": "Communication Synchronization",
+          "learn": "The Session Layer can use synchronization points so communication can recover from failures by returning to a known good state.",
+          "example": "A checkpoint can help resume from a previously synchronized point.",
+          "keyPoints": [
+            "Synchronization points",
+            "Recovery",
+            "Checkpoints"
+          ]
+        },
+        {
+          "id": "dialog-management",
+          "title": "Dialog Management",
+          "learn": "Dialog management controls the direction of communication and supports half-duplex and full-duplex communication modes.",
+          "example": "In half-duplex communication, a token can determine which side may transmit.",
+          "keyPoints": [
+            "Dialog control",
+            "Half duplex",
+            "Full duplex",
+            "Token"
+          ]
+        },
+        {
+          "id": "session-resynchronization",
+          "title": "Resynchronization",
+          "learn": "The notes describe Set, Abandon and Restart modes for handling session state after interruptions.",
+          "example": "Restart can restore a session from a previously saved state.",
+          "keyPoints": [
+            "Set",
+            "Abandon",
+            "Restart"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-presentation-layer",
+      "title": "Presentation Layer",
+      "description": "Data translation, compression, encryption, decryption and syntax management.",
+      "sourcePages": "46",
+      "topics": [
+        {
+          "id": "presentation-basics",
+          "title": "Presentation Layer Basics",
+          "learn": "The Presentation Layer prepares data in a format that can be correctly interpreted by sender and receiver.",
+          "example": "The layer can translate data between different representations.",
+          "keyPoints": [
+            "OSI Layer 6",
+            "Translation Layer",
+            "Data representation"
+          ]
+        },
+        {
+          "id": "data-translation",
+          "title": "Data Translation",
+          "learn": "Data translation converts data between different formats so systems can communicate using compatible representations.",
+          "example": "A sender's data representation can be translated into a common format before transmission.",
+          "keyPoints": [
+            "Format conversion",
+            "Compatibility",
+            "Translation"
+          ]
+        },
+        {
+          "id": "data-compression",
+          "title": "Data Compression",
+          "learn": "Compression reduces the size of data before transmission. The notes distinguish lossy and lossless compression.",
+          "example": "Lossless compression allows the original data to be restored.",
+          "keyPoints": [
+            "Lossy compression",
+            "Lossless compression",
+            "Reduced data size"
+          ]
+        },
+        {
+          "id": "encryption-decryption",
+          "title": "Encryption and Decryption",
+          "learn": "Encryption converts data into an unreadable representation, while decryption converts it back into a readable form.",
+          "example": "Encrypted information can be transmitted so unauthorized users cannot directly interpret it.",
+          "keyPoints": [
+            "Encryption",
+            "Decryption",
+            "Data protection"
+          ]
+        },
+        {
+          "id": "syntax-semantics",
+          "title": "Syntax and Semantics Management",
+          "learn": "The Presentation Layer can provide common syntax and semantics so communicating systems interpret data consistently.",
+          "example": "Two systems can exchange data after agreeing on a common representation.",
+          "keyPoints": [
+            "Syntax",
+            "Semantics",
+            "Common representation"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-application-layer",
+      "title": "Application Layer",
+      "description": "Application protocols including HTTP, HTTPS, DNS, DHCP, FTP, SMTP, POP, IMAP and NFS.",
+      "sourcePages": "47-51",
+      "topics": [
+        {
+          "id": "application-layer-basics",
+          "title": "Application Layer Basics",
+          "learn": "The Application Layer is the topmost OSI layer and provides network functionality to users and applications.",
+          "example": "A browser uses application-layer protocols to communicate with web servers.",
+          "keyPoints": [
+            "OSI Layer 7",
+            "User-facing network functionality",
+            "Application protocols"
+          ]
+        },
+        {
+          "id": "http",
+          "title": "HTTP",
+          "learn": "HTTP is the HyperText Transfer Protocol used for web communication. The notes describe it as stateless and associated with TCP port 80.",
+          "example": "A browser sends an HTTP request for a web page and receives an HTTP response.",
+          "keyPoints": [
+            "Port 80",
+            "Stateless",
+            "Client-server",
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ]
+        },
+        {
+          "id": "https",
+          "title": "HTTPS",
+          "learn": "HTTPS is the secure form of HTTP and uses TLS to protect communication. The notes associate it with port 443.",
+          "example": "Online banking and secure web applications commonly use HTTPS.",
+          "keyPoints": [
+            "Port 443",
+            "TLS",
+            "Encryption",
+            "Confidentiality",
+            "Integrity",
+            "Authentication"
+          ]
+        },
+        {
+          "id": "dns-basics",
+          "title": "DNS",
+          "learn": "The Domain Name System maps domain names to IP addresses.",
+          "example": "A browser can resolve a domain name such as a website address to an IP before establishing communication.",
+          "keyPoints": [
+            "Domain name",
+            "IP address",
+            "Name resolution",
+            "DNS hierarchy"
+          ]
+        },
+        {
+          "id": "dns-hierarchy",
+          "title": "DNS Hierarchy",
+          "learn": "The notes describe root servers, TLD servers and authoritative servers as parts of DNS resolution.",
+          "example": "A resolver can contact the root, then the relevant TLD server, and finally the authoritative server.",
+          "keyPoints": [
+            "Root server",
+            "TLD server",
+            "Authoritative server"
+          ]
+        },
+        {
+          "id": "dns-recursive-iterative",
+          "title": "Recursive and Iterative DNS Queries",
+          "learn": "Recursive resolution allows the resolver to complete the lookup, while iterative resolution involves the resolver receiving referrals and continuing the lookup.",
+          "example": "A resolver can query a root server, receive a TLD referral, then query the TLD server.",
+          "keyPoints": [
+            "Recursive query",
+            "Iterative query",
+            "Caching",
+            "Resolver"
+          ]
+        },
+        {
+          "id": "dhcp",
+          "title": "DHCP",
+          "learn": "DHCP automatically provides IP addresses and other network configuration information to devices.",
+          "example": "A device connecting to Wi-Fi can receive an IP configuration from a DHCP server.",
+          "keyPoints": [
+            "Dynamic Host Configuration Protocol",
+            "Automatic IP assignment",
+            "Network configuration"
+          ]
+        },
+        {
+          "id": "ftp",
+          "title": "FTP",
+          "learn": "FTP transfers files between hosts and uses separate control and data channels according to the notes.",
+          "example": "An FTP client can upload website files to a remote server.",
+          "keyPoints": [
+            "File Transfer Protocol",
+            "Control connection",
+            "Data connection",
+            "Ports 20 and 21"
+          ]
+        },
+        {
+          "id": "email-protocols",
+          "title": "SMTP, POP and IMAP",
+          "learn": "SMTP is used for sending email, POP pulls email from a server, and IMAP keeps email synchronized with the server.",
+          "example": "A mail client may use SMTP to send an email and IMAP to keep inbox state synchronized across devices.",
+          "keyPoints": [
+            "SMTP = send/push",
+            "POP = pull/download",
+            "IMAP = synchronization"
+          ]
+        },
+        {
+          "id": "nfs",
+          "title": "Network File System",
+          "learn": "NFS allows remote hosts to mount and interact with file systems as though they were local.",
+          "example": "A developer can mount a remote Linux directory and access shared project files.",
+          "keyPoints": [
+            "Network File System",
+            "Remote file access",
+            "Mounting"
+          ]
+        },
+        {
+          "id": "persistent-http",
+          "title": "Persistent and Non-Persistent HTTP",
+          "learn": "Persistent HTTP keeps the connection open for further objects, while non-persistent HTTP closes the connection after the response.",
+          "example": "Persistent communication can reduce connection overhead when multiple objects are requested.",
+          "keyPoints": [
+            "Persistent HTTP",
+            "Non-persistent HTTP",
+            "TCP connection reuse",
+            "RTT comparison"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cn-delays",
+      "title": "Delays",
+      "description": "Transmission, propagation, queueing, processing and total network delay.",
+      "sourcePages": "52-53",
+      "topics": [
+        {
+          "id": "transmission-delay",
+          "title": "Transmission Delay",
+          "learn": "Transmission delay is the time required to push all bits of a packet onto the transmission medium. The notes give Tt = L/B.",
+          "example": "For a 20-bit packet on a 1 bps link, transmission delay is 20 seconds.",
+          "keyPoints": [
+            "Tt = L/B",
+            "Depends on packet size",
+            "Depends on bandwidth"
+          ]
+        },
+        {
+          "id": "propagation-delay",
+          "title": "Propagation Delay",
+          "learn": "Propagation delay is the time taken for a bit to travel from sender to receiver through the medium. The notes give Tp = Distance/Velocity.",
+          "example": "Increasing the physical distance generally increases propagation delay.",
+          "keyPoints": [
+            "Tp = Distance/Velocity",
+            "Depends on distance",
+            "Depends on propagation velocity"
+          ]
+        },
+        {
+          "id": "queueing-delay",
+          "title": "Queueing Delay",
+          "learn": "Queueing delay is the time a packet waits in a buffer before being processed or transmitted.",
+          "example": "Heavy traffic can create a longer queue and increase queueing delay.",
+          "keyPoints": [
+            "Buffer waiting time",
+            "Traffic dependent",
+            "Bursty traffic increases queueing"
+          ]
+        },
+        {
+          "id": "processing-delay",
+          "title": "Processing Delay",
+          "learn": "Processing delay is the time used by a router or destination system to inspect and process a packet.",
+          "example": "A router may inspect headers and update TTL before forwarding a packet.",
+          "keyPoints": [
+            "Packet inspection",
+            "Header processing",
+            "Depends on system performance"
+          ]
+        },
+        {
+          "id": "total-delay",
+          "title": "Total Network Delay",
+          "learn": "Total delay is the sum of transmission, propagation, processing and queueing delays.",
+          "example": "Ttotal = Tt + Tp + Tpro + Tq. In an ideal case where processing and queueing are negligible, Ttotal = Tt + Tp.",
+          "keyPoints": [
+            "Transmission delay",
+            "Propagation delay",
+            "Processing delay",
+            "Queueing delay",
+            "Total delay"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Java Abstraction Assessment | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+
+  <!-- Subtle professional UI enhancements -->
+  <style>
+    .assessment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .assessment-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .assessment-info-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info-item .info-label {
+      font-size: 12px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .info-item strong {
+      font-size: 20px;
+      color: #0f172a;
+    }
+
+    .result-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="assessment-page">
+
+    <header class="assessment-header">
+      <div>
+        <span class="assessment-badge">OOPs • Chapter 14</span>
+
+        <h1>Java Abstract Class & Interface Assessment</h1>
+
+        <p>
+          Test your understanding of Java abstract classes,
+          interfaces, default methods, static methods,
+          and multiple inheritance.
+        </p>
+      </div>
+
+      <a href="oops.html" class="back-btn">
+        ← Back to OOPs
+      </a>
+    </header>
+
+    <main class="assessment-container">
+
+      <section class="assessment-info-card">
+
+        <div class="info-item">
+          <span class="info-label">Questions</span>
+          <strong>10</strong>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Pass Mark</span>
+          <strong>75%</strong>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Required</span>
+          <strong>8 / 10</strong>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Chapter</span>
+          <strong>14 / 15</strong>
+        </div>
+
+      </section>
+
+      <section class="assessment-card">
+
+        <div id="assessmentLoading" class="assessment-loading">
+          Loading assessment...
+        </div>
+
+        <form
+          id="assessmentForm"
+          class="assessment-form hidden"
+        >
+          <div id="questionsContainer"></div>
+
+          <button
+            type="submit"
+            class="submit-assessment-btn"
+          >
+            Submit Assessment
+          </button>
+        </form>
+
+        <section
+          id="resultSection"
+          class="result-section hidden"
+        >
+
+          <div
+            id="resultIcon"
+            class="result-icon"
+          ></div>
+
+          <h2 id="resultTitle"></h2>
+
+          <p id="resultMessage"></p>
+
+          <div class="result-score">
+            <span>Your Score</span>
+            <strong id="scoreText"></strong>
+          </div>
+
+          <div class="result-percentage">
+            <span>Percentage</span>
+            <strong id="percentageText"></strong>
+          </div>
+
+          <div id="resultDetails"></div>
+
+          <div class="result-actions">
+
+            <button
+              id="retryBtn"
+              class="secondary-btn"
+            >
+              Retry Assessment
+            </button>
+
+            <button
+              id="continueBtn"
+              class="primary-btn"
+            >
+              Continue
+            </button>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script
+    type="module"
+    src="../js/technical/oops-java-abstraction-assessment.js"
+  ></script>
+
+</body>
+</html>

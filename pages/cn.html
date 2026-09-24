@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Computer Networks | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cn.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="cn-navbar">
+
+    <div class="cn-brand">
+      <a href="dashboard.html">
+        CareerPilot
+      </a>
+    </div>
+
+    <div class="cn-nav-actions">
+
+      
+        href="technical.html"
+        class="cn-nav-link"
+      >
+        Technical
+      </a>
+
+      <button
+        id="logoutBtn"
+        class="cn-logout-btn"
+      >
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="cn-hero">
+
+    <div class="cn-hero-content">
+
+      <span class="cn-badge">
+        Technical Preparation
+      </span>
+
+      <h1>
+        Computer Networks
+      </h1>
+
+      <p>
+        Learn networking from fundamentals to transport
+        protocols and network delays through a structured
+        chapter-by-chapter learning path.
+      </p>
+
+      <div class="cn-progress-wrapper">
+
+        <div class="cn-progress-info">
+          <span>
+            Course Progress
+          </span>
+
+          <strong id="coursePercent">
+            0%
+          </strong>
+        </div>
+
+        <div class="cn-progress">
+          <div
+            id="courseProgressBar"
+            class="cn-progress-bar"
+            style="width: 0%;"
+          ></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="cn-main">
+
+    <!-- SIDEBAR -->
+    <aside class="cn-sidebar">
+
+      <div class="cn-sidebar-header">
+
+        <div>
+          <span class="cn-sidebar-label">
+            Course Chapters
+          </span>
+
+          <h2>
+            Computer Networks
+          </h2>
+        </div>
+
+        <span
+          id="chapterCount"
+          class="cn-chapter-count"
+        >
+          0/10
+        </span>
+
+      </div>
+
+
+      <div
+        id="chapterList"
+        class="cn-chapter-list"
+      >
+      </div>
+
+    </aside>
+
+
+    <!-- CONTENT -->
+    <section class="cn-content">
+
+      <div
+        id="loadingBox"
+        class="cn-loading"
+      >
+        Loading Computer Networks...
+      </div>
+
+
+      <div
+        id="errorBox"
+        class="cn-error"
+        hidden
+      >
+      </div>
+
+
+      <div
+        id="courseBox"
+        hidden
+      >
+
+        <!-- CHAPTER HEADER -->
+        <div class="cn-section-header">
+
+          <div>
+
+            <span
+              id="chapterNumber"
+              class="cn-chapter-badge"
+            >
+              Chapter 1
+            </span>
+
+            <h2 id="chapterTitle">
+              Introduction
+            </h2>
+
+            <p id="chapterDescription">
+            </p>
+
+          </div>
+
+          <div class="cn-topic-counter">
+
+            <span>
+              Topic
+            </span>
+
+            <strong id="topicCounter">
+              1 / 1
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOPIC NAVIGATION -->
+        <div class="cn-topic-navigation">
+
+          <button
+            id="previousTopicBtn"
+            class="cn-topic-nav-btn"
+          >
+            ← Previous
+          </button>
+
+          <div
+            id="topicNav"
+            class="cn-topic-nav"
+          >
+          </div>
+
+          <button
+            id="nextTopicBtn"
+            class="cn-topic-nav-btn"
+          >
+            Next →
+          </button>
+
+        </div>
+
+
+        <!-- LESSON CARD -->
+        <article class="cn-lesson-card">
+
+          <div class="cn-topic-heading">
+
+            <span class="cn-topic-label">
+              CURRENT TOPIC
+            </span>
+
+            <h1 id="topicTitle">
+              Topic
+            </h1>
+
+          </div>
+
+
+          <!-- LEARN -->
+          <section class="cn-learning-section">
+
+            <div class="cn-section-title">
+              <span class="cn-section-icon">
+                01
+              </span>
+
+              <h3>
+                Learn
+              </h3>
+            </div>
+
+            <div
+              id="learnContent"
+              class="cn-learn-content"
+            >
+            </div>
+
+          </section>
+
+
+          <!-- EXAMPLE -->
+          <section class="cn-learning-section">
+
+            <div class="cn-section-title">
+              <span class="cn-section-icon">
+                02
+              </span>
+
+              <h3>
+                Example
+              </h3>
+            </div>
+
+            <div
+              id="exampleContent"
+              class="cn-example-box"
+            >
+            </div>
+
+          </section>
+
+
+          <!-- KEY POINTS -->
+          <section class="cn-learning-section">
+
+            <div class="cn-section-title">
+              <span class="cn-section-icon">
+                03
+              </span>
+
+              <h3>
+                Key Points
+              </h3>
+            </div>
+
+            <ul
+              id="keyPoints"
+              class="cn-key-points"
+            >
+            </ul>
+
+          </section>
+
+
+          <!-- SELF CHECK -->
+          <section class="cn-self-check">
+
+            <div class="cn-self-check-header">
+
+              <div>
+
+                <span class="cn-topic-label">
+                  SELF CHECK
+                </span>
+
+                <h3>
+                  Explain this topic in your own words
+                </h3>
+
+                <p>
+                  Write at least 40 characters before
+                  marking the topic complete.
+                </p>
+
+              </div>
+
+              <span
+                id="selfCheckCount"
+                class="cn-character-count"
+              >
+                0 characters
+              </span>
+
+            </div>
+
+
+            <textarea
+              id="selfCheckInput"
+              class="cn-self-check-input"
+              rows="7"
+              placeholder="Explain what you learned from this topic..."
+            ></textarea>
+
+
+            <div class="cn-self-check-actions">
+
+              <button
+                id="completeTopicBtn"
+                class="cn-complete-btn"
+              >
+                Complete Topic
+              </button>
+
+              <span
+                id="completionMessage"
+                class="cn-completion-message"
+                hidden
+              >
+                Topic completed ✓
+              </span>
+
+            </div>
+
+          </section>
+
+        </article>
+
+
+        <!-- FOOTER ACTIONS -->
+        <div class="cn-footer-actions">
+
+          <button
+            id="previousBtn"
+            class="cn-footer-btn secondary"
+          >
+            ← Previous
+          </button>
+
+          <button
+            id="nextBtn"
+            class="cn-footer-btn primary"
+          >
+            Next Topic →
+          </button>
+
+          <button
+            id="assessmentBtn"
+            class="cn-footer-btn assessment"
+            hidden
+          >
+            Take Chapter Assessment
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="../js/technical/cn.js"
+  ></script>
+
+</body>
+</html>

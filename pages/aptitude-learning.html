@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aptitude Learning | CareerPilot</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/aptitude-learning.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="aptitude-navbar">
+
+    <a
+        href="dashboard.html"
+        class="aptitude-brand"
+        aria-label="CareerPilot Home">
+
+        <span class="careerpilot-logo-icon">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path
+                    d="M12 3L4.5 20L12 16L19.5 20L12 3Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linejoin="round">
+                </path>
+
+                <path
+                    d="M12 3L12 17"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round">
+                </path>
+
+            </svg>
+
+        </span>
+
+        <span class="aptitude-brand-text">
+
+            <strong>
+                Career<span>Pilot</span>
+            </strong>
+
+            <small>
+                Aptitude Learning
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav class="aptitude-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a
+            href="aptitude-learning.html"
+            class="active">
+            Learn
+        </a>
+
+        <a href="aptitude.html">
+            Practice
+        </a>
+
+        <a href="daily-plan.html">
+            Daily Plan
+        </a>
+
+    </nav>
+    <!-- MOBILE MENU BUTTON -->
+
+<button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+
+<!-- MOBILE MENU -->
+
+<nav class="mobile-nav-menu">
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="roadmap.html">
+        Roadmap
+    </a>
+
+    <a href="dsa.html">
+        DSA
+    </a>
+
+    <a
+        href="aptitude-learning.html"
+        class="active">
+        Aptitude
+    </a>
+
+    <a href="technical.html">
+        Technical
+    </a>
+
+    <a href="interview.html">
+        Interview
+    </a>
+
+    <a href="companies.html">
+        Companies
+    </a>
+
+</nav>
+
+</header>
+
+
+<main class="learning-page">
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="learning-hero">
+
+        <div>
+
+            <div class="section-label">
+                APTITUDE LEARNING PLATFORM
+            </div>
+
+            <h1>
+                Learn first.
+                Practice what you learned.
+            </h1>
+
+            <p>
+                Watch the lesson, confirm that you completed it,
+                then solve questions specifically related to that topic.
+            </p>
+
+        </div>
+
+
+        <div class="learning-progress-card">
+
+            <div
+                class="learning-progress-ring"
+                id="learningProgressRing"
+            >
+
+                <strong id="overallProgress">
+                    0%
+                </strong>
+
+            </div>
+
+            <span>
+                Course Progress
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         STATS
+    ====================================== -->
+
+    <section class="learning-stats">
+
+        <div class="learning-stat">
+
+            <div class="stat-icon">
+            </div>
+
+            <div>
+
+                <span>
+                    Topics
+                </span>
+
+                <strong>
+                    <span id="completedTopics">
+                        0
+                    </span>
+                    /
+                    <span id="totalTopics">
+                        4
+                    </span>
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="learning-stat">
+
+            <div class="stat-icon">
+            </div>
+
+            <div>
+
+                <span>
+                    Lessons Watched
+                </span>
+
+                <strong id="videosWatched">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="learning-stat">
+
+            <div class="stat-icon">
+            </div>
+
+            <div>
+
+                <span>
+                    Topics Passed
+                </span>
+
+                <strong id="topicsPassed">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="learning-stat">
+
+            <div class="stat-icon">
+            </div>
+
+            <div>
+
+                <span>
+                    Aptitude XP
+                </span>
+
+                <strong id="learningXP">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         LAYOUT
+    ====================================== -->
+
+    <section class="learning-layout">
+
+
+        <!-- =================================
+             TOPIC SIDEBAR
+        ================================== -->
+
+        <aside class="topic-sidebar">
+
+            <div class="sidebar-heading">
+
+                <div class="section-label">
+                    COURSE
+                </div>
+
+                <h2>
+                    Aptitude Topics
+                </h2>
+
+            </div>
+
+
+            <div
+                id="topicList"
+                class="topic-list"
+            ></div>
+
+        </aside>
+
+
+        <!-- =================================
+             MAIN LESSON
+        ================================== -->
+
+        <section class="lesson-area">
+
+
+            <div class="lesson-header">
+
+                <div>
+
+                    <div
+                        id="topicBadge"
+                        class="topic-badge"
+                    >
+                        TOPIC 01
+                    </div>
+
+                    <h2 id="topicTitle">
+                        Percentage
+                    </h2>
+
+                    <p id="topicDescription">
+                        Learn percentage concepts and
+                        solve placement-style problems.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-status">
+
+                    <span
+                        id="topicStatus"
+                        class="status-pill locked"
+                    >
+                        Lesson Required
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO -->
+
+            <div class="video-section">
+
+                <div class="video-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            VIDEO LESSON
+                        </div>
+
+                        
+
+
+                <div class="video-wrapper">
+
+                    <iframe
+                        id="youtubeFrame"
+                        src=""
+                        title="Aptitude lesson"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+
+                </div>
+
+
+                <div class="lesson-complete-box">
+
+                    <div>
+
+                        <strong>
+                            Finished watching?
+                        </strong>
+
+                        <p>
+                            Confirm the lesson before
+                            starting its related questions.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="finishLessonBtn"
+                        class="finish-lesson-btn"
+                    >
+                        I Finished the Lesson ✓
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTIONS -->
+
+            <div class="questions-section">
+
+                <div class="questions-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            RELATED QUESTIONS
+                        </div>
+
+                        <h3>
+                            Test what you learned
+                        </h3>
+
+                        <p>
+                            These questions are tied to the
+                            current lesson.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="questionCounter"
+                        class="question-counter"
+                    >
+                        0 / 5
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="questionsLocked"
+                    class="questions-locked"
+                >
+
+                    <div class="lock-icon">
+                    </div>
+
+                    <h3>
+                        Watch the lesson first
+                    </h3>
+
+                    <p>
+                        Finish the YouTube lesson and confirm
+                        completion to unlock the questions.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="quizContainer"
+                    class="quiz-container hidden"
+                >
+
+                    <div
+                        id="quizQuestion"
+                        class="quiz-question"
+                    ></div>
+
+
+                    <div
+                        id="quizOptions"
+                        class="quiz-options"
+                    ></div>
+
+
+                    <div
+                        id="quizFeedback"
+                        class="quiz-feedback"
+                    ></div>
+
+
+                    <div class="quiz-actions">
+
+                        <button
+                            type="button"
+                            id="submitQuizAnswer"
+                            class="quiz-submit"
+                        >
+                            Submit Answer
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="nextQuizQuestion"
+                            class="quiz-next"
+                            disabled
+                        >
+                            Next Question →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="topicResult"
+                    class="topic-result hidden"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- =====================================
+         TIP
+    ====================================== -->
+
+    <section class="learning-tip">
+
+        <div class="tip-icon">
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                HOW THIS WORKS
+            </div>
+
+            <h2>
+                Learn → Practice → Pass → Unlock
+            </h2>
+
+            <p>
+                Each topic requires you to complete its lesson
+                before its related questions become available.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script
+    type="module"
+    src="../js/aptitude/aptitude-learning.js"
+></script>
+<script src="../js/mobile-nav.js"></script>
+
+</body>
+
+</html>

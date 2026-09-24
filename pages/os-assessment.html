@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Assessment | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/os-assessment.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .assessment-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .result-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .result-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke-width: 2.2;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<nav class="assessment-navbar">
+
+    <div class="assessment-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        <strong>CareerPilot</strong>
+        <span>/ Operating Systems Assessment</span>
+    </div>
+
+    <div class="assessment-nav-right">
+        <a href="os.html">
+            ← Back to OS
+        </a>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+    </div>
+
+</nav>
+
+
+
+<main class="assessment-page">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <section class="assessment-hero">
+
+        <span class="assessment-eyebrow">
+            CHAPTER ASSESSMENT
+        </span>
+
+        <h1 id="assessmentTitle">
+            Operating Systems Assessment
+        </h1>
+
+        <p id="assessmentDescription">
+            Complete the assessment to unlock the next chapter.
+        </p>
+
+        <div class="assessment-rule">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            Passing Score: <strong>75%</strong>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROGRESS
+    ========================================== -->
+    <section class="assessment-progress-card">
+
+        <div class="progress-top">
+            <span>Assessment Progress</span>
+            <strong id="progressText">0%</strong>
+        </div>
+
+        <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         QUESTIONS
+    ========================================== -->
+    <section id="questionContainer" class="question-container"></section>
+
+
+
+    <!-- =========================================
+         SUBMIT
+    ========================================== -->
+    <div class="assessment-actions">
+        <button id="submitBtn" class="submit-btn">
+            Submit Assessment
+        </button>
+    </div>
+
+
+
+    <!-- =========================================
+         RESULT
+    ========================================== -->
+    <section id="resultCard" class="result-card" hidden>
+
+        <div id="resultIcon" class="result-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+            </svg>
+        </div>
+
+        <h2 id="resultTitle">Assessment Result</h2>
+
+        <div id="resultScore" class="result-score">
+            0%
+        </div>
+
+        <p id="resultMessage"></p>
+
+        <div class="result-stats">
+
+            <div>
+                <span>Correct</span>
+                <strong id="correctCount">0</strong>
+            </div>
+
+            <div>
+                <span>Wrong</span>
+                <strong id="wrongCount">0</strong>
+            </div>
+
+            <div>
+                <span>Total</span>
+                <strong id="totalCount">0</strong>
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             RESULT ACTIONS
+        ========================================== -->
+        <div class="result-actions">
+
+            <button id="retryBtn" class="retry-btn">
+                Retry Assessment
+            </button>
+
+            <!-- NEXT CHAPTER -->
+            <button id="nextChapterBtn" class="next-chapter-btn" hidden>
+                Next Chapter →
+            </button>
+
+            <!-- BACK TO OS -->
+            <button id="backToOSBtn" class="back-btn" hidden>
+                Back to Operating Systems
+            </button>
+
+            <a href="os.html" class="back-btn">
+                Back to OS
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/os-assessment.js"></script>
+
+</body>
+
+</html>

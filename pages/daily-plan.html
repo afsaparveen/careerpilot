@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Daily Plan | CareerPilot
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/daily-plan.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="daily-navbar">
+
+
+    <!-- CAREERPILOT LOGO -->
+
+    <a
+        href="dashboard.html"
+        class="careerpilot-logo daily-brand"
+        aria-label="CareerPilot Home"
+    >
+
+        <span class="careerpilot-logo-icon">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+
+                <path
+                    d="M12 3L4.5 20L12 16L19.5 20L12 3Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                >
+                </path>
+
+                <path
+                    d="M12 3L12 17"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                </path>
+
+            </svg>
+
+        </span>
+
+
+        <span class="daily-brand-text careerpilot-logo-text">
+
+            Career<span>Pilot</span>
+
+        </span>
+
+    </a>
+
+
+
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav class="daily-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa.html">
+            DSA
+        </a>
+
+        <a href="aptitude.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a
+            href="daily-plan.html"
+            class="active"
+        >
+            Daily Plan
+        </a>
+
+    </nav>
+
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav class="mobile-nav-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa.html">
+            DSA
+        </a>
+
+        <a href="aptitude.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a
+            href="companies.html"
+        >
+            Companies
+        </a>
+
+        <a
+            href="daily-plan.html"
+            class="active"
+        >
+            Daily Plan
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="daily-page">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="daily-hero">
+
+
+        <div class="daily-hero-copy">
+
+            <span class="daily-eyebrow">
+                YOUR DAILY PLACEMENT ROUTINE
+            </span>
+
+
+            <h1>
+                One focused plan.
+                <span>
+                    Every day.
+                </span>
+            </h1>
+
+
+            <p
+                id="planDate"
+                class="daily-date"
+            >
+                Loading today's plan...
+            </p>
+
+
+            <p class="daily-hero-description">
+
+                CareerPilot automatically builds your
+                preparation plan from your resume,
+                skills, projects, DSA, aptitude,
+                technical learning and interview practice.
+
+            </p>
+
+        </div>
+
+
+        <div class="daily-hero-visual">
+
+            <div class="daily-focus-circle">
+
+
+                <!-- FOCUS VECTOR -->
+
+                <div class="focus-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                        ></circle>
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                        ></circle>
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="1"
+                            fill="currentColor"
+                        ></circle>
+
+                    </svg>
+
+                </div>
+
+
+                <strong>
+                    Focus
+                </strong>
+
+                <span>
+                    Today's goal
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <section class="daily-stats">
+
+
+        <!-- DAILY PROGRESS -->
+
+        <article class="daily-stat-card stat-green">
+
+            <div class="daily-stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M5 12l4 4L19 6"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Daily Progress
+                </span>
+
+                <strong id="planProgressText">
+                    0/0 tasks completed
+                </strong>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- STUDY STREAK -->
+
+        <article class="daily-stat-card stat-orange">
+
+            <div class="daily-stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M12 22c4 0 7-3 7-7
+                           0-3-2-5-4-7
+                           0 3-1 5-3 5
+                           -1-2-1-4 0-7
+                           -4 2-7 6-7 10
+                           0 3 3 6 7 6z"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Study Streak
+                </span>
+
+                <strong>
+
+                    <span id="dailyPlanStreak">
+                        0
+                    </span>
+
+                    days
+
+                </strong>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CAREER XP -->
+
+        <article class="daily-stat-card stat-blue">
+
+            <div class="daily-stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M12 3l2.7 5.5
+                           6.1.9-4.4 4.3
+                           1 6.1-5.4-2.9
+                           -5.4 2.9 1-6.1
+                           -4.4-4.3 6.1-.9
+                           L12 3z"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Career XP
+                </span>
+
+                <strong id="dailyPlanXP">
+                    0
+                </strong>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROGRESS
+    ================================================== -->
+
+    <section class="daily-progress-card">
+
+
+        <div class="daily-progress-header">
+
+
+            <div>
+
+                <span class="daily-section-label">
+                    TODAY'S PROGRESS
+                </span>
+
+                <h2>
+                    Keep moving forward
+                </h2>
+
+                <p>
+                    Small progress every day builds
+                    placement readiness.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="generatePlan"
+                class="daily-refresh-button"
+            >
+
+                <!-- REFRESH VECTOR -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M20 11a8.1 8.1 0 0 0-15.5-3"
+                    ></path>
+
+                    <path
+                        d="M4 4v5h5"
+                    ></path>
+
+                    <path
+                        d="M4 13a8.1 8.1 0 0 0 15.5 3"
+                    ></path>
+
+                    <path
+                        d="M20 20v-5h-5"
+                    ></path>
+
+                </svg>
+
+                <span>
+                    Refresh Plan
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+        <div class="daily-progress-track">
+
+            <div
+                id="planProgressBar"
+                class="daily-progress-fill"
+            ></div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         TODAY'S MISSIONS
+    ================================================== -->
+
+    <section class="daily-plan-section">
+
+
+        <div class="daily-section-heading">
+
+            <span class="daily-section-label">
+                TODAY'S MISSIONS
+            </span>
+
+
+            <h2>
+                Your personalized plan
+            </h2>
+
+
+            <p>
+                Complete these activities to keep your
+                placement preparation balanced.
+            </p>
+
+        </div>
+
+
+
+        <!-- TASKS ARE INSERTED BY JAVASCRIPT -->
+
+        <div
+            id="planContainer"
+            class="daily-plan-container"
+        >
+
+            <div class="daily-loading">
+
+                <div class="daily-spinner"></div>
+
+                <p>
+                    Building your plan...
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="emptyState"
+            class="daily-empty"
+        >
+
+            <!-- EMPTY STATE VECTOR -->
+
+            <div class="daily-empty-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M5 12l4 4L19 6"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+
+            <h3>
+                You're doing great!
+            </h3>
+
+            <p>
+                There are no additional tasks right now.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         HOW IT WORKS
+    ================================================== -->
+
+    <section class="daily-workflow">
+
+
+        <div class="daily-section-heading">
+
+            <span class="daily-section-label">
+                HOW YOUR PLAN WORKS
+            </span>
+
+
+            <h2>
+                CareerPilot follows your journey
+            </h2>
+
+        </div>
+
+
+
+        <div class="daily-workflow-grid">
+
+
+            <!-- 01 -->
+
+            <article class="workflow-card workflow-purple">
+
+                <div class="workflow-number">
+                    01
+                </div>
+
+
+                <div class="workflow-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+
+                        <rect
+                            x="4"
+                            y="3"
+                            width="16"
+                            height="18"
+                            rx="2"
+                        ></rect>
+
+                        <path
+                            d="M8 8h8"
+                        ></path>
+
+                        <path
+                            d="M8 12h8"
+                        ></path>
+
+                        <path
+                            d="M8 16h5"
+                        ></path>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Build Evidence
+                </h3>
+
+                <p>
+                    Resume, verified skills and projects
+                    strengthen your candidate profile.
+                </p>
+
+            </article>
+
+
+
+            <!-- 02 -->
+
+            <article class="workflow-card workflow-blue">
+
+                <div class="workflow-number">
+                    02
+                </div>
+
+
+                <div class="workflow-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M4 5h16v14H4z"
+                        ></path>
+
+                        <path
+                            d="M8 9h8"
+                        ></path>
+
+                        <path
+                            d="M8 13h5"
+                        ></path>
+
+                        <path
+                            d="M8 17h8"
+                        ></path>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Continue DSA, aptitude and technical
+                    learning from where you stopped.
+                </p>
+
+            </article>
+
+
+
+            <!-- 03 -->
+
+            <article class="workflow-card workflow-pink">
+
+                <div class="workflow-number">
+                    03
+                </div>
+
+
+                <div class="workflow-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M4 5h16v14H4z"
+                        ></path>
+
+                        <path
+                            d="M8 9h8"
+                        ></path>
+
+                        <path
+                            d="M8 13h6"
+                        ></path>
+
+                        <path
+                            d="M8 17h4"
+                        ></path>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Practice
+                </h3>
+
+                <p>
+                    Strengthen your interview answers
+                    through repeated practice.
+                </p>
+
+            </article>
+
+
+
+            <!-- 04 -->
+
+            <article class="workflow-card workflow-green">
+
+                <div class="workflow-number">
+                    04
+                </div>
+
+
+                <div class="workflow-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                        ></circle>
+
+                        <path
+                            d="M8 12l3 3 5-6"
+                        ></path>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Progress
+                </h3>
+
+                <p>
+                    Complete daily missions and build
+                    your placement readiness.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="daily-toast"
+></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script
+    type="module"
+    src="../js/daily-plan/daily-plan.js"
+></script>
+
+<script
+    src="../js/mobile-nav.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Test | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/technical-core-test.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .test-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .result-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="test-navbar">
+
+    <a href="technical.html" class="test-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        CareerPilot
+    </a>
+
+    <a href="technical.html">
+        Technical Subjects
+    </a>
+
+</header>
+
+
+<main class="test-page">
+
+    <section class="test-hero">
+        <span class="eyebrow">CHAPTER TEST</span>
+        <h1 id="testTitle">Loading...</h1>
+        <p id="testDescription">Loading chapter test...</p>
+    </section>
+
+    <section id="questionsContainer" class="questions-container"></section>
+
+    <div class="submit-row">
+        <button id="submitTestBtn" class="submit-test-button">
+            Submit Test
+        </button>
+    </div>
+
+    <section id="resultCard" class="result-card hidden">
+
+        <div id="resultIcon" class="result-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+        </div>
+
+        <h2 id="resultTitle">Result</h2>
+        <strong id="resultScore">0%</strong>
+        <p id="resultMessage"></p>
+
+        <button id="continueButton" class="continue-button">
+            Continue
+        </button>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/technical-core-test.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>OOPs Completed | CareerPilot</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/style.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../css/os-assessment.css"
+  />
+
+  <style>
+    .completion-page {
+      min-height: 100vh;
+      padding: 40px 20px 70px;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(37, 99, 235, 0.08),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(16, 185, 129, 0.08),
+          transparent 35%
+        ),
+        #f8fafc;
+    }
+
+    .completion-shell {
+      width: min(1000px, 100%);
+      margin: 0 auto;
+    }
+
+    .completion-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+
+    .completion-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .completion-icon svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .completion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .completion-card h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+    }
+
+    .completion-card > p {
+      max-width: 650px;
+      margin: 14px auto 0;
+      color: #64748b;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .completion-stats {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .completion-stat {
+      padding: 20px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .completion-stat span {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .completion-stat strong {
+      display: block;
+      color: #0f172a;
+      font-size: 24px;
+    }
+
+    .score-box {
+      margin-top: 30px;
+      padding: 28px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f8fafc, #eff6ff);
+      border: 1px solid #dbeafe;
+    }
+
+    .score-box-label {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .score-box-score {
+      margin-top: 6px;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .score-box-percent {
+      margin-top: 6px;
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .chapter-summary {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .chapter-summary h2 {
+      margin-bottom: 16px;
+      color: #0f172a;
+      font-size: 20px;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .chapter-item {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .chapter-item.completed {
+      border-color: #a7f3d0;
+      background: #f0fdf4;
+      color: #15803d;
+    }
+
+    .completion-actions {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .completion-actions a {
+      text-decoration: none;
+    }
+
+    .completion-primary,
+    .completion-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .completion-primary {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .completion-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .completion-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+
+    .completion-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .completion-loading,
+    .completion-error {
+      padding: 40px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    @media (max-width: 800px) {
+      .completion-card {
+        padding: 28px 20px;
+      }
+
+      .completion-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .chapter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .completion-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .chapter-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="completion-page">
+
+    <div class="completion-shell">
+
+      <div
+        id="loadingState"
+        class="completion-loading"
+      >
+        Loading your OOPs completion status...
+      </div>
+
+
+      <section
+        id="completionContent"
+        class="completion-card"
+        style="display: none;"
+      >
+
+        <div class="completion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </div>
+
+        <div class="completion-badge">
+          OOPs Learning Path Completed
+        </div>
+
+        <h1>
+          OOPs Completed!
+        </h1>
+
+        <p>
+          You have completed all 15 OOPs chapters
+          and successfully passed the final
+          comprehensive assessment.
+        </p>
+
+
+        <div class="completion-stats">
+
+          <div class="completion-stat">
+            <span>Chapters</span>
+            <strong id="chapterCount">
+              15 / 15
+            </strong>
+          </div>
+
+          <div class="completion-stat">
+            <span>Final Questions</span>
+            <strong id="questionCount">
+              45
+            </strong>
+          </div>
+
+          <div class="completion-stat">
+            <span>Attempts</span>
+            <strong id="attemptCount">
+              1
+            </strong>
+          </div>
+
+          <div class="completion-stat">
+            <span>Status</span>
+            <strong>
+              Passed
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="score-box">
+
+          <div class="score-box-label">
+            FINAL OOPS ASSESSMENT
+          </div>
+
+          <div
+            id="finalScore"
+            class="score-box-score"
+          >
+            --
+          </div>
+
+          <div
+            id="finalPercentage"
+            class="score-box-percent"
+          >
+            --
+          </div>
+
+        </div>
+
+
+        <section class="chapter-summary">
+
+          <h2>
+            Completed Chapters
+          </h2>
+
+          <div
+            id="chapterGrid"
+            class="chapter-grid"
+          ></div>
+
+        </section>
+
+
+        <div class="completion-actions">
+
+          <a
+            href="oops.html"
+            class="completion-secondary"
+          >
+            Review OOPs
+          </a>
+
+          <a
+            href="dashboard.html"
+            class="completion-primary"
+          >
+            Back to Dashboard
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <section
+        id="errorState"
+        class="completion-card"
+        style="display: none;"
+      >
+
+        <div class="completion-icon" style="background: #fef2f2; color: #dc2626;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+
+        <h1>
+          OOPs Not Yet Completed
+        </h1>
+
+        <p id="errorMessage">
+          Complete all OOPs chapters and pass
+          the final assessment first.
+        </p>
+
+        <div class="completion-actions">
+
+          <a
+            href="oops.html"
+            class="completion-primary"
+          >
+            Go to OOPs
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="../js/technical/oops-completion.js"
+  ></script>
+
+</body>
+</html>

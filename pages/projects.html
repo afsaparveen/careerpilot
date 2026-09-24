@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .projects-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .side-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .side-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke-width: 2;
+        }
+
+        .evidence-list div span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+        }
+
+        .evidence-list div span svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 2.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="projects-navbar">
+
+    <div class="projects-brand">
+        <div class="brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+            </svg>
+        </div>
+
+        <div>
+            <strong>CareerPilot</strong>
+            <span>Projects & Career Evidence</span>
+        </div>
+    </div>
+
+    <nav class="projects-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+    </nav>
+
+</header>
+
+
+<main class="projects-page">
+
+    <section class="projects-hero">
+
+        <div>
+            <div class="section-label">
+                CAREER EVIDENCE
+            </div>
+
+            <h1>
+                Show what you can build.
+            </h1>
+
+            <p>
+                Add your projects, connect them to verified skills,
+                and build a stronger evidence profile for your
+                placement journey.
+            </p>
+        </div>
+
+        <div class="projects-hero-stat">
+            <strong id="projectCount">0</strong>
+            <span>Projects</span>
+        </div>
+
+    </section>
+
+
+    <section class="projects-layout">
+
+        <div class="projects-form-card">
+
+            <div class="card-title-row">
+                <div>
+                    <div class="section-label">
+                        PROJECT BUILDER
+                    </div>
+
+                    <h2>
+                        Add a project
+                    </h2>
+
+                    <p>
+                        Connect real project work with the skills
+                        you have verified.
+                    </p>
+                </div>
+            </div>
+
+
+            <form id="projectForm">
+
+                <div class="field-group">
+                    <label for="projectTitle">
+                        Project Title
+                    </label>
+
+                    <input
+                        id="projectTitle"
+                        type="text"
+                        placeholder="e.g. CareerPilot"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+
+                <div class="field-group">
+                    <label for="projectDescription">
+                        Project Description
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        rows="5"
+                        maxlength="900"
+                        placeholder="What did you build, what problem did it solve, and what did you personally work on?"
+                        required
+                    ></textarea>
+
+                    <div class="field-help">
+                        <span>Use clear, evidence-based language.</span>
+                        <span id="descriptionCount">0 / 900</span>
+                    </div>
+                </div>
+
+
+                <div class="two-column-fields">
+
+                    <div class="field-group">
+                        <label for="projectRole">
+                            Your Role
+                        </label>
+
+                        <input
+                            id="projectRole"
+                            type="text"
+                            placeholder="e.g. Full Stack Developer"
+                            maxlength="80"
+                        >
+                    </div>
+
+                    <div class="field-group">
+                        <label for="projectDuration">
+                            Duration
+                        </label>
+
+                        <input
+                            id="projectDuration"
+                            type="text"
+                            placeholder="e.g. Jan 2026 - Mar 2026"
+                            maxlength="80"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="field-group">
+                    <label for="projectTech">
+                        Technologies
+                    </label>
+
+                    <input
+                        id="projectTech"
+                        type="text"
+                        placeholder="e.g. HTML, CSS, JavaScript, Firebase"
+                        maxlength="250"
+                    >
+
+                    <div class="field-help">
+                        Separate technologies with commas.
+                    </div>
+                </div>
+
+
+                <div class="field-group">
+                    <label>
+                        Verified Skills Used
+                    </label>
+
+                    <div
+                        id="verifiedSkillsPicker"
+                        class="skills-picker"
+                    ></div>
+
+                    <div
+                        id="skillsPickerMessage"
+                        class="picker-message"
+                    >
+                        Loading verified skills...
+                    </div>
+                </div>
+
+
+                <div class="two-column-fields">
+
+                    <div class="field-group">
+                        <label for="githubUrl">
+                            GitHub URL
+                        </label>
+
+                        <input
+                            id="githubUrl"
+                            type="url"
+                            placeholder="https://github.com/..."
+                        >
+                    </div>
+
+                    <div class="field-group">
+                        <label for="liveUrl">
+                            Live Project URL
+                        </label>
+
+                        <input
+                            id="liveUrl"
+                            type="url"
+                            placeholder="https://..."
+                        >
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    class="save-project-button"
+                    id="saveProjectButton"
+                >
+                    Save Project
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <aside class="projects-side-card">
+
+            <div class="side-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                </svg>
+            </div>
+
+            <div class="section-label">
+                PROFILE IMPACT
+            </div>
+
+            <h2>
+                Build evidence, not just claims.
+            </h2>
+
+            <p>
+                A project becomes stronger evidence when it shows
+                what you built, which skills you used, and where
+                the work can be reviewed.
+            </p>
+
+            <div class="evidence-list">
+
+                <div>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <p>Clear project description</p>
+                </div>
+
+                <div>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <p>Technologies used</p>
+                </div>
+
+                <div>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <p>Verified skills connected</p>
+                </div>
+
+                <div>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <p>GitHub or live evidence</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <section class="saved-projects-section">
+
+        <div class="saved-header">
+            <div>
+                <div class="section-label">
+                    YOUR PORTFOLIO
+                </div>
+
+                <h2>
+                    Saved Projects
+                </h2>
+
+                <p>
+                    Projects saved to your CareerPilot profile.
+                </p>
+            </div>
+        </div>
+
+        <div
+            id="projectsList"
+            class="projects-list"
+        ></div>
+
+    </section>
+
+
+    <section class="projects-actions">
+        <a href="skills.html" class="secondary-button">
+            ← Skills Verification
+        </a>
+
+        <a href="dashboard.html" class="primary-button">
+            Go to Dashboard →
+        </a>
+    </section>
+
+</main>
+
+
+<div id="toast" class="toast"></div>
+
+<script
+    type="module"
+    src="../js/projects/projects.js"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,1475 @@
+{
+  "courseId": "operating-systems",
+  "title": "Operating Systems",
+  "passingScore": 75,
+  "chapters": [
+    {
+      "id": "os-introduction",
+      "number": 1,
+      "title": "Introduction to Operating System",
+      "topics": [
+        {
+          "id": "what-is-os",
+          "title": "What is an Operating System?",
+          "learn": "An Operating System is system software that acts as an intermediary between user applications and computer hardware. Examples mentioned in the notes include Windows, Linux, macOS and Android.",
+          "example": "When you run an application, the operating system provides the environment in which the application can use CPU, memory, storage and I/O resources.",
+          "keyPoints": [
+            "Operating System is system software.",
+            "It acts as an intermediary between applications and hardware.",
+            "Examples include Windows, Linux, macOS and Android."
+          ]
+        },
+        {
+          "id": "why-os",
+          "title": "Why Do We Need an Operating System?",
+          "learn": "Without an OS, each application would need to contain its own code to interact directly with hardware. The OS also prevents uncontrolled resource usage and provides memory protection between applications.",
+          "example": "Without memory protection, one application could access or overwrite another application's memory, causing corruption or crashes.",
+          "keyPoints": [
+            "Reduces hardware interaction complexity for applications.",
+            "Controls CPU, memory and I/O resource usage.",
+            "Provides memory protection."
+          ]
+        },
+        {
+          "id": "application-system-software",
+          "title": "Application Software and System Software",
+          "learn": "Application software performs specific tasks for the user. System software controls the computer system and provides a platform to run application software.",
+          "example": "A text editor is application software, while the operating system that manages its execution is system software.",
+          "keyPoints": [
+            "Application software performs user-oriented tasks.",
+            "System software controls the computer system.",
+            "An operating system is system software."
+          ]
+        },
+        {
+          "id": "os-goals",
+          "title": "Goals of an Operating System",
+          "learn": "The notes identify convenience, efficiency, energy conservation and minimal user interference as goals of an operating system.",
+          "example": "The OS makes it convenient to run applications while allocating resources efficiently in the background.",
+          "keyPoints": [
+            "Convenience.",
+            "Efficiency.",
+            "Energy conservation.",
+            "Minimal user interference."
+          ]
+        },
+        {
+          "id": "os-functions",
+          "title": "Main Functions of an Operating System",
+          "learn": "The main functions listed in the notes are process management, resource allocation, memory management, file system management, device management, security and protection, and process scheduling.",
+          "example": "When multiple programs need CPU time, process scheduling decides which process should run.",
+          "keyPoints": [
+            "Process Management.",
+            "Resource Allocation.",
+            "Memory Management.",
+            "File System Management.",
+            "Device Management.",
+            "Security and Protection.",
+            "Process Scheduling."
+          ]
+        },
+        {
+          "id": "os-history-types",
+          "title": "History and Types of Operating Systems",
+          "learn": "The notes describe OS evolution from batch systems to time-sharing and GUI systems, and then to modern systems such as Android, iOS, cloud-based systems and embedded systems. Types discussed include Batch-processing, Multiprogramming, Multitasking, Real-time and Distributed operating systems.",
+          "example": "A multiprogramming OS keeps multiple programs in memory and switches between them when one process is waiting for another operation.",
+          "keyPoints": [
+            "Batch-processing executes groups of jobs.",
+            "Multiprogramming keeps multiple programs in memory.",
+            "Multitasking supports multiple programs through rapid switching.",
+            "Real-time systems respond within required timing limits.",
+            "Distributed OS coordinates multiple computers as one system."
+          ]
+        },
+        {
+          "id": "kernel-user-mode",
+          "title": "Kernel and User Mode",
+          "learn": "The kernel is the part of the OS that interacts directly with hardware and performs crucial tasks. Kernel mode is privileged and has full access to system resources, while user mode restricts applications for safety and stability.",
+          "example": "An ordinary application operates in user mode, while privileged operating system operations execute in kernel mode.",
+          "keyPoints": [
+            "Kernel is the core of the OS.",
+            "Kernel mode is privileged.",
+            "User mode is restricted.",
+            "Mode separation improves protection."
+          ]
+        },
+        {
+          "id": "os-structures",
+          "title": "Operating System Structures",
+          "learn": "The notes describe Monolithic Kernel, Microkernel, Layered Architecture and Modular Architecture.",
+          "example": "In a microkernel design, only essential services remain in kernel mode while other services operate in user mode.",
+          "keyPoints": [
+            "Monolithic Kernel.",
+            "Microkernel.",
+            "Layered Architecture.",
+            "Modular Architecture."
+          ]
+        },
+        {
+          "id": "system-calls",
+          "title": "System Calls",
+          "learn": "A system call is a mechanism through which a user program requests a service from the kernel that it does not have permission to perform directly. The notes mention examples such as fork, exec, getpid, getppid, wait and exit.",
+          "example": "A user program requesting a privileged OS service causes a controlled transition toward kernel mode.",
+          "keyPoints": [
+            "System calls request OS services.",
+            "They connect user-level programs with kernel services.",
+            "They can cause a switch to kernel mode.",
+            "System call categories include process control, file management, device management, information maintenance and communication management."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "process-management",
+      "number": 2,
+      "title": "Process Management",
+      "topics": [
+        {
+          "id": "program-vs-process",
+          "title": "Program vs Process",
+          "learn": "A program is a set of written instructions that is passive and stored on disk until execution. A process is an executing instance of a program and is stored in main memory while executing.",
+          "example": "The notes compare a movie with a program and its screening with a process. The same movie can have multiple screenings just as one program can create multiple processes.",
+          "keyPoints": [
+            "Program is passive.",
+            "Process is active execution.",
+            "Program is stored on disk.",
+            "Process exists in main memory during execution.",
+            "Multiple processes can run the same program."
+          ]
+        },
+        {
+          "id": "process-components",
+          "title": "Components of a Process",
+          "learn": "A process contains a text section with program code, current activity represented by the program counter and registers, a program stack, a data section containing global variables, and a heap.",
+          "example": "A running application uses its code, current execution state, stack, data and heap as part of its process representation.",
+          "keyPoints": [
+            "Text section.",
+            "Program counter and registers.",
+            "Program stack.",
+            "Data section.",
+            "Heap."
+          ]
+        },
+        {
+          "id": "pcb",
+          "title": "Process Control Block",
+          "learn": "The Process Control Block (PCB) stores information about a process including process ID, state, program counter, CPU registers and memory limits. The notes state that the PCB is stored in protected memory areas.",
+          "example": "A PCB can be thought of as the OS record containing important information required to manage a process.",
+          "keyPoints": [
+            "Stores process ID.",
+            "Stores process state.",
+            "Stores program counter.",
+            "Stores CPU registers.",
+            "Stores memory-related information."
+          ]
+        },
+        {
+          "id": "pcb-purpose",
+          "title": "Why Do We Need a PCB?",
+          "learn": "PCBs allow the OS to track active processes, perform context switching and maintain resource information for each process.",
+          "example": "When a process is paused, its state can be stored through its PCB so the process can later resume correctly.",
+          "keyPoints": [
+            "Tracks process execution.",
+            "Enables context switching.",
+            "Stores resource information.",
+            "Supports multiprogramming."
+          ]
+        },
+        {
+          "id": "process-table",
+          "title": "Process Table",
+          "learn": "The Process Table is an array of PCBs and logically contains a PCB for every current process in the system.",
+          "example": "A system with many active processes maintains their PCB information through the process table.",
+          "keyPoints": [
+            "Contains PCBs.",
+            "Represents current processes.",
+            "Helps the OS track active processes."
+          ]
+        },
+        {
+          "id": "context-switching",
+          "title": "Context Switching",
+          "learn": "Context switching saves the state of a currently running process and restores the state of another process that is ready to run. The CPU context includes registers and the program counter.",
+          "example": "When a running process waits for I/O, the OS can save its context and load another process to keep the CPU productive.",
+          "keyPoints": [
+            "Saves the current process state.",
+            "Restores another process state.",
+            "Uses PCB information.",
+            "Supports multitasking.",
+            "Creates overhead because no direct user work is performed during the switch."
+          ]
+        },
+        {
+          "id": "process-states",
+          "title": "Process States",
+          "learn": "The notes describe New, Ready, Running, Waiting, Terminated or Exit, and Suspended states.",
+          "example": "A process waiting for file input enters the waiting state until the required I/O operation finishes.",
+          "keyPoints": [
+            "New: process is being created.",
+            "Ready: waiting for CPU assignment.",
+            "Running: currently executing on the CPU.",
+            "Waiting: waiting for an event such as I/O completion.",
+            "Terminated: execution has finished or process has been killed.",
+            "Suspended: temporarily paused."
+          ]
+        },
+        {
+          "id": "threads",
+          "title": "Threads",
+          "learn": "A thread is the smallest unit of execution within a process. It is often called a lightweight process because it executes independently while sharing many resources with its parent process.",
+          "example": "The notes compare a process to a team project and each thread to a team member working in the same shared workspace.",
+          "keyPoints": [
+            "Smallest unit of execution.",
+            "Belongs to a process.",
+            "Shares many process resources.",
+            "Has its own execution state."
+          ]
+        },
+        {
+          "id": "thread-purpose",
+          "title": "Why Do We Need Threads?",
+          "learn": "Threads provide concurrency, can improve performance, use fewer resources than separate processes, share memory and improve application responsiveness.",
+          "example": "Typing, auto-save and formatting in a document editor can be handled concurrently using threads.",
+          "keyPoints": [
+            "Concurrency.",
+            "Faster execution or switching compared with full processes.",
+            "Shared memory communication.",
+            "Better responsiveness."
+          ]
+        },
+        {
+          "id": "thread-sharing",
+          "title": "What Do Threads Share?",
+          "learn": "Threads within the same process share the code section, data section, open files, signals and other OS resources.",
+          "example": "Multiple threads in an application can work with the same data and open files.",
+          "keyPoints": [
+            "Code section is shared.",
+            "Data section is shared.",
+            "Open files are shared.",
+            "Other process resources can be shared."
+          ]
+        },
+        {
+          "id": "thread-private",
+          "title": "What Is Unique to Each Thread?",
+          "learn": "Each thread has its own Thread ID, Program Counter, Register Set and Stack.",
+          "example": "Two threads can use the same application data but have separate stacks because their function calls and local variables differ.",
+          "keyPoints": [
+            "Thread ID.",
+            "Program Counter.",
+            "Register Set.",
+            "Own Stack."
+          ]
+        },
+        {
+          "id": "process-vs-thread",
+          "title": "Process vs Thread",
+          "learn": "A process is an independent unit of execution with its own address space, while a thread is a lightweight execution unit inside a process and shares the process address space with other threads.",
+          "example": "Processes generally have greater creation and context-switch overhead than threads.",
+          "keyPoints": [
+            "Processes have separate address spaces.",
+            "Threads share the process address space.",
+            "Thread context switching is generally faster.",
+            "Thread creation generally has lower overhead.",
+            "A thread failure can affect its entire process."
+          ]
+        },
+        {
+          "id": "ult-vs-klt",
+          "title": "User-Level Thread vs Kernel-Level Thread",
+          "learn": "User-Level Threads are managed by a user-level thread library. Kernel-Level Threads are managed by the operating system kernel.",
+          "example": "User-level thread switching can be fast because it may not require kernel involvement, while kernel-level threads are directly managed by the OS.",
+          "keyPoints": [
+            "ULT is managed by a user-level library.",
+            "KLT is managed by the kernel.",
+            "ULT context switching can be faster.",
+            "KLT scheduling is handled by the OS.",
+            "Blocking behavior differs between ULT and KLT."
+          ]
+        },
+        {
+          "id": "multithreading",
+          "title": "Multithreading",
+          "learn": "Multithreading allows a single process to run multiple threads concurrently. On a single-core CPU this provides concurrency through switching; on a multi-core CPU threads can execute simultaneously on different cores.",
+          "example": "One thread may perform I/O while another continues computation in the same process.",
+          "keyPoints": [
+            "Multiple threads can exist in one process.",
+            "Single-core systems provide concurrency through switching.",
+            "Multi-core systems can provide parallel execution.",
+            "Multithreading can improve responsiveness."
+          ]
+        },
+        {
+          "id": "cpu-bound-io-bound",
+          "title": "CPU-Bound and I/O-Bound Processes",
+          "learn": "A CPU-bound process spends most of its time performing computations and has long CPU bursts. An I/O-bound process spends more time waiting for I/O and generally has shorter CPU bursts.",
+          "example": "A process doing complex numerical calculations can be CPU-bound, while a process repeatedly reading from disk can be I/O-bound.",
+          "keyPoints": [
+            "CPU-bound processes perform many computations.",
+            "CPU-bound processes have long CPU bursts.",
+            "I/O-bound processes wait more for I/O.",
+            "I/O-bound processes generally have shorter CPU bursts."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cpu-scheduling",
+      "number": 3,
+      "title": "CPU Scheduling",
+      "topics": [
+        {
+          "id": "cpu-scheduling-basics",
+          "title": "What is CPU Scheduling?",
+          "learn": "CPU scheduling is the process used by the OS to decide which process in the ready queue should be executed next by the CPU.",
+          "example": "If several processes are in the ready queue, the scheduler selects one based on the chosen scheduling algorithm.",
+          "keyPoints": [
+            "Scheduler selects the next process.",
+            "Processes are selected from the ready queue.",
+            "Scheduling determines CPU allocation."
+          ]
+        },
+        {
+          "id": "scheduling-goals",
+          "title": "Goals of CPU Scheduling",
+          "learn": "The notes list maximizing CPU utilization and throughput, minimizing turnaround, waiting and response time, and ensuring fairness by preventing starvation.",
+          "example": "A scheduling algorithm should keep the CPU busy while still giving processes a fair opportunity to execute.",
+          "keyPoints": [
+            "Maximize CPU utilization.",
+            "Maximize throughput.",
+            "Minimize turnaround time.",
+            "Minimize waiting time.",
+            "Minimize response time.",
+            "Prevent starvation."
+          ]
+        },
+        {
+          "id": "preemptive-nonpreemptive",
+          "title": "Preemptive and Non-Preemptive Scheduling",
+          "learn": "In non-preemptive scheduling, a process continues until it finishes or blocks. In preemptive scheduling, the CPU can be taken away from a running process and assigned to another process.",
+          "example": "If a short process arrives while a long process is running, a preemptive scheduler may interrupt the long process.",
+          "keyPoints": [
+            "Non-preemptive scheduling is simpler.",
+            "Non-preemptive scheduling has less context-switch overhead.",
+            "Preemptive scheduling can improve response time.",
+            "Preemptive scheduling adds context-switch overhead."
+          ]
+        },
+        {
+          "id": "scheduling-queues",
+          "title": "CPU Scheduling Queues",
+          "learn": "The notes describe Job Queue, Ready Queue, Waiting or Blocked Queue and Swapped-Out Queue.",
+          "example": "A process waiting for disk input is placed in the waiting queue and can later return to the ready queue.",
+          "keyPoints": [
+            "Job Queue contains submitted processes.",
+            "Ready Queue contains memory-resident processes waiting for CPU.",
+            "Waiting Queue contains processes waiting for I/O.",
+            "Swapped-Out Queue contains processes temporarily moved to disk."
+          ]
+        },
+        {
+          "id": "schedulers",
+          "title": "Types of Schedulers",
+          "learn": "The Long-Term Scheduler selects jobs from the job queue and admits them to memory, the Short-Term Scheduler selects a process from the ready queue for CPU execution, and the Medium-Term Scheduler handles swapping.",
+          "example": "The short-term scheduler may run every few milliseconds because CPU decisions happen frequently.",
+          "keyPoints": [
+            "Long-Term Scheduler controls admission and degree of multiprogramming.",
+            "Short-Term Scheduler selects the next CPU process.",
+            "Medium-Term Scheduler handles suspension and swapping."
+          ]
+        },
+        {
+          "id": "dispatcher",
+          "title": "Dispatcher",
+          "learn": "The dispatcher gives control of the CPU to the process selected by the short-term scheduler.",
+          "example": "After the scheduler selects P2, the dispatcher performs the required process switch so P2 can start executing.",
+          "keyPoints": [
+            "Performs context switching.",
+            "Switches from kernel mode to user mode.",
+            "Jumps to the starting instruction of the selected process."
+          ]
+        },
+        {
+          "id": "scheduling-terminology",
+          "title": "CPU Scheduling Terminology",
+          "learn": "Important terms are Arrival Time, Burst Time, Completion Time, Turnaround Time, Waiting Time, Response Time, Throughput, CPU Utilization, Dispatch Latency and Gantt Chart.",
+          "example": "Turnaround Time = Completion Time - Arrival Time. Waiting Time = Turnaround Time - Burst Time.",
+          "keyPoints": [
+            "AT = Arrival Time.",
+            "BT = Burst Time.",
+            "CT = Completion Time.",
+            "TAT = CT - AT.",
+            "WT = TAT - BT.",
+            "RT = time from arrival until first execution.",
+            "Throughput is the number of completed processes per unit time.",
+            "Gantt chart shows process execution order over time."
+          ]
+        },
+        {
+          "id": "fcfs",
+          "title": "First-Come, First-Served",
+          "learn": "FCFS schedules processes in the order they arrive in the ready queue. The notes describe it as simple and easy to implement but note the convoy effect and high average waiting time.",
+          "example": "If P1, P2, P3 and P4 arrive in that order, FCFS executes P1, then P2, then P3, then P4.",
+          "keyPoints": [
+            "Uses arrival order.",
+            "Simple implementation.",
+            "Can cause convoy effect.",
+            "Can produce high average waiting time."
+          ]
+        },
+        {
+          "id": "sjf",
+          "title": "Shortest Job First",
+          "learn": "SJF schedules the process with the smallest burst time first. The notes state that it can minimize average waiting time when burst times are known.",
+          "example": "Among available processes with burst times 8, 4, 2 and 1, SJF selects the shortest available burst.",
+          "keyPoints": [
+            "Selects smallest burst time.",
+            "Can minimize average waiting time.",
+            "Requires burst-time knowledge.",
+            "Long processes may starve."
+          ]
+        },
+        {
+          "id": "srtf",
+          "title": "Shortest Remaining Time First",
+          "learn": "SRTF is the preemptive version of SJF and runs the process with the least remaining time.",
+          "example": "A newly arriving process with a shorter remaining burst can preempt the currently running process.",
+          "keyPoints": [
+            "Preemptive version of SJF.",
+            "Chooses least remaining time.",
+            "Can cause frequent context switching.",
+            "Longer processes may starve."
+          ]
+        },
+        {
+          "id": "round-robin",
+          "title": "Round Robin",
+          "learn": "Round Robin gives each process a fixed time quantum in cyclic order and is suitable for time-sharing systems.",
+          "example": "With a time quantum of 2, the scheduler can give P1 two units, then P2 two units, then P3 and continue cyclically.",
+          "keyPoints": [
+            "Uses fixed time quantum.",
+            "Uses cyclic scheduling.",
+            "Suitable for time-sharing.",
+            "Very small quantum can create high context-switch overhead."
+          ]
+        },
+        {
+          "id": "priority-scheduling",
+          "title": "Priority Scheduling",
+          "learn": "Priority Scheduling assigns a priority to each process and gives CPU preference to the highest-priority process.",
+          "example": "If an urgent process has higher priority than background work, the higher-priority process can be selected first.",
+          "keyPoints": [
+            "Processes have priorities.",
+            "Higher-priority processes are preferred.",
+            "Low-priority processes can starve.",
+            "Aging can help reduce starvation."
+          ]
+        },
+        {
+          "id": "multilevel-queue",
+          "title": "Multilevel Queue Scheduling",
+          "learn": "Multilevel Queue Scheduling divides processes into separate queues, such as system and user queues, with each queue potentially using its own scheduling algorithm.",
+          "example": "System processes can be placed in one queue while user processes are handled in another queue.",
+          "keyPoints": [
+            "Uses multiple queues.",
+            "Queues can represent different process classes.",
+            "Each queue can use its own algorithm.",
+            "Processes are generally fixed to their queue."
+          ]
+        },
+        {
+          "id": "mlfq",
+          "title": "Multilevel Feedback Queue",
+          "learn": "MLFQ is similar to multilevel queue scheduling but allows processes to move between queues based on behavior and aging.",
+          "example": "A process may move between priority queues depending on how it behaves and how long it has waited.",
+          "keyPoints": [
+            "Processes can move between queues.",
+            "Uses process behavior.",
+            "Aging can help reduce starvation.",
+            "More flexible but more complex to implement and tune."
+          ]
+        },
+        {
+          "id": "gantt-chart-calculations",
+          "title": "Gantt Charts and Scheduling Calculations",
+          "learn": "The notes use Gantt charts to show execution order and calculate Completion Time, Turnaround Time, Waiting Time and Response Time for scheduling algorithms.",
+          "example": "A Gantt chart can show P1 from 0–8 followed by P2, P3 and P4 and can then be used to calculate their scheduling metrics.",
+          "keyPoints": [
+            "Gantt chart is a CPU execution timeline.",
+            "CT identifies completion.",
+            "TAT = CT - AT.",
+            "WT = TAT - BT.",
+            "RT measures time until first execution."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "process-synchronization",
+      "number": 4,
+      "title": "Process Synchronization",
+      "topics": [
+        {
+          "id": "cooperating-independent-processes",
+          "title": "Cooperating and Independent Processes",
+          "learn": "A cooperating process shares data, resources or communication with other processes. An independent process does not share data or resources with other processes and therefore does not require synchronization for shared data.",
+          "example": "Producer-consumer is a cooperating-process example, while a music player and an unrelated text editor can be independent processes.",
+          "keyPoints": [
+            "Cooperating processes share data or resources.",
+            "Independent processes do not share data or resources.",
+            "Cooperating processes may require synchronization."
+          ]
+        },
+        {
+          "id": "synchronization-basics",
+          "title": "Process Synchronization",
+          "learn": "Process synchronization coordinates processes so that they do not interfere with each other while accessing shared resources such as memory, variables and files.",
+          "example": "Two processes updating the same shared value must coordinate access to avoid inconsistent results.",
+          "keyPoints": [
+            "Coordinates processes.",
+            "Protects shared resources.",
+            "Prevents inconsistent updates."
+          ]
+        },
+        {
+          "id": "race-condition",
+          "title": "Race Condition",
+          "learn": "A race condition occurs when multiple processes access and manipulate the same data concurrently and the final result depends on execution order.",
+          "example": "Two processes incrementing the same counter without synchronization can produce a timing-dependent final value.",
+          "keyPoints": [
+            "Multiple processes access shared data.",
+            "Result depends on timing.",
+            "Race conditions can produce incorrect results."
+          ]
+        },
+        {
+          "id": "critical-section",
+          "title": "Critical Section",
+          "learn": "A critical section is the part of code where shared resources are accessed. Only one process should execute its critical section at a time to avoid race conditions.",
+          "example": "Code that updates a shared bank balance can be treated as a critical section.",
+          "keyPoints": [
+            "Critical section accesses shared resources.",
+            "Mutual exclusion protects the critical section."
+          ]
+        },
+        {
+          "id": "synchronization-types",
+          "title": "Types of Process Synchronization",
+          "learn": "The notes divide synchronization into Mutual Exclusion Synchronization and Condition Synchronization.",
+          "example": "Mutex and semaphores can provide mutual exclusion, while condition variables can coordinate waiting and signaling.",
+          "keyPoints": [
+            "Mutual Exclusion Synchronization.",
+            "Condition Synchronization.",
+            "Mutual exclusion protects shared sections.",
+            "Condition synchronization waits for events or conditions."
+          ]
+        },
+        {
+          "id": "critical-section-requirements",
+          "title": "Requirements for a Synchronization Algorithm",
+          "learn": "The three essential conditions listed are Mutual Exclusion, Progress and Bounded Wait. The notes also mention no busy waiting as optional.",
+          "example": "A correct algorithm should not allow an unlimited sequence of other processes to enter the critical section before a waiting process gets its turn.",
+          "keyPoints": [
+            "Mutual Exclusion.",
+            "Progress.",
+            "Bounded Wait.",
+            "No busy waiting is mentioned as optional."
+          ]
+        },
+        {
+          "id": "peterson-bakery",
+          "title": "Peterson's Solution and Bakery Algorithm",
+          "learn": "Peterson's Solution is a software-based solution for two-process synchronization. The Bakery Algorithm generalizes the idea to multiple processes and is inspired by take-a-number systems.",
+          "example": "Peterson's Solution uses flags and a turn variable to coordinate two processes.",
+          "keyPoints": [
+            "Peterson's Solution works for two processes.",
+            "Uses flag and turn variables.",
+            "Bakery Algorithm supports multiple processes.",
+            "Bakery Algorithm aims for fairness and mutual exclusion."
+          ]
+        },
+        {
+          "id": "semaphores",
+          "title": "Semaphores",
+          "learn": "Semaphores are synchronization tools used to control access to shared resources. The notes describe Counting Semaphores and Binary Semaphores and the atomic wait() and signal() operations.",
+          "example": "A counting semaphore can represent multiple instances of a resource such as several printers.",
+          "keyPoints": [
+            "Counting Semaphore can have non-negative integer values.",
+            "Binary Semaphore uses 0 and 1.",
+            "wait() decreases the semaphore value.",
+            "signal() increases the semaphore value.",
+            "Semaphore operations are atomic."
+          ]
+        },
+        {
+          "id": "hardware-synchronization",
+          "title": "Hardware Synchronization Algorithms",
+          "learn": "The notes describe Disable Interrupts, Test-and-Set and Compare-and-Swap as low-level hardware mechanisms for synchronization.",
+          "example": "Test-and-Set can be used to implement a lock by checking and setting a memory value atomically.",
+          "keyPoints": [
+            "Disable interrupts prevents context switching on a single CPU.",
+            "Test-and-Set can cause busy waiting.",
+            "Compare-and-Swap is useful in lock-free programming.",
+            "Low-level atomic operations support mutual exclusion."
+          ]
+        },
+        {
+          "id": "monitor",
+          "title": "Monitor",
+          "learn": "A Monitor is a high-level synchronization construct that combines mutual exclusion and condition synchronization using condition variables.",
+          "example": "Only one thread can execute a monitor function at a time, while condition variables allow threads to wait for and signal conditions.",
+          "keyPoints": [
+            "High-level synchronization construct.",
+            "Provides mutual exclusion.",
+            "Supports condition synchronization."
+          ]
+        },
+        {
+          "id": "condition-variable",
+          "title": "Condition Variable",
+          "learn": "A condition variable is used inside a monitor so a thread can wait and release the monitor and another thread can signal it when a required condition becomes true.",
+          "example": "A consumer can wait while a shared buffer is empty and be signaled after the producer inserts data.",
+          "keyPoints": [
+            "Supports waiting.",
+            "Supports signaling.",
+            "Used with monitors."
+          ]
+        },
+        {
+          "id": "producer-consumer",
+          "title": "Producer-Consumer Problem",
+          "learn": "A producer places data into a bounded buffer and a consumer removes data from it. The producer waits when the buffer is full and the consumer waits when it is empty.",
+          "example": "The notes use mutex, empty and full semaphores to coordinate access to the buffer.",
+          "keyPoints": [
+            "Uses a bounded buffer.",
+            "Producer waits when buffer is full.",
+            "Consumer waits when buffer is empty.",
+            "Mutex protects buffer access."
+          ]
+        },
+        {
+          "id": "dining-philosophers",
+          "title": "Dining Philosophers Problem",
+          "learn": "Five philosophers alternate between thinking and eating and need two forks to eat. If all philosophers pick up one fork, they can become stuck in a deadlock situation.",
+          "example": "The notes use mutex, individual philosopher semaphores and states such as THINKING, HUNGRY and EATING.",
+          "keyPoints": [
+            "Each philosopher needs two forks.",
+            "Poor synchronization can cause deadlock.",
+            "Starvation is also an important concern."
+          ]
+        },
+        {
+          "id": "reader-writer",
+          "title": "Reader-Writer Problem",
+          "learn": "Multiple readers can read at the same time, but only one writer can write and readers should not access the shared resource during writing. The notes discuss reader-priority and writer-priority variants.",
+          "example": "A database-like shared resource can allow many readers concurrently while writer access is exclusive.",
+          "keyPoints": [
+            "Multiple readers can read together.",
+            "Only one writer writes at a time.",
+            "Reader-priority may starve writers.",
+            "Writer-priority avoids writer starvation."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "deadlock",
+      "number": 5,
+      "title": "Deadlock",
+      "topics": [
+        {
+          "id": "deadlock-basics",
+          "title": "What is Deadlock?",
+          "learn": "Deadlock occurs when a set of processes become permanently blocked because each process is waiting for a resource held by another process.",
+          "example": "P1 holds Resource A and waits for Resource B while P2 holds Resource B and waits for Resource A.",
+          "keyPoints": [
+            "Processes become permanently blocked.",
+            "Each process waits for another resource holder.",
+            "The resources cannot be released because processes cannot proceed."
+          ]
+        },
+        {
+          "id": "deadlock-conditions",
+          "title": "Necessary Conditions for Deadlock",
+          "learn": "All four conditions must hold simultaneously: Mutual Exclusion, Hold and Wait, No Preemption and Circular Wait.",
+          "example": "A system with shared non-preemptable resources, held resources, waiting processes and a circular dependency can enter deadlock.",
+          "keyPoints": [
+            "Mutual Exclusion.",
+            "Hold and Wait.",
+            "No Preemption.",
+            "Circular Wait."
+          ]
+        },
+        {
+          "id": "resource-allocation-graph",
+          "title": "Resource Allocation Graph",
+          "learn": "A Resource Allocation Graph (RAG) is a directed graph representing processes, resources, requests and assignments. The notes distinguish single-instance and multiple-instance resource types.",
+          "example": "P → R is a request edge and R → P is an assignment edge.",
+          "keyPoints": [
+            "Process nodes represent processes.",
+            "Resource nodes represent resource types.",
+            "Request edge: process to resource.",
+            "Assignment edge: resource to process.",
+            "For single-instance resources, a cycle indicates deadlock.",
+            "For multiple-instance resources, a cycle may or may not indicate deadlock."
+          ]
+        },
+        {
+          "id": "deadlock-prevention",
+          "title": "Deadlock Prevention",
+          "learn": "Deadlock prevention ensures at least one of the four necessary conditions never occurs.",
+          "example": "Circular wait can be prevented by imposing a global ordering on resources.",
+          "keyPoints": [
+            "Eliminate or reduce Mutual Exclusion where practical.",
+            "Eliminate Hold and Wait.",
+            "Allow preemption where possible.",
+            "Eliminate Circular Wait.",
+            "Prevention guarantees that deadlock conditions cannot all hold simultaneously."
+          ]
+        },
+        {
+          "id": "deadlock-avoidance",
+          "title": "Deadlock Avoidance",
+          "learn": "Deadlock avoidance dynamically decides whether resource allocation leaves the system in a safe state. The notes use Banker's Algorithm for multiple resource instances.",
+          "example": "A resource request is granted only when the resulting state is safe.",
+          "keyPoints": [
+            "Checks system safety before granting resources.",
+            "Banker's Algorithm is used for multiple resource instances.",
+            "Requires knowledge of maximum resource demand."
+          ]
+        },
+        {
+          "id": "deadlock-detection-recovery",
+          "title": "Deadlock Detection and Recovery",
+          "learn": "In this approach deadlock is allowed to occur and the system periodically detects it and then recovers by terminating processes or preempting resources and rolling back.",
+          "example": "The notes mention RAG for single-instance resources and Banker's-style analysis for multiple instances.",
+          "keyPoints": [
+            "Deadlock can occur before detection.",
+            "Detection is performed periodically.",
+            "Recovery can terminate processes.",
+            "Recovery can preempt resources and roll back."
+          ]
+        },
+        {
+          "id": "ostrich-algorithm",
+          "title": "Ignore the Problem / Ostrich Algorithm",
+          "learn": "The notes describe the Ostrich Algorithm as doing nothing and assuming deadlock will not happen. It can be used when deadlocks are very rare and prevention or detection overhead is not justified.",
+          "example": "The notes mention Windows or Linux as examples where very rare deadlocks may be tolerated rather than continuously handled with expensive mechanisms.",
+          "keyPoints": [
+            "Simple approach.",
+            "No prevention or detection overhead.",
+            "Deadlock can still cause serious issues when it occurs."
+          ]
+        },
+        {
+          "id": "bankers-algorithm",
+          "title": "Banker's Algorithm",
+          "learn": "Banker's Algorithm is a resource allocation and deadlock avoidance algorithm for systems with multiple instances of resources. It tries to keep the system in a safe state.",
+          "example": "Need = Max - Allocation. The algorithm checks whether remaining resource needs can be satisfied in a safe sequence.",
+          "keyPoints": [
+            "Uses Available, Max, Allocation and Need.",
+            "Need = Max - Allocation.",
+            "Uses a safety check.",
+            "A safe state has a sequence in which all processes can finish.",
+            "Resource requests are evaluated before actual allocation."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "inter-process-communication",
+      "number": 6,
+      "title": "Inter-process Communication",
+      "topics": [
+        {
+          "id": "ipc-overview",
+          "title": "What is IPC?",
+          "learn": "Inter-process communication is used when two or more processes on the same or different computers need to exchange data or coordinate.",
+          "example": "A client process can request a service from a server process using IPC.",
+          "keyPoints": [
+            "IPC enables process communication.",
+            "Can happen on the same machine.",
+            "Can happen across different machines."
+          ]
+        },
+        {
+          "id": "ipc-use-cases",
+          "title": "Where is IPC Used?",
+          "learn": "The notes mention client-server communication, component-based applications, parallel processing, data synchronization and transaction systems as IPC use cases.",
+          "example": "Parallel processes can use IPC to exchange intermediate results while working on different parts of a larger task.",
+          "keyPoints": [
+            "Client-server communication.",
+            "Component-based applications.",
+            "Parallel processing.",
+            "Data synchronization.",
+            "Transaction systems."
+          ]
+        },
+        {
+          "id": "message-passing",
+          "title": "Message Passing",
+          "learn": "In message passing, processes send and receive structured messages. No shared memory is required.",
+          "example": "Two processes can exchange requests and responses through messages rather than writing to the same memory.",
+          "keyPoints": [
+            "No shared memory is required.",
+            "Simple to implement.",
+            "Can work across machines.",
+            "Useful in client-server and distributed systems."
+          ]
+        },
+        {
+          "id": "shared-memory-ipc",
+          "title": "Shared Memory",
+          "learn": "In shared memory, processes share a region of memory that they can read and write. The notes describe it as fast but requiring synchronization.",
+          "example": "A shared buffer can allow processes to exchange high-volume data quickly.",
+          "keyPoints": [
+            "Processes share a memory region.",
+            "Fast communication.",
+            "Synchronization is required.",
+            "Useful for high-performance workloads."
+          ]
+        },
+        {
+          "id": "pipes",
+          "title": "Pipes and FIFOs",
+          "learn": "Pipes usually provide one-way communication between related processes. FIFOs or named pipes can be used between unrelated processes.",
+          "example": "The notes use shell command chaining such as ls | grep txt as a pipe example.",
+          "keyPoints": [
+            "Pipes are generally unidirectional.",
+            "FIFOs are named pipes.",
+            "Two pipes can be used for two-way communication.",
+            "Useful for shell command chaining."
+          ]
+        },
+        {
+          "id": "sockets",
+          "title": "Sockets",
+          "learn": "Sockets allow processes on the same or different machines to communicate over a network. The notes mention TCP and UDP sockets.",
+          "example": "Web servers, chat applications and multiplayer games can use sockets for communication.",
+          "keyPoints": [
+            "Can communicate across networks.",
+            "TCP provides reliable connection-oriented communication.",
+            "UDP is faster but provides no delivery guarantee.",
+            "Sockets support full-duplex communication."
+          ]
+        },
+        {
+          "id": "signals",
+          "title": "Signals",
+          "learn": "A signal is a notification sent by the OS to a process to inform it that an event occurred.",
+          "example": "A signal can be used to request graceful shutdown or handle an alarm event.",
+          "keyPoints": [
+            "Signals are notifications.",
+            "They are asynchronous.",
+            "Information carried is limited.",
+            "Some signals can be handled or ignored depending on the signal."
+          ]
+        },
+        {
+          "id": "message-queues",
+          "title": "Message Queues",
+          "learn": "A message queue is a buffer where processes can store and retrieve messages. The notes describe FIFO ordering and the ability to send priority messages.",
+          "example": "Task queues and print spoolers can use message queues to manage work in order.",
+          "keyPoints": [
+            "Messages are stored in a queue.",
+            "FIFO ordering is supported.",
+            "Priority messages can be supported.",
+            "Useful for task queues and similar systems."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "memory-management",
+      "number": 7,
+      "title": "Memory Management",
+      "topics": [
+        {
+          "id": "memory-hierarchy",
+          "title": "Memory Hierarchy",
+          "learn": "Memory hierarchy arranges memory devices such as registers, cache and main memory according to performance, access time and cost per bit.",
+          "example": "Registers are faster and more expensive per bit than larger forms of memory, so systems use different levels to balance performance and cost.",
+          "keyPoints": [
+            "Includes registers, cache and main memory.",
+            "Balances access time, performance and cost.",
+            "Helps system design decisions."
+          ]
+        },
+        {
+          "id": "memory-management-basics",
+          "title": "What is Memory Management?",
+          "learn": "Memory management is how the OS organizes and controls system memory. It allocates memory to processes, tracks used and free space, ensures isolation and supports multitasking and virtual memory.",
+          "example": "When a process terminates, the OS can reclaim its allocated memory for another process.",
+          "keyPoints": [
+            "Allocates memory.",
+            "Reclaims memory.",
+            "Tracks used and free memory.",
+            "Provides isolation.",
+            "Supports multitasking and virtual memory."
+          ]
+        },
+        {
+          "id": "mmu",
+          "title": "Memory Management Unit",
+          "learn": "The Memory Management Unit is a hardware component that translates logical or virtual addresses generated by the CPU into physical addresses used in RAM. It also supports protection and access control.",
+          "example": "The MMU translates a process address into a corresponding physical RAM location.",
+          "keyPoints": [
+            "Performs address translation.",
+            "Provides memory protection.",
+            "Controls read, write and execute permissions.",
+            "Supports paging and segmentation."
+          ]
+        },
+        {
+          "id": "logical-physical-address",
+          "title": "Logical and Physical Address",
+          "learn": "A logical address is generated by the CPU during program execution, while a physical address is the actual address in main memory. Translation is performed by the MMU.",
+          "example": "A logical address generated by the CPU can be translated into a different physical RAM address.",
+          "keyPoints": [
+            "Logical address is generated by the CPU.",
+            "Physical address refers to RAM.",
+            "MMU performs translation."
+          ]
+        },
+        {
+          "id": "swapping",
+          "title": "Swapping",
+          "learn": "Swapping moves inactive processes to disk or swap space to free RAM and brings them back when needed.",
+          "example": "If RAM is limited, an inactive process can be moved to swap space so memory can be used by another process.",
+          "keyPoints": [
+            "Moves inactive processes out of RAM.",
+            "Frees memory.",
+            "Disk access makes swapping slower.",
+            "Supports multitasking."
+          ]
+        },
+        {
+          "id": "memory-protection",
+          "title": "Memory Isolation and Protection",
+          "learn": "The OS gives processes separate virtual address spaces and uses the MMU, access permissions and user/kernel modes to prevent illegal memory access.",
+          "example": "A process cannot normally access another process's protected memory because the OS enforces memory boundaries.",
+          "keyPoints": [
+            "Each process has a protected address space.",
+            "MMU enforces memory boundaries.",
+            "Pages can have read, write and execute permissions.",
+            "User and kernel modes add protection."
+          ]
+        },
+        {
+          "id": "fragmentation",
+          "title": "Internal and External Fragmentation",
+          "learn": "Fragmentation occurs when memory is wasted or cannot be used efficiently. Internal fragmentation is wasted space inside allocated blocks, while external fragmentation is wasted space between allocated blocks.",
+          "example": "A process using only 6 KB of an allocated 8 KB block creates 2 KB of internal fragmentation.",
+          "keyPoints": [
+            "Internal fragmentation occurs inside allocated blocks.",
+            "External fragmentation occurs between allocated blocks.",
+            "Compaction or paging can reduce external fragmentation."
+          ]
+        },
+        {
+          "id": "contiguous-memory",
+          "title": "Contiguous Memory Allocation",
+          "learn": "In contiguous memory allocation each process receives one continuous block of memory. The notes describe Fixed Partitioning and Variable Partitioning.",
+          "example": "In fixed partitioning, memory is divided into fixed-size partitions before processes are assigned.",
+          "keyPoints": [
+            "Fixed Partitioning uses fixed-size partitions.",
+            "Variable Partitioning creates partitions based on process size.",
+            "Fixed partitioning can cause internal fragmentation.",
+            "Variable partitioning can cause external fragmentation."
+          ]
+        },
+        {
+          "id": "non-contiguous-memory",
+          "title": "Non-Contiguous Memory Allocation",
+          "learn": "In non-contiguous allocation a process does not need to occupy one continuous memory region. The notes cover Paging, Multilevel Paging, Inverted Paging, Segmentation and Segmented Paging.",
+          "example": "Pages of one process can be placed into different physical frames instead of one continuous area.",
+          "keyPoints": [
+            "Supports more flexible memory placement.",
+            "Paging divides processes into pages and memory into frames.",
+            "Segmentation divides processes into logical segments."
+          ]
+        },
+        {
+          "id": "paging",
+          "title": "Paging",
+          "learn": "Paging divides physical memory into fixed-size frames and a process into pages of the same size. A page table maps pages to frames.",
+          "example": "Page 0 can map to one physical frame while page 1 maps to another frame.",
+          "keyPoints": [
+            "Pages are logical memory units.",
+            "Frames are physical memory units.",
+            "Page table maps pages to frames.",
+            "Avoids external fragmentation."
+          ]
+        },
+        {
+          "id": "multilevel-paging",
+          "title": "Multilevel Paging",
+          "learn": "Multilevel paging splits a large page table into multiple levels so a first-level table points to lower-level page tables.",
+          "example": "A first-level page table entry can point to a second-level page table containing more detailed mappings.",
+          "keyPoints": [
+            "Uses multiple page-table levels.",
+            "Can reduce page-table memory requirements.",
+            "Supports large address spaces.",
+            "Adds additional lookup overhead."
+          ]
+        },
+        {
+          "id": "inverted-page-table",
+          "title": "Inverted Paging",
+          "learn": "Inverted paging uses one global page table for the entire system. Each entry corresponds to a physical frame and stores information such as process ID and page number.",
+          "example": "Instead of having one page table per process, the system maintains one structure associated with physical frames.",
+          "keyPoints": [
+            "One global page table.",
+            "Entries correspond to physical frames.",
+            "Can save memory.",
+            "Address translation can be more complex."
+          ]
+        },
+        {
+          "id": "segmentation",
+          "title": "Segmentation",
+          "learn": "Segmentation divides a process into logical segments such as code, stack, heap and data. A segment table maps segments using base and limit information.",
+          "example": "The code and stack of a process can be treated as separate logical segments with their own protection.",
+          "keyPoints": [
+            "Uses logical segments.",
+            "Each segment has base and limit.",
+            "Supports logical organization and protection.",
+            "Can suffer external fragmentation."
+          ]
+        },
+        {
+          "id": "segmented-paging",
+          "title": "Segmented Paging",
+          "learn": "Segmented paging combines segmentation and paging. A process is divided into segments and each segment is further divided into pages.",
+          "example": "A code segment can contain multiple pages while a stack segment can contain a different group of pages.",
+          "keyPoints": [
+            "Combines segmentation and paging.",
+            "Uses a segment table and page tables.",
+            "Provides logical organization with paging-based memory use.",
+            "Address translation is more complex."
+          ]
+        },
+        {
+          "id": "allocation-strategies",
+          "title": "Contiguous Allocation Strategies",
+          "learn": "The four allocation methods in the notes are First Fit, Next Fit, Best Fit and Worst Fit.",
+          "example": "First Fit allocates the first free block large enough for the process, while Best Fit chooses the smallest suitable block.",
+          "keyPoints": [
+            "First Fit searches from the beginning.",
+            "Next Fit continues searching from the last allocation point.",
+            "Best Fit chooses the smallest suitable block.",
+            "Worst Fit chooses the largest suitable block."
+          ]
+        },
+        {
+          "id": "virtual-memory",
+          "title": "Virtual Memory",
+          "learn": "Virtual Memory is a memory management technique that makes a computer appear to have more memory than physically available by using disk space as additional memory.",
+          "example": "A large program can run even when the physical RAM is smaller than the program's total memory requirement.",
+          "keyPoints": [
+            "Allows large programs to run with limited physical RAM.",
+            "Moves data between RAM and disk as required.",
+            "Supports process isolation.",
+            "Disk access is slower than RAM."
+          ]
+        },
+        {
+          "id": "demand-paging",
+          "title": "Demand Paging",
+          "learn": "In demand paging, pages are loaded into memory only when they are needed. If a required page is absent, a page fault occurs and the OS loads it from disk.",
+          "example": "A process starts with no pages loaded and brings a page into RAM when it first accesses that page.",
+          "keyPoints": [
+            "Pages load when needed.",
+            "Page faults occur when required pages are absent.",
+            "Saves memory.",
+            "Frequent page faults can be expensive."
+          ]
+        },
+        {
+          "id": "page-replacement",
+          "title": "Page Replacement Algorithms",
+          "learn": "The notes cover FIFO, LIFO, LRU, Optimal and Random page replacement.",
+          "example": "FIFO removes the oldest loaded page, while LRU removes the page that has not been used for the longest time.",
+          "keyPoints": [
+            "FIFO removes the oldest page.",
+            "LIFO removes the most recently loaded page.",
+            "LRU removes the least recently used page.",
+            "Optimal removes the page that will not be used for the longest time in the future.",
+            "Random chooses a page randomly."
+          ]
+        },
+        {
+          "id": "thrashing",
+          "title": "Thrashing",
+          "learn": "Thrashing occurs when the system spends more time swapping pages in and out than executing actual processes.",
+          "example": "Too many processes competing for insufficient RAM can generate frequent page faults and cause severe performance loss.",
+          "keyPoints": [
+            "Caused by insufficient memory and frequent page faults.",
+            "Reduces actual useful work.",
+            "Working set methods and lower multiprogramming can help."
+          ]
+        },
+        {
+          "id": "tlb",
+          "title": "Translation Lookaside Buffer",
+          "learn": "The TLB is a small fast cache used by the MMU to store recent logical-to-physical address translations.",
+          "example": "A TLB hit allows the MMU to obtain a recent translation quickly without reading the page table from memory.",
+          "keyPoints": [
+            "Stores recent address mappings.",
+            "TLB hit gives fast translation.",
+            "TLB miss requires a page-table lookup.",
+            "Improves address-translation performance."
+          ]
+        },
+        {
+          "id": "overlay",
+          "title": "Overlay",
+          "learn": "Overlay was historically used to run programs larger than available memory by dividing the program into mutually exclusive modules and loading only the needed module.",
+          "example": "One program module can occupy memory and later be replaced by another module when the second part is needed.",
+          "keyPoints": [
+            "Used before virtual memory became common.",
+            "Only required module is loaded.",
+            "Requires manual program design.",
+            "Rarely used today."
+          ]
+        },
+        {
+          "id": "caching",
+          "title": "Caching",
+          "learn": "Caching stores frequently accessed data in a faster memory so future requests can be served more quickly.",
+          "example": "CPU cache keeps frequently used data close to the CPU to reduce access time.",
+          "keyPoints": [
+            "Stores frequently accessed data.",
+            "Uses faster storage.",
+            "Improves repeated access performance."
+          ]
+        },
+        {
+          "id": "compaction",
+          "title": "Compaction",
+          "learn": "Compaction shifts allocated memory blocks together and combines scattered free spaces into one larger block to reduce external fragmentation.",
+          "example": "The OS can move allocated blocks together so several small free gaps become one large free region.",
+          "keyPoints": [
+            "Reduces external fragmentation.",
+            "Moves allocated memory blocks.",
+            "Can be time-consuming.",
+            "Requires relocation support."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "file-systems",
+      "number": 8,
+      "title": "File Systems",
+      "topics": [
+        {
+          "id": "file-system-basics",
+          "title": "What is a File System?",
+          "learn": "A file system organizes and manages how data is stored and retrieved on storage devices. Its functions include file creation and deletion, directory management, storage allocation and access control.",
+          "example": "NTFS, ext4, FAT32 and HFS+ are examples mentioned in the notes.",
+          "keyPoints": [
+            "Manages file storage and retrieval.",
+            "Supports directories.",
+            "Handles storage allocation.",
+            "Provides access control."
+          ]
+        },
+        {
+          "id": "file-system-advantages",
+          "title": "Advantages and Disadvantages of File Systems",
+          "learn": "The notes identify organization, access control, data sharing, recovery and efficient storage as advantages. Disadvantages include metadata overhead, fragmentation, complexity and performance bottlenecks.",
+          "example": "A file system can enforce permissions while also adding metadata that consumes storage space.",
+          "keyPoints": [
+            "Organizes files and directories.",
+            "Provides permissions.",
+            "Supports data recovery.",
+            "Can introduce metadata overhead.",
+            "Fragmentation can reduce performance."
+          ]
+        },
+        {
+          "id": "file-system-properties",
+          "title": "Properties of a File System",
+          "learn": "The notes list persistence, security, scalability, efficiency and reliability as properties of a file system.",
+          "example": "A reliable file system should protect stored data and support recovery from failures.",
+          "keyPoints": [
+            "Persistence.",
+            "Security.",
+            "Scalability.",
+            "Efficiency.",
+            "Reliability."
+          ]
+        },
+        {
+          "id": "file-attributes",
+          "title": "File Attributes",
+          "learn": "File attributes are metadata describing a file. The notes include name, type, size, location, timestamps, permissions and owner.",
+          "example": "A file may have read, write and execute permissions and timestamps showing when it was created or modified.",
+          "keyPoints": [
+            "Name.",
+            "Type.",
+            "Size.",
+            "Location.",
+            "Timestamps.",
+            "Permissions.",
+            "Owner."
+          ]
+        },
+        {
+          "id": "file-system-terms",
+          "title": "Common File System Terms",
+          "learn": "The notes define File Descriptor, Metadata, Mounting, Pathname and Inode as common file-system terms.",
+          "example": "In UNIX, an inode stores file attributes and pointers to disk blocks.",
+          "keyPoints": [
+            "File Descriptor identifies a file for OS access.",
+            "Metadata is data about data.",
+            "Mounting makes a file system accessible.",
+            "Pathname identifies file location.",
+            "Inode stores UNIX file metadata and block pointers."
+          ]
+        },
+        {
+          "id": "file-access-methods",
+          "title": "File Access Methods",
+          "learn": "The notes describe Sequential Access, Direct Access and Indexed Access.",
+          "example": "Sequential access is suitable when data is read in order, while direct access can jump to a selected block.",
+          "keyPoints": [
+            "Sequential Access reads data in order.",
+            "Direct Access can jump to a block.",
+            "Indexed Access uses an index to locate blocks."
+          ]
+        },
+        {
+          "id": "directory-structures",
+          "title": "Directory Structures",
+          "learn": "The notes cover Single-Level Directory, Two-Level Directory, Tree Structure and Acyclic Graph (DAG).",
+          "example": "A tree structure allows directories to contain subdirectories, creating a hierarchical organization.",
+          "keyPoints": [
+            "Single-Level Directory contains all files in one directory.",
+            "Two-Level Directory separates users.",
+            "Tree Structure supports hierarchical directories.",
+            "DAG allows shared files or directories."
+          ]
+        },
+        {
+          "id": "file-types",
+          "title": "File Types",
+          "learn": "The notes mention Text Files, Binary Files, Directories and Special Files.",
+          "example": "A text file such as .txt is human-readable, while a binary file such as .exe is machine-readable.",
+          "keyPoints": [
+            "Text Files.",
+            "Binary Files.",
+            "Directories.",
+            "Special Files."
+          ]
+        },
+        {
+          "id": "file-allocation",
+          "title": "File Allocation Methods",
+          "learn": "The three major allocation methods in the notes are Contiguous Allocation, Linked Allocation and Indexed Allocation.",
+          "example": "In contiguous allocation, a file needing five blocks can occupy five adjacent blocks such as 10–14.",
+          "keyPoints": [
+            "Contiguous Allocation stores adjacent blocks.",
+            "Linked Allocation links file blocks.",
+            "Indexed Allocation uses a separate index block.",
+            "Each method has different access, fragmentation and overhead characteristics."
+          ]
+        },
+        {
+          "id": "contiguous-linked-indexed",
+          "title": "Contiguous, Linked and Indexed Allocation",
+          "learn": "Contiguous allocation provides fast access but can cause external fragmentation. Linked allocation avoids external fragmentation but makes random access slower. Indexed allocation supports direct access using an index block.",
+          "example": "A linked file may be represented as Block 7 → Block 12 → Block 3 → null, while indexed allocation can use an index block containing addresses such as 5, 9, 13 and 18.",
+          "keyPoints": [
+            "Contiguous: fast access, difficult growth.",
+            "Linked: easy growth, slower direct access.",
+            "Indexed: direct access, requires index storage."
+          ]
+        },
+        {
+          "id": "free-space-management",
+          "title": "Free Space Management",
+          "learn": "The notes describe Bitmaps, Free Lists, Grouping and Counting as free-space management techniques.",
+          "example": "In a bitmap, one bit corresponds to one disk block and indicates whether the block is allocated or free.",
+          "keyPoints": [
+            "Bitmap or bit vector.",
+            "Free List.",
+            "Grouping.",
+            "Counting."
+          ]
+        },
+        {
+          "id": "file-system-mounting",
+          "title": "File System Mounting",
+          "learn": "Mounting is the process of making a file system accessible to the OS. The mount point is the directory where the new file system is attached.",
+          "example": "A USB file system can be mounted under a directory such as /media/usb.",
+          "keyPoints": [
+            "Mounting attaches a file system.",
+            "Mount point is the attachment directory.",
+            "The OS verifies the file-system type.",
+            "Mount information is updated by the OS."
+          ]
+        },
+        {
+          "id": "ufs",
+          "title": "Unix File System",
+          "learn": "The notes describe UFS as a foundational UNIX file system with Boot Block, Superblock, Inode Table and Data Blocks.",
+          "example": "The inode stores file metadata while data blocks contain the actual file contents.",
+          "keyPoints": [
+            "Boot Block contains bootloader information.",
+            "Superblock contains file-system metadata.",
+            "Inode Table stores file metadata.",
+            "Data Blocks contain actual file contents.",
+            "Supports hierarchical directories and permissions."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "disk-management",
+      "number": 9,
+      "title": "Disk Management",
+      "topics": [
+        {
+          "id": "disk-management-basics",
+          "title": "What is Disk Management?",
+          "learn": "Disk Management is an OS function responsible for controlling the use of disk storage, including space allocation, formatting, partitioning and file-system handling.",
+          "example": "The OS can partition a physical disk and format a partition before files are stored on it.",
+          "keyPoints": [
+            "Manages disk storage.",
+            "Handles partitioning.",
+            "Handles formatting.",
+            "Coordinates disk read/write activity.",
+            "Helps prevent data loss and corruption."
+          ]
+        },
+        {
+          "id": "disk-structure",
+          "title": "Structure of a Disk",
+          "learn": "The notes describe platters, spindle, read/write heads, actuator arm, tracks, sectors, cylinders, disk blocks and cache.",
+          "example": "A track is divided into sectors, while a cylinder is formed by tracks aligned at the same radius across platter surfaces.",
+          "keyPoints": [
+            "Platters store magnetic data.",
+            "Spindle rotates the platters.",
+            "Read/write heads access platter surfaces.",
+            "Actuator arm moves the heads.",
+            "Tracks are concentric circles.",
+            "Sectors divide tracks.",
+            "Cylinders align tracks across platters.",
+            "Disk blocks are logical units managed by the file system.",
+            "Cache temporarily stores frequently used data."
+          ]
+        },
+        {
+          "id": "disk-management-functions",
+          "title": "Functions of Disk Management",
+          "learn": "The notes list partitioning, formatting, file-system management, space allocation, disk scheduling, defragmentation and error checking.",
+          "example": "Disk scheduling can reorder pending I/O requests to reduce unnecessary head movement.",
+          "keyPoints": [
+            "Partitioning.",
+            "Formatting.",
+            "File-System Management.",
+            "Space Allocation.",
+            "Disk Scheduling.",
+            "Defragmentation.",
+            "Error Checking."
+          ]
+        },
+        {
+          "id": "disk-scheduling-terminology",
+          "title": "Disk Scheduling Terminology",
+          "learn": "Important terms include Seek Time, Rotational Latency, Transfer Time, Access Time, Request Queue, Starvation, Fairness, Direction Bit and Head Start Position.",
+          "example": "Access Time = Seek Time + Rotational Latency + Transfer Time.",
+          "keyPoints": [
+            "Seek Time = time to move the head to the required track.",
+            "Rotational Latency = time for the required sector to rotate under the head.",
+            "Transfer Time = time to transfer data.",
+            "Access Time = Seek Time + Rotational Latency + Transfer Time.",
+            "Request Queue contains pending I/O requests.",
+            "SSTF can cause starvation.",
+            "SCAN, LOOK, C-SCAN and C-LOOK use movement direction."
+          ]
+        },
+        {
+          "id": "fcfs-disk",
+          "title": "FCFS Disk Scheduling",
+          "learn": "FCFS services disk requests in the order they arrive. The notes describe it as simple and fair but with potentially high total seek time.",
+          "example": "For head position 50 and requests 82, 170, 43, 140, 24, 16 and 190, FCFS follows that same request order.",
+          "keyPoints": [
+            "Services requests in arrival order.",
+            "Simple.",
+            "Fair by arrival order.",
+            "Can have high total seek time."
+          ]
+        },
+        {
+          "id": "sstf-disk",
+          "title": "SSTF Disk Scheduling",
+          "learn": "SSTF selects the request closest to the current disk-head position.",
+          "example": "With the head at 50, a request at 43 is closer than one at 170, so 43 can be selected first.",
+          "keyPoints": [
+            "Chooses the closest request.",
+            "Can reduce average seek time.",
+            "Far requests may starve."
+          ]
+        },
+        {
+          "id": "scan-disk",
+          "title": "SCAN Disk Scheduling",
+          "learn": "SCAN moves the disk head in one direction while servicing requests, then reverses direction. It is also called the Elevator Algorithm.",
+          "example": "The head can move toward higher track numbers servicing requests and then reverse toward lower tracks.",
+          "keyPoints": [
+            "Moves in one direction.",
+            "Services requests along the way.",
+            "Reverses direction.",
+            "Provides more uniform waiting than SSTF."
+          ]
+        },
+        {
+          "id": "cscan-disk",
+          "title": "C-SCAN Disk Scheduling",
+          "learn": "C-SCAN moves the disk head in one direction only. After reaching the end, it jumps to the beginning and continues servicing requests.",
+          "example": "After reaching the highest required track, the head returns to the start without servicing requests during the jump.",
+          "keyPoints": [
+            "Services in one direction.",
+            "Jumps back to the start.",
+            "Provides more uniform waiting time.",
+            "Can involve longer travel distance."
+          ]
+        },
+        {
+          "id": "look-disk",
+          "title": "LOOK Disk Scheduling",
+          "learn": "LOOK is similar to SCAN but the disk head reverses when there are no more requests in the current direction rather than continuing to the physical end of the disk.",
+          "example": "If the highest pending request is 190, the head need not travel beyond it before reversing.",
+          "keyPoints": [
+            "Similar to SCAN.",
+            "Stops at the last request.",
+            "Avoids unnecessary movement."
+          ]
+        },
+        {
+          "id": "clook-disk",
+          "title": "C-LOOK Disk Scheduling",
+          "learn": "C-LOOK is similar to C-SCAN but only moves as far as the last request before jumping back to the lowest pending request.",
+          "example": "After servicing the largest request, the head jumps to the lowest pending request rather than travelling to the physical end of the disk.",
+          "keyPoints": [
+            "Similar to C-SCAN.",
+            "Only goes as far as the last request.",
+            "Jumps to the lowest pending request.",
+            "Can be more efficient than C-SCAN."
+          ]
+        }
+      ]
+    }
+  ]
+}

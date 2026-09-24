@@ -1,0 +1,298 @@
+﻿import { auth, db } from "../firebase/firebase-config.js";
+import {
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import {
+  doc,
+  getDoc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const params = new URLSearchParams(window.location.search);
+const chapterId = params.get("chapter");
+
+const title = document.getElementById("assessmentTitle");
+const description = document.getElementById("assessmentDescription");
+const questionContainer = document.getElementById("questionContainer");
+const submitBtn = document.getElementById("submitBtn");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const resultCard = document.getElementById("resultCard");
+const resultTitle = document.getElementById("resultTitle");
+const resultMessage = document.getElementById("resultMessage");
+const resultScore = document.getElementById("resultScore");
+const resultIcon = document.getElementById("resultIcon");
+const correctCount = document.getElementById("correctCount");
+const wrongCount = document.getElementById("wrongCount");
+const totalCount = document.getElementById("totalCount");
+const retryBtn = document.getElementById("retryBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+let user = null;
+let curriculum = null;
+let chapter = null;
+let questions = [];
+
+const questionBanks = {
+  "os-introduction": [
+    ["What is the primary role of an Operating System?", ["Interface between user and hardware","Only a compiler","Only a browser","Only a database"],0],
+    ["Which OS type processes groups of jobs without direct interaction during execution?",["Batch OS","Time Sharing OS","Real Time OS","Distributed OS"],0],
+    ["Which mode has privileged access to hardware resources?",["User mode","Kernel mode","Browser mode","Application mode"],1],
+    ["A process is:",["A program under execution","A file extension","A folder","A database"],0],
+    ["Which OS type keeps multiple jobs in memory to improve CPU utilization?",["Multiprogramming","Batch","Single-user","Offline"],0],
+    ["Real-time systems are designed to:",["Meet required timing deadlines","Avoid all memory use","Only run browsers","Only store files"],0]
+  ],
+  "process-management": [
+    ["What does PCB stand for?",["Process Control Block","Program Cache Buffer","Process Code Bus","Program Control Board"],0],
+    ["The Program Counter stores:",["Address of the next instruction","Disk size","File name","User password"],0],
+    ["A running process is:",["Currently using the CPU","Waiting for input","Already terminated","Being created"],0],
+    ["A process waiting for I/O is commonly in:",["Waiting/Blocked state","Running state","New state","Terminated state"],0],
+    ["Which activity is part of process management?",["Process creation and scheduling","CSS rendering","Image compression","Web styling"],0],
+    ["Ready state means a process is:",["Waiting for CPU time","Finished forever","Deleted","Running on disk"],0]
+  ],
+  "cpu-scheduling": [
+    ["CPU scheduling selects:",["Which ready process runs next","Which file is deleted","Which user logs in","Which disk is formatted"],0],
+    ["Which is non-preemptive?",["A process keeps CPU until completion/blocking","CPU is always forcibly removed","Only high priority runs","No scheduling happens"],0],
+    ["Which scheduling algorithm uses a time quantum?",["Round Robin","FCFS","SJF only","FIFO disk scheduling"],0],
+    ["FCFS schedules according to:",["Arrival order","File size","Priority only","Memory size"],0],
+    ["A major goal of scheduling is to:",["Reduce waiting and response time","Increase starvation","Keep CPU idle","Delete processes"],0],
+    ["Preemptive scheduling can improve:",["Responsiveness","Disk capacity","File permissions","Database indexing"],0]
+  ],
+  "process-synchronization": [
+    ["A critical section is where:",["Shared resources are accessed","A file is compiled","A disk is formatted","A process is deleted"],0],
+    ["A race condition depends on:",["Timing of concurrent access","Screen size","Disk brand","Keyboard layout"],0],
+    ["Which is a critical section requirement?",["Mutual exclusion","Data deletion","File mounting","Disk formatting"],0],
+    ["A mutex provides:",["Exclusive access","Multiple CPUs","Disk storage","Network routing"],0],
+    ["A binary semaphore generally uses:",["0 and 1","1 and 2","2 and 3","Any string"],0],
+    ["Producer-Consumer commonly uses a:",["Shared buffer","Kernel file","Disk partition","CPU cache only"],0]
+  ],
+  "deadlock": [
+    ["Which is a necessary condition for deadlock?",["Circular wait","Sorting","Caching","Compilation"],0],
+    ["P â†’ R in a Resource Allocation Graph means:",["Process requests resource","Resource requests process","Process terminates","Resource is released"],0],
+    ["Which algorithm is associated with deadlock avoidance?",["Banker's Algorithm","Round Robin","FCFS","SCAN"],0],
+    ["Deadlock prevention attempts to:",["Break at least one necessary condition","Increase circular wait","Remove all CPU scheduling","Delete memory"],0],
+    ["Detection and recovery means:",["Allow deadlock, detect it and recover","Never detect anything","Disable the OS","Only increase RAM"],0],
+    ["R â†’ P in a Resource Allocation Graph means:",["Resource is assigned to process","Process requests resource","Process is terminated","Disk is mounted"],0]
+  ],
+  "ipc": [
+    ["IPC stands for:",["Inter-process Communication","Internal Program Cache","Input Process Controller","Internet Program Compiler"],0],
+    ["Message passing communicates using:",["Structured messages","Shared files only","Disk blocks","Keyboard events"],0],
+    ["Shared memory requires:",["Synchronization to avoid clashes","No OS support","No memory","Only a browser"],0],
+    ["IPC is useful for:",["Client-server communication","CSS styling","Image editing","Font selection"],0],
+    ["Which IPC approach can work across machines?",["Message passing","Only local shared memory","CPU registers","Screen sharing"],0],
+    ["Shared memory can be fast because:",["There is no message-copying overhead in the shared region","It uses no RAM","It removes the CPU","It deletes all synchronization"],0]
+  ],
+  "memory-management": [
+    ["Internal fragmentation is wasted space:",["Inside allocated blocks","Only on disk","Between networks","Inside files"],0],
+    ["External fragmentation is wasted space:",["Between allocated blocks","Inside one allocated block","Inside the CPU","In the browser"],0],
+    ["Variable partitioning can cause:",["External fragmentation","Only internal fragmentation","No fragmentation","Network fragmentation"],0],
+    ["Fixed partitioning can cause:",["Internal fragmentation","No memory waste","Only file fragmentation","Only CPU fragmentation"],0],
+    ["Paging uses:",["Pages and frames","Only partitions","Only files","Only registers"],0],
+    ["Compaction is mainly used to reduce:",["External fragmentation","CPU starvation","Disk rotation","Race conditions"],0]
+  ],
+  "file-systems": [
+    ["Which method uses a bit per disk block?",["Bitmap","Queue","Stack","Hash table"],0],
+    ["A free list stores:",["Linked free blocks","CPU instructions","User passwords","Only file names"],0],
+    ["Mounting a file system makes it:",["Accessible to the OS","Invisible to the OS","A CPU process","A database query"],0],
+    ["A mount point is:",["Directory where a file system is attached","A CPU register","A process state","A scheduling algorithm"],0],
+    ["In UFS, the inode stores:",["File metadata","Only file contents","Only boot code","Only directory names"],0],
+    ["In UFS, data blocks contain:",["Actual file contents","Only permissions","Only bootloader code","Only file-system type"],0]
+  ],
+  "disk-management": [
+    ["Disk scheduling determines:",["Order of servicing disk requests","Order of user logins","Order of source files","Order of CSS rules"],0],
+    ["FCFS disk scheduling serves requests:",["In arrival order","By closest distance","By highest priority only","Randomly"],0],
+    ["SSTF chooses the request with:",["Shortest seek distance","Longest seek distance","Largest file size","Highest CPU priority"],0],
+    ["SCAN is often compared to:",["An elevator movement pattern","A queue stack","A memory page","A compiler"],0],
+    ["Seek time is related to:",["Moving the disk head to the required position","Reading keyboard input","Creating a process","Loading CSS"],0],
+    ["Rotational delay is waiting for:",["The required sector to rotate under the head","A process to terminate","A file to mount","The CPU to cool"],0]
+  ]
+};
+
+function renderQuestions() {
+  questionContainer.innerHTML = "";
+
+  questions.forEach((q, index) => {
+    const card = document.createElement("div");
+    card.className = "question";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = `${index + 1}. ${q[0]}`;
+    card.appendChild(h3);
+
+    q[1].forEach((option, optionIndex) => {
+      const label = document.createElement("label");
+      label.className = "option";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `q${index}`;
+      input.value = optionIndex;
+
+      input.addEventListener("change", updateProgress);
+
+      const span = document.createElement("span");
+      span.textContent = option;
+
+      label.appendChild(input);
+      label.appendChild(span);
+      card.appendChild(label);
+    });
+
+    questionContainer.appendChild(card);
+  });
+
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = questions.filter((_, index) =>
+    document.querySelector(`input[name="q${index}"]:checked`)
+  ).length;
+
+  const value = Math.round(
+    (answered / questions.length) * 100
+  );
+
+  progressText.textContent = `${value}%`;
+  progressFill.style.width = `${value}%`;
+}
+
+async function saveResult(score, correct, total, passed) {
+  const ref = doc(db, "users", user.uid);
+  const snap = await getDoc(ref);
+  const data = snap.exists() ? snap.data() : {};
+
+  const osProgress = data.osProgress || {};
+  const assessments = osProgress.assessments || {};
+  const completedChapters =
+    osProgress.completedChapters || {};
+
+  assessments[chapter.id] = {
+    score,
+    correct,
+    total,
+    passed,
+    completedAt: new Date().toISOString()
+  };
+
+  if (passed) {
+    completedChapters[chapter.id] = true;
+  }
+
+  await setDoc(
+    ref,
+    {
+      osProgress: {
+        ...osProgress,
+        assessments,
+        completedChapters
+      }
+    },
+    { merge: true }
+  );
+}
+
+submitBtn.addEventListener("click", async () => {
+  const answers = questions.map((_, index) => {
+    const selected =
+      document.querySelector(`input[name="q${index}"]:checked`);
+    return selected ? Number(selected.value) : null;
+  });
+
+  if (answers.some(answer => answer === null)) {
+    alert("Please answer all questions before submitting.");
+    return;
+  }
+
+  let correct = 0;
+
+  answers.forEach((answer, index) => {
+    if (answer === questions[index][2]) {
+      correct++;
+    }
+  });
+
+  const total = questions.length;
+  const score = Math.round((correct / total) * 100);
+  const passed = score >= 75;
+
+  await saveResult(score, correct, total, passed);
+
+  resultCard.hidden = false;
+  submitBtn.disabled = true;
+
+  resultScore.textContent = `${score}%`;
+  correctCount.textContent = correct;
+  wrongCount.textContent = total - correct;
+  totalCount.textContent = total;
+
+  if (passed) {
+    resultIcon.textContent = "ðŸŽ‰";
+    resultTitle.textContent = "Chapter Passed";
+    resultMessage.textContent =
+      "You reached the 75% passing score. The chapter has been marked complete.";
+  } else {
+    resultIcon.textContent = "ðŸ“š";
+    resultTitle.textContent = "Keep Practicing";
+    resultMessage.textContent =
+      "You need at least 75% to pass. Review the chapter and retry.";
+  }
+
+  resultCard.scrollIntoView({ behavior: "smooth" });
+});
+
+retryBtn.addEventListener("click", () => {
+  resultCard.hidden = true;
+  submitBtn.disabled = false;
+  renderQuestions();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+  window.location.href = "login.html";
+});
+
+onAuthStateChanged(auth, async currentUser => {
+  if (!currentUser) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  user = currentUser;
+
+  try {
+    const response = await fetch("../data/os-curriculum.json", {
+      cache: "no-store"
+    });
+
+    const data = await response.json();
+    curriculum = data;
+
+    chapter =
+      curriculum.chapters.find(c => c.id === chapterId) ||
+      curriculum.chapters[0];
+
+    questions =
+      questionBanks[chapter.id] ||
+      [];
+
+    title.textContent =
+      `Chapter ${chapter.number}: ${chapter.title}`;
+
+    description.textContent =
+      `Assessment for ${chapter.title}. Passing score: 75%.`;
+
+    if (!questions.length) {
+      throw new Error("No questions are available for this chapter.");
+    }
+
+    renderQuestions();
+
+  } catch (error) {
+    console.error(error);
+    questionContainer.innerHTML =
+      `<div class="question"><h3>Assessment could not load</h3><p>${error.message}</p></div>`;
+  }
+});

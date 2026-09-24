@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Scope Resolution & this Pointer Assessment | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+
+  <!-- Subtle professional UI enhancements -->
+  <style>
+    .assessment-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .result-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .result-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="assessment-page">
+
+    <section class="assessment-card">
+
+      <div class="assessment-header">
+        <div>
+          <span class="assessment-badge">
+            Object-Oriented Programming
+          </span>
+
+          <h1>
+            Scope Resolution & this Pointer
+          </h1>
+
+          <p>
+            Chapter 8 · 10 Questions · Pass Mark: 75%
+          </p>
+        </div>
+      </div>
+
+      <div id="loadingState" class="assessment-status">
+        Loading assessment...
+      </div>
+
+      <form id="assessmentForm" class="assessment-form hidden"></form>
+
+      <div id="resultSection" class="result-section hidden">
+
+        <div id="resultIcon" class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultMessage"></p>
+
+        <div class="result-score">
+          <span id="scoreText"></span>
+          <span id="percentageText"></span>
+        </div>
+
+        <div class="result-actions">
+
+          <button
+            id="retryBtn"
+            class="btn btn-secondary"
+            type="button"
+          >
+            Retry Assessment
+          </button>
+
+          <button
+            id="continueBtn"
+            class="btn btn-primary"
+            type="button"
+          >
+            Continue OOP
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script
+    type="module"
+    src="../js/technical/oops-scope-this-copy-assessment.js"
+  ></script>
+
+</body>
+</html>

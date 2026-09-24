@@ -1,0 +1,1183 @@
+{
+  "subjects": [
+    {
+      "id": "sql",
+      "name": "SQL",
+      "description": "Complete SQL preparation from fundamentals to placement-level query solving.",
+      "topics": [
+        {
+          "id": "sql-01",
+          "title": "SQL Fundamentals",
+          "learn": "SQL is used to query and manipulate data stored in relational databases. Understand databases, tables, rows, columns and the basic structure of a SQL statement.",
+          "example": "SELECT name, salary FROM employees;",
+          "keyPoints": [
+            "Database and table fundamentals",
+            "Rows and columns",
+            "SELECT statement",
+            "FROM clause",
+            "Basic SQL syntax"
+          ]
+        },
+        {
+          "id": "sql-02",
+          "title": "SELECT, WHERE and ORDER BY",
+          "learn": "Use SELECT to retrieve columns, WHERE to filter rows and ORDER BY to sort the result.",
+          "example": "SELECT name, salary FROM employees WHERE salary > 50000 ORDER BY salary DESC;",
+          "keyPoints": [
+            "SELECT",
+            "WHERE",
+            "Comparison operators",
+            "AND and OR",
+            "ORDER BY",
+            "ASC and DESC"
+          ]
+        },
+        {
+          "id": "sql-03",
+          "title": "DISTINCT, LIMIT and Filtering",
+          "learn": "Use DISTINCT to eliminate duplicate results and LIMIT to control the number of returned rows.",
+          "example": "SELECT DISTINCT department FROM employees LIMIT 10;",
+          "keyPoints": [
+            "DISTINCT",
+            "LIMIT",
+            "IN",
+            "BETWEEN",
+            "LIKE",
+            "IS NULL"
+          ]
+        },
+        {
+          "id": "sql-04",
+          "title": "Aggregate Functions and GROUP BY",
+          "learn": "Aggregate functions calculate values across multiple rows. GROUP BY creates groups on which aggregates can be calculated.",
+          "example": "SELECT department, AVG(salary) FROM employees GROUP BY department;",
+          "keyPoints": [
+            "COUNT",
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GROUP BY"
+          ]
+        },
+        {
+          "id": "sql-05",
+          "title": "HAVING",
+          "learn": "HAVING filters grouped results after aggregation, while WHERE filters individual rows before grouping.",
+          "example": "SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 5;",
+          "keyPoints": [
+            "WHERE vs HAVING",
+            "Filtering grouped results",
+            "Aggregate conditions",
+            "Grouped queries"
+          ]
+        },
+        {
+          "id": "sql-06",
+          "title": "INNER JOIN",
+          "learn": "INNER JOIN combines rows from related tables when the join condition matches.",
+          "example": "SELECT e.name, d.name FROM employees e INNER JOIN departments d ON e.department_id = d.id;",
+          "keyPoints": [
+            "Primary key",
+            "Foreign key",
+            "JOIN condition",
+            "INNER JOIN",
+            "Table aliases"
+          ]
+        },
+        {
+          "id": "sql-07",
+          "title": "LEFT, RIGHT and FULL JOIN",
+          "learn": "Outer joins preserve rows that do not have a matching row on the other side.",
+          "example": "SELECT customers.name, orders.id FROM customers LEFT JOIN orders ON customers.id = orders.customer_id;",
+          "keyPoints": [
+            "LEFT JOIN",
+            "RIGHT JOIN",
+            "FULL OUTER JOIN",
+            "NULL results",
+            "Join selection"
+          ]
+        },
+        {
+          "id": "sql-08",
+          "title": "Subqueries",
+          "learn": "A subquery is a query nested inside another query and can be used for filtering, comparison or derived results.",
+          "example": "SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);",
+          "keyPoints": [
+            "Scalar subqueries",
+            "Nested queries",
+            "IN subqueries",
+            "EXISTS",
+            "Correlated subqueries"
+          ]
+        },
+        {
+          "id": "sql-09",
+          "title": "CTEs",
+          "learn": "Common Table Expressions make complex queries easier to read by defining temporary named result sets.",
+          "example": "WITH high_paid AS (SELECT * FROM employees WHERE salary > 80000) SELECT * FROM high_paid;",
+          "keyPoints": [
+            "WITH",
+            "Named temporary result",
+            "Readable complex queries",
+            "Multiple CTEs",
+            "Recursive CTE concept"
+          ]
+        },
+        {
+          "id": "sql-10",
+          "title": "Window Functions",
+          "learn": "Window functions perform calculations across related rows without collapsing them into groups.",
+          "example": "SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rank FROM employees;",
+          "keyPoints": [
+            "OVER",
+            "PARTITION BY",
+            "ORDER BY",
+            "ROW_NUMBER",
+            "RANK",
+            "DENSE_RANK"
+          ]
+        },
+        {
+          "id": "sql-11",
+          "title": "Constraints and Data Integrity",
+          "learn": "Constraints enforce rules that keep relational data valid and consistent.",
+          "example": "CREATE TABLE users (id INT PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL);",
+          "keyPoints": [
+            "PRIMARY KEY",
+            "FOREIGN KEY",
+            "UNIQUE",
+            "NOT NULL",
+            "CHECK",
+            "DEFAULT"
+          ]
+        },
+        {
+          "id": "sql-12",
+          "title": "Indexes",
+          "learn": "Indexes improve lookup performance by providing a faster access path to rows, while also adding storage and write overhead.",
+          "example": "CREATE INDEX idx_employee_email ON employees(email);",
+          "keyPoints": [
+            "Index purpose",
+            "Lookup performance",
+            "B-tree concept",
+            "Composite indexes",
+            "Read/write trade-off"
+          ]
+        },
+        {
+          "id": "sql-13",
+          "title": "Transactions and ACID",
+          "learn": "Transactions group database operations into a logical unit. ACID describes important transaction properties.",
+          "example": "BEGIN; UPDATE accounts SET balance = balance - 500 WHERE id = 1; COMMIT;",
+          "keyPoints": [
+            "Atomicity",
+            "Consistency",
+            "Isolation",
+            "Durability",
+            "COMMIT",
+            "ROLLBACK"
+          ]
+        },
+        {
+          "id": "sql-14",
+          "title": "Normalization",
+          "learn": "Normalization organizes relational data to reduce unnecessary duplication and update anomalies.",
+          "example": "Separate customer details from order details instead of repeating customer information for every order.",
+          "keyPoints": [
+            "1NF",
+            "2NF",
+            "3NF",
+            "Functional dependency",
+            "Redundancy",
+            "Denormalization trade-off"
+          ]
+        },
+        {
+          "id": "sql-15",
+          "title": "Placement SQL Practice",
+          "learn": "Solve common placement queries involving joins, grouping, subqueries, ranking and analytical calculations.",
+          "example": "Find the second-highest salary, department-wise employee counts and employees earning more than their department average.",
+          "keyPoints": [
+            "Second highest salary",
+            "Top N records",
+            "Department queries",
+            "Duplicate detection",
+            "Join problems",
+            "Window-function problems"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "description": "Structured JavaScript preparation from fundamentals to interview-level concepts.",
+      "topics": [
+        {
+          "id": "js-01",
+          "title": "JavaScript Fundamentals",
+          "learn": "Understand how JavaScript runs, where it is used and the basic syntax used to write programs.",
+          "example": "const message = 'Hello CareerPilot'; console.log(message);",
+          "keyPoints": [
+            "JavaScript runtime",
+            "Statements",
+            "Expressions",
+            "Console",
+            "Basic syntax"
+          ]
+        },
+        {
+          "id": "js-02",
+          "title": "Variables and Data Types",
+          "learn": "Learn let, const, primitive values and reference values.",
+          "example": "let age = 22; const name = 'Arun';",
+          "keyPoints": [
+            "let",
+            "const",
+            "var",
+            "String",
+            "Number",
+            "Boolean",
+            "null",
+            "undefined"
+          ]
+        },
+        {
+          "id": "js-03",
+          "title": "Operators and Type Conversion",
+          "learn": "Understand arithmetic, comparison, logical and assignment operators and the difference between implicit and explicit conversion.",
+          "example": "Number('42') === 42;",
+          "keyPoints": [
+            "Arithmetic",
+            "Comparison",
+            "Strict equality",
+            "Logical operators",
+            "Type coercion"
+          ]
+        },
+        {
+          "id": "js-04",
+          "title": "Conditions and Loops",
+          "learn": "Use conditional statements and loops to control program execution.",
+          "example": "for (let i = 0; i < 5; i++) { console.log(i); }",
+          "keyPoints": [
+            "if",
+            "else",
+            "switch",
+            "for",
+            "while",
+            "break",
+            "continue"
+          ]
+        },
+        {
+          "id": "js-05",
+          "title": "Functions",
+          "learn": "Functions organize reusable behavior and can be declared, expressed or written as arrow functions.",
+          "example": "const add = (a, b) => a + b;",
+          "keyPoints": [
+            "Function declarations",
+            "Function expressions",
+            "Arrow functions",
+            "Parameters",
+            "Return values"
+          ]
+        },
+        {
+          "id": "js-06",
+          "title": "Scope and Closures",
+          "learn": "Understand lexical scope, block scope and how inner functions can remember variables from outer scopes.",
+          "example": "function counter(){ let count=0; return ()=>++count; }",
+          "keyPoints": [
+            "Global scope",
+            "Function scope",
+            "Block scope",
+            "Lexical environment",
+            "Closures"
+          ]
+        },
+        {
+          "id": "js-07",
+          "title": "Arrays",
+          "learn": "Learn common array operations and functional methods used heavily in application code and interviews.",
+          "example": "[1,2,3,4].map(n => n * 2);",
+          "keyPoints": [
+            "push",
+            "pop",
+            "slice",
+            "splice",
+            "map",
+            "filter",
+            "reduce"
+          ]
+        },
+        {
+          "id": "js-08",
+          "title": "Objects",
+          "learn": "Objects store related data and behavior using properties and methods.",
+          "example": "const user = { name: 'Arun', role: 'Developer' };",
+          "keyPoints": [
+            "Object properties",
+            "Methods",
+            "Destructuring",
+            "Spread syntax",
+            "Object.keys",
+            "Object.entries"
+          ]
+        },
+        {
+          "id": "js-09",
+          "title": "DOM and Events",
+          "learn": "Understand how JavaScript interacts with HTML through the DOM and responds to user events.",
+          "example": "document.querySelector('#save').addEventListener('click', saveData);",
+          "keyPoints": [
+            "DOM",
+            "querySelector",
+            "createElement",
+            "Event listeners",
+            "Form events"
+          ]
+        },
+        {
+          "id": "js-10",
+          "title": "Promises and Async JavaScript",
+          "learn": "Asynchronous JavaScript allows operations such as network calls to complete without blocking the main flow.",
+          "example": "const response = await fetch('/api/users');",
+          "keyPoints": [
+            "Promise",
+            "async",
+            "await",
+            "then",
+            "catch",
+            "finally"
+          ]
+        },
+        {
+          "id": "js-11",
+          "title": "Fetch and APIs",
+          "learn": "Use fetch to communicate with HTTP APIs and process JSON responses.",
+          "example": "const data = await fetch('/api/users').then(r => r.json());",
+          "keyPoints": [
+            "HTTP requests",
+            "fetch",
+            "JSON",
+            "GET",
+            "POST",
+            "Error handling"
+          ]
+        },
+        {
+          "id": "js-12",
+          "title": "Classes and OOP in JavaScript",
+          "learn": "JavaScript classes provide syntax for constructing objects and organizing behavior.",
+          "example": "class User { constructor(name){ this.name = name; } }",
+          "keyPoints": [
+            "class",
+            "constructor",
+            "methods",
+            "inheritance",
+            "static methods"
+          ]
+        },
+        {
+          "id": "js-13",
+          "title": "Modules",
+          "learn": "Modules let applications divide code into reusable files using import and export.",
+          "example": "export function add(a,b){ return a+b; }",
+          "keyPoints": [
+            "export",
+            "import",
+            "Named exports",
+            "Default exports",
+            "Module structure"
+          ]
+        },
+        {
+          "id": "js-14",
+          "title": "Error Handling",
+          "learn": "Use exceptions and structured error handling to make applications more reliable.",
+          "example": "try { riskyOperation(); } catch (error) { console.error(error); }",
+          "keyPoints": [
+            "try",
+            "catch",
+            "finally",
+            "throw",
+            "Error objects"
+          ]
+        },
+        {
+          "id": "js-15",
+          "title": "JavaScript Interview Practice",
+          "learn": "Review common placement questions covering closures, hoisting, promises, async behavior, arrays and objects.",
+          "example": "Explain why let and const behave differently from var and describe closure-based examples.",
+          "keyPoints": [
+            "Hoisting",
+            "Closures",
+            "Promises",
+            "Event loop",
+            "this",
+            "Prototypes"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "git-github",
+      "name": "Git & GitHub",
+      "description": "Practical version control and GitHub workflow preparation.",
+      "topics": [
+        {
+          "id": "git-01",
+          "title": "Git Fundamentals",
+          "learn": "Git is a distributed version-control system used to track changes in source code.",
+          "example": "git --version",
+          "keyPoints": [
+            "Repository",
+            "Working tree",
+            "Version control",
+            "Local repository"
+          ]
+        },
+        {
+          "id": "git-02",
+          "title": "Repository and First Commit",
+          "learn": "Create a repository, stage files and record the first snapshot.",
+          "example": "git init && git add . && git commit -m \"Initial commit\"",
+          "keyPoints": [
+            "git init",
+            "git status",
+            "git add",
+            "git commit"
+          ]
+        },
+        {
+          "id": "git-03",
+          "title": "Git History",
+          "learn": "Inspect past commits and understand how project history is represented.",
+          "example": "git log --oneline",
+          "keyPoints": [
+            "git log",
+            "Commit hash",
+            "Author",
+            "Commit message",
+            "History"
+          ]
+        },
+        {
+          "id": "git-04",
+          "title": "Branches",
+          "learn": "Branches allow independent development without changing the main development line.",
+          "example": "git switch -c feature/login",
+          "keyPoints": [
+            "Branch",
+            "git branch",
+            "git switch",
+            "Feature workflow"
+          ]
+        },
+        {
+          "id": "git-05",
+          "title": "Merge",
+          "learn": "Merging combines changes from one branch into another.",
+          "example": "git switch main && git merge feature/login",
+          "keyPoints": [
+            "Merge",
+            "Fast-forward",
+            "Merge commit",
+            "Integration"
+          ]
+        },
+        {
+          "id": "git-06",
+          "title": "Remote Repositories",
+          "learn": "Remote repositories allow code to be shared and synchronized with services such as GitHub.",
+          "example": "git remote add origin https://github.com/user/project.git",
+          "keyPoints": [
+            "Remote",
+            "origin",
+            "push",
+            "pull",
+            "fetch"
+          ]
+        },
+        {
+          "id": "git-07",
+          "title": "GitHub Workflow",
+          "learn": "Understand the common workflow of branches, commits, pushes and pull requests.",
+          "example": "Create branch → commit changes → push → open pull request → review → merge.",
+          "keyPoints": [
+            "GitHub repository",
+            "Pull request",
+            "Code review",
+            "Branch workflow"
+          ]
+        },
+        {
+          "id": "git-08",
+          "title": "Merge Conflicts",
+          "learn": "Conflicts happen when Git cannot automatically combine competing changes.",
+          "example": "Resolve conflicting lines, stage the corrected file and continue the merge.",
+          "keyPoints": [
+            "Conflict markers",
+            "Manual resolution",
+            "git add",
+            "Commit after resolution"
+          ]
+        },
+        {
+          "id": "git-09",
+          "title": "Stash",
+          "learn": "Git stash temporarily stores uncommitted changes so you can switch tasks cleanly.",
+          "example": "git stash push -m \"work in progress\"",
+          "keyPoints": [
+            "git stash",
+            "git stash list",
+            "git stash pop",
+            "Temporary work"
+          ]
+        },
+        {
+          "id": "git-10",
+          "title": "Reset and Revert",
+          "learn": "Reset changes repository state while revert creates a new commit that reverses an earlier commit.",
+          "example": "git revert <commit>",
+          "keyPoints": [
+            "reset",
+            "revert",
+            "HEAD",
+            "Safe history changes"
+          ]
+        },
+        {
+          "id": "git-11",
+          "title": "Tags and Releases",
+          "learn": "Tags identify important points in project history and are commonly used for releases.",
+          "example": "git tag v1.0.0",
+          "keyPoints": [
+            "Tags",
+            "Versioning",
+            "Release points",
+            "Annotated tags"
+          ]
+        },
+        {
+          "id": "git-12",
+          "title": "Git Interview Practice",
+          "learn": "Review the Git questions commonly asked in development interviews.",
+          "example": "Explain the difference between merge and rebase, reset and revert, fetch and pull.",
+          "keyPoints": [
+            "merge vs rebase",
+            "reset vs revert",
+            "fetch vs pull",
+            "HEAD",
+            "branching"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "rest-apis",
+      "name": "REST APIs",
+      "description": "Web API fundamentals and practical REST API development concepts.",
+      "topics": [
+        {
+          "id": "rest-01",
+          "title": "HTTP Fundamentals",
+          "learn": "HTTP defines how clients and servers communicate using requests and responses.",
+          "example": "GET /users/42 HTTP/1.1",
+          "keyPoints": [
+            "Client",
+            "Server",
+            "Request",
+            "Response",
+            "HTTP"
+          ]
+        },
+        {
+          "id": "rest-02",
+          "title": "Resources and URLs",
+          "learn": "REST APIs model application entities as resources identified through URLs.",
+          "example": "/users/42/orders",
+          "keyPoints": [
+            "Resource",
+            "URI",
+            "Path parameter",
+            "Resource hierarchy"
+          ]
+        },
+        {
+          "id": "rest-03",
+          "title": "HTTP Methods",
+          "learn": "HTTP methods communicate the intended operation on a resource.",
+          "example": "GET /users, POST /users, PUT /users/42, DELETE /users/42",
+          "keyPoints": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        {
+          "id": "rest-04",
+          "title": "Status Codes",
+          "learn": "HTTP status codes communicate the result of a request.",
+          "example": "200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Internal Server Error.",
+          "keyPoints": [
+            "2xx success",
+            "3xx redirection",
+            "4xx client errors",
+            "5xx server errors"
+          ]
+        },
+        {
+          "id": "rest-05",
+          "title": "Headers and JSON",
+          "learn": "Headers carry metadata while JSON is a common representation for API request and response bodies.",
+          "example": "Content-Type: application/json",
+          "keyPoints": [
+            "Headers",
+            "Content-Type",
+            "Accept",
+            "JSON",
+            "Request body"
+          ]
+        },
+        {
+          "id": "rest-06",
+          "title": "CRUD APIs",
+          "learn": "CRUD maps common application operations to API endpoints.",
+          "example": "POST /products, GET /products, PATCH /products/1, DELETE /products/1",
+          "keyPoints": [
+            "Create",
+            "Read",
+            "Update",
+            "Delete",
+            "Endpoint design"
+          ]
+        },
+        {
+          "id": "rest-07",
+          "title": "Validation and Errors",
+          "learn": "APIs should validate incoming data and return predictable error responses.",
+          "example": "{ \"error\": \"email is required\" }",
+          "keyPoints": [
+            "Input validation",
+            "Error response",
+            "Validation messages",
+            "Consistent structure"
+          ]
+        },
+        {
+          "id": "rest-08",
+          "title": "Authentication and Authorization",
+          "learn": "Authentication establishes identity while authorization controls what an authenticated user can access.",
+          "example": "Authorization: Bearer <token>",
+          "keyPoints": [
+            "Authentication",
+            "Authorization",
+            "Bearer token",
+            "JWT concept",
+            "Access control"
+          ]
+        },
+        {
+          "id": "rest-09",
+          "title": "Pagination Filtering and Sorting",
+          "learn": "Large datasets should normally be requested in controlled pages with filtering and sorting options.",
+          "example": "/products?page=2&limit=20&sort=price",
+          "keyPoints": [
+            "Pagination",
+            "Limit",
+            "Offset",
+            "Cursor concept",
+            "Filtering",
+            "Sorting"
+          ]
+        },
+        {
+          "id": "rest-10",
+          "title": "Idempotency",
+          "learn": "Idempotent operations produce the same intended result when repeated with the same request.",
+          "example": "PUT /users/42 with the same representation can be safely retried by a client.",
+          "keyPoints": [
+            "Idempotent operations",
+            "Retries",
+            "Safe API behavior",
+            "PUT",
+            "DELETE"
+          ]
+        },
+        {
+          "id": "rest-11",
+          "title": "API Versioning",
+          "learn": "Versioning allows APIs to evolve without immediately breaking existing clients.",
+          "example": "/api/v1/users",
+          "keyPoints": [
+            "Versioning",
+            "Backward compatibility",
+            "Deprecation",
+            "Migration"
+          ]
+        },
+        {
+          "id": "rest-12",
+          "title": "REST API Interview Practice",
+          "learn": "Review endpoint design, status codes, authentication, idempotency and API architecture questions.",
+          "example": "Design an API for users, orders and payments and explain your endpoint choices.",
+          "keyPoints": [
+            "API design",
+            "Status codes",
+            "Auth",
+            "Pagination",
+            "Errors",
+            "Versioning"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "linux",
+      "name": "Linux",
+      "description": "Practical Linux command-line and system fundamentals for technical interviews.",
+      "topics": [
+        {
+          "id": "linux-01",
+          "title": "Linux and the Shell",
+          "learn": "Linux provides a Unix-like operating-system environment. The shell lets users interact with the system through commands.",
+          "example": "pwd",
+          "keyPoints": [
+            "Linux",
+            "Kernel",
+            "Shell",
+            "Terminal",
+            "Command line"
+          ]
+        },
+        {
+          "id": "linux-02",
+          "title": "Filesystem Navigation",
+          "learn": "Navigate Linux directories and understand the hierarchical filesystem.",
+          "example": "cd /var/log && pwd",
+          "keyPoints": [
+            "pwd",
+            "cd",
+            "ls",
+            "Absolute path",
+            "Relative path"
+          ]
+        },
+        {
+          "id": "linux-03",
+          "title": "Files and Directories",
+          "learn": "Create, copy, move, rename and remove files and directories.",
+          "example": "mkdir project && touch project/app.js",
+          "keyPoints": [
+            "mkdir",
+            "touch",
+            "cp",
+            "mv",
+            "rm",
+            "rmdir"
+          ]
+        },
+        {
+          "id": "linux-04",
+          "title": "Permissions",
+          "learn": "Linux permissions control who can read, write and execute files.",
+          "example": "chmod 755 deploy.sh",
+          "keyPoints": [
+            "Read",
+            "Write",
+            "Execute",
+            "Owner",
+            "Group",
+            "chmod"
+          ]
+        },
+        {
+          "id": "linux-05",
+          "title": "Users and Groups",
+          "learn": "Linux supports multiple users and groups with separate ownership and permissions.",
+          "example": "id username",
+          "keyPoints": [
+            "Users",
+            "Groups",
+            "Ownership",
+            "useradd",
+            "groupadd"
+          ]
+        },
+        {
+          "id": "linux-06",
+          "title": "Processes",
+          "learn": "Processes are running programs managed by the operating system.",
+          "example": "ps aux",
+          "keyPoints": [
+            "Process ID",
+            "ps",
+            "top",
+            "kill",
+            "Foreground",
+            "Background"
+          ]
+        },
+        {
+          "id": "linux-07",
+          "title": "Pipes and Redirection",
+          "learn": "Pipes connect command output to another command, while redirection sends output to files.",
+          "example": "cat access.log | grep 500 > errors.txt",
+          "keyPoints": [
+            "Pipe",
+            "stdout",
+            "stderr",
+            ">",
+            ">>",
+            "<"
+          ]
+        },
+        {
+          "id": "linux-08",
+          "title": "grep, find and Text Processing",
+          "learn": "Command-line tools make it possible to search and process large amounts of text quickly.",
+          "example": "grep -R \"ERROR\" /var/log/",
+          "keyPoints": [
+            "grep",
+            "find",
+            "sort",
+            "uniq",
+            "wc",
+            "head",
+            "tail"
+          ]
+        },
+        {
+          "id": "linux-09",
+          "title": "Packages",
+          "learn": "Package managers install, update and remove software packages.",
+          "example": "sudo apt update",
+          "keyPoints": [
+            "Package manager",
+            "Repositories",
+            "Install",
+            "Update",
+            "Remove"
+          ]
+        },
+        {
+          "id": "linux-10",
+          "title": "Networking Commands",
+          "learn": "Linux provides command-line utilities for checking network interfaces, connectivity and ports.",
+          "example": "ip addr",
+          "keyPoints": [
+            "ip",
+            "ping",
+            "curl",
+            "ss",
+            "DNS basics"
+          ]
+        },
+        {
+          "id": "linux-11",
+          "title": "Services and Logs",
+          "learn": "Linux systems run background services and maintain logs useful for troubleshooting.",
+          "example": "systemctl status nginx",
+          "keyPoints": [
+            "systemd",
+            "systemctl",
+            "Service",
+            "Logs",
+            "journalctl"
+          ]
+        },
+        {
+          "id": "linux-12",
+          "title": "Shell Scripting Basics",
+          "learn": "Shell scripts automate repeated administrative and development tasks.",
+          "example": "#!/bin/bash\necho \"Build started\"",
+          "keyPoints": [
+            "Shebang",
+            "Variables",
+            "Conditions",
+            "Loops",
+            "Exit codes"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "system-design",
+      "name": "System Design",
+      "description": "Placement-oriented system design from fundamentals to complete high-level designs.",
+      "topics": [
+        {
+          "id": "sd-01",
+          "title": "What is System Design?",
+          "learn": "System design is the process of deciding how software components, data stores and communication mechanisms work together to satisfy requirements.",
+          "example": "Design a URL shortener that accepts a long URL and returns a short URL.",
+          "keyPoints": [
+            "Requirements",
+            "Components",
+            "Interfaces",
+            "Data",
+            "Trade-offs"
+          ]
+        },
+        {
+          "id": "sd-02",
+          "title": "Functional and Non-Functional Requirements",
+          "learn": "Functional requirements describe what the system does. Non-functional requirements describe qualities such as availability, latency and scalability.",
+          "example": "A chat application must deliver messages; it may also require low latency and high availability.",
+          "keyPoints": [
+            "Functional requirements",
+            "Non-functional requirements",
+            "Availability",
+            "Latency",
+            "Scalability"
+          ]
+        },
+        {
+          "id": "sd-03",
+          "title": "Capacity Estimation",
+          "learn": "Estimate users, requests, storage and bandwidth before selecting architecture.",
+          "example": "Estimate daily active users, requests per second and storage growth for a social application.",
+          "keyPoints": [
+            "Users",
+            "Requests per second",
+            "Storage",
+            "Bandwidth",
+            "Traffic assumptions"
+          ]
+        },
+        {
+          "id": "sd-04",
+          "title": "Client Server Architecture",
+          "learn": "Most applications separate clients from backend services that handle business logic and data access.",
+          "example": "Browser → API server → database.",
+          "keyPoints": [
+            "Client",
+            "Server",
+            "API",
+            "Application layer",
+            "Database"
+          ]
+        },
+        {
+          "id": "sd-05",
+          "title": "API Design",
+          "learn": "Design clear APIs that expose resources and operations while remaining stable for clients.",
+          "example": "GET /users/42/profile",
+          "keyPoints": [
+            "Endpoints",
+            "Requests",
+            "Responses",
+            "Authentication",
+            "Versioning"
+          ]
+        },
+        {
+          "id": "sd-06",
+          "title": "Load Balancing",
+          "learn": "A load balancer distributes incoming traffic across multiple backend instances.",
+          "example": "Client → Load Balancer → Server A / Server B / Server C",
+          "keyPoints": [
+            "Traffic distribution",
+            "Health checks",
+            "Horizontal scaling",
+            "Failover"
+          ]
+        },
+        {
+          "id": "sd-07",
+          "title": "Caching",
+          "learn": "Caches keep frequently accessed data closer to applications to reduce latency and database load.",
+          "example": "Application → Redis cache → Database",
+          "keyPoints": [
+            "Cache",
+            "Cache hit",
+            "Cache miss",
+            "TTL",
+            "Invalidation"
+          ]
+        },
+        {
+          "id": "sd-08",
+          "title": "SQL vs NoSQL",
+          "learn": "Database selection depends on data shape, consistency, query needs, scale and operational requirements.",
+          "example": "A transactional banking system and a flexible high-scale content system may have different database requirements.",
+          "keyPoints": [
+            "Relational",
+            "Document",
+            "Key-value",
+            "Consistency",
+            "Schema",
+            "Query patterns"
+          ]
+        },
+        {
+          "id": "sd-09",
+          "title": "Replication",
+          "learn": "Replication keeps multiple copies of data to improve availability, read scalability or fault tolerance.",
+          "example": "Primary database → replica databases.",
+          "keyPoints": [
+            "Primary",
+            "Replica",
+            "Read scaling",
+            "Failover",
+            "Replication lag"
+          ]
+        },
+        {
+          "id": "sd-10",
+          "title": "Partitioning and Sharding",
+          "learn": "Partitioning divides data so large datasets can be distributed across machines.",
+          "example": "Users can be distributed by user ID ranges or hash buckets.",
+          "keyPoints": [
+            "Partitioning",
+            "Sharding",
+            "Shard key",
+            "Hashing",
+            "Hot partitions"
+          ]
+        },
+        {
+          "id": "sd-11",
+          "title": "Message Queues",
+          "learn": "Queues decouple producers and consumers and allow asynchronous work to be processed reliably.",
+          "example": "API → Message Queue → Worker → Database.",
+          "keyPoints": [
+            "Producer",
+            "Consumer",
+            "Queue",
+            "Asynchronous processing",
+            "Retries"
+          ]
+        },
+        {
+          "id": "sd-12",
+          "title": "CAP and Consistency",
+          "learn": "Distributed systems involve trade-offs between consistency, availability and partition tolerance, with practical designs choosing behavior appropriate to the use case.",
+          "example": "A shopping-cart system may tolerate temporary consistency differences differently from a financial ledger.",
+          "keyPoints": [
+            "Consistency",
+            "Availability",
+            "Partition tolerance",
+            "Distributed systems",
+            "Trade-offs"
+          ]
+        },
+        {
+          "id": "sd-13",
+          "title": "CDN and Rate Limiting",
+          "learn": "CDNs serve content closer to users, while rate limiting protects services from excessive request volume.",
+          "example": "User → CDN → Application, with an API gateway applying request limits.",
+          "keyPoints": [
+            "CDN",
+            "Edge caching",
+            "Rate limiting",
+            "Traffic protection",
+            "API gateway"
+          ]
+        },
+        {
+          "id": "sd-14",
+          "title": "Reliability and Fault Tolerance",
+          "learn": "Reliable systems expect failures and use retries, timeouts, redundancy, graceful degradation and health checks.",
+          "example": "If a downstream service fails, the application can retry with limits and return a degraded response where appropriate.",
+          "keyPoints": [
+            "Timeouts",
+            "Retries",
+            "Circuit breaker",
+            "Redundancy",
+            "Graceful degradation"
+          ]
+        },
+        {
+          "id": "sd-15",
+          "title": "Observability",
+          "learn": "Logs, metrics and traces help developers understand system behavior and diagnose failures.",
+          "example": "Track request latency, error rate and service traces across multiple backend services.",
+          "keyPoints": [
+            "Logs",
+            "Metrics",
+            "Tracing",
+            "Latency",
+            "Error rate"
+          ]
+        },
+        {
+          "id": "sd-16",
+          "title": "System Security",
+          "learn": "System design must consider authentication, authorization, encryption, secrets and abuse prevention.",
+          "example": "API gateway performs authentication while services enforce authorization rules.",
+          "keyPoints": [
+            "Authentication",
+            "Authorization",
+            "TLS",
+            "Secrets",
+            "Abuse prevention"
+          ]
+        },
+        {
+          "id": "sd-17",
+          "title": "URL Shortener Design",
+          "learn": "Design a service that maps long URLs to short identifiers and redirects users efficiently.",
+          "example": "POST /shorten → short code → GET /abc123 → original URL.",
+          "keyPoints": [
+            "ID generation",
+            "Database",
+            "Caching",
+            "Redirects",
+            "Scale"
+          ]
+        },
+        {
+          "id": "sd-18",
+          "title": "Chat System Design",
+          "learn": "Design real-time messaging with message storage, delivery, online presence and scalable communication channels.",
+          "example": "Client → WebSocket gateway → message service → persistent store.",
+          "keyPoints": [
+            "WebSocket",
+            "Message persistence",
+            "Presence",
+            "Delivery",
+            "Queues"
+          ]
+        },
+        {
+          "id": "sd-19",
+          "title": "Social Feed Design",
+          "learn": "Design a feed system that retrieves and ranks content efficiently for a large user base.",
+          "example": "User posts → content service → feed generation → cache → clients.",
+          "keyPoints": [
+            "Fan-out",
+            "Feed generation",
+            "Ranking",
+            "Caching",
+            "Storage"
+          ]
+        },
+        {
+          "id": "sd-20",
+          "title": "System Design Interview Practice",
+          "learn": "Practice the complete design process: clarify requirements, estimate scale, propose architecture, identify bottlenecks and explain trade-offs.",
+          "example": "Design a video streaming platform from requirements through scalable architecture.",
+          "keyPoints": [
+            "Requirements",
+            "Estimation",
+            "Architecture",
+            "Bottlenecks",
+            "Trade-offs",
+            "Failure handling"
+          ]
+        }
+      ]
+    }
+  ]
+}

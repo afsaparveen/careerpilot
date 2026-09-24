@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Twin | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/progress.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .progress-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-icon, .card-icon, .side-card-icon, .quick-actions a span, .xp-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-icon svg, .card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .side-card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2;
+            color: #2563eb;
+        }
+
+        .quick-actions a span svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
+            color: #64748b;
+        }
+
+        .xp-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+            color: #d97706;
+        }
+
+        .profile-stat-card:nth-child(1) .stat-icon { color: #6366f1; }
+        .profile-stat-card:nth-child(2) .stat-icon { color: #0284c7; }
+        .profile-stat-card:nth-child(3) .stat-icon { color: #059669; }
+        .profile-stat-card:nth-child(4) .stat-icon { color: #d97706; }
+
+        .status-progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="progress-navbar">
+
+    <div class="progress-brand">
+        <div class="brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+            </svg>
+        </div>
+
+        <div>
+            <strong>CareerPilot</strong>
+            <span>Career Twin</span>
+        </div>
+    </div>
+
+    <nav class="progress-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="progress.html" class="active">Career Twin</a>
+    </nav>
+
+</header>
+
+
+<main class="progress-page">
+
+    <!-- HERO -->
+    <section class="career-hero">
+
+        <div class="career-hero-copy">
+            <div class="section-label">
+                YOUR CAREER TWIN
+            </div>
+
+            <h1>
+                Your placement profile,
+                in one place.
+            </h1>
+
+            <p>
+                CareerPilot combines your resume evidence,
+                verified skills, projects and learning progress
+                into a single career profile.
+            </p>
+        </div>
+
+        <div class="career-health-card">
+            <div class="health-ring">
+                <strong id="careerHealth">0%</strong>
+            </div>
+            <span>Profile Completeness</span>
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE STATS -->
+    <section class="profile-stats">
+
+        <div class="profile-stat-card">
+            <span class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+            </span>
+            <div>
+                <span>Verified Skills</span>
+                <strong id="verifiedSkills">0</strong>
+            </div>
+        </div>
+
+        <div class="profile-stat-card">
+            <span class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+            </span>
+            <div>
+                <span>Projects</span>
+                <strong id="projectCount">0</strong>
+            </div>
+        </div>
+
+        <div class="profile-stat-card">
+            <span class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+            </span>
+            <div>
+                <span>Resume Score</span>
+                <strong id="resumeScore">0%</strong>
+            </div>
+        </div>
+
+        <div class="profile-stat-card">
+            <span class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+            </span>
+            <div>
+                <span>Career XP</span>
+                <strong id="careerXP">0</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- CAREER SNAPSHOT -->
+    <section class="profile-layout">
+
+        <div class="profile-main">
+
+            <!-- PERSONAL PROFILE -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <div>
+                        <div class="section-label">PROFILE</div>
+                        <h2>Career Snapshot</h2>
+                    </div>
+                    <span class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="snapshot-grid">
+                    <div class="snapshot-item">
+                        <span>Name</span>
+                        <strong id="profileName">Loading...</strong>
+                    </div>
+
+                    <div class="snapshot-item">
+                        <span>Target Role</span>
+                        <strong id="targetRole">Not set</strong>
+                    </div>
+
+                    <div class="snapshot-item">
+                        <span>Email</span>
+                        <strong id="profileEmail">Loading...</strong>
+                    </div>
+
+                    <div class="snapshot-item">
+                        <span>Resume</span>
+                        <strong id="resumeStatus">Not analyzed</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <div>
+                        <div class="section-label">SKILLS</div>
+                        <h2>Verified Skills</h2>
+                    </div>
+                    <a href="skills.html" class="card-link">
+                        Manage →
+                    </a>
+                </div>
+                <div id="verifiedSkillsList" class="chip-list"></div>
+            </div>
+
+            <!-- PROJECTS -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <div>
+                        <div class="section-label">EVIDENCE</div>
+                        <h2>Projects</h2>
+                    </div>
+                    <a href="projects.html" class="card-link">
+                        Manage →
+                    </a>
+                </div>
+                <div id="recentProjects" class="recent-projects"></div>
+            </div>
+
+            <!-- LEARNING -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <div>
+                        <div class="section-label">LEARNING</div>
+                        <h2>Placement Preparation</h2>
+                    </div>
+                </div>
+                <div id="learningCourses" class="learning-courses"></div>
+            </div>
+
+        </div>
+
+
+        <!-- SIDE -->
+        <aside class="profile-side">
+
+            <!-- CAREER STATUS -->
+            <div class="side-card twin-status-card">
+                <div class="side-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+
+                <div class="section-label">CAREER TWIN</div>
+                <h2 id="twinStatus">Profile building</h2>
+                <p id="twinMessage">
+                    Keep adding resume evidence, verified skills and projects.
+                </p>
+
+                <div class="status-progress">
+                    <div class="status-progress-track">
+                        <div id="careerHealthBar" class="status-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK ACTIONS -->
+            <div class="side-card">
+                <div class="section-label">QUICK ACTIONS</div>
+                <h2>Continue building</h2>
+
+                <div class="quick-actions">
+                    <a href="resume.html">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Resume Audit</strong>
+                            <small>Improve your resume evidence</small>
+                        </div>
+                    </a>
+
+                    <a href="skills.html">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="6"/>
+                                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Verify Skills</strong>
+                            <small>Review your detected skills</small>
+                        </div>
+                    </a>
+
+                    <a href="projects.html">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>Add Project</strong>
+                            <small>Strengthen your evidence</small>
+                        </div>
+                    </a>
+
+                    <a href="dsa-learning.html">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <strong>DSA Learning</strong>
+                            <small>Continue technical preparation</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- XP -->
+            <div class="side-card xp-card">
+                <div class="xp-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </div>
+                <div>
+                    <span>CAREER XP</span>
+                    <strong id="sideCareerXP">0</strong>
+                </div>
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <section class="progress-actions">
+        <a href="dashboard.html" class="secondary-button">
+            ← Dashboard
+        </a>
+        <a href="roadmap.html" class="primary-button">
+            Continue Roadmap →
+        </a>
+    </section>
+
+</main>
+
+<script type="module" src="../js/common/progress.js"></script>
+
+</body>
+</html>

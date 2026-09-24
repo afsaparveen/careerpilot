@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+
+/* HEADER */
+
+.header {
+    background: #172554;
+
+    color: white;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.header a {
+    color: white;
+
+    text-decoration: none;
+
+    background: #334155;
+
+    padding: 10px 14px;
+
+    border-radius: 6px;
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1100px;
+
+    margin: 25px auto;
+
+    padding: 0 18px;
+}
+
+
+/* TOPIC NAV */
+
+.topic-nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.topic-nav button {
+    border: 1px solid #ddd;
+
+    background: #f8fafc;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.topic-nav button.active {
+    background: #dbeafe;
+
+    border-color: #2563eb;
+}
+
+.topic-nav button.completed {
+    border-color: #22c55e;
+}
+
+
+/* CARD */
+
+.card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: #1e3a8a;
+
+    margin-bottom: 12px;
+}
+
+.card p,
+.card div {
+    line-height: 1.7;
+}
+
+.card ul {
+    padding-left: 22px;
+
+    line-height: 1.7;
+}
+
+
+/* SELF CHECK */
+
+.self-check {
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 130px;
+
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    border: 1px solid #ccc;
+
+    resize: vertical;
+}
+
+
+/* ACTIONS */
+
+.actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+button.action {
+    padding: 12px 18px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+button.action.green {
+    background: #16a34a;
+}
+
+button.action:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+}

@@ -1,0 +1,1086 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f8f9ff;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    height: 75px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    border-bottom: 1px solid #eeeeff;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #3826b8;
+}
+
+
+.logo span {
+    color: #ec4899;
+}
+
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+
+.login-btn {
+    padding: 10px 20px;
+
+    color: #3826b8;
+
+    font-weight: 600;
+}
+
+
+.signup-btn {
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b4bdb,
+            #ec4899
+        );
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 620px;
+
+    padding: 80px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #ddd6fe 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #fbcfe8 0,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8f7ff,
+            #fff7fc
+        );
+}
+
+
+.hero-content {
+    max-width: 620px;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #5b4bdb,
+            #ec4899,
+            #f97316
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #667085;
+
+    max-width: 570px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+}
+
+
+.primary-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b4bdb,
+            #ec4899
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(91, 75, 219, 0.25);
+}
+
+
+.secondary-btn {
+    color: #3826b8;
+
+    background: white;
+
+    border: 1px solid #ddd6fe;
+}
+
+
+/* =====================================================
+   DASHBOARD PREVIEW
+===================================================== */
+
+.dashboard-preview {
+    width: 440px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 60px
+        rgba(55, 48, 163, 0.18);
+
+    transform: rotate(1deg);
+}
+
+
+.preview-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.preview-header small {
+    color: #98a2b3;
+}
+
+
+.preview-header h3 {
+    margin-top: 5px;
+}
+
+
+.profile-circle {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b4bdb,
+            #ec4899
+        );
+}
+
+
+/* =====================================================
+   PROGRESS CARD
+===================================================== */
+
+.progress-card {
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #9333ea
+        );
+}
+
+
+.progress-card small {
+    opacity: .8;
+}
+
+
+.progress-card h2 {
+    font-size: 35px;
+
+    margin-top: 5px;
+}
+
+
+.progress-ring {
+    font-size: 40px;
+}
+
+
+/* =====================================================
+   MINI CARDS
+===================================================== */
+
+.mini-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.mini-card {
+    padding: 15px;
+
+    border-radius: 15px;
+}
+
+
+.mini-card span {
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+
+.mini-card strong,
+.mini-card small {
+    display: block;
+}
+
+
+.mini-card small {
+    margin-top: 5px;
+
+    color: #667085;
+}
+
+
+/* =====================================================
+   MINI CARD COLORS
+===================================================== */
+
+.blue {
+    background: #eff6ff;
+}
+
+
+.purple {
+    background: #f5f3ff;
+}
+
+
+.orange {
+    background: #fff7ed;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features {
+    padding: 90px 7%;
+
+    background: white;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+}
+
+
+.section-heading span {
+    color: #ec4899;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+    margin: 12px 0;
+
+    font-size: 38px;
+}
+
+
+.section-heading p {
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.feature-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.feature-card {
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: #fafaff;
+
+    border: 1px solid #eeeeff;
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(50, 40, 120, .1);
+}
+
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+
+.pink {
+    background: #fce7f3;
+}
+
+
+.blue {
+    background: #dbeafe;
+}
+
+
+.purple {
+    background: #ede9fe;
+}
+
+
+.orange {
+    background: #ffedd5;
+}
+
+
+.green {
+    background: #dcfce7;
+}
+
+
+.yellow {
+    background: #fef3c7;
+}
+
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.feature-card p {
+    color: #667085;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+    margin: 70px 7%;
+
+    padding: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            120deg,
+            #4338ca,
+            #7c3aed,
+            #db2777
+        );
+}
+
+
+.cta h2 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+
+.cta p {
+    opacity: .85;
+}
+
+
+.cta a {
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    color: #4338ca;
+
+    background: white;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #667085;
+
+    background: #f8f9ff;
+}
+
+
+/* =====================================================
+   CAREERPILOT BRAND LOGO
+===================================================== */
+
+.careerpilot-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: #17213f;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+}
+
+
+.careerpilot-logo:hover {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   CAREERPILOT LOGO SQUARE
+===================================================== */
+
+.careerpilot-logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(124, 58, 237, 0.25);
+}
+
+
+/* =====================================================
+   CAREERPILOT ARROW SVG
+===================================================== */
+
+.careerpilot-logo-icon svg {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+}
+
+
+/* =====================================================
+   CAREERPILOT TEXT
+===================================================== */
+
+.careerpilot-logo-text {
+    color: #17213f;
+}
+
+
+.careerpilot-logo-text span {
+    color: #7c3aed;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .hero p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dashboard-preview {
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+
+    .cta {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* CareerPilot logo */
+
+    .careerpilot-logo {
+        font-size: 19px;
+
+        gap: 8px;
+    }
+
+
+    .careerpilot-logo-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 11px;
+    }
+
+
+    .careerpilot-logo-icon svg {
+        width: 21px;
+        height: 21px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    .login-btn {
+        display: none;
+    }
+
+
+    .hero {
+        padding: 55px 5%;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .mini-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cta {
+        margin: 40px 5%;
+
+        padding: 35px 25px;
+    }
+
+
+    /* CareerPilot logo */
+
+    .careerpilot-logo {
+        font-size: 17px;
+
+        gap: 7px;
+    }
+
+
+    .careerpilot-logo-icon {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 10px;
+    }
+
+
+    .careerpilot-logo-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+}
+/* =====================================================
+   GLOBAL MOBILE NAVIGATION
+===================================================== */
+
+/* Mobile menu button - hidden on desktop */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f5f3ff;
+
+    color: #7c3aed;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* Hamburger icon */
+
+.mobile-menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: currentColor;
+
+    border-radius: 3px;
+
+    margin: 4px 0;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =====================================================
+   MOBILE NAV MENU
+===================================================== */
+
+.mobile-nav-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeef5;
+
+    border-bottom: 1px solid #eeeef5;
+
+    box-shadow:
+        0 12px 30px
+        rgba(30, 30, 55, 0.10);
+
+    padding: 10px 16px;
+
+    z-index: 999;
+}
+
+
+/* Open menu */
+
+.mobile-nav-menu.open {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Mobile links */
+
+.mobile-nav-menu a {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.mobile-nav-menu a:hover {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+
+.mobile-nav-menu a.active {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* Header must become the positioning parent */
+
+    .dashboard-navbar,
+    .dsa-navbar,
+    .technical-navbar,
+    .companies-navbar,
+    .aptitude-navbar,
+    .aptitude-learning-navbar {
+        position: relative;
+
+        min-height: 64px;
+
+        padding: 10px 16px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .dashboard-nav,
+    .dsa-nav,
+    .technical-nav,
+    .companies-nav,
+    .aptitude-nav,
+    .aptitude-learning-nav {
+        display: none !important;
+    }
+
+
+    /* Show hamburger */
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+
+    /* Keep navbar horizontal */
+
+    .dashboard-navbar,
+    .dsa-navbar,
+    .technical-navbar,
+    .companies-navbar,
+    .aptitude-navbar,
+    .aptitude-learning-navbar {
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+
+    /* Logo sizing */
+
+    .careerpilot-logo-icon,
+    .companies-brand .careerpilot-logo-icon,
+    .aptitude-brand .careerpilot-logo-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+
+    .careerpilot-logo-icon svg,
+    .companies-brand .careerpilot-logo-icon svg,
+    .aptitude-brand .careerpilot-logo-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .careerpilot-logo,
+    .companies-brand,
+    .aptitude-brand {
+        gap: 9px;
+    }
+
+
+    .careerpilot-logo-text,
+    .companies-brand-text strong,
+    .aptitude-brand-text strong {
+        font-size: 19px;
+    }
+
+
+    .companies-brand-text small,
+    .aptitude-brand-text small {
+        font-size: 11px;
+    }
+
+
+    /* Dashboard profile */
+
+    .dashboard-profile {
+        display: none;
+    }
+
+
+    /* Mobile menu should be above page content */
+
+    .mobile-nav-menu {
+        position: absolute;
+
+        top: 100%;
+    }
+
+}

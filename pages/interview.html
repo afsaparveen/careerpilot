@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Practice | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interview.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .interview-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .interview-stat-icon, .category-tab span, .empty-history div {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .interview-stat-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .category-tab span svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+            margin-bottom: 6px;
+        }
+
+        .interview-stat-icon.purple { color: #6366f1; background: #eef2ff; }
+        .interview-stat-icon.pink { color: #0284c7; background: #f0f9ff; }
+        .interview-stat-icon.blue { color: #0d9488; background: #f0fdfa; }
+        .interview-stat-icon.orange { color: #d97706; background: #fffbeb; }
+
+        .answer-hints span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .answer-hints span svg {
+            width: 14px;
+            height: 14px;
+            color: #2563eb;
+        }
+
+        .question-progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="interview-navbar">
+
+    <div class="interview-brand">
+        <div class="interview-brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+            </svg>
+        </div>
+
+        <div>
+            <strong>CareerPilot</strong>
+            <span>Interview Preparation</span>
+        </div>
+    </div>
+
+    <nav class="interview-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dsa-learning.html">DSA</a>
+        <a href="aptitude-learning.html">Aptitude</a>
+        <a href="technical.html">Technical</a>
+        <a href="interview.html" class="active">Interview</a>
+        <a href="companies.html">Companies</a>
+    </nav>
+<!-- MOBILE MENU BUTTON -->
+
+<button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+
+<!-- MOBILE MENU -->
+
+<nav class="mobile-nav-menu">
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="roadmap.html">
+        Roadmap
+    </a>
+
+    <a href="dsa.html">
+        DSA
+    </a>
+
+    <a href="aptitude.html">
+        Aptitude
+    </a>
+
+    <a href="technical.html">
+        Technical
+    </a>
+
+    <a
+        href="interview.html"
+        class="active">
+        Interview
+    </a>
+
+    <a href="companies.html">
+        Companies
+    </a>
+
+</nav>
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="interview-page">
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+    <section class="interview-hero">
+
+        <div class="interview-hero-copy">
+            <span class="interview-eyebrow">
+                INTERVIEW PREPARATION
+            </span>
+
+            <h1>
+                Practice your answers.
+                <span>Build confidence.</span>
+            </h1>
+
+            <p>
+                Practice technical, project, HR and mock
+                interview questions. Type your answer and
+                receive structured feedback based on the
+                key concepts expected in the response.
+            </p>
+
+            <div class="target-role-box">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;">
+                        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    Target Role
+                </span>
+                <strong id="targetRole">Loading...</strong>
+            </div>
+        </div>
+
+        <div class="interview-hero-stats">
+            <div>
+                <strong id="questionsAttempted">0</strong>
+                <span>Questions</span>
+            </div>
+
+            <div>
+                <strong id="strongAnswers">0</strong>
+                <span>Strong Answers</span>
+            </div>
+
+            <div>
+                <strong id="interviewAccuracy">0%</strong>
+                <span>Accuracy</span>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+    <section class="interview-stats">
+
+        <div class="interview-stat-card">
+            <div class="interview-stat-icon purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" y1="19" x2="12" y2="23"/>
+                    <line x1="8" y1="23" x2="16" y2="23"/>
+                </svg>
+            </div>
+            <div>
+                <span>Questions Attempted</span>
+                <strong id="statQuestions">0</strong>
+            </div>
+        </div>
+
+        <div class="interview-stat-card">
+            <div class="interview-stat-icon pink">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+            </div>
+            <div>
+                <span>Strong Answers</span>
+                <strong id="statStrong">0</strong>
+            </div>
+        </div>
+
+        <div class="interview-stat-card">
+            <div class="interview-stat-icon blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+            </div>
+            <div>
+                <span>Accuracy</span>
+                <strong id="statAccuracy">0%</strong>
+            </div>
+        </div>
+
+        <div class="interview-stat-card">
+            <div class="interview-stat-icon orange">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+            </div>
+            <div>
+                <span>Interview XP</span>
+                <strong id="interviewXP">0</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CATEGORY TABS
+    ================================================== -->
+    <section class="interview-practice-section">
+
+        <div class="section-heading">
+            <span class="section-label">PRACTICE MODE</span>
+            <h2>Choose your interview type</h2>
+            <p>
+                Start with a focused category or try a complete mock interview.
+            </p>
+        </div>
+
+        <div class="category-tabs">
+
+            <button type="button" class="category-tab active" data-category="technical">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"/>
+                        <polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                </span>
+                <strong>Technical</strong>
+                <small>DBMS • OS • CN • OOP • DSA</small>
+            </button>
+
+            <button type="button" class="category-tab" data-category="project">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </span>
+                <strong>Project</strong>
+                <small>Resume • Projects • Experience</small>
+            </button>
+
+            <button type="button" class="category-tab" data-category="hr">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </span>
+                <strong>HR</strong>
+                <small>Behavioral • Goals • Motivation</small>
+            </button>
+
+            <button type="button" class="category-tab" data-category="mock">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </span>
+                <strong>Mock Interview</strong>
+                <small>Mixed interview simulation</small>
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUESTION PANEL
+    ================================================== -->
+    <section class="interview-question-card">
+
+        <div class="question-topbar">
+            <div>
+                <span class="section-label">CURRENT QUESTION</span>
+                <h2 id="categoryTitle">Technical Interview</h2>
+            </div>
+
+            <div class="question-counter">
+                <span id="questionNumber">1</span> / <span id="questionTotal">1</span>
+            </div>
+        </div>
+
+        <div class="question-progress">
+            <div id="questionProgressBar" class="question-progress-fill"></div>
+        </div>
+
+        <div class="question-content">
+
+            <div class="question-badge">
+                Q<span id="questionBadge">1</span>
+            </div>
+
+            <h3 id="questionText">Loading question...</h3>
+
+            <div class="answer-label">Your answer</div>
+
+            <textarea
+                id="answerInput"
+                rows="8"
+                placeholder="Type your interview answer here..."
+            ></textarea>
+
+            <div class="answer-hints">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Explain clearly
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Use relevant concepts
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Add an example when possible
+                </span>
+            </div>
+
+            <div class="question-actions">
+                <button
+                    type="button"
+                    id="submitAnswer"
+                    class="primary-interview-button"
+                >
+                    Evaluate Answer
+                </button>
+
+                <button
+                    type="button"
+                    id="nextQuestion"
+                    class="secondary-interview-button"
+                    disabled
+                >
+                    Next Question →
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FEEDBACK
+    ================================================== -->
+    <section id="feedbackPanel" class="feedback-panel hidden">
+
+        <div class="feedback-header">
+            <div>
+                <span class="section-label">ANSWER REVIEW</span>
+                <h2>Interview Feedback</h2>
+            </div>
+
+            <div id="answerScore" class="answer-score">
+                0/100
+            </div>
+        </div>
+
+        <div class="feedback-grid">
+            <div class="feedback-box score-box">
+                <span>Score</span>
+                <strong id="scoreMessage">-</strong>
+            </div>
+
+            <div class="feedback-box">
+                <span>Matched Concepts</span>
+                <strong id="matchedConcepts">-</strong>
+            </div>
+
+            <div class="feedback-box">
+                <span>Missing Concepts</span>
+                <strong id="missingConcepts">-</strong>
+            </div>
+        </div>
+
+        <div class="feedback-advice">
+            <h3>Feedback</h3>
+            <p id="feedbackText">-</p>
+        </div>
+
+        <div class="strong-answer-example">
+            <span>EXPECTED ANSWER DIRECTION</span>
+            <p id="expectedAnswer">-</p>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         HISTORY
+    ================================================== -->
+    <section class="history-card">
+
+        <div class="section-heading">
+            <span class="section-label">PRACTICE HISTORY</span>
+            <h2>Your recent interview practice</h2>
+            <p>
+                Your recent answers are saved to your CareerPilot profile.
+            </p>
+        </div>
+
+        <div id="historyList" class="history-list">
+            <div class="empty-history">
+                <div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8" y1="23" x2="16" y2="23"/>
+                    </svg>
+                </div>
+                <p>No interview questions attempted yet.</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="toast" class="interview-toast"></div>
+
+<script type="module" src="../js/interview/interview.js"></script>
+<script src="../js/mobile-nav.js"></script>
+</body>
+
+</html>

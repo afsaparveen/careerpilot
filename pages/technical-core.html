@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Subject | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/technical-core.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .core-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="core-navbar">
+
+    <a href="technical.html" class="core-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        CareerPilot
+    </a>
+
+    <nav class="core-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dsa.html">DSA</a>
+        <a href="aptitude.html">Aptitude</a>
+        <a href="technical.html" class="active">Technical</a>
+        <a href="interview.html">Interview</a>
+    </nav>
+
+    <div class="core-user">
+        <span id="userInitials">CP</span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+</header>
+
+
+<main class="core-page">
+
+    <!-- COURSE HEADER -->
+    <section class="core-hero">
+
+        <div>
+            <span id="courseLabel" class="eyebrow">
+                CORE TECHNICAL
+            </span>
+            <h1 id="courseTitle">Loading...</h1>
+            <p id="courseDescription">Loading subject material...</p>
+        </div>
+
+        <div class="course-progress">
+            <strong id="coursePercent">0%</strong>
+            <span>Subject Progress</span>
+
+            <div class="progress-track">
+                <div id="courseProgressFill" class="progress-fill"></div>
+            </div>
+
+            <small id="courseProgressText">0 completed</small>
+        </div>
+
+    </section>
+
+
+    <!-- COURSE LAYOUT -->
+    <section class="core-layout">
+
+        <!-- =================================================
+             CHAPTER SIDEBAR
+        ================================================== -->
+        <aside class="chapter-sidebar">
+
+            <div class="sidebar-heading">
+                <span>CHAPTERS</span>
+                <strong id="chapterCount">0</strong>
+            </div>
+
+            <div id="chapterList"></div>
+
+        </aside>
+
+
+        <!-- =================================================
+             STUDY CONTENT
+        ================================================== -->
+        <section class="core-content">
+
+            <div class="chapter-header">
+                <span id="chapterBadge" class="chapter-badge">CHAPTER 1</span>
+                <h2 id="chapterTitle">Loading...</h2>
+                <p id="chapterPages"></p>
+            </div>
+
+            <!-- TOPICS -->
+            <div class="topic-navigation">
+                <div class="topic-heading">
+                    <span>CHAPTER TOPICS</span>
+                </div>
+                <div id="topicList" class="topic-list"></div>
+            </div>
+
+            <!-- CURRENT TOPIC -->
+            <article class="study-card">
+
+                <div class="study-card-header">
+                    <div>
+                        <span class="current-topic-label">CURRENT TOPIC</span>
+                        <h2 id="topicTitle">Loading...</h2>
+                    </div>
+
+                    <span id="topicStatus" class="topic-status">
+                        Not completed
+                    </span>
+                </div>
+
+                <div class="study-section">
+                    <h3>Learn</h3>
+                    <div id="topicLearn" class="study-text">Loading...</div>
+                </div>
+
+                <div id="exampleSection" class="study-section example-section">
+                    <h3>Example</h3>
+                    <div id="topicExample" class="example-box"></div>
+                </div>
+
+                <div class="study-section">
+                    <h3>Key Points</h3>
+                    <ul id="keyPointsList" class="key-points"></ul>
+                </div>
+
+                <!-- FINISH TOPIC -->
+                <div class="topic-completion">
+                    <button id="completeTopicBtn" class="primary-button">
+                        I Finished Studying This Topic
+                    </button>
+                    <span id="topicMessage" class="topic-message"></span>
+                </div>
+
+            </article>
+
+            <!-- CHAPTER TEST -->
+            <section id="chapterTestCard" class="chapter-test-card">
+
+                <div>
+                    <span class="eyebrow">CHAPTER TEST</span>
+                    <h2>Finish the chapter test</h2>
+                    <p id="chapterTestMessage">
+                        Complete every topic in this chapter before starting the test.
+                    </p>
+                </div>
+
+                <button id="chapterTestBtn" class="test-button" disabled>
+                    Chapter Test
+                </button>
+
+            </section>
+
+            <!-- NEXT CHAPTER -->
+            <section id="nextChapterCard" class="next-chapter-card">
+
+                <div>
+                    <span class="eyebrow">NEXT</span>
+                    <h2 id="nextChapterTitle">Next Chapter</h2>
+                    <p id="nextChapterMessage">
+                        Complete the current chapter test to unlock the next chapter.
+                    </p>
+                </div>
+
+                <button id="nextChapterBtn" class="secondary-button" disabled>
+                    Next Chapter →
+                </button>
+
+            </section>
+
+        </section>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/technical-core.js"></script>
+
+</body>
+</html>

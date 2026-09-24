@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Profile & Settings | CareerPilot
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/account.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="account-navbar">
+
+    <div class="account-brand">
+
+        <div class="account-brand-mark">
+            CP
+        </div>
+
+        <div>
+
+            <strong>
+                CareerPilot
+            </strong>
+
+            <span>
+                Profile & Settings
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="account-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa-learning.html">
+            DSA
+        </a>
+
+        <a href="aptitude-learning.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        
+            href="account.html"
+            class="active"
+        >
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="account-page">
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="account-hero">
+
+        <div class="account-hero-copy">
+
+            <span class="account-eyebrow">
+                YOUR CAREER PROFILE
+            </span>
+
+            <h1>
+                Build a profile that
+                <span>guides CareerPilot.</span>
+            </h1>
+
+            <p>
+                Keep your target role, education,
+                preferences and career information
+                updated so your preparation stays
+                aligned with your goals.
+            </p>
+
+        </div>
+
+
+        <div class="profile-preview">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                CP
+            </div>
+
+            <div>
+
+                <strong id="profilePreviewName">
+                    Career Explorer
+                </strong>
+
+                <span id="profilePreviewRole">
+                    Target role not selected
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROFILE COMPLETION
+    ========================================== -->
+
+    <section class="completion-card">
+
+        <div class="completion-top">
+
+            <div>
+
+                <span class="section-label">
+                    PROFILE COMPLETION
+                </span>
+
+                <h2>
+                    Complete your career profile
+                </h2>
+
+            </div>
+
+
+            <strong id="profileCompletion">
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="completion-track">
+
+            <div
+                id="profileCompletionBar"
+                class="completion-fill"
+            ></div>
+
+        </div>
+
+
+        <p id="profileCompletionMessage">
+            Add your information to complete your profile.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROFILE FORM
+    ========================================== -->
+
+    <section class="account-card">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                PERSONAL & CAREER INFORMATION
+            </span>
+
+            <h2>
+                Your Profile
+            </h2>
+
+            <p>
+                These details help CareerPilot personalize
+                your placement preparation.
+            </p>
+
+        </div>
+
+
+        <form id="profileForm">
+
+            <div class="form-grid">
+
+
+                <div class="form-field">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        id="fullName"
+                        type="text"
+                        placeholder="Your full name"
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="targetRole">
+                        Target Role
+                    </label>
+
+                    <input
+                        id="targetRole"
+                        type="text"
+                        placeholder="Software Developer"
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="experienceLevel">
+                        Experience Level
+                    </label>
+
+                    <select id="experienceLevel">
+
+                        <option value="">
+                            Select level
+                        </option>
+
+                        <option value="Student">
+                            Student
+                        </option>
+
+                        <option value="Fresher">
+                            Fresher
+                        </option>
+
+                        <option value="Entry Level">
+                            Entry Level
+                        </option>
+
+                        <option value="Experienced">
+                            Experienced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="graduationYear">
+                        Graduation Year
+                    </label>
+
+                    <input
+                        id="graduationYear"
+                        type="number"
+                        min="2020"
+                        max="2100"
+                        placeholder="2027"
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="preferredLanguage">
+                        Preferred Programming Language
+                    </label>
+
+                    <select id="preferredLanguage">
+
+                        <option value="">
+                            Select language
+                        </option>
+
+                        <option value="Java">
+                            Java
+                        </option>
+
+                        <option value="C++">
+                            C++
+                        </option>
+
+                        <option value="Python">
+                            Python
+                        </option>
+
+                        <option value="JavaScript">
+                            JavaScript
+                        </option>
+
+                        <option value="C">
+                            C
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        id="location"
+                        type="text"
+                        placeholder="City / State"
+                    >
+
+                </div>
+
+
+                <div class="form-field full-field">
+
+                    <label for="bio">
+                        Career Summary
+                    </label>
+
+                    <textarea
+                        id="bio"
+                        rows="5"
+                        placeholder="Tell CareerPilot about your current skills, goals or preparation focus..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Save Profile
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PREFERENCES
+    ========================================== -->
+
+    <section class="account-card">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                PREPARATION PREFERENCES
+            </span>
+
+            <h2>
+                CareerPilot Preferences
+            </h2>
+
+            <p>
+                Choose how your preparation experience
+                should behave.
+            </p>
+
+        </div>
+
+
+        <div class="preference-list">
+
+
+            <label class="preference-item">
+
+                <div>
+
+                    <strong>
+                        Daily Plan
+                    </strong>
+
+                    <span>
+                        Generate a personalized daily
+                        preparation plan.
+                    </span>
+
+                </div>
+
+                <input
+                    id="dailyPlanPreference"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <label class="preference-item">
+
+                <div>
+
+                    <strong>
+                        Interview Practice
+                    </strong>
+
+                    <span>
+                        Include interview practice in
+                        your preparation workflow.
+                    </span>
+
+                </div>
+
+                <input
+                    id="interviewPreference"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <label class="preference-item">
+
+                <div>
+
+                    <strong>
+                        Aptitude Learning
+                    </strong>
+
+                    <span>
+                        Include lesson-based aptitude
+                        learning in your routine.
+                    </span>
+
+                </div>
+
+                <input
+                    id="aptitudePreference"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <label class="preference-item">
+
+                <div>
+
+                    <strong>
+                        DSA Learning
+                    </strong>
+
+                    <span>
+                        Include structured DSA learning
+                        in your routine.
+                    </span>
+
+                </div>
+
+                <input
+                    id="dsaPreference"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="savePreferences"
+            class="secondary-button"
+        >
+            Save Preferences
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ACCOUNT
+    ========================================== -->
+
+    <section class="account-card account-info-card">
+
+        <div>
+
+            <span class="section-label">
+                ACCOUNT
+            </span>
+
+            <h2>
+                Account Information
+            </h2>
+
+            <p>
+                Your CareerPilot account email is shown
+                below.
+            </p>
+
+        </div>
+
+
+        <div class="account-email-box">
+
+            <span>
+                Signed in as
+            </span>
+
+            <strong id="accountEmail">
+                Loading...
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<div
+    id="toast"
+    class="account-toast"
+></div>
+
+
+<script
+    type="module"
+    src="../js/account/account.js"
+></script>
+
+
+</body>
+
+</html>

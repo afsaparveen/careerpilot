@@ -1,0 +1,465 @@
+{
+  "courseId": "dsa-learning",
+  "title": "Data Structures & Algorithms",
+  "description": "Learn DSA concepts step by step, complete topic self-checks, and unlock module assessments.",
+  "modules": [
+    {
+      "id": "dsa-foundations",
+      "title": "DSA Foundations",
+      "description": "Build the core concepts needed to understand data structures and algorithms.",
+      "icon": "🧠",
+      "topics": [
+        {
+          "id": "introduction-to-dsa",
+          "title": "Introduction to DSA",
+          "content": "<h3>What is DSA?</h3><p>Data Structures and Algorithms are the foundation of efficient problem solving in programming.</p><p>A data structure organizes data, while an algorithm defines the steps used to solve a problem.</p>",
+          "example": "<pre><code>Problem: Find a number in a list\nData structure: Array\nAlgorithm: Linear Search</code></pre>",
+          "keyPoints": [
+            "Data structures organize data.",
+            "Algorithms solve problems.",
+            "Efficient programs depend on choosing suitable data structures and algorithms."
+          ]
+        },
+        {
+          "id": "data-structures",
+          "title": "Data Structures",
+          "content": "<h3>Types of Data Structures</h3><p>Data structures can be classified into linear and non-linear structures.</p><p>Common examples include arrays, linked lists, stacks, queues, trees and graphs.</p>",
+          "example": "<pre><code>Linear: Array → Linked List → Stack → Queue\nNon-linear: Tree → Graph</code></pre>",
+          "keyPoints": [
+            "Linear structures store elements in a sequential relationship.",
+            "Non-linear structures represent hierarchical or network relationships.",
+            "The choice of structure depends on the problem."
+          ]
+        },
+        {
+          "id": "linear-vs-nonlinear",
+          "title": "Linear vs Non-Linear Data Structures",
+          "content": "<h3>Linear Data Structures</h3><p>Elements are arranged sequentially.</p><h3>Non-Linear Data Structures</h3><p>Elements can have multiple relationships.</p>",
+          "example": "<pre><code>Linear → Array, Linked List, Stack, Queue\nNon-Linear → Tree, Graph</code></pre>",
+          "keyPoints": [
+            "Arrays and linked lists are linear structures.",
+            "Trees and graphs are non-linear structures.",
+            "Relationships are more complex in non-linear structures."
+          ]
+        },
+        {
+          "id": "algorithms",
+          "title": "Algorithms",
+          "content": "<h3>What is an Algorithm?</h3><p>An algorithm is a finite sequence of well-defined steps used to solve a problem.</p><p>A good algorithm should be clear, finite and effective.</p>",
+          "example": "<pre><code>Algorithm to find maximum:\n1. Assume first element is maximum.\n2. Compare with remaining elements.\n3. Update maximum when required.\n4. Return maximum.</code></pre>",
+          "keyPoints": [
+            "Algorithms contain ordered steps.",
+            "Algorithms should eventually terminate.",
+            "Algorithms should produce the required result."
+          ]
+        },
+        {
+          "id": "algorithm-characteristics",
+          "title": "Characteristics of Algorithms",
+          "content": "<h3>Main Characteristics</h3><p>Important characteristics include input, output, definiteness, finiteness and effectiveness.</p>",
+          "example": "<pre><code>Input → Algorithm → Output</code></pre>",
+          "keyPoints": [
+            "An algorithm may accept zero or more inputs.",
+            "An algorithm should produce output.",
+            "Steps should be precise.",
+            "The algorithm should terminate."
+          ]
+        },
+        {
+          "id": "time-complexity",
+          "title": "Time Complexity",
+          "content": "<h3>Time Complexity</h3><p>Time complexity describes how the running time of an algorithm grows as the input size increases.</p><p>It helps compare algorithms without depending on a specific machine.</p>",
+          "example": "<pre><code>for (int i = 0; i &lt; n; i++) {\n    cout &lt;&lt; i;\n}\n\nTime Complexity: O(n)</code></pre>",
+          "keyPoints": [
+            "Time complexity describes growth in execution work.",
+            "Input size is commonly represented by n.",
+            "We usually focus on the dominant growth term."
+          ]
+        },
+        {
+          "id": "space-complexity",
+          "title": "Space Complexity",
+          "content": "<h3>Space Complexity</h3><p>Space complexity describes the additional memory required by an algorithm as input size increases.</p>",
+          "example": "<pre><code>int arr[n];\n\nAdditional space: O(n)</code></pre>",
+          "keyPoints": [
+            "Space complexity measures memory requirements.",
+            "Auxiliary space refers to extra memory used by the algorithm.",
+            "Memory efficiency is important for large inputs."
+          ]
+        },
+        {
+          "id": "big-o",
+          "title": "Big-O Notation",
+          "content": "<h3>Big-O</h3><p>Big-O notation describes an upper bound on the growth rate of an algorithm.</p><p>Common complexities include O(1), O(log n), O(n), O(n log n) and O(n²).</p>",
+          "example": "<pre><code>O(1)       → Constant\nO(log n)   → Logarithmic\nO(n)       → Linear\nO(n log n) → Linearithmic\nO(n²)      → Quadratic</code></pre>",
+          "keyPoints": [
+            "O(1) does not depend on input size.",
+            "O(n) grows linearly.",
+            "O(n²) grows quadratically.",
+            "Big-O helps compare scalability."
+          ]
+        },
+        {
+          "id": "arrays",
+          "title": "Arrays",
+          "content": "<h3>Arrays</h3><p>An array stores elements of the same type in contiguous memory locations in many common implementations.</p><p>Array indexing provides direct access to elements.</p>",
+          "example": "<pre><code>int numbers[] = {10, 20, 30, 40};\n\nnumbers[0] → 10\nnumbers[2] → 30</code></pre>",
+          "keyPoints": [
+            "Arrays support indexed access.",
+            "Accessing an element by index is typically O(1).",
+            "Insertion and deletion may require shifting elements."
+          ]
+        },
+        {
+          "id": "strings",
+          "title": "Strings",
+          "content": "<h3>Strings</h3><p>A string is a sequence of characters.</p><p>String operations frequently appear in coding interviews and algorithmic problems.</p>",
+          "example": "<pre><code>string name = \"CareerPilot\";\n\nname[0] → 'C'</code></pre>",
+          "keyPoints": [
+            "Strings represent sequences of characters.",
+            "String traversal is commonly O(n).",
+            "Searching, matching and manipulation are common string problems."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsa-linear",
+      "title": "Linear Data Structures",
+      "description": "Learn linked lists, stacks, queues, deques and recursion.",
+      "icon": "🔗",
+      "topics": [
+        {
+          "id": "linked-list",
+          "title": "Linked Lists",
+          "content": "<h3>Linked List</h3><p>A linked list consists of nodes connected through references.</p><p>Each node commonly contains data and a link to another node.</p>",
+          "example": "<pre><code>Head → [10|•] → [20|•] → [30|null]</code></pre>",
+          "keyPoints": [
+            "Nodes are connected using links.",
+            "Insertion can be efficient when the position is known.",
+            "Random access is slower than arrays."
+          ]
+        },
+        {
+          "id": "stack",
+          "title": "Stack",
+          "content": "<h3>Stack</h3><p>A stack follows the LIFO principle: Last In, First Out.</p>",
+          "example": "<pre><code>Push 10\nPush 20\nPush 30\n\nPop → 30</code></pre>",
+          "keyPoints": [
+            "Stack follows LIFO.",
+            "Push adds an element.",
+            "Pop removes the top element."
+          ]
+        },
+        {
+          "id": "queue",
+          "title": "Queue",
+          "content": "<h3>Queue</h3><p>A queue generally follows FIFO: First In, First Out.</p>",
+          "example": "<pre><code>Enqueue: 10, 20, 30\nDequeue → 10</code></pre>",
+          "keyPoints": [
+            "Queue follows FIFO.",
+            "Insertion occurs at the rear.",
+            "Removal occurs at the front."
+          ]
+        },
+        {
+          "id": "deque",
+          "title": "Deque",
+          "content": "<h3>Deque</h3><p>A deque allows insertion and deletion from both ends.</p>",
+          "example": "<pre><code>Front ← [10] [20] [30] → Rear</code></pre>",
+          "keyPoints": [
+            "Deque means double-ended queue.",
+            "Both ends can support insertion and deletion.",
+            "It can be used to implement several queue-like behaviours."
+          ]
+        },
+        {
+          "id": "recursion",
+          "title": "Recursion",
+          "content": "<h3>Recursion</h3><p>Recursion occurs when a function calls itself to solve smaller instances of the same problem.</p><p>A recursive solution requires a base case.</p>",
+          "example": "<pre><code>factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)</code></pre>",
+          "keyPoints": [
+            "A recursive function calls itself.",
+            "A base case prevents infinite recursion.",
+            "The call stack stores active recursive calls."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsa-search-sort-hash",
+      "title": "Searching, Sorting & Hashing",
+      "description": "Understand searching, sorting techniques and hash-based data structures.",
+      "icon": "🔎",
+      "topics": [
+        {
+          "id": "linear-search",
+          "title": "Linear Search",
+          "content": "<h3>Linear Search</h3><p>Linear search checks elements one by one until the target is found or the collection is exhausted.</p>",
+          "example": "<pre><code>[5, 8, 2, 9]\nTarget = 2\n\nCheck 5 → Check 8 → Check 2 ✓</code></pre>",
+          "keyPoints": [
+            "Works on unsorted collections.",
+            "Worst-case time complexity is O(n).",
+            "Simple to implement."
+          ]
+        },
+        {
+          "id": "binary-search",
+          "title": "Binary Search",
+          "content": "<h3>Binary Search</h3><p>Binary search repeatedly divides a sorted search range into two halves.</p>",
+          "example": "<pre><code>[10, 20, 30, 40, 50]\nTarget = 40\n\nCheck middle → eliminate half → repeat</code></pre>",
+          "keyPoints": [
+            "The data must satisfy the required ordering condition.",
+            "Each step eliminates approximately half the search space.",
+            "Typical time complexity is O(log n)."
+          ]
+        },
+        {
+          "id": "basic-sorting",
+          "title": "Basic Sorting",
+          "content": "<h3>Basic Sorting Algorithms</h3><p>Bubble sort, selection sort and insertion sort are common introductory sorting algorithms.</p>",
+          "example": "<pre><code>Before: 5 3 1\nAfter:  1 3 5</code></pre>",
+          "keyPoints": [
+            "Sorting arranges elements according to an order.",
+            "Basic quadratic sorting algorithms are useful for learning fundamentals.",
+            "Insertion sort can perform well on nearly sorted data."
+          ]
+        },
+        {
+          "id": "merge-sort",
+          "title": "Merge Sort",
+          "content": "<h3>Merge Sort</h3><p>Merge sort uses divide and conquer: divide the array, sort the parts and merge them.</p>",
+          "example": "<pre><code>[8, 3, 5, 1]\n↓\n[8,3] [5,1]\n↓\n[3,8] [1,5]\n↓\n[1,3,5,8]</code></pre>",
+          "keyPoints": [
+            "Merge sort uses divide and conquer.",
+            "Typical time complexity is O(n log n).",
+            "Merging combines sorted subarrays."
+          ]
+        },
+        {
+          "id": "quick-sort",
+          "title": "Quick Sort",
+          "content": "<h3>Quick Sort</h3><p>Quick sort selects a pivot and partitions elements around it.</p>",
+          "example": "<pre><code>Pivot = 5\nSmaller → 3, 2\nPivot    → 5\nLarger   → 8, 9</code></pre>",
+          "keyPoints": [
+            "Quick sort uses partitioning.",
+            "Average-case performance is commonly O(n log n).",
+            "Pivot choice influences performance."
+          ]
+        },
+        {
+          "id": "hashing",
+          "title": "Hashing",
+          "content": "<h3>Hashing</h3><p>Hashing maps keys to positions using a hash function.</p><p>Hash tables are widely used for fast lookup operations.</p>",
+          "example": "<pre><code>key = 25\nhash(key) → bucket index</code></pre>",
+          "keyPoints": [
+            "Hash functions map keys to positions.",
+            "Collisions occur when keys map to the same location.",
+            "Good hashing aims for efficient lookup."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsa-trees-heaps",
+      "title": "Trees & Heaps",
+      "description": "Learn hierarchical data structures and priority-based structures.",
+      "icon": "🌳",
+      "topics": [
+        {
+          "id": "binary-tree",
+          "title": "Binary Trees",
+          "content": "<h3>Binary Tree</h3><p>A binary tree is a tree in which each node has at most two children.</p>",
+          "example": "<pre><code>        10\n       /  \\\n      5   15</code></pre>",
+          "keyPoints": [
+            "Each node has at most two children.",
+            "Children are commonly called left and right.",
+            "Trees represent hierarchical relationships."
+          ]
+        },
+        {
+          "id": "tree-traversals",
+          "title": "Tree Traversals",
+          "content": "<h3>Tree Traversals</h3><p>Common traversals include preorder, inorder, postorder and level-order traversal.</p>",
+          "example": "<pre><code>        10\n       /  \\\n      5   15\n\nInorder → 5 10 15</code></pre>",
+          "keyPoints": [
+            "Preorder visits root before subtrees.",
+            "Inorder visits left subtree, root, right subtree.",
+            "Postorder visits subtrees before the root."
+          ]
+        },
+        {
+          "id": "binary-search-tree",
+          "title": "Binary Search Trees",
+          "content": "<h3>BST</h3><p>In a binary search tree, values in the left subtree follow the ordering rule relative to the node, while values in the right subtree follow the opposite side.</p>",
+          "example": "<pre><code>        50\n       /  \\\n     30    70</code></pre>",
+          "keyPoints": [
+            "BSTs maintain an ordering property.",
+            "Average operations can be efficient when the tree is balanced.",
+            "An unbalanced BST can become similar to a linked list."
+          ]
+        },
+        {
+          "id": "heap",
+          "title": "Heaps",
+          "content": "<h3>Heap</h3><p>A heap is a complete binary tree that satisfies a heap property.</p><p>Common forms are min-heaps and max-heaps.</p>",
+          "example": "<pre><code>Min Heap:\n        1\n       / \\\n      3   5</code></pre>",
+          "keyPoints": [
+            "Min-heaps keep the smallest value at the root.",
+            "Max-heaps keep the largest value at the root.",
+            "Heaps are commonly implemented using arrays."
+          ]
+        },
+        {
+          "id": "priority-queue",
+          "title": "Priority Queue",
+          "content": "<h3>Priority Queue</h3><p>A priority queue removes elements according to priority rather than simply insertion order.</p>",
+          "example": "<pre><code>Priority:\nHigh → served first\nLow  → served later</code></pre>",
+          "keyPoints": [
+            "Removal depends on priority.",
+            "Heaps are commonly used to implement priority queues.",
+            "Priority queues are useful in scheduling and graph algorithms."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsa-graphs",
+      "title": "Graphs",
+      "description": "Learn graph representations, traversal and important graph algorithms.",
+      "icon": "🕸️",
+      "topics": [
+        {
+          "id": "graph-basics",
+          "title": "Graph Basics",
+          "content": "<h3>Graphs</h3><p>A graph consists of vertices and edges representing relationships between entities.</p>",
+          "example": "<pre><code>A —— B\n|    |\nC —— D</code></pre>",
+          "keyPoints": [
+            "Vertices represent entities.",
+            "Edges represent relationships.",
+            "Graphs can be directed or undirected."
+          ]
+        },
+        {
+          "id": "graph-representation",
+          "title": "Graph Representation",
+          "content": "<h3>Representing Graphs</h3><p>Common representations include adjacency matrices and adjacency lists.</p>",
+          "example": "<pre><code>Adjacency List:\nA → B, C\nB → A, D\nC → A</code></pre>",
+          "keyPoints": [
+            "Adjacency lists store neighbouring vertices.",
+            "Adjacency matrices use a matrix representation.",
+            "The choice depends on graph density and operations."
+          ]
+        },
+        {
+          "id": "bfs",
+          "title": "Breadth-First Search",
+          "content": "<h3>BFS</h3><p>Breadth-first search explores a graph level by level.</p><p>A queue is commonly used.</p>",
+          "example": "<pre><code>Start A\nVisit A → neighbours → next level</code></pre>",
+          "keyPoints": [
+            "BFS uses a queue.",
+            "It explores nodes level by level.",
+            "BFS can be useful for shortest paths in unweighted graphs."
+          ]
+        },
+        {
+          "id": "dfs",
+          "title": "Depth-First Search",
+          "content": "<h3>DFS</h3><p>Depth-first search explores as far as possible before backtracking.</p><p>It can be implemented using recursion or an explicit stack.</p>",
+          "example": "<pre><code>Visit A\n  ↓\nVisit B\n  ↓\nVisit D\nBacktrack</code></pre>",
+          "keyPoints": [
+            "DFS goes deep before backtracking.",
+            "DFS uses recursion or a stack.",
+            "DFS is used in many connectivity and traversal problems."
+          ]
+        },
+        {
+          "id": "shortest-path",
+          "title": "Shortest Path",
+          "content": "<h3>Shortest Path</h3><p>Shortest path algorithms find minimum-cost routes between vertices under specified graph conditions.</p>",
+          "example": "<pre><code>A --2-- B --3-- C\nA ------6------ C\n\nA to C via B = 5</code></pre>",
+          "keyPoints": [
+            "Shortest path depends on edge properties.",
+            "Different algorithms suit different graph types.",
+            "Weights and negative edges affect algorithm selection."
+          ]
+        },
+        {
+          "id": "topological-sort-mst",
+          "title": "Topological Sort & MST",
+          "content": "<h3>Topological Sort</h3><p>Topological ordering is applicable to directed acyclic graphs.</p><h3>Minimum Spanning Tree</h3><p>An MST connects all vertices with minimum total edge weight in a suitable connected weighted undirected graph.</p>",
+          "example": "<pre><code>Tasks:\nA → B → C\n\nPossible topological order:\nA, B, C</code></pre>",
+          "keyPoints": [
+            "Topological ordering requires a directed acyclic graph.",
+            "MST connects all vertices with minimum total weight under the stated conditions.",
+            "Kruskal and Prim are common MST algorithms."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dsa-advanced",
+      "title": "Advanced Problem Solving",
+      "description": "Develop advanced problem-solving techniques used in coding interviews.",
+      "icon": "🚀",
+      "topics": [
+        {
+          "id": "greedy",
+          "title": "Greedy Algorithms",
+          "content": "<h3>Greedy Approach</h3><p>A greedy algorithm makes a locally optimal choice at each step with the goal of obtaining a global solution.</p>",
+          "example": "<pre><code>Choose the currently best available option.\nRepeat until the problem is solved.</code></pre>",
+          "keyPoints": [
+            "Greedy decisions are made step by step.",
+            "A greedy strategy does not automatically work for every problem.",
+            "Correctness depends on the problem's structure."
+          ]
+        },
+        {
+          "id": "dynamic-programming",
+          "title": "Dynamic Programming",
+          "content": "<h3>Dynamic Programming</h3><p>Dynamic programming solves problems by combining solutions to overlapping subproblems and storing results to avoid repeated work.</p>",
+          "example": "<pre><code>fib(5)\n→ fib(4) + fib(3)\nStore previously calculated results</code></pre>",
+          "keyPoints": [
+            "DP often relies on overlapping subproblems.",
+            "Memoization stores results recursively.",
+            "Tabulation builds results iteratively."
+          ]
+        },
+        {
+          "id": "backtracking",
+          "title": "Backtracking",
+          "content": "<h3>Backtracking</h3><p>Backtracking explores possible choices and reverses a choice when it cannot lead to a valid solution.</p>",
+          "example": "<pre><code>Choose → Explore → Reject → Undo → Try another choice</code></pre>",
+          "keyPoints": [
+            "Backtracking systematically explores choices.",
+            "Invalid paths are abandoned.",
+            "It is common in permutations, combinations and constraint problems."
+          ]
+        },
+        {
+          "id": "interview-patterns",
+          "title": "Common Interview Patterns",
+          "content": "<h3>Problem-Solving Patterns</h3><p>Many coding problems can be recognized using patterns such as two pointers, sliding window, prefix sums, binary search on answer and fast/slow pointers.</p>",
+          "example": "<pre><code>Array + contiguous range\n→ Think about Sliding Window</code></pre>",
+          "keyPoints": [
+            "Pattern recognition reduces repeated problem-solving effort.",
+            "Two pointers are useful for many array and string problems.",
+            "Sliding window is useful for many subarray and substring problems."
+          ]
+        },
+        {
+          "id": "advanced-practice",
+          "title": "Advanced Practice Strategy",
+          "content": "<h3>Practice Strategy</h3><p>After learning the concepts, practice problems by topic, difficulty and pattern.</p><p>Focus on understanding the approach rather than memorizing solutions.</p>",
+          "example": "<pre><code>Learn concept\n↓\nSolve easy\n↓\nSolve medium\n↓\nReview mistakes\n↓\nRepeat</code></pre>",
+          "keyPoints": [
+            "Start with concept-based problems.",
+            "Review failed attempts.",
+            "Increase difficulty gradually.",
+            "Track recurring mistakes."
+          ]
+        }
+      ]
+    }
+  ]
+}

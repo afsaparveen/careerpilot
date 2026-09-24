@@ -1,0 +1,1431 @@
+body {
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(124, 58, 237, 0.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(14, 165, 233, 0.07),
+            transparent 28%
+        ),
+        #f7f8fc;
+
+    color: #172033;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.roadmap-navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        16px 5vw;
+
+    background:
+        rgba(255,255,255,.94);
+
+    backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid #e7e9f1;
+}
+
+
+.roadmap-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.brand-mark {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(124,58,237,.22);
+}
+
+
+.roadmap-brand strong {
+
+    display: block;
+
+    font-size: 15px;
+}
+
+
+.roadmap-brand span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #7b8391;
+
+    font-size: 11px;
+}
+
+
+.roadmap-nav {
+
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.roadmap-nav a {
+
+    padding:
+        9px 12px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #6a7282;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.roadmap-nav a:hover,
+.roadmap-nav a.active {
+
+    color: #6741ce;
+
+    background: #f0ebff;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.roadmap-page {
+
+    width:
+        min(1180px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        38px 0 70px;
+}
+
+
+.section-label {
+
+    color: #7c3aed;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.roadmap-hero {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 34px;
+
+    border:
+        1px solid #e8e2f8;
+
+    border-radius: 27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f4efff
+        );
+
+    box-shadow:
+        0 18px 50px
+        rgba(48,40,88,.07);
+}
+
+
+.roadmap-hero-copy h1 {
+
+    margin:
+        8px 0 12px;
+
+    max-width: 700px;
+
+    font-size:
+        clamp(30px, 5vw, 47px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+}
+
+
+.roadmap-hero-copy p {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #70788a;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+.hero-role {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid #e4dafb;
+
+    border-radius: 10px;
+
+    background: #faf8ff;
+}
+
+
+.hero-role span {
+
+    color: #7c8390;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.hero-role strong {
+
+    color: #6841ce;
+
+    font-size: 11px;
+}
+
+
+.roadmap-health {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 180px;
+}
+
+
+.roadmap-ring {
+
+    width: 145px;
+
+    height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #7c3aed 0deg,
+            #a855f7 0deg,
+            #ece8f7 0deg
+        );
+}
+
+
+.roadmap-ring::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 11px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+.roadmap-ring strong {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 30px;
+}
+
+
+.roadmap-health > span {
+
+    color: #757d8e;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.roadmap-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap: 17px;
+
+    margin-top: 22px;
+}
+
+
+.summary-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 19px;
+
+    background: white;
+
+    border:
+        1px solid #e7e9f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 9px 28px
+        rgba(30,35,60,.05);
+}
+
+
+.summary-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #f1edff;
+
+    font-size: 21px;
+}
+
+
+.summary-card span {
+
+    display: block;
+
+    color: #808797;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.summary-card strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.roadmap-section,
+.technical-section {
+
+    margin-top: 30px;
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+}
+
+
+.section-heading h2 {
+
+    margin:
+        6px 0 6px;
+
+    font-size: 27px;
+}
+
+
+.section-heading p {
+
+    margin: 0;
+
+    color: #778092;
+
+    font-size: 12px;
+}
+
+
+.section-link {
+
+    text-decoration: none;
+
+    color: #6741ce;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   ROADMAP LIST
+========================================= */
+
+.roadmap-list {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.roadmap-list::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 31px;
+
+    top: 28px;
+
+    bottom: 28px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ddd5f7,
+            #eceef4
+        );
+}
+
+
+.roadmap-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        64px
+        minmax(0, 1fr)
+        105px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        18px 20px;
+
+    background: white;
+
+    border:
+        1px solid #e5e8ef;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 9px 25px
+        rgba(30,35,60,.04);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.roadmap-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(30,35,60,.07);
+}
+
+
+.roadmap-number {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-radius: 50%;
+
+    background: #f0ebff;
+
+    color: #6741ce;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+.roadmap-card.completed .roadmap-number {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7
+        );
+
+    color: white;
+}
+
+
+.roadmap-card.locked .roadmap-number {
+
+    background: #f0f1f5;
+
+    color: #8b92a0;
+}
+
+
+.roadmap-content h3 {
+
+    margin: 0;
+
+    font-size: 17px;
+}
+
+
+.roadmap-content p {
+
+    margin:
+        6px 0 0;
+
+    color: #747c8c;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.roadmap-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+
+.roadmap-meta span {
+
+    padding:
+        6px 8px;
+
+    border-radius: 999px;
+
+    background: #f5f5f9;
+
+    color: #626a79;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.roadmap-status {
+
+    text-align: right;
+}
+
+
+.status-label {
+
+    display: inline-block;
+
+    padding:
+        7px 9px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+.status-label.complete {
+
+    background: #dcfce7;
+
+    color: #18814c;
+}
+
+
+.status-label.progress {
+
+    background: #f0ebff;
+
+    color: #6741ce;
+}
+
+
+.status-label.locked {
+
+    background: #f0f1f5;
+
+    color: #7f8795;
+}
+
+
+.stage-progress {
+
+    margin-top: 9px;
+
+    text-align: right;
+
+    color: #858d9c;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TECHNICAL
+========================================= */
+
+.technical-progress-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 15px;
+}
+
+
+.technical-card {
+
+    padding: 20px;
+
+    background: white;
+
+    border:
+        1px solid #e6e8ef;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(30,35,60,.04);
+}
+
+
+.technical-card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.technical-card h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+.technical-percent {
+
+    color: #6741ce;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+.technical-bar {
+
+    height: 8px;
+
+    margin-top: 13px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e9eaf1;
+}
+
+
+.technical-fill {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #a855f7
+        );
+}
+
+
+.technical-card p {
+
+    margin:
+        10px 0 0;
+
+    color: #818898;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   NEXT ACTION
+========================================= */
+
+.next-action-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 30px;
+
+    padding: 23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5f1ff
+        );
+
+    border:
+        1px solid #e3dcf5;
+
+    border-radius: 21px;
+
+    box-shadow:
+        0 12px 34px
+        rgba(48,40,88,.06);
+}
+
+
+.next-action-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #eee8ff;
+
+    font-size: 24px;
+}
+
+
+.next-action-card h2 {
+
+    margin:
+        6px 0;
+
+    font-size: 21px;
+}
+
+
+.next-action-card p {
+
+    margin: 0;
+
+    color: #747c8c;
+
+    font-size: 11px;
+}
+
+
+.next-action-button {
+
+    margin-left: auto;
+
+    padding:
+        11px 15px;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7
+        );
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.roadmap-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+
+.primary-button,
+.secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        12px 17px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.primary-button {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7
+        );
+}
+
+
+.secondary-button {
+
+    color: #6741ce;
+
+    background: #f1edff;
+
+    border:
+        1px solid #e3daf9;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty-roadmap {
+
+    padding:
+        40px 20px;
+
+    text-align: center;
+
+    color: #7b8391;
+
+    background: white;
+
+    border:
+        1px dashed #d9dce6;
+
+    border-radius: 18px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+
+    .roadmap-summary {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+
+    .technical-progress-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .roadmap-navbar {
+
+        padding:
+            13px 4vw;
+    }
+
+
+    .roadmap-nav a {
+
+        padding:
+            7px 8px;
+
+        font-size: 10px;
+    }
+
+
+    .roadmap-brand span {
+
+        display: none;
+    }
+
+
+    .roadmap-hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .roadmap-health {
+
+        align-self: center;
+    }
+
+
+    .roadmap-card {
+
+        grid-template-columns:
+            52px
+            minmax(0,1fr);
+    }
+
+
+    .roadmap-status {
+
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+
+    .stage-progress {
+
+        text-align: left;
+    }
+
+
+    .technical-progress-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .next-action-card {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .next-action-button {
+
+        margin-left: 68px;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .roadmap-summary {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .roadmap-hero {
+
+        padding: 25px;
+    }
+
+
+    .roadmap-card {
+
+        padding: 16px;
+    }
+
+
+    .next-action-button {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .roadmap-actions {
+
+        flex-direction: column;
+    }
+
+
+    .primary-button,
+    .secondary-button {
+
+        width: 100%;
+    }
+
+}
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------
+       ROADMAP NAVBAR
+    ----------------------------- */
+
+    .roadmap-navbar {
+
+        position: sticky;
+
+        top: 0;
+
+        width: 100%;
+
+        min-height: 64px;
+
+        padding: 10px 16px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        background: rgba(255,255,255,.97);
+
+        z-index: 9999;
+    }
+
+
+    /* -----------------------------
+       LOGO
+    ----------------------------- */
+
+    .roadmap-brand {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        flex-shrink: 0;
+    }
+
+
+    .brand-mark {
+
+        width: 40px;
+
+        height: 40px;
+
+        border-radius: 12px;
+
+        flex-shrink: 0;
+    }
+
+
+    .roadmap-brand strong {
+
+        font-size: 18px;
+    }
+
+
+    .roadmap-brand span {
+
+        display: none;
+    }
+.careerpilot-logo-text {
+    color: #17213f;
+}
+
+.careerpilot-logo-text span {
+    color: #7c3aed;
+}
+
+    /* -----------------------------
+       HIDE DESKTOP NAV
+    ----------------------------- */
+
+    .roadmap-nav {
+
+        display: none !important;
+    }
+
+
+    /* -----------------------------
+       HAMBURGER BUTTON
+    ----------------------------- */
+
+    .mobile-menu-toggle {
+
+        display: flex !important;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 42px;
+
+        height: 42px;
+
+        padding: 0;
+
+        margin-left: auto;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background: #f5f3ff;
+
+        color: #7c3aed;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------
+       THREE HAMBURGER LINES
+    ----------------------------- */
+
+    .mobile-menu-toggle span {
+
+        display: block !important;
+
+        width: 22px !important;
+
+        height: 3px !important;
+
+        margin: 3px 0 !important;
+
+        padding: 0 !important;
+
+        background: #7c3aed !important;
+
+        border-radius: 3px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------
+       MOBILE MENU
+    ----------------------------- */
+
+    .mobile-nav-menu {
+
+        display: none;
+    }
+
+
+    .mobile-nav-menu.open {
+
+        display: flex;
+
+        flex-direction: column;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        right: 0;
+
+        width: 100%;
+
+        padding: 10px 16px;
+
+        box-sizing: border-box;
+
+        background: #ffffff;
+
+        border-top: 1px solid #eeeef5;
+
+        border-bottom: 1px solid #eeeef5;
+
+        box-shadow:
+            0 12px 30px
+            rgba(30, 30, 55, 0.10);
+
+        z-index: 99999;
+    }
+
+
+    /* -----------------------------
+       MOBILE MENU LINKS
+    ----------------------------- */
+
+    .mobile-nav-menu a {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 14px 16px;
+
+        margin: 1px 0;
+
+        border-radius: 10px;
+
+        color: #4b5563;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        font-weight: 700;
+    }
+
+
+    .mobile-nav-menu a:hover {
+
+        color: #7c3aed;
+
+        background: #f5f3ff;
+    }
+
+
+    .mobile-nav-menu a.active {
+
+        color: #7c3aed;
+
+        background: #f5f3ff;
+    }
+
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DSA Learning | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/dsa-learning.css" />
+</head>
+
+<body>
+
+  <header class="learning-header">
+    <div class="header-left">
+      <a href="dashboard.html" class="back-link">← Dashboard</a>
+
+      <div>
+        <span class="page-eyebrow">CAREERPILOT</span>
+        <h1>DSA Learning</h1>
+        <p>Master Data Structures & Algorithms step by step.</p>
+      </div>
+    </div>
+
+    <button id="logoutBtn" class="logout-btn">
+      Logout
+    </button>
+  </header>
+
+  <main class="learning-container">
+
+    <section class="learning-hero">
+      <div>
+        <span class="hero-badge">Structured Learning</span>
+
+        <h2>
+          Learn DSA.
+          <span>Build Problem-Solving Skills.</span>
+        </h2>
+
+        <p>
+          Complete each topic, pass the module assessment,
+          and unlock the next level.
+        </p>
+      </div>
+
+      <div class="overall-progress-card">
+        <span>Overall Progress</span>
+
+        <strong id="overallProgressText">
+          0%
+        </strong>
+
+        <div class="progress-track">
+          <div
+            id="overallProgressBar"
+            class="progress-fill"
+            style="width: 0%"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module-strip" id="moduleStrip"></section>
+
+    <section class="learning-layout">
+
+      <aside class="topic-sidebar">
+
+        <div class="sidebar-heading">
+          <div>
+            <span>Current Module</span>
+            <h3 id="currentModuleTitle">
+              DSA Foundations
+            </h3>
+          </div>
+        </div>
+
+        <div id="topicList" class="topic-list"></div>
+
+      </aside>
+
+      <section class="topic-content">
+
+        <div class="topic-topbar">
+
+          <div>
+            <span id="topicNumber" class="topic-number">
+              Topic 1
+            </span>
+
+            <h2 id="topicTitle">
+              Introduction to DSA
+            </h2>
+          </div>
+
+          <div id="topicStatus" class="topic-status">
+            Not completed
+          </div>
+
+        </div>
+
+        <div class="topic-section">
+
+          <div
+            id="learnContent"
+            class="content-card"
+          ></div>
+
+          <div class="content-card">
+
+            <div class="section-label">
+              Example
+            </div>
+
+            <div
+              id="exampleContent"
+              class="example-box"
+            ></div>
+
+          </div>
+
+          <div class="content-card">
+
+            <div class="section-label">
+              Key Points
+            </div>
+
+            <ul
+              id="keyPointsList"
+              class="key-points-list"
+            ></ul>
+
+          </div>
+
+          <div class="self-check-card">
+
+            <div>
+              <span class="section-label">
+                Self Check
+              </span>
+
+              <h3>
+                Explain this topic in your own words.
+              </h3>
+
+              <p>
+                Write at least a short explanation before
+                completing this topic.
+              </p>
+            </div>
+
+            <textarea
+              id="selfCheckInput"
+              placeholder="Write what you understood..."
+              rows="5"
+            ></textarea>
+
+            <button
+              id="completeTopicBtn"
+              class="primary-btn"
+            >
+              Mark Topic Complete
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="assessment-card">
+
+          <div>
+
+            <span class="assessment-label">
+              Module Assessment
+            </span>
+
+            <h3 id="assessmentTitle">
+              Complete all topics to unlock the assessment.
+            </h3>
+
+            <p id="assessmentDescription">
+              Finish every topic in this module first.
+            </p>
+
+          </div>
+
+          <button
+            id="assessmentBtn"
+            class="assessment-btn"
+            disabled
+          >
+            Assessment Locked
+          </button>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+  <script type="module" src="../js/technical/dsa-learning.js"></script>
+
+</body>
+</html>

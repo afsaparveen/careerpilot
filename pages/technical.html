@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Technical Preparation | CareerPilot AI
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/technical.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         TECHNICAL NAVBAR
+    ================================================== -->
+
+    <header class="technical-navbar">
+
+
+        <!-- =================================================
+             CAREERPILOT LOGO
+        ================================================== -->
+
+        <a
+            href="dashboard.html"
+            class="careerpilot-logo"
+            aria-label="CareerPilot Home">
+
+            <span class="careerpilot-logo-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+                        d="M12 3L4.5 20L12 16L19.5 20L12 3Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linejoin="round">
+                    </path>
+
+                    <path
+                        d="M12 3L12 17"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round">
+                    </path>
+
+                </svg>
+
+            </span>
+
+
+            <span class="careerpilot-logo-text">
+                Career<span>Pilot</span>
+            </span>
+
+        </a>
+
+<button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+<nav class="mobile-nav-menu">
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="roadmap.html">
+        Roadmap
+    </a>
+
+    <a href="dsa.html">
+        DSA
+    </a>
+
+    <a href="aptitude.html">
+        Aptitude
+    </a>
+
+    <a
+        href="technical.html"
+        class="active">
+        Technical
+    </a>
+
+    <a href="interview.html">
+        Interview
+    </a>
+
+    <a href="companies.html">
+        Companies
+    </a>
+
+</nav>
+
+        <!-- =================================================
+             TECHNICAL NAVIGATION
+        ================================================== -->
+
+        <nav class="technical-nav">
+
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+
+            <a href="roadmap.html">
+                Roadmap
+            </a>
+
+
+            <a href="dsa.html">
+                DSA
+            </a>
+
+
+            <a href="aptitude.html">
+                Aptitude
+            </a>
+
+
+            <a
+                href="technical.html"
+                class="active">
+
+                Technical
+
+            </a>
+
+
+            <a href="interview.html">
+                Interview
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             USER / LOGOUT
+        ================================================== -->
+
+        <div class="technical-profile"></div>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN TECHNICAL PAGE
+    ================================================== -->
+
+    <main class="technical-page">
+
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <section class="technical-hero">
+
+
+            <div>
+
+                <span class="technical-eyebrow">
+                    PLACEMENT TECHNICAL PREPARATION
+                </span>
+
+
+                <h1>
+                    Core Technical Subjects
+                </h1>
+
+
+                <p>
+                    Study your technical subjects chapter-by-chapter,
+                    complete topic learning and assessments, and track
+                    your preparation progress automatically.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TECHNICAL PROGRESS
+            ================================================== -->
+
+            <div class="technical-progress-card">
+
+
+                <span>
+                    Overall Technical Progress
+                </span>
+
+
+                <strong id="overallTechnicalProgress">
+                    0%
+                </strong>
+
+
+                <div class="technical-progress-bar">
+
+                    <div
+                        id="overallTechnicalProgressFill"
+                        class="technical-progress-fill">
+                    </div>
+
+                </div>
+
+
+                <small id="overallTechnicalProgressText">
+                    0 completed
+                </small>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             AVAILABLE SUBJECTS
+        ================================================== -->
+
+        <section class="technical-section">
+
+
+            <div class="technical-section-heading">
+
+
+                <div>
+
+                    <span class="technical-section-label">
+                        LEARNING
+                    </span>
+
+
+                    <h2>
+                        Available Technical Subjects
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Select a subject to continue its existing
+                    chapter-based preparation.
+                </p>
+
+
+            </div>
+
+
+
+            <div
+                id="technicalSubjects"
+                class="technical-subject-grid">
+
+                <!-- Subjects inserted by JavaScript -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             OTHER SUBJECTS
+        ================================================== -->
+
+        <section class="technical-section">
+
+
+            <div class="technical-section-heading">
+
+
+                <div>
+
+                    <span class="technical-section-label">
+                        EXPANSION
+                    </span>
+
+
+                    <h2>
+                        More Technical Subjects
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    These subjects are listed for the complete
+                    placement roadmap. Learning pages can be
+                    connected when their curriculum is added.
+                </p>
+
+
+            </div>
+
+
+
+            <div
+                id="futureSubjects"
+                class="technical-future-grid">
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOW PROGRESS WORKS
+        ================================================== -->
+
+        <section class="technical-flow-card">
+
+
+            <div class="technical-flow-heading">
+
+
+                <span class="technical-section-label">
+                    YOUR LEARNING FLOW
+                </span>
+
+
+                <h2>
+                    Study → Test → Complete → Progress
+                </h2>
+
+
+                <p>
+                    Your existing subject progress is reused.
+                    Completing topics and passing chapter
+                    assessments updates your technical preparation
+                    data, which can then be reflected in the
+                    dashboard and daily study plan.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LEARNING FLOW STEPS
+            ================================================== -->
+
+            <div class="technical-flow-grid">
+
+
+                <!-- STEP 01 -->
+
+                <div class="technical-flow-step">
+
+
+                    <span>
+                        01
+                    </span>
+
+
+                    <strong>
+                        Study Chapter
+                    </strong>
+
+
+                    <p>
+                        Open the existing subject page and study
+                        the chapter topics.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="technical-flow-step">
+
+
+                    <span>
+                        02
+                    </span>
+
+
+                    <strong>
+                        Complete Topics
+                    </strong>
+
+
+                    <p>
+                        Mark each topic completed after learning it.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="technical-flow-step">
+
+
+                    <span>
+                        03
+                    </span>
+
+
+                    <strong>
+                        Take Test
+                    </strong>
+
+
+                    <p>
+                        Complete the chapter assessment and meet
+                        the required passing score.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="technical-flow-step">
+
+
+                    <span>
+                        04
+                    </span>
+
+
+                    <strong>
+                        Progress Updates
+                    </strong>
+
+
+                    <p>
+                        Subject progress remains saved to the user's
+                        Firestore profile.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         TECHNICAL JAVASCRIPT
+    ================================================== -->
+
+    <script
+        type="module"
+        src="../js/technical/technical.js">
+    </script>
+
+<script src="../js/mobile-nav.js"></script>
+</body>
+
+</html>

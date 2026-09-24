@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CareerPilot</title>
+
+    <!-- Main CareerPilot CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Login / Register CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .auth-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .google-auth-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .password-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- =====================================================
+         MAIN AUTH CONTAINER
+    ====================================================== -->
+
+    <main class="auth-container">
+
+
+        <!-- =================================================
+             LEFT BRAND SECTION
+        ================================================== -->
+
+        <section class="auth-brand-panel">
+
+            <!-- BRAND -->
+            <a href="../index.html" class="auth-brand">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+                </svg>
+                CareerPilot
+            </a>
+
+            <!-- BRAND CONTENT -->
+            <div class="auth-brand-content">
+
+                <span class="auth-eyebrow">
+                    WELCOME BACK
+                </span>
+
+                <h1>
+                    Continue your
+                    <span class="gradient-text">journey.</span>
+                </h1>
+
+                <p>
+                    Continue your placement preparation,
+                    track your progress, practice DSA,
+                    aptitude, technical subjects and
+                    interviews from one place.
+                </p>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="auth-brand-footer">
+                © 2026 CareerPilot. All rights reserved.
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT LOGIN SECTION
+        ================================================== -->
+
+        <section class="auth-form-panel">
+
+            <div class="auth-card">
+
+                <!-- =================================================
+                     LOGIN HEADER
+                ================================================== -->
+                <div class="auth-card-header">
+
+                    <span class="auth-eyebrow">
+                        LOGIN
+                    </span>
+
+                    <h2>Welcome back</h2>
+
+                    <p>Continue your placement preparation.</p>
+
+                </div>
+
+                <!-- =================================================
+                     GOOGLE LOGIN BUTTON
+                ================================================== -->
+                <button
+                    type="button"
+                    id="googleLoginBtn"
+                    class="google-auth-btn"
+                >
+                    <!-- GOOGLE ICON -->
+                    <svg
+                        class="google-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            fill="#4285F4"
+                            d="M21.35 12.27c0-.78-.07-1.53-.2-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.42z"
+                        />
+                        <path
+                            fill="#34A853"
+                            d="M12 21.8c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.29v2.53A9.75 9.75 0 0 0 12 21.8z"
+                        />
+                        <path
+                            fill="#FBBC05"
+                            d="M6.54 13.89A5.86 5.86 0 0 1 6.23 12c0-.66.11-1.3.31-1.89V7.58H3.29A9.8 9.8 0 0 0 2.2 12c0 1.58.38 3.07 1.09 4.42l3.25-2.53z"
+                        />
+                        <path
+                            fill="#EA4335"
+                            d="M12 6.08c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.13 14.63 2.2 12 2.2a9.75 9.75 0 0 0-8.71 5.38l3.25 2.53C7.31 7.8 9.46 6.08 12 6.08z"
+                        />
+                    </svg>
+
+                    <span>Continue with Google</span>
+                </button>
+
+                <!-- =================================================
+                     OR DIVIDER
+                ================================================== -->
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- =================================================
+                     LOGIN FORM
+                ================================================== -->
+                <form
+                    id="loginForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+                        <div class="password-label-row">
+                            <label for="password">Password</label>
+                        </div>
+
+                        <div class="password-input-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ERROR MESSAGE -->
+                    <div
+                        id="loginError"
+                        class="auth-message error-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        id="loginBtn"
+                        class="auth-submit-btn"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+                <!-- =================================================
+                     REGISTER LINK
+                ================================================== -->
+                <div class="auth-switch">
+                    <span>Don't have an account?</span>
+                    <a href="./register.html">Create Account</a>
+                </div>
+
+                <!-- HOME LINK -->
+                <a href="../index.html" class="auth-home-link">
+                    ← Back to CareerPilot
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PASSWORD SHOW / HIDE
+    ====================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById("password");
+            const togglePassword = document.getElementById("togglePassword");
+
+            if (passwordInput && togglePassword) {
+                togglePassword.addEventListener("click", function () {
+                    if (passwordInput.type === "password") {
+                        passwordInput.type = "text";
+                        togglePassword.textContent = "Hide";
+                        togglePassword.setAttribute("aria-label", "Hide password");
+                    } else {
+                        passwordInput.type = "password";
+                        togglePassword.textContent = "Show";
+                        togglePassword.setAttribute("aria-label", "Show password");
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    <!-- =====================================================
+         FIREBASE LOGIN
+    ====================================================== -->
+    <script
+        type="module"
+        src="../js/auth/login.js"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1364 @@
+/* =====================================================
+   COMPANIES NAVBAR
+===================================================== */
+
+.companies-navbar {
+    min-height: 70px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #eeeef5;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* =====================================================
+   COMPANIES BRAND
+===================================================== */
+
+.companies-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.companies-brand:hover {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   CAREERPILOT LOGO ICON
+===================================================== */
+
+.companies-brand .careerpilot-logo-icon {
+    width: 60px;
+    height: 60px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    border-radius: 17px;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 8px 22px
+        rgba(124, 58, 237, 0.25);
+}
+
+
+.companies-brand .careerpilot-logo-icon svg {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+}
+
+
+/* =====================================================
+   CAREERPILOT BRAND TEXT
+===================================================== */
+
+.companies-brand-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.companies-brand-text strong {
+    display: block;
+
+    margin: 0;
+
+    color: #17213f;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.companies-brand-text strong span {
+    color: #7c3aed;
+}
+
+
+.companies-brand-text small {
+    display: block;
+
+    margin: 0;
+
+    color: #8a91a3;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* =====================================================
+   COMPANIES NAVIGATION
+===================================================== */
+
+.companies-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+
+.companies-nav a {
+    color: #68687a;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.companies-nav a:hover {
+    color: #1e3a8a;
+
+    background: #eef2ff;
+}
+
+
+.companies-nav a.active {
+    color: #1e3a8a;
+
+    background: #e8edfb;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.companies-page {
+    width: min(1180px, calc(100% - 34px));
+
+    margin: 30px auto 60px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.companies-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 32px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f6fa,
+            #eef2f7 55%,
+            #eef5fa
+        );
+
+    border: 1px solid #dde3ea;
+}
+
+
+.companies-eyebrow {
+    color: #1e3a8a;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+}
+
+
+.companies-hero h1 {
+    max-width: 650px;
+
+    margin: 8px 0 10px;
+
+    color: #171725;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.08;
+}
+
+
+.companies-hero h1 span {
+    color: #1e3a8a;
+}
+
+
+.companies-hero-content p {
+    max-width: 630px;
+
+    margin: 0;
+
+    color: #6d6d7c;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.companies-hero-card {
+    min-width: 270px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 1px solid #dde3ea;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 14px 35px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+.hero-stat {
+    text-align: center;
+
+    padding: 12px 6px;
+}
+
+
+.hero-stat strong {
+    display: block;
+
+    color: #171725;
+
+    font-size: 22px;
+}
+
+
+.hero-stat span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #878796;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.companies-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+
+.summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(30, 30, 55, 0.04);
+}
+
+
+.summary-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+}
+
+
+.purple-summary .summary-icon {
+    background: #eef2ff;
+}
+
+
+.blue-summary .summary-icon {
+    background: #e8f6ff;
+}
+
+
+.pink-summary .summary-icon {
+    background: #f0fdfa;
+}
+
+
+.green-summary .summary-icon {
+    background: #eafbf0;
+}
+
+
+/* =====================================================
+   SUMMARY ICON SVG
+===================================================== */
+
+.summary-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.purple-summary .summary-icon {
+    color: #1e3a8a;
+}
+
+
+.blue-summary .summary-icon {
+    color: #0879b6;
+}
+
+
+.pink-summary .summary-icon {
+    color: #0f766e;
+}
+
+
+.green-summary .summary-icon {
+    color: #168044;
+}
+
+
+.summary-card span {
+    display: block;
+
+    color: #838392;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.summary-card strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #181827;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.company-form-card {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 9px 30px
+        rgba(27, 27, 51, 0.04);
+}
+
+
+.section-label {
+    color: #1e3a8a;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.section-heading h2 {
+    margin: 5px 0 5px;
+
+    color: #171725;
+
+    font-size: 22px;
+}
+
+
+.section-heading p {
+    margin: 0;
+
+    color: #868695;
+
+    font-size: 12px;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 17px;
+
+    margin-top: 23px;
+}
+
+
+.form-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.full-field {
+    grid-column: 1 / -1;
+}
+
+
+.form-field label {
+    color: #3c3c4b;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid #e1e1ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafafe;
+
+    color: #282837;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-field textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(30, 58, 138, 0.1);
+
+    background: white;
+}
+
+
+.save-company-button {
+    margin-top: 20px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    padding: 12px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1e3a8a,
+            #2563eb
+        );
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.save-company-button:hover {
+    opacity: 0.92;
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-card {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 9px 30px
+        rgba(27, 27, 51, 0.04);
+}
+
+
+.filter-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.filter-heading h2 {
+    margin: 5px 0 0;
+
+    color: #171725;
+
+    font-size: 22px;
+}
+
+
+.filter-controls {
+    display: flex;
+
+    gap: 9px;
+}
+
+
+.filter-controls input,
+.filter-controls select {
+    padding: 10px 11px;
+
+    border: 1px solid #e1e1ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafafe;
+
+    color: #333343;
+
+    font-family: inherit;
+
+    font-size: 11px;
+}
+
+
+.filter-controls input:focus,
+.filter-controls select:focus {
+    border-color: #3b82f6;
+}
+
+
+/* =====================================================
+   COMPANY LIST
+===================================================== */
+
+.companies-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+.company-card {
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fbfcfe
+        );
+}
+
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #1e3a8a;
+
+    background: #eef2ff;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+
+.company-main {
+    min-width: 0;
+}
+
+
+.company-topline {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+
+.company-topline h3 {
+    margin: 0;
+
+    color: #1b1b29;
+
+    font-size: 16px;
+}
+
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+.status-target {
+    background: #eef2ff;
+    color: #1e3a8a;
+}
+
+
+.status-preparing {
+    background: #eaf7ff;
+    color: #0879b6;
+}
+
+
+.status-applied {
+    background: #fff4e8;
+    color: #c26400;
+}
+
+
+.status-shortlisted {
+    background: #f0fdfa;
+    color: #0f766e;
+}
+
+
+.status-interview {
+    background: #fff1ed;
+    color: #c2410c;
+}
+
+
+.status-selected {
+    background: #eafbf0;
+    color: #168044;
+}
+
+
+.status-rejected {
+    background: #fff0f0;
+    color: #bd2d2d;
+}
+
+
+.company-role {
+    margin: 5px 0 7px;
+
+    color: #575767;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.company-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+
+.meta-chip {
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    background: #f6f6fa;
+
+    color: #777786;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.company-notes {
+    margin: 8px 0 0;
+
+    color: #878796;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    max-width: 750px;
+}
+
+
+.company-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    align-items: stretch;
+
+    min-width: 95px;
+}
+
+
+.company-action-button {
+    border: 0;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.edit-company {
+    color: #1e3a8a;
+
+    background: #eef2ff;
+}
+
+
+.delete-company {
+    color: #c62828;
+
+    background: #fff0f0;
+}
+
+
+/* =====================================================
+   EMPTY / LOADING
+===================================================== */
+
+.loading-state,
+.empty-state {
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+
+.loading-spinner {
+    width: 25px;
+    height: 25px;
+
+    margin: 0 auto 12px;
+
+    border: 3px solid #e2e8f0;
+
+    border-top-color: #1e3a8a;
+
+    border-radius: 50%;
+
+    animation:
+        companySpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+@keyframes companySpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.empty-state-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state h3 {
+    margin: 0 0 6px;
+
+    color: #252535;
+
+    font-size: 17px;
+}
+
+
+.empty-state p {
+    margin: 0;
+
+    color: #858594;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.company-toast {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    max-width: 300px;
+
+    padding: 12px 15px;
+
+    border-radius: 11px;
+
+    color: white;
+
+    background: #171725;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.18);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    opacity: 0;
+
+    transform:
+        translateY(15px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 500;
+}
+
+
+.company-toast.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .companies-nav {
+        display: none;
+    }
+
+
+    .companies-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .companies-hero-card {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .companies-summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .companies-navbar {
+        padding: 0 16px;
+    }
+
+
+    .companies-brand .careerpilot-logo-icon {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 14px;
+    }
+
+
+    .companies-brand .careerpilot-logo-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .companies-brand-text strong {
+        font-size: 21px;
+    }
+
+
+    .companies-brand-text small {
+        font-size: 12px;
+    }
+
+
+    .companies-page {
+        width: min(
+            100% - 22px,
+            1180px
+        );
+    }
+
+
+    .companies-hero {
+        padding: 23px;
+    }
+
+
+    .companies-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .full-field {
+        grid-column: auto;
+    }
+
+
+    .filter-heading {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .filter-controls {
+        flex-direction: column;
+    }
+
+
+    .company-card {
+        grid-template-columns:
+            auto 1fr;
+    }
+
+
+    .company-actions {
+        grid-column: 1 / -1;
+
+        flex-direction: row;
+    }
+
+}
+
+
+/* =====================================================
+   NO COMPANIES
+===================================================== */
+
+.no-companies {
+    width: 100%;
+    min-height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 20px;
+}
+
+
+.no-companies h3 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+}
+
+
+.no-companies p {
+    margin: 8px 0 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+/* =========================================================
+   MOBILE HAMBURGER
+========================================================= */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+    margin-left: auto;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f5f3ff;
+    color: #7c3aed;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block !important;
+
+    width: 22px !important;
+    height: 3px !important;
+
+    margin: 3px 0 !important;
+    padding: 0 !important;
+
+    background: #7c3aed !important;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-nav-menu {
+    display: none;
+}
+
+.mobile-nav-menu.open {
+    display: flex;
+
+    flex-direction: column;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    padding: 10px 16px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeef5;
+    border-bottom: 1px solid #eeeef5;
+
+    box-shadow:
+        0 12px 30px
+        rgba(30, 30, 55, 0.10);
+
+    z-index: 99999;
+}
+
+.mobile-nav-menu a {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    margin: 1px 0;
+
+    border-radius: 10px;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.mobile-nav-menu a:hover {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+.mobile-nav-menu a.active {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+
+/* =========================================================
+   COMPANIES MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .companies-navbar {
+        position: relative;
+
+        min-height: 64px;
+
+        padding: 10px 12px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        z-index: 9999;
+    }
+
+    .companies-nav {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+
+        margin-left: auto;
+    }
+
+    .companies-brand {
+        gap: 8px;
+
+        min-width: 0;
+    }
+
+    .companies-brand .careerpilot-logo-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .companies-brand .careerpilot-logo-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .companies-brand-text strong {
+        font-size: 19px;
+    }
+
+    .companies-brand-text small {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .companies-navbar {
+        padding: 9px 10px;
+    }
+
+    .mobile-menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-menu-toggle span {
+        width: 21px !important;
+        height: 3px !important;
+
+        margin: 3px 0 !important;
+    }
+}

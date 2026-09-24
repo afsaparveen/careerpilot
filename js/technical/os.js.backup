@@ -1,0 +1,385 @@
+﻿import { auth } from "../firebase/firebase-config.js";
+import {
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const chapterList = document.getElementById("chapterList");
+const chapterCount = document.getElementById("chapterCount");
+const coursePercent = document.getElementById("coursePercent");
+const emptyState = document.getElementById("emptyState");
+const courseView = document.getElementById("courseView");
+const loadError = document.getElementById("loadError");
+
+const chapterBadge = document.getElementById("chapterBadge");
+const chapterTitle = document.getElementById("chapterTitle");
+const topicTitle = document.getElementById("topicTitle");
+const topicCounter = document.getElementById("topicCounter");
+const topicNav = document.getElementById("topicNav");
+const learnText = document.getElementById("learnText");
+const exampleText = document.getElementById("exampleText");
+const keyPoints = document.getElementById("keyPoints");
+const selfCheck = document.getElementById("selfCheck");
+const selfCheckCount = document.getElementById("selfCheckCount");
+const completeTopicBtn = document.getElementById("completeTopicBtn");
+const completeMessage = document.getElementById("completeMessage");
+const prevTopicBtn = document.getElementById("prevTopicBtn");
+const nextTopicBtn = document.getElementById("nextTopicBtn");
+const assessmentBtn = document.getElementById("assessmentBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+let user = null;`r`nlet db = null;
+let curriculum = null;
+let progress = {
+  completedTopics: {},
+  selfChecks: {},
+  completedChapters: {},
+  assessments: {}
+};
+
+let currentChapterIndex = 0;
+let currentTopicIndex = 0;
+
+async function loadCurriculum() {
+  const response = await fetch("../data/os-curriculum.json", { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error(`Could not load os-curriculum.json (HTTP ${response.status}).`);
+  }
+
+  return await response.json();
+}
+
+function topicKey(chapterId, topicId) {
+  return `${chapterId}__${topicId}`;
+}
+
+async function loadProgress() {
+  if (!user) return;
+
+  const ref = doc(db, "users", user.uid);
+  const snap = await getDoc(ref);
+
+  if (snap.exists()) {
+    const data = snap.data();
+    progress = {
+      ...progress,
+      ...(data.osProgress || {})
+    };
+  }
+}
+
+async function saveProgress() {
+  if (!user) return;
+
+  const ref = doc(db, "users", user.uid);
+
+  await setDoc(
+    ref,
+    {
+      osProgress: progress
+    },
+    { merge: true }
+  );
+}
+
+function isChapterUnlocked(index) {
+  if (index === 0) return true;
+
+  return !!progress.completedChapters[
+    curriculum.chapters[index - 1].id
+  ];
+}
+
+function isTopicCompleted(chapter, topic) {
+  return !!progress.completedTopics[
+    topicKey(chapter.id, topic.id)
+  ];
+}
+
+function isChapterCompleted(chapter) {
+  return !!progress.completedChapters[chapter.id];
+}
+
+function renderChapters() {
+  chapterList.innerHTML = "";
+  chapterCount.textContent = curriculum.chapters.length;
+
+  curriculum.chapters.forEach((chapter, index) => {
+    const unlocked = isChapterUnlocked(index);
+    const completed = isChapterCompleted(chapter);
+
+    const item = document.createElement("div");
+    item.className = "os-chapter";
+
+    if (index === currentChapterIndex) item.classList.add("active");
+    if (!unlocked) item.classList.add("locked");
+
+    item.innerHTML = `
+      <div class="os-chapter-title">
+        <span>${chapter.number}. ${chapter.title}</span>
+        <span>${completed ? "âœ“" : unlocked ? "â€º" : "ðŸ”’"}</span>
+      </div>
+      <div class="os-chapter-meta">
+        ${chapter.topics.length} topics
+      </div>
+    `;
+
+    if (unlocked) {
+      item.addEventListener("click", () => {
+        currentChapterIndex = index;
+        currentTopicIndex = 0;
+        renderAll();
+      });
+    }
+
+    chapterList.appendChild(item);
+  });
+}
+
+function renderTopicNav(chapter) {
+  topicNav.innerHTML = "";
+
+  chapter.topics.forEach((topic, index) => {
+    const pill = document.createElement("button");
+    pill.className = "os-topic-pill";
+
+    if (index === currentTopicIndex) {
+      pill.classList.add("current");
+    }
+
+    if (isTopicCompleted(chapter, topic)) {
+      pill.classList.add("completed");
+    }
+
+    pill.textContent = `${index + 1}. ${topic.title}`;
+
+    const canOpen =
+      index === 0 ||
+      isTopicCompleted(chapter, chapter.topics[index - 1]);
+
+    pill.disabled = !canOpen;
+    pill.addEventListener("click", () => {
+      if (!canOpen) return;
+      currentTopicIndex = index;
+      renderAll();
+    });
+
+    topicNav.appendChild(pill);
+  });
+}
+
+function renderCurrentTopic() {
+  const chapter = curriculum.chapters[currentChapterIndex];
+  const topic = chapter.topics[currentTopicIndex];
+
+  chapterBadge.textContent = `Chapter ${chapter.number}`;
+  chapterTitle.textContent = chapter.title;
+  topicTitle.textContent = topic.title;
+  topicCounter.textContent =
+    `Topic ${currentTopicIndex + 1} of ${chapter.topics.length}`;
+
+  learnText.textContent = topic.learn;
+  exampleText.textContent = topic.example;
+
+  keyPoints.innerHTML = "";
+  topic.keyPoints.forEach(point => {
+    const li = document.createElement("li");
+    li.textContent = point;
+    keyPoints.appendChild(li);
+  });
+
+  const key = topicKey(chapter.id, topic.id);
+  selfCheck.value = progress.selfChecks[key] || "";
+  updateSelfCheckCount();
+
+  const completed = isTopicCompleted(chapter, topic);
+
+  completeTopicBtn.disabled = completed;
+
+  if (completed) {
+    completeTopicBtn.textContent = "âœ“ Topic Completed";
+    completeMessage.textContent = "This topic is completed.";
+  } else {
+    completeTopicBtn.textContent = "Complete Topic";
+    completeMessage.textContent = "";
+  }
+
+  prevTopicBtn.disabled = currentTopicIndex === 0;
+
+  const lastTopic = currentTopicIndex === chapter.topics.length - 1;
+  nextTopicBtn.disabled =
+    !completed || lastTopic;
+
+  assessmentBtn.hidden = !(
+    lastTopic && allTopicsCompleted(chapter)
+  );
+
+  prevTopicBtn.textContent =
+    currentTopicIndex === 0
+      ? "â† Previous"
+      : "â† Previous Topic";
+
+  nextTopicBtn.textContent =
+    lastTopic
+      ? "Chapter Complete"
+      : "Next Topic â†’";
+}
+
+function allTopicsCompleted(chapter) {
+  return chapter.topics.every(topic =>
+    isTopicCompleted(chapter, topic)
+  );
+}
+
+function updateCourseProgress() {
+  let total = 0;
+  let completed = 0;
+
+  curriculum.chapters.forEach(chapter => {
+    total += chapter.topics.length;
+    chapter.topics.forEach(topic => {
+      if (isTopicCompleted(chapter, topic)) {
+        completed++;
+      }
+    });
+  });
+
+  const percentage =
+    total === 0
+      ? 0
+      : Math.round((completed / total) * 100);
+
+  coursePercent.textContent = `${percentage}%`;
+}
+
+function renderAll() {
+  renderChapters();
+  renderTopicNav(curriculum.chapters[currentChapterIndex]);
+  renderCurrentTopic();
+  updateCourseProgress();
+}
+
+function showError(error) {
+  console.error(error);
+
+  emptyState.hidden = true;
+  courseView.hidden = true;
+  loadError.hidden = false;
+
+  loadError.textContent =
+    `OS course failed to load.\n\n${error.message}\n\nOpen the browser Console (F12) if the problem continues.`;
+}
+
+selfCheck.addEventListener("input", updateSelfCheckCount);
+
+function updateSelfCheckCount() {
+  selfCheckCount.textContent =
+    `${selfCheck.value.trim().length} characters`;
+}
+
+completeTopicBtn.addEventListener("click", async () => {
+  const chapter = curriculum.chapters[currentChapterIndex];
+  const topic = chapter.topics[currentTopicIndex];
+  const answer = selfCheck.value.trim();
+
+  if (answer.length < 40) {
+    completeMessage.textContent =
+      "Please write at least 40 characters in the self-check.";
+    return;
+  }
+
+  const key = topicKey(chapter.id, topic.id);
+
+  progress.completedTopics[key] = true;
+  progress.selfChecks[key] = answer;
+
+  if (allTopicsCompleted(chapter)) {
+    progress.completedChapters[chapter.id] = true;
+  }
+
+  try {
+    completeTopicBtn.disabled = true;
+    completeMessage.textContent = "Saving progressâ€¦";
+
+    await saveProgress();
+
+    renderAll();
+
+    completeMessage.textContent =
+      "Topic completed and progress saved.";
+
+  } catch (error) {
+    console.error(error);
+    completeMessage.textContent =
+      "Could not save progress. Please try again.";
+  }
+});
+
+prevTopicBtn.addEventListener("click", () => {
+  if (currentTopicIndex > 0) {
+    currentTopicIndex--;
+    renderAll();
+  }
+});
+
+nextTopicBtn.addEventListener("click", () => {
+  const chapter = curriculum.chapters[currentChapterIndex];
+
+  if (!isTopicCompleted(
+    chapter,
+    chapter.topics[currentTopicIndex]
+  )) {
+    return;
+  }
+
+  if (currentTopicIndex < chapter.topics.length - 1) {
+    currentTopicIndex++;
+    renderAll();
+  }
+});
+
+assessmentBtn.addEventListener("click", () => {
+  const chapter = curriculum.chapters[currentChapterIndex];
+
+  window.location.href =
+    `os-assessment.html?chapter=${encodeURIComponent(chapter.id)}`;
+});
+
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+  window.location.href = "login.html";
+});
+
+onAuthStateChanged(auth, async currentUser => {
+  if (!currentUser) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  user = currentUser;`r`n    db = getFirestore(auth.app);
+
+  try {
+    curriculum = await loadCurriculum();
+
+    if (
+      !curriculum ||
+      !Array.isArray(curriculum.chapters) ||
+      curriculum.chapters.length === 0
+    ) {
+      throw new Error("No chapters were found in os-curriculum.json.");
+    }
+
+    await loadProgress();
+
+    emptyState.hidden = true;
+    courseView.hidden = false;
+
+    renderAll();
+
+  } catch (error) {
+    showError(error);
+  }
+});
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Object-Oriented Programming | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/oops.css" />
+
+  <!-- Subtle professional UI enhancements -->
+  <style>
+    .course-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .course-progress-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 24px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    .overview-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .overview-number {
+      color: #0f172a;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="oops-page">
+
+    <header class="oops-header">
+
+      <div>
+
+        <span class="course-badge">
+          Technical Subjects
+        </span>
+
+        <h1>
+          Object-Oriented Programming
+        </h1>
+
+        <p>
+          Learn OOP concepts, C++, Java, inheritance,
+          polymorphism, abstraction and interview-level fundamentals.
+        </p>
+
+      </div>
+
+
+      <div class="course-progress-card">
+
+        <strong id="coursePercentage">
+          0%
+        </strong>
+
+        <span>
+          Course Progress
+        </span>
+
+      </div>
+
+    </header>
+
+
+    <section class="course-overview">
+
+      <div class="overview-card">
+        <span class="overview-number" id="topicCount">
+          0
+        </span>
+
+        <span class="overview-label">
+          Learning Topics
+        </span>
+      </div>
+
+
+      <div class="overview-card">
+        <span class="overview-number" id="completedCount">
+          0
+        </span>
+
+        <span class="overview-label">
+          Completed Topics
+        </span>
+      </div>
+
+
+      <div class="overview-card">
+        <span class="overview-number" id="chapterCount">
+          0
+        </span>
+
+        <span class="overview-label">
+          Chapters
+        </span>
+      </div>
+
+    </section>
+
+
+    <section class="course-content">
+
+      <aside class="chapter-sidebar">
+
+        <h2>
+          OOP Chapters
+        </h2>
+
+        <div
+          id="chapterNavigation"
+          class="chapter-navigation"
+        ></div>
+
+      </aside>
+
+
+      <section class="learning-area">
+
+        <div
+          id="loadingState"
+          class="loading-state"
+        >
+          Loading OOP curriculum...
+        </div>
+
+
+        <div
+          id="chapterContainer"
+          class="chapter-container hidden"
+        ></div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="../js/technical/oops.js"
+  ></script>
+
+</body>
+</html>

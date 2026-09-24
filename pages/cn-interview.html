@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>CN Interview Questions | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cn-interview.css" />
+</head>
+
+<body>
+
+  <main class="cn-interview-page">
+
+    <header class="interview-header">
+
+      <div>
+        <span class="interview-badge">
+          Computer Networks
+        </span>
+
+        <h1>
+          Interview Questions
+        </h1>
+
+        <p>
+          Practice the important Computer Networks questions
+          from your study material.
+        </p>
+      </div>
+
+
+      <div class="interview-stats">
+
+        <div class="interview-stat">
+          <strong id="totalQuestions">
+            41
+          </strong>
+
+          <span>
+            Questions
+          </span>
+        </div>
+
+
+        <div class="interview-stat">
+          <strong id="answeredCount">
+            0
+          </strong>
+
+          <span>
+            Practiced
+          </span>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <section class="interview-toolbar">
+
+      <div class="search-box">
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search interview questions..."
+        />
+
+      </div>
+
+
+      <select id="topicFilter">
+
+        <option value="all">
+          All Topics
+        </option>
+
+        <option value="protocols">
+          Protocols & Architecture
+        </option>
+
+        <option value="networks">
+          Network Types & Models
+        </option>
+
+        <option value="topology">
+          Topologies
+        </option>
+
+        <option value="devices">
+          Devices & Security
+        </option>
+
+        <option value="tcp">
+          TCP & Reliability
+        </option>
+
+        <option value="delays">
+          Delays
+        </option>
+
+        <option value="ip">
+          IP & Subnetting
+        </option>
+
+        <option value="dns">
+          DNS
+        </option>
+
+        <option value="communication">
+          Communication Types
+        </option>
+
+        <option value="osi">
+          OSI Layers
+        </option>
+
+        <option value="vpn">
+          VPN
+        </option>
+
+      </select>
+
+    </section>
+
+
+    <section
+      id="questionList"
+      class="question-list"
+    ></section>
+
+
+    <div
+      id="emptyState"
+      class="empty-state hidden"
+    >
+      No matching interview questions found.
+    </div>
+
+
+    <section class="interview-footer">
+
+      <button
+        id="backBtn"
+        class="btn btn-secondary"
+      >
+        Back to CN
+      </button>
+
+      <button
+        id="completionBtn"
+        class="btn btn-primary"
+      >
+        View CN Completion
+      </button>
+
+    </section>
+
+
+    <div
+      id="loadingState"
+      class="loading-state"
+    >
+      Loading interview questions...
+    </div>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="../js/technical/cn-interview.js"
+  ></script>
+
+</body>
+</html>

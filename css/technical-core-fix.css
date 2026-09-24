@@ -1,0 +1,545 @@
+/* =========================================================
+   CORE TECHNICAL SUBJECT — STUDY LAYOUT FIX
+   Use on DBMS / OS / CN / OOP pages
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f7f8fc;
+    color: #111827;
+}
+
+
+/* =========================================================
+   MAIN TWO-COLUMN STUDY AREA
+========================================================= */
+
+.os-layout,
+.dbms-layout,
+.cn-layout,
+.oop-layout,
+.subject-layout,
+.course-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(250px, 300px)
+        minmax(0, 1fr);
+
+    gap: 22px;
+
+    align-items: start;
+
+    max-width: 1280px;
+    margin: 0 auto;
+
+    padding: 24px;
+}
+
+
+/* =========================================================
+   CHAPTER SIDEBAR
+========================================================= */
+
+/*
+   The important fix:
+   the chapter sidebar remains visible while
+   the student scrolls through the study material.
+*/
+
+.chapter-panel,
+.chapter-sidebar,
+.dbms-sidebar,
+.os-sidebar,
+.cn-sidebar,
+.oop-sidebar,
+aside:has(#chapterList) {
+    position: sticky;
+
+    top: 88px;
+
+    align-self: start;
+
+    max-height:
+        calc(100vh - 108px);
+
+    overflow-y: auto;
+
+    padding: 18px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   CHAPTER LIST
+========================================================= */
+
+#chapterList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.chapter-item,
+.chapter-btn {
+    width: 100%;
+
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 11px 12px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.chapter-item:hover,
+.chapter-btn:hover {
+    background: #f8f7ff;
+
+    border-color: #cfc7ff;
+}
+
+.chapter-item.active,
+.chapter-btn.active {
+    background: #f0edff;
+
+    border-color: #7668ed;
+}
+
+.chapter-item.completed,
+.chapter-btn.completed {
+    background: #f3fff8;
+
+    border-color: #bbf7d0;
+}
+
+.chapter-item.locked,
+.chapter-btn.locked {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+.chapter-number {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+}
+
+.chapter-item.active
+.chapter-number,
+.chapter-btn.active
+.chapter-number {
+    background: #ddd6fe;
+
+    color: #5b21b6;
+}
+
+.chapter-info {
+    min-width: 0;
+}
+
+.chapter-info strong {
+    display: block;
+
+    color: #1e293b;
+
+    font-size: 0.84rem;
+
+    line-height: 1.35;
+}
+
+.chapter-info small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   STUDY CONTENT
+========================================================= */
+
+.lesson-panel,
+.dbms-main,
+.os-main,
+.cn-main,
+.oop-main,
+.study-content,
+.course-content {
+    min-width: 0;
+}
+
+
+/*
+   Keep the study card natural so the user can
+   scroll through a long topic without the
+   sidebar disappearing.
+*/
+
+#topicContent,
+.topic-content,
+.current-topic,
+.study-material,
+.content-card {
+    min-height: 500px;
+
+    padding: 30px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   TOPIC MATERIAL
+========================================================= */
+
+#learnContent,
+#exampleContent,
+#topicContent p,
+.topic-content p {
+    color: #475569;
+
+    font-size: 0.96rem;
+
+    line-height: 1.9;
+}
+
+#keyPointsList,
+.topic-content ul {
+    padding-left: 22px;
+}
+
+#keyPointsList li,
+.topic-content li {
+    margin: 9px 0;
+
+    color: #475569;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TOPIC BUTTONS
+========================================================= */
+
+#topicList {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 18px 0;
+}
+
+.topic-item,
+.topic-btn {
+    max-width: 180px;
+
+    min-height: 48px;
+
+    padding: 9px 12px;
+
+    border:
+        1px solid #e4e7ef;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-size: 0.78rem;
+
+    cursor: pointer;
+}
+
+.topic-item.active,
+.topic-btn.active {
+    background: #eeeaff;
+
+    border-color: #7668ed;
+
+    color: #4c3fc6;
+}
+
+.topic-item.completed,
+.topic-btn.completed {
+    background: #ecfdf5;
+
+    border-color: #bbf7d0;
+
+    color: #166534;
+}
+
+.topic-item.locked,
+.topic-btn.locked {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SELF CHECK / STUDY ACTION
+========================================================= */
+
+.self-check,
+#selfCheckInput {
+    width: 100%;
+
+    min-height: 140px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    border:
+        1px solid #d8dce6;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-family: inherit;
+
+    line-height: 1.65;
+
+    outline: none;
+}
+
+.self-check:focus,
+#selfCheckInput:focus {
+    border-color: #7668ed;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(118, 104, 237, 0.12);
+}
+
+
+/* =========================================================
+   STUDY ACTION BUTTONS
+========================================================= */
+
+.complete-btn,
+.complete-topic,
+#completeTopicBtn {
+    min-height: 44px;
+
+    padding: 11px 17px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.complete-btn:disabled,
+.complete-topic:disabled,
+#completeTopicBtn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ASSESSMENT
+========================================================= */
+
+.assessment-btn,
+#assessmentButton,
+#assessmentBtn {
+    min-height: 44px;
+
+    padding: 11px 17px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: #4c3fc6;
+
+    background: #eeeaff;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.assessment-btn:disabled,
+#assessmentButton:disabled,
+#assessmentBtn:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   NEXT CHAPTER AREA
+========================================================= */
+
+.next-chapter-card {
+    margin-top: 22px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border:
+        1px solid #ddd6fe;
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f3ff,
+            #eef2ff
+        );
+}
+
+.next-chapter-card h3 {
+    margin: 5px 0 6px;
+
+    color: #312e81;
+
+    font-size: 1.15rem;
+}
+
+.next-chapter-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .os-layout,
+    .dbms-layout,
+    .cn-layout,
+    .oop-layout,
+    .subject-layout,
+    .course-layout {
+        grid-template-columns: 1fr;
+
+        padding: 14px;
+    }
+
+    .chapter-panel,
+    .chapter-sidebar,
+    .dbms-sidebar,
+    .os-sidebar,
+    .cn-sidebar,
+    .oop-sidebar,
+    aside:has(#chapterList) {
+        position: static;
+
+        max-height: none;
+    }
+
+    #topicContent,
+    .topic-content,
+    .current-topic,
+    .study-material,
+    .content-card {
+        padding: 22px;
+    }
+}

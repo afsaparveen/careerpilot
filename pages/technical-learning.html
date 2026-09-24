@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Learning | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/technical-learning.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .learning-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .empty-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .empty-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke-width: 1.8;
+        }
+
+        .course-progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="learning-navbar">
+
+    <div class="learning-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+        </svg>
+        CareerPilot
+    </div>
+
+    <nav class="learning-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dsa.html">DSA</a>
+        <a href="aptitude.html">Aptitude</a>
+        <a href="technical.html" class="active">Technical</a>
+        <a href="interview.html">Interview</a>
+    </nav>
+
+    <div class="learning-user">
+        <span id="userInitials">CP</span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+</header>
+
+
+<main class="learning-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <section class="learning-header">
+
+        <div>
+            <span class="learning-eyebrow">TECHNICAL LEARNING</span>
+            <h1>Learn Technical Skills Properly</h1>
+            <p>
+                Study one topic at a time, save your progress,
+                and continue from exactly where you stopped.
+            </p>
+        </div>
+
+        <a href="technical.html" class="back-button">
+            ← Technical Subjects
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUBJECT SELECTOR
+    ====================================================== -->
+    <section class="subject-selector-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">SUBJECTS</span>
+                <h2>Choose a Technical Subject</h2>
+            </div>
+            <p>
+                These are the additional technical learning tracks connected to CareerPilot.
+            </p>
+        </div>
+
+        <div id="subjectGrid" class="subject-grid"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LEARNING AREA
+    ====================================================== -->
+    <section id="learningArea" class="learning-area hidden">
+
+        <!-- Subject header -->
+        <div class="course-header-card">
+
+            <div>
+                <span id="currentSubjectLabel" class="learning-eyebrow">
+                    TECHNICAL
+                </span>
+                <h2 id="currentSubjectName">SQL</h2>
+                <p id="currentSubjectDescription">
+                    Complete technical learning curriculum.
+                </p>
+            </div>
+
+            <div class="course-progress-box">
+                <strong id="courseProgressPercent">0%</strong>
+                <span>course progress</span>
+
+                <div class="course-progress-track">
+                    <div id="courseProgressFill" class="course-progress-fill"></div>
+                </div>
+
+                <small id="courseProgressText">0 / 0 topics completed</small>
+            </div>
+
+        </div>
+
+
+        <!-- Main learning grid -->
+        <div class="learning-layout">
+
+            <!-- =================================================
+                 TOPIC LIST
+            ================================================== -->
+            <aside class="topic-sidebar">
+
+                <div class="topic-sidebar-header">
+                    <span>TOPICS</span>
+                    <strong id="topicCount">0</strong>
+                </div>
+
+                <div id="topicList" class="topic-list"></div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 CONTENT
+            ================================================== -->
+            <article class="topic-content-card">
+
+                <div class="topic-top-row">
+                    <div>
+                        <span id="topicNumber" class="topic-number-badge">
+                            Topic 1
+                        </span>
+                        <h2 id="topicTitle">Select a topic</h2>
+                    </div>
+
+                    <span id="topicStatus" class="topic-status">
+                        Not started
+                    </span>
+                </div>
+
+                <div class="topic-content-section">
+                    <span class="content-label">LEARN</span>
+                    <p id="topicLearn" class="topic-learn">
+                        Select a topic to begin learning.
+                    </p>
+                </div>
+
+                <div class="topic-example-card">
+                    <span class="content-label">EXAMPLE</span>
+                    <div id="topicExample">—</div>
+                </div>
+
+                <div class="key-points-card">
+                    <span class="content-label">KEY POINTS</span>
+                    <ul id="keyPointsList"></ul>
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="topic-actions">
+                    <button id="previousTopicBtn" type="button" class="secondary-button">
+                        ← Previous
+                    </button>
+
+                    <button id="completeTopicBtn" type="button" class="primary-button">
+                        Mark Topic Complete
+                    </button>
+
+                    <button id="nextTopicBtn" type="button" class="secondary-button">
+                        Next →
+                    </button>
+                </div>
+
+                <p id="actionMessage" class="action-message"></p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EMPTY STATE
+    ====================================================== -->
+    <section id="emptyLearningState" class="empty-learning-state">
+
+        <div class="empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+        </div>
+
+        <h2>Start Your Technical Preparation</h2>
+        <p>Select a subject above to begin learning.</p>
+
+    </section>
+
+</main>
+
+<script type="module" src="../js/technical/technical-learning.js"></script>
+
+</body>
+
+</html>

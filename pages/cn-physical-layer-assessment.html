@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Physical Layer Assessment | Computer Networks</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+</head>
+
+<body>
+
+  <main class="assessment-page">
+
+    <section class="assessment-hero">
+
+      <div class="assessment-hero-content">
+
+        <span class="assessment-badge">
+          Computer Networks · Chapter 3
+        </span>
+
+        <h1>
+          Physical Layer Assessment
+        </h1>
+
+        <p>
+          Test your understanding of OSI Layer 1,
+          signal transmission, modulation,
+          connections and communication modes.
+        </p>
+
+        <div class="assessment-stats">
+
+          <div class="assessment-stat">
+            <strong>10</strong>
+            <span>Questions</span>
+          </div>
+
+          <div class="assessment-stat">
+            <strong>75%</strong>
+            <span>Pass Mark</span>
+          </div>
+
+          <div class="assessment-stat">
+            <strong>8/10</strong>
+            <span>To Pass</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="assessment-container">
+
+      <div class="assessment-progress-wrapper">
+
+        <div class="assessment-progress-text">
+
+          <span id="progressText">
+            Question 1 of 10
+          </span>
+
+          <span id="answeredText">
+            0 answered
+          </span>
+
+        </div>
+
+        <div class="assessment-progress">
+
+          <div
+            id="progressBar"
+            class="assessment-progress-bar"
+            style="width: 5%;"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <form id="assessmentForm">
+
+        <div id="questionsContainer"></div>
+
+
+        <div class="assessment-actions">
+
+          <button
+            type="button"
+            id="submitBtn"
+            class="btn btn-primary"
+          >
+            Submit Assessment
+          </button>
+
+          <button
+            type="button"
+            id="backBtn"
+            class="btn btn-secondary"
+          >
+            Back to Computer Networks
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <div
+        id="resultBox"
+        class="result-card"
+        hidden
+      >
+
+        <div
+          class="result-icon"
+          id="resultIcon"
+        >
+          ✓
+        </div>
+
+        <h2 id="resultTitle">
+          Assessment Complete
+        </h2>
+
+        <p id="resultMessage"></p>
+
+
+        <div class="result-stats">
+
+          <div>
+            <strong id="scoreValue">
+              0/10
+            </strong>
+
+            <span>
+              Score
+            </span>
+          </div>
+
+          <div>
+            <strong id="percentageValue">
+              0%
+            </strong>
+
+            <span>
+              Percentage
+            </span>
+          </div>
+
+          <div>
+            <strong id="passValue">
+              8/10
+            </strong>
+
+            <span>
+              Required
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="assessment-actions">
+
+          <button
+            type="button"
+            id="continueBtn"
+            class="btn btn-primary"
+          >
+            Continue Computer Networks
+          </button>
+
+          <button
+            type="button"
+            id="retryBtn"
+            class="btn btn-secondary"
+          >
+            Retry Assessment
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="errorBox"
+        class="assessment-error"
+        hidden
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="../js/technical/cn-physical-layer-assessment.js"
+  ></script>
+
+</body>
+</html>

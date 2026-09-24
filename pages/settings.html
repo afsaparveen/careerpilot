@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Settings | CareerPilot
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/settings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="settings-navbar">
+
+    <div class="settings-logo">
+        CareerPilot
+        <span>AI</span>
+    </div>
+
+
+    <nav class="settings-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="companies.html">
+            Companies
+        </a>
+
+    </nav>
+
+
+    <a
+        href="profile.html"
+        class="back-profile-button"
+    >
+        ← Profile
+    </a>
+
+</header>
+
+
+
+<main class="settings-container">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <section class="settings-header">
+
+        <span class="settings-label">
+            ACCOUNT SETTINGS
+        </span>
+
+        <h1>
+            Settings
+        </h1>
+
+        <p>
+            Manage your CareerPilot account,
+            preferences and security.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PREFERENCES
+    ================================================== -->
+
+    <section class="settings-card">
+
+        <div class="settings-card-heading">
+
+            <div>
+
+                <span class="section-label">
+                    PREFERENCES
+                </span>
+
+                <h2>
+                    Application Preferences
+                </h2>
+
+            </div>
+
+            <span class="settings-icon">
+                ⚙
+            </span>
+
+        </div>
+
+
+        <div class="settings-options">
+
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>
+                        Study Reminders
+                    </strong>
+
+                    <p>
+                        Receive reminders about your
+                        daily learning plan.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="studyReminders"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>
+                        Email Notifications
+                    </strong>
+
+                    <p>
+                        Receive important CareerPilot
+                        account notifications.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="emailNotifications"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>
+                        Dark Mode
+                    </strong>
+
+                    <p>
+                        Use a darker appearance for
+                        supported settings screens.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="darkMode"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>
+                        Compact Layout
+                    </strong>
+
+                    <p>
+                        Reduce spacing in supported
+                        CareerPilot screens.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="compactMode"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="settingsMessage"
+            class="settings-message"
+        ></div>
+
+
+        <button
+            id="saveSettingsBtn"
+            class="save-settings-button"
+        >
+            Save Preferences
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACCOUNT SECURITY
+    ================================================== -->
+
+    <section class="settings-card">
+
+        <div class="settings-card-heading">
+
+            <div>
+
+                <span class="section-label">
+                    SECURITY
+                </span>
+
+                <h2>
+                    Account Security
+                </h2>
+
+            </div>
+
+            <span class="settings-icon">
+                🔐
+            </span>
+
+        </div>
+
+
+        <div class="security-section">
+
+
+            <div class="security-item">
+
+                <div>
+
+                    <strong>
+                        Email Address
+                    </strong>
+
+                    <p id="currentEmail">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <button
+                    id="changeEmailBtn"
+                    class="secondary-button"
+                >
+                    Change Email
+                </button>
+
+            </div>
+
+
+            <div
+                id="emailChangeBox"
+                class="security-form hidden"
+            >
+
+                <label for="newEmail">
+                    New Email
+                </label>
+
+                <input
+                    id="newEmail"
+                    type="email"
+                    placeholder="Enter new email"
+                >
+
+                <label for="emailPassword">
+                    Current Password
+                </label>
+
+                <input
+                    id="emailPassword"
+                    type="password"
+                    placeholder="Enter current password"
+                >
+
+                <button
+                    id="updateEmailBtn"
+                    class="primary-small-button"
+                >
+                    Update Email
+                </button>
+
+            </div>
+
+
+
+            <div class="security-item">
+
+                <div>
+
+                    <strong>
+                        Password
+                    </strong>
+
+                    <p>
+                        Change your Firebase account password.
+                    </p>
+
+                </div>
+
+                <button
+                    id="changePasswordBtn"
+                    class="secondary-button"
+                >
+                    Change Password
+                </button>
+
+            </div>
+
+
+            <div
+                id="passwordChangeBox"
+                class="security-form hidden"
+            >
+
+                <label for="currentPassword">
+                    Current Password
+                </label>
+
+                <input
+                    id="currentPassword"
+                    type="password"
+                    placeholder="Current password"
+                >
+
+                <label for="newPassword">
+                    New Password
+                </label>
+
+                <input
+                    id="newPassword"
+                    type="password"
+                    placeholder="Minimum 6 characters"
+                >
+
+                <button
+                    id="updatePasswordBtn"
+                    class="primary-small-button"
+                >
+                    Update Password
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="securityMessage"
+            class="settings-message"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACCOUNT ACTIONS
+    ================================================== -->
+
+    <section class="settings-card danger-card">
+
+        <div class="settings-card-heading">
+
+            <div>
+
+                <span class="danger-label">
+                    ACCOUNT ACTIONS
+                </span>
+
+                <h2>
+                    Manage Account
+                </h2>
+
+            </div>
+
+            <span class="settings-icon danger-icon">
+                ⚠
+            </span>
+
+        </div>
+
+
+        <div class="danger-actions">
+
+
+            <div class="danger-action-row">
+
+                <div>
+
+                    <strong>
+                        Sign Out
+                    </strong>
+
+                    <p>
+                        Sign out from this CareerPilot account.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="logoutBtn"
+                    class="secondary-button"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+
+
+            <div class="danger-action-row delete-row">
+
+                <div>
+
+                    <strong>
+                        Delete Account
+                    </strong>
+
+                    <p>
+                        Permanently delete your CareerPilot
+                        account and profile data.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="deleteAccountBtn"
+                    class="delete-button"
+                >
+                    Delete Account
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="../js/settings/settings.js"
+></script>
+
+
+</body>
+
+</html>

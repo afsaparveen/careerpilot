@@ -1,0 +1,1424 @@
+/* =========================================================
+   CAREERPILOT AI
+   RESUME PAGE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background:
+        linear-gradient(
+            180deg,
+            #faf9ff 0%,
+            #f7f8fc 100%
+        );
+    color: #111827;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.resume-navbar {
+    height: 72px;
+    padding: 0 5%;
+    background: #ffffff;
+    border-bottom: 1px solid #ececf4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.resume-logo {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+.resume-logo span {
+    color: #7c3aed;
+}
+
+
+.resume-nav {
+    display: flex;
+    gap: 25px;
+}
+
+
+.resume-nav a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.resume-nav a:hover {
+    color: #7c3aed;
+}
+
+
+.resume-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.resume-profile span {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.resume-profile button {
+    border: 0;
+    padding: 9px 13px;
+    border-radius: 9px;
+    background: #f3f4f6;
+    color: #4b5563;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.resume-profile button:hover {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.resume-container {
+    width: min(
+        1180px,
+        92%
+    );
+    margin: auto;
+    padding: 38px 0 70px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.resume-hero {
+    padding: 34px;
+    border-radius: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #f3e8ff,
+            #fff1f8,
+            #eef6ff
+        );
+    border: 1px solid #e8ddff;
+}
+
+
+.hero-label {
+    display: inline-block;
+    color: #7c3aed;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    margin-bottom: 10px;
+}
+
+
+.resume-hero h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+
+.resume-hero p {
+    max-width: 650px;
+    margin: 12px 0 0;
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+.resume-score-card {
+    min-width: 170px;
+    padding: 23px;
+    border-radius: 21px;
+    background: rgba(
+        255,
+        255,
+        255,
+        0.84
+    );
+    text-align: center;
+}
+
+
+.resume-score-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.resume-score-card strong {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 48px;
+    color: #7c3aed;
+}
+
+
+.resume-score-card small {
+    color: #9ca3af;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.resume-upload-section,
+.current-resume-section,
+.audit-section,
+.evidence-section {
+    margin-top: 38px;
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 17px;
+}
+
+
+.section-label {
+    display: block;
+    color: #7c3aed;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+
+.section-heading h2 {
+    margin: 6px 0 0;
+    font-size: 23px;
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+========================================================= */
+
+.upload-box {
+    min-height: 260px;
+    border: 2px dashed #d9d7eb;
+    border-radius: 24px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+}
+
+
+.upload-box.drag-active {
+    border-color: #7c3aed;
+    background: #faf5ff;
+    transform: translateY(-2px);
+}
+
+
+.upload-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+    background: #ede9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+
+.upload-box h3 {
+    margin: 15px 0 5px;
+    font-size: 17px;
+}
+
+
+.upload-box p {
+    margin: 0 0 17px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+.upload-button,
+.primary-button,
+.secondary-button {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.upload-button {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.selected-file {
+    margin-top: 18px;
+    padding: 10px 13px;
+    border-radius: 11px;
+    background: #f8f8fc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.selected-file span {
+    font-size: 12px;
+    color: #4b5563;
+}
+
+
+.selected-file button {
+    border: 0;
+    background: transparent;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.upload-actions {
+    margin-top: 16px;
+}
+
+
+.primary-button {
+    border: 0;
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+    color: #ffffff;
+    padding: 12px 17px;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.primary-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+.secondary-button {
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.secondary-button:hover {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   UPLOAD PROGRESS
+========================================================= */
+
+.upload-progress {
+    margin-top: 17px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ececf4;
+    border-radius: 15px;
+}
+
+
+.upload-progress-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+
+.upload-progress-top strong {
+    color: #7c3aed;
+}
+
+
+.upload-progress-bar {
+    height: 8px;
+    margin-top: 9px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f1f2f7;
+}
+
+
+.upload-progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #ec4899
+        );
+    transition: width 0.2s;
+}
+
+
+/* =========================================================
+   CURRENT RESUME
+========================================================= */
+
+.current-resume-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    border: 1px solid #ececf4;
+    border-radius: 19px;
+    padding: 18px;
+}
+
+
+.current-resume-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #ede9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+
+.current-resume-info {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.current-resume-info strong {
+    display: block;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.current-resume-info span {
+    display: block;
+    margin-top: 5px;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   AUDIT STATUS
+========================================================= */
+
+.audit-status {
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #ecfdf5;
+    color: #15803d;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.audit-summary-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+    gap: 15px;
+}
+
+
+.audit-summary-card {
+    padding: 18px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.summary-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+
+.audit-summary-card small {
+    display: block;
+    color: #6b7280;
+    font-size: 10px;
+}
+
+
+.audit-summary-card strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 25px;
+}
+
+
+.purple-audit {
+    background: #faf5ff;
+}
+
+
+.purple-audit .summary-icon {
+    background: #ede9fe;
+}
+
+
+.blue-audit {
+    background: #eff6ff;
+}
+
+
+.blue-audit .summary-icon {
+    background: #dbeafe;
+}
+
+
+.green-audit {
+    background: #f0fdf4;
+}
+
+
+.green-audit .summary-icon {
+    background: #dcfce7;
+}
+
+
+.orange-audit {
+    background: #fff7ed;
+}
+
+
+.orange-audit .summary-icon {
+    background: #ffedd5;
+}
+
+
+/* =========================================================
+   CHECKS
+========================================================= */
+
+.audit-checks {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+    gap: 13px;
+}
+
+
+.audit-check {
+    background: #ffffff;
+    border: 1px solid #ececf4;
+    border-radius: 17px;
+    padding: 17px;
+}
+
+
+.audit-check-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.audit-check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+
+.audit-check.pass .audit-check-icon {
+    background: #dcfce7;
+}
+
+
+.audit-check.warn .audit-check-icon {
+    background: #fef3c7;
+}
+
+
+.audit-check.fail .audit-check-icon {
+    background: #fee2e2;
+}
+
+
+.audit-check strong {
+    font-size: 13px;
+}
+
+
+.audit-check p {
+    margin: 9px 0 0;
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MINI HEADINGS
+========================================================= */
+
+.detected-skills-section,
+.suggestions-section {
+    margin-top: 25px;
+}
+
+
+.mini-heading h3 {
+    margin: 6px 0 0;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-chip-list {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.skill-chip {
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: #f3e8ff;
+    border: 1px solid #e9d5ff;
+    color: #6d28d9;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SUGGESTIONS
+========================================================= */
+
+.suggestion-list {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.suggestion {
+    padding: 13px 15px;
+    border-radius: 13px;
+    background: #ffffff;
+    border: 1px solid #ececf4;
+    color: #4b5563;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EVIDENCE
+========================================================= */
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+    gap: 15px;
+}
+
+
+.evidence-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #ffffff;
+    border: 1px solid #ececf4;
+    border-radius: 18px;
+    padding: 18px;
+}
+
+
+.evidence-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+
+.evidence-card strong {
+    font-size: 13px;
+}
+
+
+.evidence-card p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NEXT STEP
+========================================================= */
+
+.next-step-section {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 21px;
+    background:
+        linear-gradient(
+            135deg,
+            #faf5ff,
+            #eff6ff
+        );
+    border: 1px solid #e8e3ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.next-step-section h2 {
+    margin: 6px 0 0;
+    font-size: 21px;
+}
+
+
+.next-step-section p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .resume-nav {
+        display: none;
+    }
+
+
+    .audit-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .resume-container {
+        width: 94%;
+        padding-top: 24px;
+    }
+
+
+    .resume-hero {
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .resume-hero h1 {
+        font-size: 31px;
+    }
+
+
+    .resume-score-card {
+        min-width: 0;
+    }
+
+
+    .audit-summary-grid,
+    .audit-checks,
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .current-resume-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+
+    .current-resume-info {
+        width: calc(
+            100% - 65px
+        );
+    }
+
+
+    .next-step-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .resume-navbar {
+        padding: 0 3%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .resume-profile button {
+        display: none;
+    }
+
+
+    .upload-box {
+        padding: 23px 16px;
+    }
+
+
+    .resume-score-card strong {
+        font-size: 39px;
+    }
+
+}
+/* =========================================================
+   DYNAMIC RESUME ANALYSIS RESULTS
+   These styles are required for content generated by
+   js/resume/resume.js
+========================================================= */
+
+#resume-results {
+    margin-top: 38px;
+}
+
+
+.resume-result-panel {
+    width: 100%;
+}
+
+
+.resume-result-header {
+    padding: 28px;
+    border-radius: 24px;
+    background:
+        linear-gradient(
+            135deg,
+            #f3e8ff,
+            #fff1f8,
+            #eef6ff
+        );
+    border: 1px solid #e8ddff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+.resume-result-header h2 {
+    margin: 6px 0 0;
+    font-size: 25px;
+    color: #111827;
+}
+
+
+.resume-result-header p {
+    margin: 7px 0 0;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.resume-score {
+    min-width: 145px;
+    padding: 20px;
+    border-radius: 19px;
+    background: #ffffff;
+    text-align: center;
+    border: 1px solid #ececf4;
+}
+
+
+.resume-score strong {
+    display: block;
+    font-size: 34px;
+    line-height: 1;
+}
+
+
+.resume-score span {
+    display: block;
+    margin-top: 7px;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.resume-score.good {
+    border-color: #bbf7d0;
+}
+
+
+.resume-score.good strong {
+    color: #16a34a;
+}
+
+
+.resume-score.medium {
+    border-color: #fde68a;
+}
+
+
+.resume-score.medium strong {
+    color: #d97706;
+}
+
+
+.resume-score.needs-work {
+    border-color: #fecaca;
+}
+
+
+.resume-score.needs-work strong {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   RESULT GRID
+========================================================= */
+
+.resume-result-grid {
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   RESULT CARDS
+========================================================= */
+
+.resume-result-card {
+    margin-top: 18px;
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid #ececf4;
+    border-radius: 19px;
+}
+
+
+.resume-result-grid .resume-result-card {
+    margin-top: 0;
+}
+
+
+.resume-result-card h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #111827;
+}
+
+
+.resume-result-card > p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.muted {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   AUDIT CHECKS
+========================================================= */
+
+.resume-check-list {
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.resume-check {
+    padding: 13px 14px;
+
+    border-radius: 13px;
+
+    border: 1px solid #ececf4;
+    background: #fafafa;
+}
+
+
+.resume-check > div {
+    width: 100%;
+}
+
+
+.resume-check strong {
+    display: block;
+    font-size: 12px;
+    color: #111827;
+}
+
+
+.resume-check p {
+    margin: 6px 0 0;
+
+    color: #6b7280;
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+.resume-check.passed {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+
+.resume-check.failed {
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+
+/* =========================================================
+   DETECTED SKILLS
+========================================================= */
+
+.resume-skill-list {
+    margin-top: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.resume-skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    border-radius: 999px;
+
+    background: #f3e8ff;
+    border: 1px solid #e9d5ff;
+
+    color: #6d28d9;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.resume-skill-chip span {
+    color: #9333ea;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.resume-recommendations {
+    margin: 14px 0 0;
+    padding-left: 19px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.resume-recommendations li {
+    color: #4b5563;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.resume-recommendations li::marker {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   CAREER EVIDENCE
+========================================================= */
+
+.resume-evidence-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf5ff,
+            #eff6ff
+        );
+
+    border-color: #e8e3ff;
+}
+
+
+.resume-evidence-card h3 {
+    margin-top: 5px;
+}
+
+
+.resume-evidence-card > div:first-child p:last-child {
+    margin-top: 7px;
+}
+
+
+.evidence-stat {
+    min-width: 110px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #ececf4;
+
+    text-align: center;
+}
+
+
+.evidence-stat strong {
+    display: block;
+
+    font-size: 22px;
+
+    color: #7c3aed;
+}
+
+
+.evidence-stat span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #6b7280;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STORAGE NOTE
+========================================================= */
+
+.resume-storage-note {
+    margin-top: 14px;
+
+    padding: 13px 15px;
+
+    border-radius: 13px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.resume-storage-note strong {
+    color: #374151;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #f9fafb;
+
+    border: 1px dashed #d1d5db;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESUME STATUS
+========================================================= */
+
+.resume-status {
+    margin-top: 12px;
+
+    padding: 10px 13px;
+
+    border-radius: 11px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.resume-status.success {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+
+.resume-status.error {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+.resume-status.loading {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   RESPONSIVE RESULTS
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .resume-result-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .resume-score {
+        width: 100%;
+    }
+
+
+    .resume-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .resume-evidence-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .evidence-stat {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .resume-result-header {
+        padding: 21px;
+    }
+
+
+    .resume-result-card {
+        padding: 17px;
+    }
+
+
+    .resume-result-header h2 {
+        font-size: 20px;
+    }
+
+}

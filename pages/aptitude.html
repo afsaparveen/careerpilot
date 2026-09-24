@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aptitude Practice | CareerPilot</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/aptitude.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="aptitude-navbar">
+
+    <div class="aptitude-brand">
+
+        <div class="brand-mark">
+            CP
+        </div>
+
+        <div>
+
+            <strong>
+                CareerPilot
+            </strong>
+
+            <span>
+                Aptitude Preparation
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="aptitude-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="aptitude-learning.html">
+            Learn Aptitude
+        </a>
+
+        <a
+            href="aptitude.html"
+            class="active"
+        >
+            Practice
+        </a>
+
+        <a href="daily-plan.html">
+            Daily Plan
+        </a>
+
+    </nav>
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <nav class="mobile-nav-menu">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa.html">
+            DSA
+        </a>
+
+        <a
+            href="aptitude.html"
+            class="active"
+        >
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+        <a href="companies.html">
+            Companies
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="aptitude-page">
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="aptitude-hero">
+
+        <div class="aptitude-hero-copy">
+
+            <div class="section-label">
+                PLACEMENT APTITUDE PRACTICE
+            </div>
+
+            <h1>
+                Practice smarter.
+                Improve every day.
+            </h1>
+
+            <p>
+                Test your speed and accuracy across
+                quantitative aptitude, logical reasoning
+                and verbal ability.
+            </p>
+
+            <div class="aptitude-role">
+
+                <span>
+                    Target Role
+                </span>
+
+                <strong id="targetRole">
+                    Loading...
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="accuracy-card">
+
+            <strong id="overallAccuracy">
+                0%
+            </strong>
+
+            <span>
+                Overall Accuracy
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         LEARNING LINK
+    ====================================== -->
+
+    <section
+        style="
+            margin-top:22px;
+            padding:20px;
+            border:1px solid #e2e5ea;
+            border-radius:14px;
+            background:#f8f9fb;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+            flex-wrap:wrap;
+        "
+    >
+
+        <div>
+
+            <div class="section-label">
+                NEED TO LEARN FIRST?
+            </div>
+
+            <h2
+                style="
+                    margin:6px 0;
+                    font-size:20px;
+                "
+            >
+                Watch lessons before practicing.
+            </h2>
+
+            <p
+                style="
+                    margin:0;
+                    color:#5b6473;
+                    font-size:12px;
+                    line-height:1.6;
+                "
+            >
+                Learn Percentage, Ratio & Proportion,
+                Averages and Time & Work through
+                topic-based YouTube lessons, then solve
+                questions related to each lesson.
+            </p>
+
+        </div>
+
+
+        <!-- FIXED START LEARNING BUTTON -->
+
+        <a
+            href="aptitude-learning.html"
+            style="
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                gap:8px;
+                padding:11px 16px;
+                border-radius:8px;
+                text-decoration:none;
+                color:white;
+                background:#1f2a44;
+                font-size:11px;
+                font-weight:700;
+                white-space:nowrap;
+            "
+        >
+
+            <span>
+                Start Learning
+            </span>
+
+            <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+
+                <path d="M5 12h14"></path>
+
+                <path d="M13 6l6 6-6 6"></path>
+
+            </svg>
+
+        </a>
+
+    </section>
+
+
+    <!-- =====================================
+         STATS
+    ====================================== -->
+
+    <section class="aptitude-stats">
+
+
+        <!-- QUESTIONS SOLVED -->
+
+        <div class="aptitude-stat">
+
+            <div class="stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="28"
+                    height="28"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <rect
+                        x="4"
+                        y="4"
+                        width="16"
+                        height="16"
+                        rx="2"
+                    ></rect>
+
+                    <path d="M8 8h8"></path>
+
+                    <path d="M8 12h5"></path>
+
+                    <path d="M8 16h3"></path>
+
+                </svg>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Questions Solved
+                </span>
+
+                <strong id="questionsSolved">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- CORRECT -->
+
+        <div class="aptitude-stat">
+
+            <div class="stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="28"
+                    height="28"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="9"
+                    ></circle>
+
+                    <path d="m8 12 2.5 2.5L16 9"></path>
+
+                </svg>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Correct
+                </span>
+
+                <strong id="correctAnswers">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- APTITUDE STREAK -->
+
+        <div class="aptitude-stat">
+
+            <div class="stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="28"
+                    height="28"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="
+                            M12 3
+                            c1.5 3 5 4.5 5 8.5
+                            A5 5 0 0 1 7 12
+                            c0-2.2 1.2-4.2 3.2-6.2
+                        "
+                    ></path>
+
+                    <path
+                        d="
+                            M12 21
+                            a3 3 0 0 0 3-3
+                            c0-1.8-1.5-3.1-3-5
+                            -1.5 1.9-3 3.2-3 5
+                            a3 3 0 0 0 3 3z
+                        "
+                    ></path>
+
+                </svg>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Aptitude Streak
+                </span>
+
+                <strong id="aptitudeStreak">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- APTITUDE XP -->
+
+        <div class="aptitude-stat">
+
+            <div class="stat-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="28"
+                    height="28"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="9"
+                    ></circle>
+
+                    <path d="M12 7v5l3 2"></path>
+
+                </svg>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Aptitude XP
+                </span>
+
+                <strong id="aptitudeXP">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CATEGORY SELECTOR
+    ====================================== -->
+
+    <section class="practice-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-label">
+                    PRACTICE AREAS
+                </div>
+
+                <h2>
+                    Choose a category
+                </h2>
+
+                <p>
+                    Select a category and solve a focused
+                    placement-style question set.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- QUANTITATIVE -->
+
+            <button
+                type="button"
+                class="category-card active"
+                data-category="quantitative"
+            >
+
+                <div class="category-icon">
+                </div>
+
+                <div>
+
+                    <h3>
+                        Quantitative
+                    </h3>
+
+                    <p>
+                        Numbers, percentages,
+                        ratios and averages.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- LOGICAL -->
+
+            <button
+                type="button"
+                class="category-card"
+                data-category="logical"
+            >
+
+                <div class="category-icon">
+                </div>
+
+                <div>
+
+                    <h3>
+                        Logical Reasoning
+                    </h3>
+
+                    <p>
+                        Patterns, sequences,
+                        arrangements and logic.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- VERBAL -->
+
+            <button
+                type="button"
+                class="category-card"
+                data-category="verbal"
+            >
+
+                <div class="category-icon">
+                </div>
+
+                <div>
+
+                    <h3>
+                        Verbal Ability
+                    </h3>
+
+                    <p>
+                        Grammar, vocabulary
+                        and sentence correction.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- MIXED -->
+
+            <button
+                type="button"
+                class="category-card"
+                data-category="mixed"
+            >
+
+                <div class="category-icon">
+                </div>
+
+                <div>
+
+                    <h3>
+                        Mixed Practice
+                    </h3>
+
+                    <p>
+                        A balanced placement-style
+                        practice set.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         QUESTION
+    ====================================== -->
+
+    <section class="question-section">
+
+        <div class="question-header">
+
+            <div>
+
+                <div class="section-label">
+                    CURRENT QUESTION
+                </div>
+
+                <h2 id="categoryTitle">
+                    Quantitative Aptitude
+                </h2>
+
+            </div>
+
+
+            <div class="question-counter">
+
+                <span id="questionNumber">
+                    1
+                </span>
+
+                /
+
+                <span id="questionTotal">
+                    8
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="question-progress">
+
+            <div
+                id="questionProgressBar"
+                class="question-progress-fill"
+            ></div>
+
+        </div>
+
+
+        <article class="question-card">
+
+            <div class="question-number-badge">
+
+                Q<span id="questionBadge">
+                    1
+                </span>
+
+            </div>
+
+
+            <h3 id="questionText">
+                Loading question...
+            </h3>
+
+
+            <div
+                id="optionsList"
+                class="options-list"
+            ></div>
+
+
+            <div
+                id="feedback"
+                class="question-feedback"
+            ></div>
+
+
+            <div class="question-actions">
+
+                <button
+                    type="button"
+                    id="submitAnswer"
+                    class="submit-answer"
+                >
+                    Submit Answer
+                </button>
+
+
+                <button
+                    type="button"
+                    id="nextQuestion"
+                    class="next-question"
+                    disabled
+                >
+                    Next Question →
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================
+         SESSION RESULT
+    ====================================== -->
+
+    <section class="result-card">
+
+        <div class="result-icon">
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                SESSION PROGRESS
+            </div>
+
+            <h2 id="sessionTitle">
+                Start practicing
+            </h2>
+
+            <p id="sessionMessage">
+                Complete a question set to see your
+                accuracy and progress.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script
+    type="module"
+    src="../js/aptitude/aptitude.js"
+></script>
+
+<script src="../js/mobile-nav.js"></script>
+
+</body>
+
+</html>

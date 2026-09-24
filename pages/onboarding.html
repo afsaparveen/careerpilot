@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPilot | Onboarding</title>
+
+    <!-- Main CareerPilot styles -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Onboarding styles -->
+    <link rel="stylesheet" href="../css/onboarding.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .onboarding-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .step-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .step-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        .choice-card span, .skill-card span {
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="onboarding-page">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="onboarding-header">
+
+            <a href="../index.html" class="onboarding-logo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+                </svg>
+                CareerPilot
+            </a>
+
+            <div class="step-indicator">
+                Step <span id="currentStep">1</span> of 4
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PROGRESS BAR
+        ================================================== -->
+
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+
+
+        <!-- =================================================
+             MAIN CARD
+        ================================================== -->
+
+        <section class="onboarding-card">
+
+
+            <!-- =================================================
+                 STEP 1
+            ================================================== -->
+
+            <div class="onboarding-step active" id="step1">
+
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                    </svg>
+                </div>
+
+                <h1>
+                    Let's build your career plan
+                </h1>
+
+                <p class="step-description">
+                    Tell CareerPilot a little about your career goals.
+                    We'll use this information to personalize your preparation journey.
+                </p>
+
+                <!-- NAME -->
+                <div class="form-group">
+                    <label for="fullName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                    >
+                </div>
+
+                <!-- TARGET ROLE -->
+                <div class="form-group">
+                    <label for="targetRole">
+                        What role are you targeting?
+                    </label>
+
+                    <select id="targetRole">
+                        <option value="">
+                            Select your target role
+                        </option>
+                        <option value="Software Engineer">
+                            Software Engineer / SDE
+                        </option>
+                        <option value="Full Stack Developer">
+                            Full Stack Developer
+                        </option>
+                        <option value="AI ML Engineer">
+                            AI / ML Engineer
+                        </option>
+                        <option value="Data Analyst">
+                            Data Analyst
+                        </option>
+                        <option value="Data Scientist">
+                            Data Scientist
+                        </option>
+                        <option value="Cloud DevOps Engineer">
+                            Cloud / DevOps Engineer
+                        </option>
+                        <option value="Cybersecurity">
+                            Cybersecurity
+                        </option>
+                    </select>
+                </div>
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="next-btn"
+                        onclick="nextStep()"
+                    >
+                        Continue →
+                    </button>
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STEP 2
+            ================================================== -->
+
+            <div class="onboarding-step" id="step2">
+
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                        <line x1="9" y1="22" x2="9" y2="22.01"/>
+                        <line x1="15" y1="22" x2="15" y2="22.01"/>
+                        <line x1="9" y1="6" x2="9" y2="6.01"/>
+                        <line x1="15" y1="6" x2="15" y2="6.01"/>
+                        <line x1="9" y1="10" x2="9" y2="10.01"/>
+                        <line x1="15" y1="10" x2="15" y2="10.01"/>
+                        <line x1="9" y1="14" x2="9" y2="14.01"/>
+                        <line x1="15" y1="15" x2="15" y2="15.01"/>
+                    </svg>
+                </div>
+
+                <h1>
+                    Where do you want to work?
+                </h1>
+
+                <p class="step-description">
+                    Choose the companies you're preparing for.
+                </p>
+
+                <div class="company-grid">
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="TCS">
+                        <span>TCS</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Infosys">
+                        <span>Infosys</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Accenture">
+                        <span>Accenture</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Wipro">
+                        <span>Wipro</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Amazon">
+                        <span>Amazon</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Microsoft">
+                        <span>Microsoft</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Google">
+                        <span>Google</span>
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" value="Other">
+                        <span>Other</span>
+                    </label>
+
+                </div>
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="previousStep()"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        type="button"
+                        class="next-btn"
+                        onclick="nextStep()"
+                    >
+                        Continue →
+                    </button>
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STEP 3
+            ================================================== -->
+
+            <div class="onboarding-step" id="step3">
+
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="6"/>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                    </svg>
+                </div>
+
+                <h1>
+                    Tell us about your skills
+                </h1>
+
+                <p class="step-description">
+                    Select the skills you already know.
+                    We'll verify them later instead of blindly trusting your resume.
+                </p>
+
+                <div class="skills-grid">
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="Java">
+                        <span>Java</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="Python">
+                        <span>Python</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="JavaScript">
+                        <span>JavaScript</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="HTML CSS">
+                        <span>HTML / CSS</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="React">
+                        <span>React</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="SQL">
+                        <span>SQL</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="DSA">
+                        <span>DSA</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="Git GitHub">
+                        <span>Git / GitHub</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="DBMS">
+                        <span>DBMS</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="Operating Systems">
+                        <span>Operating Systems</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="Computer Networks">
+                        <span>Computer Networks</span>
+                    </label>
+
+                    <label class="skill-card">
+                        <input type="checkbox" value="OOP">
+                        <span>OOP</span>
+                    </label>
+
+                </div>
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="previousStep()"
+                    >
+                        ← Back
+                    </button>
+
+                    <button
+                        type="button"
+                        class="next-btn"
+                        onclick="nextStep()"
+                    >
+                        Continue →
+                    </button>
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STEP 4
+            ================================================== -->
+
+            <div class="onboarding-step" id="step4">
+
+                <div class="step-icon">
+                    <svg viewBox="0 0 24

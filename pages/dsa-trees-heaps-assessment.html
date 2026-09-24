@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Trees & Heaps Assessment | CareerPilot</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/os-assessment.css" />
+
+  <!-- Subtle professional UI enhancements -->
+  <style>
+    .assessment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .assessment-eyebrow {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .assessment-info-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info-item span {
+      font-size: 12px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .info-item strong {
+      font-size: 20px;
+      color: #0f172a;
+    }
+
+    .question-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .option:hover {
+      background-color: #f8fafc;
+      border-color: #cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="assessment-page">
+
+    <header class="assessment-header">
+
+      <div>
+        <span class="assessment-eyebrow">
+          CAREERPILOT • DSA LEARNING
+        </span>
+
+        <h1>
+          Trees & Heaps Assessment
+        </h1>
+
+        <p>
+          Test your understanding of binary trees,
+          traversals, BSTs, heaps and priority queues.
+        </p>
+      </div>
+
+      <a
+        href="dsa-learning.html"
+        class="back-btn"
+      >
+        ← Back to DSA Learning
+      </a>
+
+    </header>
+
+
+    <main class="assessment-container">
+
+      <section class="assessment-info-card">
+
+        <div class="info-item">
+          <span>Questions</span>
+          <strong>5</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Pass Mark</span>
+          <strong>4 / 5</strong>
+        </div>
+
+        <div class="info-item">
+          <span>Attempts</span>
+          <strong>Unlimited</strong>
+        </div>
+
+      </section>
+
+
+      <form id="assessmentForm">
+
+        <!-- QUESTION 1 -->
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 1
+          </div>
+
+          <h2>
+            In a binary tree, what is the maximum number of
+            children a node can have?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="A"
+            />
+            <span>1</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="B"
+            />
+            <span>2</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="C"
+            />
+            <span>3</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q1"
+              value="D"
+            />
+            <span>Unlimited</span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 2 -->
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 2
+          </div>
+
+          <h2>
+            Which traversal visits the left subtree, then the
+            root, and then the right subtree?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="A"
+            />
+            <span>Preorder</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="B"
+            />
+            <span>Inorder</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="C"
+            />
+            <span>Postorder</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q2"
+              value="D"
+            />
+            <span>Level-order</span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 3 -->
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 3
+          </div>
+
+          <h2>
+            What property does a Binary Search Tree normally maintain?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="A"
+            />
+            <span>
+              Every node must have exactly two children
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="B"
+            />
+            <span>
+              Values follow an ordering relationship between
+              left and right subtrees
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="C"
+            />
+            <span>
+              All values must be identical
+            </span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q3"
+              value="D"
+            />
+            <span>
+              Nodes cannot contain numerical values
+            </span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 4 -->
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 4
+          </div>
+
+          <h2>
+            In a min-heap, which value is normally found at
+            the root?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="A"
+            />
+            <span>The largest value</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="B"
+            />
+            <span>The smallest value</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="C"
+            />
+            <span>The middle value</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q4"
+              value="D"
+            />
+            <span>Always zero</span>
+          </label>
+
+        </section>
+
+
+        <!-- QUESTION 5 -->
+        <section class="question-card">
+
+          <div class="question-number">
+            Question 5
+          </div>
+
+          <h2>
+            Which data structure is commonly used to implement
+            a priority queue?
+          </h2>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="A"
+            />
+            <span>Heap</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="B"
+            />
+            <span>String</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="C"
+            />
+            <span>Graph only</span>
+          </label>
+
+          <label class="option">
+            <input
+              type="radio"
+              name="q5"
+              value="D"
+            />
+            <span>Character array only</span>
+          </label>
+
+        </section>
+
+
+        <div class="submit-section">
+          <button
+            type="submit"
+            id="submitBtn"
+            class="primary-btn"
+          >
+            Submit Assessment
+          </button>
+        </div>
+
+      </form>
+
+
+      <section
+        id="resultSection"
+        class="result-section"
+        style="display: none;"
+      >
+
+        <div id="resultIcon"></div>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultMessage"></p>
+
+        <div class="score-display">
+          <span>Your Score</span>
+          <strong id="scoreDisplay">
+            0 / 5
+          </strong>
+        </div>
+
+        <div class="result-actions">
+          <button
+            id="retryBtn"
+            class="secondary-btn"
+          >
+            Try Again
+          </button>
+
+          <button
+            id="backLearningBtn"
+            class="primary-btn"
+          >
+            Back to DSA Learning
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script
+    type="module"
+    src="../js/technical/dsa-trees-heaps-assessment.js"
+  ></script>
+
+</body>
+</html>

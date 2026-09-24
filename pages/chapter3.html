@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 3 - Data Abstraction</title>
+
+    <link rel="stylesheet"
+          href="../css/chapter3.css">
+
+</head>
+
+<body>
+
+<div class="chapter-container">
+
+    <a href="dbms.html" class="back-btn">
+        ← Back to DBMS Dashboard
+    </a>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="chapter-header">
+
+        <p class="chapter-number">
+            CHAPTER 3
+        </p>
+
+        <h1>
+            Data Abstraction
+        </h1>
+
+        <p>
+            Understand how DBMS hides complex storage
+            details and provides different levels of
+            information to users.
+        </p>
+
+
+        <div class="progress-box">
+
+            <div class="progress-text">
+
+                <span>
+                    Topic Progress
+                </span>
+
+                <span id="progressText">
+                    0 / 7
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= STUDY ================= -->
+
+    <main id="studySection">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    LEARN
+                </p>
+
+                <h2>
+                    Chapter 3 Topics
+                </h2>
+
+            </div>
+
+            <p>
+                Study each topic and mark it completed.
+            </p>
+
+        </div>
+
+
+        <!-- TOPIC 1 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 1
+            </div>
+
+            <h3>
+                What is Data Abstraction?
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    <strong>Data abstraction</strong>
+                    means hiding implementation details
+                    from users and applications while
+                    showing only the information that is
+                    relevant to them.
+                </p>
+
+                <p>
+                    A DBMS can store data using complex
+                    storage structures, indexing methods,
+                    files and blocks. Users normally do not
+                    need to know these internal details.
+                </p>
+
+                <p>
+                    Instead, users interact with the
+                    information they actually need.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    A student can view their attendance
+                    percentage without knowing where the
+                    attendance records are physically stored
+                    on the disk.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Hides implementation details.
+                    </li>
+
+                    <li>
+                        Shows only relevant information.
+                    </li>
+
+                    <li>
+                        Improves security.
+                    </li>
+
+                    <li>
+                        Improves flexibility.
+                    </li>
+
+                    <li>
+                        Improves maintainability.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic1">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOPIC 2 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 2
+            </div>
+
+            <h3>
+                Physical Level
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    The <strong>physical level</strong>
+                    is the lowest level of data abstraction.
+                </p>
+
+                <p>
+                    It describes how data is actually
+                    stored in the storage system.
+                </p>
+
+                <p>
+                    It includes details such as:
+                </p>
+
+                <ul>
+
+                    <li>
+                        File structures
+                    </li>
+
+                    <li>
+                        Indexing methods
+                    </li>
+
+                    <li>
+                        Data blocks
+                    </li>
+
+                    <li>
+                        Storage details
+                    </li>
+
+                </ul>
+
+                <p>
+                    Normal users do not need to see these
+                    low-level storage details.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    Attendance records may be stored in
+                    blocks on SSD storage and indexes may
+                    be used to locate records quickly.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Lowest abstraction level.
+                    </li>
+
+                    <li>
+                        Describes physical storage.
+                    </li>
+
+                    <li>
+                        Includes file structures.
+                    </li>
+
+                    <li>
+                        Includes data blocks.
+                    </li>
+
+                    <li>
+                        Users normally do not see it.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic2">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOPIC 3 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 3
+            </div>
+
+            <h3>
+                Logical Level
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    The <strong>logical level</strong>
+                    describes the overall structure of
+                    the database.
+                </p>
+
+                <p>
+                    At this level we work with:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Tables
+                    </li>
+
+                    <li>
+                        Columns
+                    </li>
+
+                    <li>
+                        Data types
+                    </li>
+
+                    <li>
+                        Relationships
+                    </li>
+
+                    <li>
+                        Constraints
+                    </li>
+
+                </ul>
+
+                <p>
+                    Developers and database designers
+                    commonly work with this level when
+                    designing databases and writing queries.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    A Students table may contain
+                    Roll No, Name and relationships
+                    with a Courses table.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Describes the overall database
+                        structure.
+                    </li>
+
+                    <li>
+                        Uses tables and relationships.
+                    </li>
+
+                    <li>
+                        Includes columns and data types.
+                    </li>
+
+                    <li>
+                        Developers commonly work at
+                        this level.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic3">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOPIC 4 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 4
+            </div>
+
+            <h3>
+                View Level
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    The <strong>view level</strong> is the
+                    highest level of data abstraction.
+                </p>
+
+                <p>
+                    It presents customized subsets of
+                    database information to different users.
+                </p>
+
+                <p>
+                    Different users may therefore see
+                    different information from the same
+                    database.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    A hostel warden may see:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Roll Number
+                    </li>
+
+                    <li>
+                        Name
+                    </li>
+
+                    <li>
+                        Hostel Fee Status
+                    </li>
+
+                </ul>
+
+                <p>
+                    The examination branch may instead
+                    see Roll Number, Name and Semester Marks.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Highest abstraction level.
+                    </li>
+
+                    <li>
+                        Provides customized views.
+                    </li>
+
+                    <li>
+                        Different users can see
+                        different information.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic4">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LEVEL COMPARISON -->
+
+        <div class="comparison-card">
+
+            <h3>
+                Three Levels of Data Abstraction
+            </h3>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Level
+                        </th>
+
+                        <th>
+                            What it describes
+                        </th>
+
+                        <th>
+                            Example
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            Physical
+                        </td>
+
+                        <td>
+                            How data is physically stored
+                        </td>
+
+                        <td>
+                            Blocks, files, indexes
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            Logical
+                        </td>
+
+                        <td>
+                            Database structure
+                        </td>
+
+                        <td>
+                            Tables, columns, relationships
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            View
+                        </td>
+
+                        <td>
+                            User-specific information
+                        </td>
+
+                        <td>
+                            Student/warden/exam views
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- TOPIC 5 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 5
+            </div>
+
+            <h3>
+                Logical Data Independence
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    <strong>Logical data independence</strong>
+                    means that changes to the logical
+                    schema should not require application
+                    programs to be rewritten.
+                </p>
+
+                <p>
+                    In simple words:
+                </p>
+
+                <div class="highlight-box">
+
+                    Logical schema changes
+                    <br>
+                    ↓
+                    <br>
+                    Applications continue to work
+
+                </div>
+
+                <p>
+                    This reduces application maintenance
+                    when the logical database structure
+                    changes.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    Suppose an Address field is changed
+                    into three separate fields:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Street
+                    </li>
+
+                    <li>
+                        City
+                    </li>
+
+                    <li>
+                        Pin Code
+                    </li>
+
+                </ul>
+
+                <p>
+                    Applications that depend on the
+                    database can remain insulated from
+                    this logical change.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Concerned with logical schema changes.
+                    </li>
+
+                    <li>
+                        Applications are insulated from
+                        some schema changes.
+                    </li>
+
+                    <li>
+                        Reduces maintenance work.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic5">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOPIC 6 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 6
+            </div>
+
+            <h3>
+                Physical Data Independence
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    <strong>Physical data independence</strong>
+                    means that physical storage changes
+                    can be made without affecting the
+                    logical schema.
+                </p>
+
+                <p>
+                    The way data is physically stored can
+                    therefore change independently from
+                    the logical database structure.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    Attendance data can be moved from
+                    HDD storage to faster SSD storage.
+                    A new index can also be added without
+                    changing the SQL queries used by
+                    faculty members.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Concerned with physical storage.
+                    </li>
+
+                    <li>
+                        Logical schema remains unchanged.
+                    </li>
+
+                    <li>
+                        Storage implementation can
+                        change independently.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic6">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TOPIC 7 -->
+
+        <div class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 7
+            </div>
+
+            <h3>
+                Physical → Logical → View
+            </h3>
+
+            <div class="learn-content">
+
+                <p>
+                    The data abstraction hierarchy moves
+                    from the lowest physical level to the
+                    highest view level.
+                </p>
+
+
+                <div class="hierarchy">
+
+                    <div class="hierarchy-item">
+
+                        <strong>
+                            PHYSICAL
+                        </strong>
+
+                        <span>
+                            Storage details
+                        </span>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="hierarchy-item">
+
+                        <strong>
+                            LOGICAL
+                        </strong>
+
+                        <span>
+                            Tables and relationships
+                        </span>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="hierarchy-item">
+
+                        <strong>
+                            VIEW
+                        </strong>
+
+                        <span>
+                            User-specific information
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <strong>Example</strong>
+
+                <p>
+                    The database server manages physical
+                    storage. Developers manage the logical
+                    database structure. A mobile portal
+                    displays a user-specific view.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <strong>Key Points</strong>
+
+                <ul>
+
+                    <li>
+                        Physical is the lowest level.
+                    </li>
+
+                    <li>
+                        Logical is the middle level.
+                    </li>
+
+                    <li>
+                        View is the highest level.
+                    </li>
+
+                    <li>
+                        Higher levels should be insulated
+                        from lower-level changes.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic7">
+
+                Mark as Completed
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ALL TOPICS -->
+
+        <div
+            id="allTopicsMessage"
+            class="all-topics-message hidden">
+
+            <h3>
+                All Chapter 3 Topics Completed!
+            </h3>
+
+            <p>
+                You can now take the Chapter 3 test.
+            </p>
+
+            <button
+                id="startTestButton"
+                class="primary-btn">
+
+                Start Chapter 3 Test →
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= TEST ================= -->
+
+    <section
+        id="testSection"
+        class="test-section hidden">
+
+        <div class="test-header">
+
+            <p class="section-label">
+                CHAPTER TEST
+            </p>
+
+            <h2>
+                Chapter 3 Test
+            </h2>
+
+            <p>
+                Answer all questions.
+                You need at least
+                <strong>75%</strong>
+                to pass.
+            </p>
+
+        </div>
+
+
+        <form id="testForm">
+
+            <div id="questionsContainer"></div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Submit Test
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- ================= RESULT ================= -->
+
+    <section
+        id="resultSection"
+        class="result-section hidden">
+
+        <div id="resultIcon"></div>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultMessage"></p>
+
+
+        <div class="score-box">
+
+            <span>
+                Your Score
+            </span>
+
+            <strong id="scoreText"></strong>
+
+        </div>
+
+
+        <button
+            id="retryButton"
+            class="secondary-btn">
+
+            Retry Test
+
+        </button>
+
+
+        
+            id="nextChapterButton"
+            href="chapter4.html"
+            class="primary-btn hidden">
+
+            Continue to Chapter 4 →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="../js/technical/chapter3.js"></script>
+
+</body>
+
+</html>

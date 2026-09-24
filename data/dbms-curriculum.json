@@ -1,0 +1,1381 @@
+{
+  "subject": {
+    "id": "dbms",
+    "name": "Database Management Systems",
+    "source": "DBMS Notes.pdf"
+  },
+  "chapters": [
+    {
+      "id": "dbms-introduction",
+      "number": 1,
+      "title": "DBMS Introduction",
+      "pages": "3–4",
+      "topics": [
+        {
+          "id": "what-is-dbms",
+          "title": "What is DBMS?",
+          "learn": "A Database Management System is software used to manage, store, retrieve, organize, and control data in databases.",
+          "example": "A college system can use a DBMS to store student details, attendance, marks, fees, and course information.",
+          "keyPoints": [
+            "A DBMS manages database information.",
+            "It provides controlled access to stored data.",
+            "It supports storing, retrieving, and updating data.",
+            "It helps applications interact with databases."
+          ]
+        },
+        {
+          "id": "why-dbms",
+          "title": "Why Do We Need a DBMS?",
+          "learn": "A DBMS helps organize data and provides benefits such as security, reduced redundancy, transaction support, indexing, and scalability.",
+          "example": "Instead of keeping student information in many independent spreadsheets, a college can maintain related information in a centralized database.",
+          "keyPoints": [
+            "Improves organization of data.",
+            "Reduces unnecessary duplication.",
+            "Supports controlled access.",
+            "Supports transactions and consistency.",
+            "Supports efficient searching."
+          ]
+        },
+        {
+          "id": "dbms-security",
+          "title": "Security in DBMS",
+          "learn": "A DBMS can control what different users are allowed to see or modify.",
+          "example": "A fee clerk may see fee status while the principal may also be allowed to see marks.",
+          "keyPoints": [
+            "Different users can have different permissions.",
+            "Sensitive information can be protected.",
+            "Access can be controlled at database level."
+          ]
+        },
+        {
+          "id": "dbms-redundancy",
+          "title": "Reducing Data Redundancy",
+          "learn": "A DBMS helps reduce unnecessary duplicate storage of the same information.",
+          "example": "Student details need not be repeatedly stored in separate files for every course or department.",
+          "keyPoints": [
+            "Redundancy means unnecessary repetition of data.",
+            "Reducing redundancy can reduce inconsistent copies.",
+            "Database design techniques help control duplication."
+          ]
+        },
+        {
+          "id": "dbms-acid",
+          "title": "ACID Properties",
+          "learn": "ACID properties describe important guarantees provided by database transactions: Atomicity, Consistency, Isolation, and Durability.",
+          "example": "In a fee transfer, the debit and credit should be treated as one complete transaction rather than leaving only half of the operation completed.",
+          "keyPoints": [
+            "Atomicity means all-or-nothing execution.",
+            "Consistency maintains database rules.",
+            "Isolation limits interference between transactions.",
+            "Durability preserves committed changes after failures."
+          ]
+        },
+        {
+          "id": "dbms-indexing",
+          "title": "Indexing",
+          "learn": "Indexes provide a faster way to locate rows instead of scanning the entire table.",
+          "example": "Searching for a student by Roll No can use an index rather than reading every student row.",
+          "keyPoints": [
+            "Indexes improve lookup performance.",
+            "Indexes store references used for faster searches.",
+            "Indexes may require additional storage."
+          ]
+        },
+        {
+          "id": "dbms-scalability",
+          "title": "Scalability",
+          "learn": "Scalability refers to the ability of a database system to handle increasing amounts of data, users, and workload.",
+          "example": "A college portal may need to handle far more users during result publication than on an ordinary day.",
+          "keyPoints": [
+            "Database systems may need to handle growing workloads.",
+            "Scaling can involve stronger machines or additional machines.",
+            "Scalability is important for growing applications."
+          ]
+        },
+        {
+          "id": "database-types",
+          "title": "Popular Types of Databases",
+          "learn": "The notes describe relational, document, key-value, graph, time-series, and object-oriented databases.",
+          "example": "UPI transactions are described using relational databases, while temporary user sessions are given as an example for key-value storage.",
+          "keyPoints": [
+            "Relational databases use tables and relationships.",
+            "Document databases use flexible documents.",
+            "Key-value databases support fast lookups.",
+            "Graph databases model nodes and connections.",
+            "Time-series databases optimize time-stamped information.",
+            "Object-oriented databases store software objects."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is a DBMS?",
+        "Why is security important in a DBMS?",
+        "What problem does data redundancy create?",
+        "Explain ACID in your own words.",
+        "Why are indexes useful?",
+        "Give one example of a key-value database use case."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "dbms-architecture",
+      "number": 2,
+      "title": "DBMS Architecture",
+      "pages": "5–6",
+      "topics": [
+        {
+          "id": "what-is-dbms-architecture",
+          "title": "What is DBMS Architecture?",
+          "learn": "DBMS architecture describes where software components reside and how they communicate.",
+          "example": "A database application may contain a client, an application server, and a database server.",
+          "keyPoints": [
+            "Architecture describes component location.",
+            "Architecture describes communication.",
+            "Architecture affects performance.",
+            "Architecture affects security.",
+            "Architecture affects scalability."
+          ]
+        },
+        {
+          "id": "one-tier-architecture",
+          "title": "One-Tier Architecture",
+          "learn": "In one-tier architecture, the user interface and database engine run on the same machine.",
+          "example": "A Python application using SQLite on one computer.",
+          "keyPoints": [
+            "UI and database run together.",
+            "Setup is simple.",
+            "It is suitable for a single-user environment.",
+            "Local resources are consumed by the application and database."
+          ]
+        },
+        {
+          "id": "two-tier-architecture",
+          "title": "Two-Tier Architecture",
+          "learn": "In two-tier architecture, a client application communicates directly with a database server.",
+          "example": "A Java desktop application connecting directly to MySQL.",
+          "keyPoints": [
+            "Client directly communicates with database server.",
+            "Multiple users can connect.",
+            "ODBC or JDBC may manage connections.",
+            "The database is directly exposed to clients."
+          ]
+        },
+        {
+          "id": "three-tier-architecture",
+          "title": "Three-Tier Architecture",
+          "learn": "In three-tier architecture, the client communicates with an application server, which communicates with the database server.",
+          "example": "A mobile application calls a Node.js REST API, which then queries PostgreSQL.",
+          "keyPoints": [
+            "Client does not directly access the database.",
+            "Application server sits in the middle.",
+            "Business logic can be centralized.",
+            "Security can be centralized.",
+            "Database remains shielded.",
+            "Clients can remain lightweight."
+          ]
+        },
+        {
+          "id": "distributed-databases",
+          "title": "Distributed Databases",
+          "learn": "A distributed database stores data segments on geographically separated servers while presenting them as one logical database.",
+          "example": "Different university campuses maintain local attendance data on local servers.",
+          "keyPoints": [
+            "Data can exist on multiple servers.",
+            "Servers may be geographically separated.",
+            "The system can appear as one logical database.",
+            "Synchronization can be asynchronous or transaction-based."
+          ]
+        },
+        {
+          "id": "cap-theorem",
+          "title": "CAP Theorem",
+          "learn": "The notes describe Consistency, Availability, and Partition Tolerance and explain a trade-off between Consistency and Availability in distributed systems.",
+          "example": "The notes discuss UPI-style payments and digital notice boards as different distributed-system scenarios.",
+          "keyPoints": [
+            "Consistency means nodes reflect identical data at a given moment.",
+            "Availability means requests receive timely responses.",
+            "Partition Tolerance means operation continues despite communication disruption.",
+            "The notes treat Partition Tolerance as mandatory in distributed systems.",
+            "The discussed trade-off is between Consistency and Availability."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Differentiate one-tier, two-tier, and three-tier architecture.",
+        "Why is an application server useful in three-tier architecture?",
+        "What is a distributed database?",
+        "Explain Consistency, Availability, and Partition Tolerance."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "data-abstraction",
+      "number": 3,
+      "title": "Data Abstraction",
+      "pages": "7–8",
+      "topics": [
+        {
+          "id": "what-is-data-abstraction",
+          "title": "What is Data Abstraction?",
+          "learn": "Data abstraction hides implementation details from users and applications while exposing relevant data structures and operations.",
+          "example": "A student can view attendance without knowing how the records are stored on disk.",
+          "keyPoints": [
+            "Hides implementation details.",
+            "Shows only relevant information.",
+            "Improves security, flexibility, and maintainability."
+          ]
+        },
+        {
+          "id": "physical-level",
+          "title": "Physical Level",
+          "learn": "The physical level describes how data is actually stored, including file structures, indexing, blocks, and storage details.",
+          "example": "Attendance records may be stored in blocks on SSD storage with indexes.",
+          "keyPoints": [
+            "Lowest abstraction level.",
+            "Describes physical storage.",
+            "Includes file structures and data blocks.",
+            "Users normally do not see it."
+          ]
+        },
+        {
+          "id": "logical-level",
+          "title": "Logical Level",
+          "learn": "The logical level describes tables, columns, data types, relationships, and constraints.",
+          "example": "A Students table contains Roll No, Name, and relationships to Courses.",
+          "keyPoints": [
+            "Describes overall database structure.",
+            "Uses tables and relationships.",
+            "Developers commonly work with this level."
+          ]
+        },
+        {
+          "id": "view-level",
+          "title": "View Level",
+          "learn": "The view level presents customized subsets of data to different users.",
+          "example": "A warden sees Roll No, Name, and Fee Status while the examination branch sees marks.",
+          "keyPoints": [
+            "Highest abstraction level.",
+            "Provides customized views.",
+            "Different users may see different information."
+          ]
+        },
+        {
+          "id": "logical-data-independence",
+          "title": "Logical Data Independence",
+          "learn": "Logical data independence allows logical schema changes without requiring application programs to be rewritten.",
+          "example": "An Address field is split into Street, City, and Pin Code without rewriting dependent applications.",
+          "keyPoints": [
+            "Concerned with logical schema changes.",
+            "Applications are insulated from some schema changes.",
+            "Reduces maintenance work."
+          ]
+        },
+        {
+          "id": "physical-data-independence",
+          "title": "Physical Data Independence",
+          "learn": "Physical data independence allows physical storage changes without affecting the logical schema.",
+          "example": "Attendance data is moved from HDD to SSD and a new index is added without changing SQL queries.",
+          "keyPoints": [
+            "Concerned with physical storage.",
+            "Logical schema stays unchanged.",
+            "Storage implementation can change independently."
+          ]
+        },
+        {
+          "id": "abstraction-hierarchy",
+          "title": "Physical → Logical → View",
+          "learn": "The hierarchy moves from physical storage to logical structure to user-specific views.",
+          "example": "A mobile portal shows a view while developers manage the logical structure and the database server manages physical storage.",
+          "keyPoints": [
+            "Physical is lowest.",
+            "Logical is middle.",
+            "View is highest.",
+            "Higher levels should be insulated from lower-level changes."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Explain data abstraction.",
+        "Differentiate physical, logical, and view levels.",
+        "Explain logical data independence.",
+        "Explain physical data independence."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "data-models",
+      "number": 4,
+      "title": "Types of Data Models",
+      "pages": "9–10",
+      "topics": [
+        {
+          "id": "what-is-data-model",
+          "title": "What is a Data Model?",
+          "learn": "A data model provides a formal way to describe how facts are organized inside a database.",
+          "example": "Choosing a relational model gives a table-based structure, while a graph model represents nodes and edges.",
+          "keyPoints": [
+            "A model describes organization of data.",
+            "The choice influences flexibility and maintenance.",
+            "Different models suit different problems."
+          ]
+        },
+        {
+          "id": "hierarchical-model",
+          "title": "Hierarchical Model",
+          "learn": "A hierarchical model organizes records in a strict parent-child tree.",
+          "example": "University → College → Department → Course → Student.",
+          "keyPoints": [
+            "Top-down tree structure.",
+            "Each child has one parent.",
+            "Suitable for one-to-many chains."
+          ]
+        },
+        {
+          "id": "network-model",
+          "title": "Network Model",
+          "learn": "A network model allows records to have multiple parents and supports complex many-to-many associations.",
+          "example": "Students belong to several clubs and clubs have many students.",
+          "keyPoints": [
+            "Supports multiple parent links.",
+            "Supports many-to-many associations.",
+            "Useful for complex linked structures."
+          ]
+        },
+        {
+          "id": "relational-model-overview",
+          "title": "Relational Model",
+          "learn": "The relational model stores data in tables made of rows and columns and uses keys to represent relationships.",
+          "example": "STUDENT, COURSE, and MARKS tables linked using keys.",
+          "keyPoints": [
+            "Uses tables.",
+            "Uses rows and columns.",
+            "Relationships are represented using keys.",
+            "SQL is used with relational databases."
+          ]
+        },
+        {
+          "id": "object-oriented-model",
+          "title": "Object-Oriented Model",
+          "learn": "The object-oriented model persists programming objects together with their attributes and behavior.",
+          "example": "A robotics system can store Robot objects containing Sensor objects.",
+          "keyPoints": [
+            "Stores software objects.",
+            "Useful for complex, behavior-rich data.",
+            "Keeps object structures close to application objects."
+          ]
+        },
+        {
+          "id": "er-model-overview",
+          "title": "Entity–Relationship Model",
+          "learn": "The ER model is a diagrammatic blueprint for representing entities, attributes, and relationships during conceptual design.",
+          "example": "Student and Course connected through ENROLLED_IN.",
+          "keyPoints": [
+            "High-level conceptual model.",
+            "Uses entities, attributes, and relationships.",
+            "Useful before physical implementation."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is a data model?",
+        "Differentiate hierarchical and network models.",
+        "What makes a relational model table-oriented?",
+        "Where is an ER model useful?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "er-model",
+      "number": 5,
+      "title": "ER Model",
+      "pages": "11–14",
+      "topics": [
+        {
+          "id": "purpose-of-er-model",
+          "title": "Purpose of ER Model",
+          "learn": "The ER model provides a conceptual-level blueprint of entities, attributes, and relationships before physical implementation.",
+          "example": "Designing Student, Course, Instructor, and their relationships before creating SQL tables.",
+          "keyPoints": [
+            "Conceptual design tool.",
+            "Not tied to physical implementation.",
+            "Bridges real-world requirements and database design."
+          ]
+        },
+        {
+          "id": "er-entities",
+          "title": "Entities and Entity Sets",
+          "learn": "An entity represents a real-world object. An entity set is a collection of similar entities.",
+          "example": "One Student is an entity; all students together form the Student entity set.",
+          "keyPoints": [
+            "Entities represent real-world objects.",
+            "Strong entities have their own identifying key.",
+            "Weak entities depend on another entity."
+          ]
+        },
+        {
+          "id": "er-attributes",
+          "title": "Attributes",
+          "learn": "Attributes describe properties of entities.",
+          "example": "Student can have Roll No, Name, Programme, and phone numbers.",
+          "keyPoints": [
+            "Attributes describe entities.",
+            "A key attribute identifies an entity.",
+            "Multivalued attributes can contain multiple values.",
+            "Derived attributes can be computed."
+          ]
+        },
+        {
+          "id": "er-relationships",
+          "title": "Relationships and Relationship Sets",
+          "learn": "A relationship represents a logical association among entities, while a relationship set contains instances of such associations.",
+          "example": "Student ENROLLED_IN Course.",
+          "keyPoints": [
+            "Relationships connect entities.",
+            "Binary relationships involve two entity types.",
+            "Ternary relationships involve three."
+          ]
+        },
+        {
+          "id": "er-notation",
+          "title": "ER Diagram Notation",
+          "learn": "ER diagrams use shapes to represent entities, attributes, and relationships.",
+          "example": "Rectangles represent entity sets, ellipses represent attributes, and diamonds represent relationships.",
+          "keyPoints": [
+            "Rectangle represents entity set.",
+            "Double rectangle represents weak entity.",
+            "Ellipse represents attribute.",
+            "Double ellipse represents multivalued attribute.",
+            "Dashed ellipse represents derived attribute.",
+            "Diamond represents relationship."
+          ]
+        },
+        {
+          "id": "er-weak-entities-cardinality",
+          "title": "Weak Entities, Cardinality and Participation",
+          "learn": "Weak entities depend on identifying relationships. Relationships can have different cardinalities such as one-to-one, one-to-many, and many-to-many.",
+          "example": "A weak occupancy record may depend on a hostel room for identification.",
+          "keyPoints": [
+            "Weak entities depend on strong entities.",
+            "Cardinality describes how many entities can participate.",
+            "1:1, 1:N, and M:N are common relationship forms.",
+            "Participation describes involvement in a relationship."
+          ]
+        },
+        {
+          "id": "er-aggregation",
+          "title": "Aggregation",
+          "learn": "Aggregation treats a relationship set and its participating entities as a higher-level unit that can participate in another relationship.",
+          "example": "A relationship between Student and Course can be treated as a higher-level unit for another relationship.",
+          "keyPoints": [
+            "Used for higher-level relationship modeling.",
+            "Combines a relationship and its participating entities conceptually."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is the purpose of an ER model?",
+        "Differentiate entity and entity set.",
+        "What is a weak entity?",
+        "Explain common ER diagram symbols.",
+        "Explain 1:1, 1:N, and M:N relationships."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "relational-model",
+      "number": 6,
+      "title": "Relational Model",
+      "pages": "15–16",
+      "topics": [
+        {
+          "id": "relational-building-blocks",
+          "title": "Domain, Attribute, Tuple and Relation",
+          "learn": "The relational model is built from domains, attributes, tuples, and relations.",
+          "example": "A STUDENT table contains attributes such as RollNo and Name and rows representing students.",
+          "keyPoints": [
+            "Domain is a set of valid values.",
+            "Attribute is a column.",
+            "Tuple is a row.",
+            "Relation is the complete table.",
+            "Remember Domain → Attribute → Tuple → Relation."
+          ]
+        },
+        {
+          "id": "schema-vs-instance",
+          "title": "Schema vs Instance",
+          "learn": "A schema describes the permanent structure of a relation while an instance represents the current rows in the table.",
+          "example": "The STUDENT schema defines columns and constraints; today's student rows form its current instance.",
+          "keyPoints": [
+            "Schema describes structure.",
+            "Instance represents current data.",
+            "Instances change as rows are inserted or deleted."
+          ]
+        },
+        {
+          "id": "integrity-constraints",
+          "title": "Integrity Constraints",
+          "learn": "Relational databases use constraints to protect valid data and relationships.",
+          "example": "A primary key cannot be NULL, and a foreign key should match an existing referenced key.",
+          "keyPoints": [
+            "Key constraints protect uniqueness.",
+            "Entity integrity prevents NULL primary keys.",
+            "Referential integrity protects foreign-key relationships.",
+            "Domain constraints restrict valid values."
+          ]
+        },
+        {
+          "id": "relational-example",
+          "title": "Designing a STUDENT Relation",
+          "learn": "A relational table can model student information using attributes, primary keys, and domains.",
+          "example": "STUDENT(RollNo, Name, Programme, MobileNo).",
+          "keyPoints": [
+            "Each row represents one student.",
+            "Each column has a defined domain.",
+            "A primary key identifies rows."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Define domain, attribute, tuple, and relation.",
+        "Differentiate schema and instance.",
+        "Explain entity integrity.",
+        "Explain referential integrity."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "types-of-keys",
+      "number": 7,
+      "title": "Types of Keys",
+      "pages": "17–18",
+      "topics": [
+        {
+          "id": "super-key",
+          "title": "Super Key",
+          "learn": "A super key is a column set that uniquely identifies rows and may contain redundant columns.",
+          "example": "RollNo, or a set such as RollNo + MobileNo.",
+          "keyPoints": [
+            "Uniquely identifies rows.",
+            "May contain unnecessary columns."
+          ]
+        },
+        {
+          "id": "candidate-key",
+          "title": "Candidate Key",
+          "learn": "A candidate key is a minimal super key; removing an attribute destroys uniqueness.",
+          "example": "RollNo or Email can each be candidate keys if each uniquely identifies a student.",
+          "keyPoints": [
+            "Minimal super key.",
+            "Every candidate key is a super key.",
+            "Minimality is important."
+          ]
+        },
+        {
+          "id": "primary-key",
+          "title": "Primary Key",
+          "learn": "The primary key is the candidate key selected as the official row identifier.",
+          "example": "A college may choose RollNo as the primary key of STUDENT.",
+          "keyPoints": [
+            "Uniquely identifies a row.",
+            "Must be unique.",
+            "Cannot contain NULL values."
+          ]
+        },
+        {
+          "id": "alternate-key",
+          "title": "Alternate Key",
+          "learn": "An alternate key is a candidate key that was not selected as the primary key.",
+          "example": "If RollNo is primary and Email is also a candidate key, Email is an alternate key.",
+          "keyPoints": [
+            "It is still a candidate key.",
+            "It was simply not selected as primary."
+          ]
+        },
+        {
+          "id": "composite-key",
+          "title": "Composite Key",
+          "learn": "A composite key uses two or more columns together to uniquely identify a row.",
+          "example": "MARKS can use RollNo + CourseCode as a composite key.",
+          "keyPoints": [
+            "Uses multiple columns.",
+            "The combination must be unique.",
+            "Individual columns may not be unique."
+          ]
+        },
+        {
+          "id": "foreign-key",
+          "title": "Foreign Key",
+          "learn": "A foreign key references a key in another table and helps establish relationships between tables.",
+          "example": "MARKS.RollNo references STUDENT.RollNo.",
+          "keyPoints": [
+            "Links tables.",
+            "Supports referential integrity.",
+            "Can be NULL when the relationship is optional according to the notes."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is a super key?",
+        "Why must a candidate key be minimal?",
+        "Differentiate primary and alternate keys.",
+        "Explain a composite key.",
+        "Why is a foreign key needed?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "normalisation",
+      "number": 8,
+      "title": "Normalisation",
+      "pages": "19–23",
+      "topics": [
+        {
+          "id": "normalisation-introduction",
+          "title": "Why Normalisation?",
+          "learn": "Normalisation organizes relations to reduce redundancy and dependency problems while preserving useful relationships.",
+          "example": "A large marks table containing repeated student and course details can be split into STUDENT, COURSE, and RESULT tables.",
+          "keyPoints": [
+            "Reduces repeated information.",
+            "Helps remove update anomalies.",
+            "Uses functional dependencies to guide decomposition."
+          ]
+        },
+        {
+          "id": "functional-dependencies",
+          "title": "Functional Dependencies",
+          "learn": "A functional dependency describes how one attribute set determines another.",
+          "example": "RollNo → StudentName, Programme.",
+          "keyPoints": [
+            "Left side is the determinant.",
+            "Functional dependencies help identify normalization problems.",
+            "The notes use several dependencies in the student-course example."
+          ]
+        },
+        {
+          "id": "first-normal-form",
+          "title": "First Normal Form (1NF)",
+          "learn": "1NF requires every cell to hold one value and repeating lists to be separated into individual rows.",
+          "example": "Instead of storing multiple course codes in one student cell, each course appears as a separate row.",
+          "keyPoints": [
+            "Every cell contains one value.",
+            "Repeating groups are removed.",
+            "Atomic values are used."
+          ]
+        },
+        {
+          "id": "second-normal-form",
+          "title": "Second Normal Form (2NF)",
+          "learn": "2NF removes attributes that depend on only part of a composite key.",
+          "example": "In a result table with RollNo + CourseCode as a composite key, student details should not remain as partial dependencies.",
+          "keyPoints": [
+            "Builds on 1NF.",
+            "Removes partial dependency.",
+            "Student and Course information can be separated."
+          ]
+        },
+        {
+          "id": "third-normal-form",
+          "title": "Third Normal Form (3NF)",
+          "learn": "3NF removes transitive dependencies.",
+          "example": "If CourseCode determines InstructorID and InstructorID determines InstructorName, InstructorName should be separated into an INSTRUCTOR table.",
+          "keyPoints": [
+            "Builds on 2NF.",
+            "Removes transitive dependency.",
+            "Non-key attributes should not depend transitively on the key."
+          ]
+        },
+        {
+          "id": "bcnf",
+          "title": "Boyce-Codd Normal Form (BCNF)",
+          "learn": "In BCNF, for every functional dependency X → Y, X must be a candidate key.",
+          "example": "The notes use an instructor-course relationship to show when a BCNF violation may occur.",
+          "keyPoints": [
+            "Stronger condition than 3NF.",
+            "Every determinant must be a candidate key.",
+            "Decomposition may be required to resolve violations."
+          ]
+        },
+        {
+          "id": "lossless-decomposition",
+          "title": "Lossless Join and Dependency Preservation",
+          "learn": "A decomposition should ideally allow reconstruction of the original relation without losing information while preserving important dependencies.",
+          "example": "The normalized STUDENT, COURSE, INSTRUCTOR, and RESULT relations can be joined without losing the original facts according to the notes.",
+          "keyPoints": [
+            "Lossless join prevents information loss.",
+            "Dependency preservation keeps important dependencies enforceable.",
+            "Both are important considerations in decomposition."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Why do we normalize data?",
+        "What is a functional dependency?",
+        "Explain 1NF.",
+        "Explain partial dependency in 2NF.",
+        "Explain transitive dependency in 3NF.",
+        "What is BCNF?",
+        "What is lossless decomposition?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "denormalization",
+      "number": 9,
+      "title": "Denormalization",
+      "pages": "24–25",
+      "topics": [
+        {
+          "id": "what-is-denormalization",
+          "title": "What is Denormalization?",
+          "learn": "Denormalization intentionally introduces controlled redundancy to make common queries faster or simpler.",
+          "example": "A RESULT_FLAT table can contain student, course, instructor, and grade information together for frequently used reports.",
+          "keyPoints": [
+            "Introduces controlled redundancy.",
+            "Can reduce expensive joins.",
+            "The normalized source of truth should remain known."
+          ]
+        },
+        {
+          "id": "when-to-denormalize",
+          "title": "When and Why to Denormalize",
+          "learn": "The notes describe denormalization as useful for heavy-read, light-write workloads, repeated aggregates, and reporting.",
+          "example": "A placement dashboard frequently reads CGPA information but updates it only occasionally.",
+          "keyPoints": [
+            "Useful for heavy reads and lighter writes.",
+            "Useful for repeatedly calculated aggregates.",
+            "Useful for reporting and analytics.",
+            "Can simplify application queries."
+          ]
+        },
+        {
+          "id": "performance-vs-redundancy",
+          "title": "Performance vs Redundancy",
+          "learn": "Denormalization can improve read speed but usually increases storage and update complexity.",
+          "example": "A flat report table may make reads faster but requires synchronization when source data changes.",
+          "keyPoints": [
+            "Reads can become faster.",
+            "Storage requirements can increase.",
+            "Updates may become more expensive.",
+            "Copies can become stale."
+          ]
+        },
+        {
+          "id": "result-flat-example",
+          "title": "RESULT_FLAT Example",
+          "learn": "The notes show a denormalized result report combining fields from multiple normalized tables.",
+          "example": "RESULT_FLAT can contain RollNo, StudentName, Programme, CourseCode, CourseName, Credits, InstructorName, and Grade.",
+          "keyPoints": [
+            "Useful for frequently accessed reports.",
+            "Reduces repeated joins.",
+            "May be refreshed periodically."
+          ]
+        },
+        {
+          "id": "safe-denormalization",
+          "title": "Safe Denormalization Guidelines",
+          "learn": "The notes recommend measuring actual query performance, targeting hot paths, automating refreshes, documenting duplicated data, and maintaining a rollback plan.",
+          "example": "Use EXPLAIN and actual timings before choosing to duplicate data.",
+          "keyPoints": [
+            "Measure first.",
+            "Target only slow paths.",
+            "Automate synchronization.",
+            "Document the source of truth.",
+            "Keep a rollback strategy."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is denormalization?",
+        "When is denormalization useful?",
+        "What is the main trade-off?",
+        "Why can duplicated data become stale?",
+        "Why should performance be measured before denormalizing?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "transactions-concurrency",
+      "number": 10,
+      "title": "Transactions & Concurrency Control",
+      "pages": "26–31",
+      "topics": [
+        {
+          "id": "what-is-transaction",
+          "title": "What is a Transaction?",
+          "learn": "A transaction is a small complete job that the database treats as one package.",
+          "example": "Publishing a result may require inserting grades, recalculating CGPA, and setting a published flag.",
+          "keyPoints": [
+            "A transaction groups related operations.",
+            "Partial completion should not leave inconsistent state."
+          ]
+        },
+        {
+          "id": "acid-properties",
+          "title": "ACID Properties",
+          "learn": "Transactions use Atomicity, Consistency, Isolation, and Durability guarantees.",
+          "example": "A fee payment should either complete properly or be rolled back.",
+          "keyPoints": [
+            "Atomicity = all or nothing.",
+            "Consistency = database rules remain valid.",
+            "Isolation = transactions do not improperly interfere.",
+            "Durability = committed work survives crashes."
+          ]
+        },
+        {
+          "id": "transaction-life-cycle",
+          "title": "Transaction Life Cycle",
+          "learn": "Transactions pass through states such as ACTIVE, PARTIALLY COMMITTED, COMMITTED, and ABORTED.",
+          "example": "A transaction becomes committed after successful completion or aborted after failure.",
+          "keyPoints": [
+            "ACTIVE means operations are executing.",
+            "PARTIALLY COMMITTED means the final statement finished.",
+            "COMMITTED means the transaction succeeded.",
+            "ABORTED means changes are undone."
+          ]
+        },
+        {
+          "id": "transaction-schedules",
+          "title": "Serial and Interleaved Schedules",
+          "learn": "Transactions may execute serially or with interleaved operations.",
+          "example": "T1 then T2 is serial; T1 step, T2 step, T1 step is interleaved.",
+          "keyPoints": [
+            "Serial schedules are straightforward.",
+            "Interleaving can improve resource use.",
+            "Concurrency requires correctness rules."
+          ]
+        },
+        {
+          "id": "serializability",
+          "title": "Serializability",
+          "learn": "A schedule is serializable when its result is equivalent to some serial execution.",
+          "example": "Conflict-serializability can be analyzed using a precedence graph.",
+          "keyPoints": [
+            "Goal is correctness during concurrency.",
+            "Conflict-serializable schedules can be tested using a graph.",
+            "A cycle in the conflict graph indicates a problem for conflict serializability."
+          ]
+        },
+        {
+          "id": "isolation-problems",
+          "title": "Isolation Problems",
+          "learn": "Concurrent transactions can create anomalies such as dirty reads, non-repeatable reads, and phantom reads.",
+          "example": "A transaction reads a fee change that another transaction later rolls back.",
+          "keyPoints": [
+            "Dirty read uses uncommitted data.",
+            "Non-repeatable read gets different values for the same row.",
+            "Phantom read occurs when a repeated query returns a different set of rows."
+          ]
+        },
+        {
+          "id": "isolation-levels",
+          "title": "Isolation Levels",
+          "learn": "The notes describe Read Uncommitted, Read Committed, Repeatable Read, and Serializable levels.",
+          "example": "Read Committed blocks dirty reads while Serializable provides stronger protection against anomalies.",
+          "keyPoints": [
+            "Read Uncommitted is weakest.",
+            "Read Committed prevents dirty reads.",
+            "Repeatable Read prevents non-repeatable reads.",
+            "Serializable provides the strongest level described in the notes.",
+            "Higher isolation can increase overhead."
+          ]
+        },
+        {
+          "id": "concurrency-control-techniques",
+          "title": "Concurrency Control Techniques",
+          "learn": "The notes cover shared/exclusive locks, two-phase locking, timestamp ordering, and optimistic control.",
+          "example": "A teacher can hold an exclusive lock while changing a grade and another transaction must wait.",
+          "keyPoints": [
+            "Shared locks support reading.",
+            "Exclusive locks protect writes.",
+            "2PL has growing and shrinking phases.",
+            "Timestamp ordering uses transaction timestamps.",
+            "Optimistic control checks conflicts at commit."
+          ]
+        },
+        {
+          "id": "database-recovery",
+          "title": "Database Recovery",
+          "learn": "Recovery techniques restore databases after transaction, system, media, or larger failures.",
+          "example": "A fee portal can use logs to recover after a crash.",
+          "keyPoints": [
+            "Backup and restore are basic recovery techniques.",
+            "Log-based recovery keeps operation history.",
+            "Shadow paging keeps an older consistent version.",
+            "Checkpointing limits recovery work.",
+            "Rollback undoes uncommitted work.",
+            "Rollforward reapplies committed operations."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "What is a transaction?",
+        "Explain ACID.",
+        "Differentiate serial and interleaved schedules.",
+        "What is serializability?",
+        "Explain dirty, non-repeatable, and phantom reads.",
+        "Compare isolation levels.",
+        "What is two-phase locking?",
+        "Why is recovery required?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "sql-commands",
+      "number": 11,
+      "title": "SQL Commands",
+      "pages": "32–35",
+      "topics": [
+        {
+          "id": "sql-command-families",
+          "title": "SQL Command Families",
+          "learn": "The notes divide SQL commands into DDL, DML, DCL, and TCL families.",
+          "example": "DDL defines structure, DML manipulates rows, DCL manages access, and TCL manages transaction boundaries.",
+          "keyPoints": [
+            "DDL = Data Definition Language.",
+            "DML = Data Manipulation Language.",
+            "DCL = Data Control Language.",
+            "TCL = Transaction Control Language."
+          ]
+        },
+        {
+          "id": "ddl",
+          "title": "DDL Commands",
+          "learn": "DDL defines or modifies database structure.",
+          "example": "ALTER TABLE STUDENT ADD COLUMN phoneNo CHAR(10).",
+          "keyPoints": [
+            "CREATE defines objects.",
+            "ALTER changes structure.",
+            "TRUNCATE removes table contents according to its command semantics.",
+            "RENAME changes object names."
+          ]
+        },
+        {
+          "id": "dml",
+          "title": "DML Commands",
+          "learn": "DML manipulates database rows.",
+          "example": "INSERT adds a student, UPDATE changes a grade, DELETE removes a row, and SELECT retrieves data.",
+          "keyPoints": [
+            "INSERT adds rows.",
+            "UPDATE changes rows.",
+            "DELETE removes rows.",
+            "SELECT retrieves rows."
+          ]
+        },
+        {
+          "id": "dcl",
+          "title": "DCL Commands",
+          "learn": "DCL manages permissions and access control.",
+          "example": "GRANT or REVOKE privileges for database users.",
+          "keyPoints": [
+            "DCL controls permissions.",
+            "GRANT gives privileges.",
+            "REVOKE removes privileges."
+          ]
+        },
+        {
+          "id": "tcl",
+          "title": "TCL Commands",
+          "learn": "TCL manages transaction boundaries and transaction control.",
+          "example": "SAVEPOINT can create a point to which a transaction can roll back.",
+          "keyPoints": [
+            "COMMIT makes work permanent.",
+            "ROLLBACK undoes transaction work.",
+            "SAVEPOINT creates a rollback point.",
+            "SET TRANSACTION can configure transaction behavior."
+          ]
+        },
+        {
+          "id": "sql-operators",
+          "title": "SQL Operators",
+          "learn": "SQL operators compare, combine, and calculate values while queries execute.",
+          "example": "WHERE pay BETWEEN 100000 AND 500000.",
+          "keyPoints": [
+            "Comparison operators filter values.",
+            "Logical operators combine conditions.",
+            "Arithmetic operators calculate values.",
+            "IN, BETWEEN, and LIKE are useful filtering operators."
+          ]
+        },
+        {
+          "id": "aggregate-functions",
+          "title": "Aggregate Functions",
+          "learn": "Aggregate functions process sets of rows and return summarized values.",
+          "example": "COUNT(*) counts rows and SUM(pay) calculates total payroll.",
+          "keyPoints": [
+            "COUNT counts rows or values.",
+            "SUM calculates totals.",
+            "AVG calculates averages.",
+            "MIN and MAX find extremes."
+          ]
+        },
+        {
+          "id": "group-by-having",
+          "title": "GROUP BY and HAVING",
+          "learn": "GROUP BY creates groups for aggregate calculations and HAVING filters groups after aggregation.",
+          "example": "GROUP BY division and HAVING COUNT(*) > 1 can identify repeated role or division conditions.",
+          "keyPoints": [
+            "GROUP BY forms groups.",
+            "HAVING filters grouped results.",
+            "WHERE filters rows before grouping."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Differentiate DDL, DML, DCL, and TCL.",
+        "Write examples of INSERT, UPDATE, and DELETE.",
+        "What is the purpose of GROUP BY?",
+        "Why is HAVING different from WHERE?",
+        "What does COUNT(*) count?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "indexing-optimization-sharding",
+      "number": 12,
+      "title": "Indexing, SQL Optimisation, Sharding",
+      "pages": "36–39",
+      "topics": [
+        {
+          "id": "sql-optimization",
+          "title": "Why Optimise SQL Queries?",
+          "learn": "Slow queries can increase page load time, server load, and cloud costs. Query optimization aims to reduce unnecessary work.",
+          "example": "A merit-list page should retrieve only the columns it needs instead of SELECT *.",
+          "keyPoints": [
+            "Optimization improves query performance.",
+            "It can reduce server workload.",
+            "It can reduce cloud costs."
+          ]
+        },
+        {
+          "id": "select-needed-columns",
+          "title": "Select Only Needed Columns",
+          "learn": "Avoid retrieving columns that are not required by the application.",
+          "example": "A merit page may need RollNo, Name, and CGPA rather than every student column.",
+          "keyPoints": [
+            "Avoid unnecessary SELECT * usage.",
+            "Retrieve only required data."
+          ]
+        },
+        {
+          "id": "filter-early",
+          "title": "Filter Early, Join Later",
+          "learn": "Applying filters before large joins can reduce the amount of data processed.",
+          "example": "Filter students to the CSE 2023 batch before joining with placement information.",
+          "keyPoints": [
+            "Reduce intermediate result size.",
+            "Use WHERE conditions effectively."
+          ]
+        },
+        {
+          "id": "index-types",
+          "title": "Index Types",
+          "learn": "The notes distinguish primary or clustered indexes from secondary or non-clustered indexes.",
+          "example": "A primary index can be associated with RollNo while a secondary index can help find students by mobile number.",
+          "keyPoints": [
+            "Primary/clustered indexing is associated with physical ordering.",
+            "Secondary/non-clustered indexes keep separate references.",
+            "Indexes can speed up lookups."
+          ]
+        },
+        {
+          "id": "btree-bplustree",
+          "title": "B-Tree and B+-Tree",
+          "learn": "B-tree structures guide searches through internal nodes while B+-tree leaves are linked to support efficient range scans.",
+          "example": "CGPA BETWEEN 8 AND 9 can be served efficiently using linked B+-tree leaves.",
+          "keyPoints": [
+            "B-tree uses internal nodes to guide searches.",
+            "B+-tree keeps keys at leaves.",
+            "B+-tree leaves are linked for range scans."
+          ]
+        },
+        {
+          "id": "vertical-scaling",
+          "title": "Vertical Scaling",
+          "learn": "Vertical scaling improves a single machine by adding resources such as RAM, CPU, or faster storage.",
+          "example": "Adding RAM and SSD capacity to a database server.",
+          "keyPoints": [
+            "Scale-up means improving one machine.",
+            "Resources may include CPU, RAM, and storage."
+          ]
+        },
+        {
+          "id": "horizontal-scaling",
+          "title": "Horizontal Scaling",
+          "learn": "Horizontal scaling adds more machines and can distribute or copy data across them.",
+          "example": "Adding additional servers to handle increased user traffic.",
+          "keyPoints": [
+            "Scale-out means adding machines.",
+            "Useful for larger workloads.",
+            "Can support high traffic."
+          ]
+        },
+        {
+          "id": "sharding",
+          "title": "Sharding",
+          "learn": "Sharding divides a large database into smaller independent pieces called shards.",
+          "example": "Delhi campus records are stored on one server and Mumbai campus records on another.",
+          "keyPoints": [
+            "Each shard holds part of the data.",
+            "A shard key determines placement.",
+            "Shared-nothing architectures allow independent shards."
+          ]
+        },
+        {
+          "id": "sharding-methods",
+          "title": "Sharding Methods",
+          "learn": "The notes describe range-based, hashed, and directory sharding.",
+          "example": "Roll numbers can be divided into ranges, admission IDs can be hashed, or a directory can map course IDs to servers.",
+          "keyPoints": [
+            "Range-based sharding divides by value ranges.",
+            "Hash-based sharding aims for even distribution.",
+            "Directory sharding uses a mapping table."
+          ]
+        },
+        {
+          "id": "rbac-encryption-masking",
+          "title": "RBAC, Encryption and Data Masking",
+          "learn": "The notes cover role-based access control, encryption, and multiple masking techniques for protecting sensitive data.",
+          "example": "Students, faculty, and admins receive different roles; sensitive account information can be encrypted or masked in test environments.",
+          "keyPoints": [
+            "RBAC attaches permissions to roles.",
+            "Encryption can protect data at rest, in transit, or at column level.",
+            "Masking can protect sensitive values in non-production data.",
+            "Masking types include dynamic, deterministic, non-deterministic, format-preserving, shuffling, redaction, and nulling."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Why should SQL queries be optimized?",
+        "What is an index?",
+        "Differentiate clustered and non-clustered indexes.",
+        "Explain B+-tree range scanning.",
+        "Differentiate vertical and horizontal scaling.",
+        "What is sharding?",
+        "What is RBAC?",
+        "Why is data masking useful?"
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "sql-practice",
+      "number": 13,
+      "title": "SQL Queries Practice",
+      "pages": "40–43",
+      "topics": [
+        {
+          "id": "select-alias-distinct",
+          "title": "SELECT, Aliases and DISTINCT",
+          "learn": "Practice retrieving columns, renaming result columns, and returning unique values.",
+          "example": "SELECT given_name AS EMPLOYEE_NAME FROM staff; and SELECT DISTINCT division FROM staff;",
+          "keyPoints": [
+            "SELECT retrieves data.",
+            "AS creates an alias.",
+            "DISTINCT removes duplicate result values."
+          ]
+        },
+        {
+          "id": "string-functions",
+          "title": "String Functions",
+          "learn": "Practice string transformation and extraction functions.",
+          "example": "UPPER, SUBSTRING, INSTR, RTRIM, LTRIM, REPLACE, CONCAT, and LENGTH.",
+          "keyPoints": [
+            "UPPER changes case.",
+            "SUBSTRING extracts part of a string.",
+            "INSTR finds a position.",
+            "TRIM functions remove spaces.",
+            "CONCAT combines strings."
+          ]
+        },
+        {
+          "id": "where-in-like-between",
+          "title": "WHERE, IN, LIKE and BETWEEN",
+          "learn": "Use filtering operators to find specific rows.",
+          "example": "WHERE given_name IN ('Arjun', 'Rohan') or pay BETWEEN 100000 AND 500000.",
+          "keyPoints": [
+            "WHERE filters rows.",
+            "IN matches a list of values.",
+            "LIKE matches patterns.",
+            "BETWEEN handles ranges."
+          ]
+        },
+        {
+          "id": "ordering-and-limits",
+          "title": "ORDER BY and LIMIT",
+          "learn": "Sort query results and restrict the number of returned rows.",
+          "example": "ORDER BY pay DESC LIMIT 5 returns the top five highest-paid employees.",
+          "keyPoints": [
+            "ORDER BY sorts results.",
+            "ASC sorts ascending.",
+            "DESC sorts descending.",
+            "LIMIT restricts result size.",
+            "OFFSET can skip rows."
+          ]
+        },
+        {
+          "id": "dates-and-numeric-filters",
+          "title": "Date and Numeric Queries",
+          "learn": "Practice filtering by dates, salary ranges, and numeric properties.",
+          "example": "Find workers who joined in February 2014 using YEAR and MONTH.",
+          "keyPoints": [
+            "Functions can extract date parts.",
+            "Numeric conditions can filter salary.",
+            "MOD can identify odd or even IDs."
+          ]
+        },
+        {
+          "id": "grouping-and-aggregates",
+          "title": "GROUP BY and Aggregation Practice",
+          "learn": "Use COUNT, SUM, and other aggregates with GROUP BY.",
+          "example": "Show each division with its employee count ordered from highest to lowest.",
+          "keyPoints": [
+            "GROUP BY forms groups.",
+            "COUNT counts rows.",
+            "SUM calculates totals.",
+            "ORDER BY can sort aggregate results."
+          ]
+        },
+        {
+          "id": "joins-and-set-style-queries",
+          "title": "JOIN Queries",
+          "learn": "Practice combining rows from multiple tables.",
+          "example": "Join staff and role on staff_id to find employees who are Supervisors.",
+          "keyPoints": [
+            "JOIN combines related tables.",
+            "Matching keys are commonly used.",
+            "LEFT JOIN can reveal rows missing from another table."
+          ]
+        },
+        {
+          "id": "subqueries-and-top-n",
+          "title": "Subqueries and Top-N Problems",
+          "learn": "Practice nested queries, maximum salary queries, nth-highest salary, and grouped totals.",
+          "example": "Find employees earning the maximum salary using MAX, or compute an nth-highest salary using the provided pattern.",
+          "keyPoints": [
+            "Subqueries can be nested inside SELECT, WHERE, or other query positions.",
+            "MAX can find the highest salary.",
+            "LIMIT/OFFSET can implement simple top-N retrieval.",
+            "The notes also provide a generic nth-highest salary formula."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Write a query using DISTINCT.",
+        "Use LIKE to find names containing a letter.",
+        "Write a GROUP BY query.",
+        "Write a JOIN query.",
+        "Find the top five highest-paid employees.",
+        "Find the maximum salary."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": true,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    },
+
+    {
+      "id": "dbms-final-assessment",
+      "number": 14,
+      "title": "MCQs & Answer Key",
+      "pages": "43–46",
+      "topics": [
+        {
+          "id": "full-dbms-mcq-assessment",
+          "title": "Full DBMS Assessment",
+          "learn": "This section contains the cumulative MCQ assessment based on the DBMS Notes. The source provides 36 multiple-choice questions covering architecture, abstraction, data models, ER model, relational concepts, keys, normalization, denormalization, transactions, isolation, SQL, indexing, scaling, and RBAC.",
+          "example": "The source question bank includes questions such as three-tier architecture, physical and logical data independence, candidate keys, normalization, isolation levels, SQL command families, indexing, horizontal scaling, and RBAC.",
+          "keyPoints": [
+            "The assessment covers the complete DBMS curriculum.",
+            "Questions are based on the uploaded DBMS Notes.",
+            "The source contains an answer key for the MCQ bank.",
+            "This assessment should be completed after the learning chapters."
+          ]
+        }
+      ],
+      "selfCheck": [
+        "Review all DBMS chapters before attempting the final assessment.",
+        "Identify your weakest DBMS chapters.",
+        "Revisit incorrect answers after the assessment."
+      ],
+      "completionRules": {
+        "allTopicsRequired": true,
+        "selfCheckRequired": false,
+        "assessmentRequired": true,
+        "passingPercentage": 75
+      }
+    }
+  ]
+}

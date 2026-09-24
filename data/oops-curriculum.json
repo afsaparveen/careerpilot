@@ -1,0 +1,656 @@
+[
+  {
+    "id": "oops-introduction",
+    "title": "Introduction",
+    "topics": [
+      {
+        "id": "what-is-oops",
+        "title": "What is OOP?",
+        "learn": "OOP is a programming paradigm based on objects and classes. Objects contain data and code that operates on that data. OOP can also be understood as designing software using real-world entities such as Car, Student, and Account.",
+        "example": "A Car object can contain properties such as color and engine information and behaviors such as drive and brake.",
+        "keyPoints": [
+          "Programming paradigm",
+          "Objects",
+          "Classes",
+          "Data and methods",
+          "Real-world modelling"
+        ]
+      },
+      {
+        "id": "need-of-oops",
+        "title": "Need of OOP",
+        "learn": "OOP addresses problems such as unclear modular structure, poor code reuse, insecure data access, difficulty managing large programs, and difficulty modelling real-world entities.",
+        "example": "Classes group data and logic, while inheritance enables code reuse.",
+        "keyPoints": [
+          "Modularity",
+          "Code reuse",
+          "Data security",
+          "Large code management",
+          "Real-world modelling"
+        ]
+      },
+      {
+        "id": "advantages-of-oops",
+        "title": "Advantages of OOP",
+        "learn": "The notes identify modularity, reusability, data hiding, maintainability, real-world modelling, and scalability as advantages of OOP.",
+        "example": "A large application can be divided into classes so individual parts can be changed more easily.",
+        "keyPoints": [
+          "Modularity",
+          "Reusability",
+          "Data hiding",
+          "Maintainability",
+          "Real-world modelling",
+          "Scalability"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-classes-objects",
+    "title": "Classes & Objects",
+    "topics": [
+      {
+        "id": "class",
+        "title": "Class",
+        "learn": "A class is the blueprint or template defining the structure and behavior of objects.",
+        "example": "A Car class can define color, engineCC, and drive().",
+        "keyPoints": [
+          "Blueprint",
+          "Attributes",
+          "Methods",
+          "Structure",
+          "Behavior"
+        ]
+      },
+      {
+        "id": "object",
+        "title": "Object",
+        "learn": "An object is a real-world entity or instance of a class. It contains characteristics and behaviors defined by the class.",
+        "example": "A particular red car created from the Car class is an object.",
+        "keyPoints": [
+          "Instance",
+          "Real-world entity",
+          "Attributes",
+          "Methods",
+          "Memory"
+        ]
+      },
+      {
+        "id": "class-vs-object",
+        "title": "Class vs Object",
+        "learn": "A class is the blueprint, while an object is an actual instance of that blueprint created in memory and used for operations.",
+        "example": "Car is the class and a particular car is the object.",
+        "keyPoints": [
+          "Blueprint vs instance",
+          "Class defines",
+          "Object represents",
+          "Object in memory"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-access-friend",
+    "title": "Access Specifiers / Modifiers & Friend Class",
+    "topics": [
+      {
+        "id": "access-specifiers",
+        "title": "Access Specifiers / Modifiers",
+        "learn": "Access specifiers define the visibility or access level of class members. The notes cover private, protected, and public.",
+        "example": "Private members are accessible inside the class, protected members inside the class and derived classes, and public members broadly.",
+        "keyPoints": [
+          "Private",
+          "Protected",
+          "Public",
+          "Visibility",
+          "Access control"
+        ]
+      },
+      {
+        "id": "friend-class",
+        "title": "Friend Class",
+        "learn": "A C++ friend class is granted special access to private and protected members of another class.",
+        "example": "A Mechanic class can access a private engine number of Car when declared as a friend.",
+        "keyPoints": [
+          "C++ only",
+          "Private access",
+          "Protected access",
+          "Special access"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-four-pillars",
+    "title": "Core Concepts of OOP",
+    "topics": [
+      {
+        "id": "encapsulation-pillar",
+        "title": "Encapsulation",
+        "learn": "Encapsulation wraps data and methods into one unit called a class and supports data hiding through private access.",
+        "example": "A class hides internal data and exposes it through methods.",
+        "keyPoints": [
+          "Wrapping",
+          "Data hiding",
+          "Private members"
+        ]
+      },
+      {
+        "id": "inheritance-pillar",
+        "title": "Inheritance",
+        "learn": "Inheritance allows a child or derived class to inherit properties and behaviors from a parent or base class.",
+        "example": "Car inherits start() from Vehicle.",
+        "keyPoints": [
+          "Base class",
+          "Derived class",
+          "Code reuse",
+          "Hierarchy"
+        ]
+      },
+      {
+        "id": "polymorphism-pillar",
+        "title": "Polymorphism",
+        "learn": "Polymorphism is the ability of objects to take different forms or behave differently depending on context.",
+        "example": "The same person behaves differently as a student, player, passenger, or child.",
+        "keyPoints": [
+          "Many forms",
+          "Compile-time",
+          "Runtime"
+        ]
+      },
+      {
+        "id": "abstraction-pillar",
+        "title": "Abstraction",
+        "learn": "Abstraction hides unnecessary details and shows only relevant features.",
+        "example": "A smartphone user can use applications without knowing their internal implementation.",
+        "keyPoints": [
+          "Hide details",
+          "Show relevant features",
+          "Essential functionality"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-encapsulation",
+    "title": "Encapsulation",
+    "topics": [
+      {
+        "id": "encapsulation-data-hiding",
+        "title": "Encapsulation & Data Hiding",
+        "learn": "Encapsulation combines attributes and methods into a class while restricting direct access to internal data.",
+        "example": "Student.age is private and accessed using setAge() and getAge().",
+        "keyPoints": [
+          "Private data",
+          "Getter",
+          "Setter",
+          "Controlled access"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-constructors",
+    "title": "Constructor",
+    "topics": [
+      {
+        "id": "constructor-basics",
+        "title": "Constructor Basics",
+        "learn": "A constructor is a special method automatically invoked when an object is created and is used to initialize the object.",
+        "example": "Student() initializes a Student object.",
+        "keyPoints": [
+          "Automatic invocation",
+          "Object creation",
+          "Initialization",
+          "Same class name",
+          "No return type"
+        ]
+      },
+      {
+        "id": "default-constructor",
+        "title": "Default / Non-Parameterized Constructor",
+        "learn": "A non-parameterized or default constructor has no parameters.",
+        "example": "Student() { }",
+        "keyPoints": [
+          "No parameters",
+          "Object initialization"
+        ]
+      },
+      {
+        "id": "parameterized-constructor",
+        "title": "Parameterized Constructor",
+        "learn": "A parameterized constructor accepts values to initialize object attributes during creation.",
+        "example": "Student(string name) initializes name.",
+        "keyPoints": [
+          "Parameters",
+          "Initialization",
+          "Creation time"
+        ]
+      },
+      {
+        "id": "copy-constructor",
+        "title": "Copy Constructor",
+        "learn": "A copy constructor creates a new object as a copy of an existing object.",
+        "example": "Student(const Student &s) copies data from another Student.",
+        "keyPoints": [
+          "Copy object",
+          "New object",
+          "Existing object"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-destructor",
+    "title": "Destructor",
+    "topics": [
+      {
+        "id": "destructor-cpp",
+        "title": "Destructor in C++",
+        "learn": "A destructor is automatically called when an object goes out of scope or is explicitly deleted. It is used to free resources.",
+        "example": "~Student() is called when the Student object leaves its scope.",
+        "keyPoints": [
+          "C++ only",
+          "Automatic call",
+          "Resource cleanup",
+          "~ClassName",
+          "No parameters"
+        ]
+      },
+      {
+        "id": "java-garbage-collection",
+        "title": "Java Garbage Collection",
+        "learn": "Java does not use destructors in the manner described for C++. Instead, garbage collection automatically handles memory occupied by objects that are no longer in use.",
+        "example": "The garbage collector identifies unreachable objects and reclaims their memory.",
+        "keyPoints": [
+          "Java",
+          "Garbage collector",
+          "Automatic memory management",
+          "Unreachable objects"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-scope-this-copy",
+    "title": "Scope Resolution Operator & this Pointer",
+    "topics": [
+      {
+        "id": "scope-resolution",
+        "title": "Scope Resolution Operator (::)",
+        "learn": "The C++ scope resolution operator is used to access members outside the current scope or members belonging to a specific class or namespace.",
+        "example": "Student::show() defines a class member function outside the class.",
+        "keyPoints": [
+          "C++ only",
+          "Global variable",
+          "Class function outside class",
+          "Namespace access"
+        ]
+      },
+      {
+        "id": "this-pointer",
+        "title": "this Pointer",
+        "learn": "The this keyword refers to the current object. The notes describe it as a pointer in C++ and a reference in Java.",
+        "example": "C++ uses this->name while Java uses this.name.",
+        "keyPoints": [
+          "Current object",
+          "C++ pointer",
+          "Java reference",
+          "Non-static methods",
+          "Name disambiguation"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-shallow-deep-copy",
+    "title": "Shallow and Deep Copy",
+    "topics": [
+      {
+        "id": "shallow-copy",
+        "title": "Shallow Copy",
+        "learn": "A shallow copy copies the reference or address of dynamic members. Both objects can therefore share the same memory.",
+        "example": "Changing s2.marks can also change s1.marks when both refer to the same memory.",
+        "keyPoints": [
+          "Copies address/reference",
+          "Shared memory",
+          "Changes affect both objects"
+        ]
+      },
+      {
+        "id": "deep-copy",
+        "title": "Deep Copy",
+        "learn": "A deep copy creates new memory and copies the actual value, making the copied objects independent.",
+        "example": "Changing s2.marks does not affect s1.marks after a proper deep copy.",
+        "keyPoints": [
+          "New memory",
+          "Actual value",
+          "Independent objects"
+        ]
+      },
+      {
+        "id": "copy-comparison",
+        "title": "Shallow vs Deep Copy",
+        "learn": "The key difference is whether dynamic data is shared or independently copied.",
+        "example": "Shallow copy shares the referenced memory; deep copy creates independent storage.",
+        "keyPoints": [
+          "Shared vs independent",
+          "Reference vs value",
+          "C++",
+          "Java"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-inheritance",
+    "title": "Inheritance",
+    "topics": [
+      {
+        "id": "inheritance-basics",
+        "title": "Inheritance Basics",
+        "learn": "Inheritance allows a child or derived class to inherit properties and behaviors from a parent or base class.",
+        "example": "Car derives from Vehicle and inherits start().",
+        "keyPoints": [
+          "Base class",
+          "Derived class",
+          "Code reuse",
+          "Hierarchy"
+        ]
+      },
+      {
+        "id": "inheritance-modes",
+        "title": "Modes of Inheritance",
+        "learn": "C++ supports public, protected, and private inheritance modes, which determine how inherited base members are treated in the derived class.",
+        "example": "class Derived : public Base",
+        "keyPoints": [
+          "Public inheritance",
+          "Protected inheritance",
+          "Private inheritance"
+        ]
+      },
+      {
+        "id": "single-inheritance",
+        "title": "Single Inheritance",
+        "learn": "One derived class inherits from one base class.",
+        "example": "A → B",
+        "keyPoints": [
+          "One base",
+          "One derived"
+        ]
+      },
+      {
+        "id": "multilevel-inheritance",
+        "title": "Multilevel Inheritance",
+        "learn": "A class is derived from a class that is already derived from another class.",
+        "example": "A → B → C",
+        "keyPoints": [
+          "Parent",
+          "Child",
+          "Grandchild"
+        ]
+      },
+      {
+        "id": "hierarchical-inheritance",
+        "title": "Hierarchical Inheritance",
+        "learn": "Multiple classes inherit from a single base class.",
+        "example": "B and C both inherit from A.",
+        "keyPoints": [
+          "One base",
+          "Multiple derived"
+        ]
+      },
+      {
+        "id": "multiple-inheritance",
+        "title": "Multiple Inheritance",
+        "learn": "A class inherits from two or more base classes. The notes state that C++ supports this directly, while Java supports multiple inheritance through interfaces.",
+        "example": "class C : public A, public B",
+        "keyPoints": [
+          "Multiple bases",
+          "C++ classes",
+          "Java interfaces"
+        ]
+      },
+      {
+        "id": "hybrid-inheritance",
+        "title": "Hybrid Inheritance",
+        "learn": "Hybrid inheritance combines two or more types of inheritance.",
+        "example": "A combination of multiple and multilevel inheritance.",
+        "keyPoints": [
+          "Combination",
+          "Multiple",
+          "Multilevel"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-diamond",
+    "title": "Diamond Problem",
+    "topics": [
+      {
+        "id": "diamond-problem",
+        "title": "Diamond Problem",
+        "learn": "The diamond problem occurs in multiple inheritance when two classes share a common base and another class inherits from both, creating ambiguity.",
+        "example": "D inherits from B and C, while B and C both inherit from A.",
+        "keyPoints": [
+          "Multiple inheritance",
+          "Shared base",
+          "Ambiguity"
+        ]
+      },
+      {
+        "id": "virtual-inheritance",
+        "title": "Virtual Inheritance",
+        "learn": "C++ virtual inheritance ensures only one copy of a shared base class is inherited and prevents the diamond problem.",
+        "example": "class B : virtual public A",
+        "keyPoints": [
+          "C++",
+          "One base copy",
+          "Diamond solution"
+        ]
+      },
+      {
+        "id": "java-diamond",
+        "title": "Java's Approach",
+        "learn": "Java does not allow multiple inheritance through classes, so the classic diamond problem does not occur with classes. Java uses interfaces.",
+        "example": "A class can implement multiple interfaces and provide the required behavior.",
+        "keyPoints": [
+          "No multiple class inheritance",
+          "Interfaces",
+          "Ambiguity avoidance"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-polymorphism",
+    "title": "Polymorphism",
+    "topics": [
+      {
+        "id": "polymorphism-basics",
+        "title": "Polymorphism",
+        "learn": "Polymorphism means many forms and allows objects or methods to behave differently in different contexts.",
+        "example": "Animal references can represent different derived objects such as Dog or Cat.",
+        "keyPoints": [
+          "Many forms",
+          "Different behavior",
+          "Context"
+        ]
+      },
+      {
+        "id": "compile-time-polymorphism",
+        "title": "Compile-time Polymorphism",
+        "learn": "Compile-time or static polymorphism is resolved at compile time. The notes cover method overloading and C++ operator overloading.",
+        "example": "add(int,int) and add(int,int,int).",
+        "keyPoints": [
+          "Static binding",
+          "Early binding",
+          "Method overloading",
+          "Operator overloading"
+        ]
+      },
+      {
+        "id": "runtime-polymorphism",
+        "title": "Runtime Polymorphism",
+        "learn": "Runtime or dynamic polymorphism determines the method to execute at runtime based on the actual object type.",
+        "example": "A base pointer referencing a Dog can call Dog's overridden speak().",
+        "keyPoints": [
+          "Dynamic binding",
+          "Late binding",
+          "Method overriding",
+          "Virtual functions"
+        ]
+      },
+      {
+        "id": "overloading-vs-overriding",
+        "title": "Overloading vs Overriding",
+        "learn": "Overloading uses the same method name with different parameters, while overriding provides a derived implementation of a base method with the matching signature.",
+        "example": "add(int,int) vs a derived class overriding speak().",
+        "keyPoints": [
+          "Parameters",
+          "Inheritance",
+          "Compile-time",
+          "Runtime"
+        ]
+      },
+      {
+        "id": "virtual-functions",
+        "title": "Virtual Functions",
+        "learn": "A C++ virtual function enables runtime binding so the correct derived implementation is selected through a base pointer or reference.",
+        "example": "Animal* a = new Dog(); a->speak();",
+        "keyPoints": [
+          "C++",
+          "virtual",
+          "Runtime binding",
+          "Base pointer"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-abstraction",
+    "title": "Abstraction",
+    "topics": [
+      {
+        "id": "abstraction",
+        "title": "Abstraction",
+        "learn": "Abstraction hides unnecessary or internal implementation details and shows only relevant or essential features.",
+        "example": "A smartphone user interacts with applications without seeing their internal implementation.",
+        "keyPoints": [
+          "Hide details",
+          "Essential features",
+          "Implementation hiding"
+        ]
+      },
+      {
+        "id": "pure-virtual-function",
+        "title": "Pure Virtual Function",
+        "learn": "A C++ pure virtual function has no implementation in the base class and is declared using = 0.",
+        "example": "virtual void area() = 0;",
+        "keyPoints": [
+          "C++",
+          "= 0",
+          "Base class requirement"
+        ]
+      },
+      {
+        "id": "abstract-class-cpp",
+        "title": "Abstract Class in C++",
+        "learn": "A C++ class containing at least one pure virtual function is abstract and cannot be instantiated.",
+        "example": "Shape with virtual void area() = 0.",
+        "keyPoints": [
+          "Cannot instantiate",
+          "Pure virtual function",
+          "Derived implementation"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-java-abstraction",
+    "title": "Abstract Class & Interface in Java",
+    "topics": [
+      {
+        "id": "java-abstract-class",
+        "title": "Abstract Class in Java",
+        "learn": "A Java abstract class cannot be instantiated and can contain abstract methods, concrete methods, fields, constructors, and access modifiers.",
+        "example": "Animal can contain an abstract makeSound() and a concrete sleep().",
+        "keyPoints": [
+          "Cannot instantiate",
+          "Abstract methods",
+          "Concrete methods",
+          "Constructors",
+          "Fields"
+        ]
+      },
+      {
+        "id": "java-interface",
+        "title": "Interface in Java",
+        "learn": "An interface is a contract defining what a class must do. The notes include abstract methods, default methods, and static methods.",
+        "example": "Flyable can define fly(), land(), and info().",
+        "keyPoints": [
+          "Contract",
+          "implements",
+          "Default methods",
+          "Static methods"
+        ]
+      },
+      {
+        "id": "abstract-class-vs-interface",
+        "title": "Abstract Class vs Interface",
+        "learn": "The notes compare inheritance, constructors, fields, concrete methods, access modifiers, instantiation, use case, and multiple inheritance support.",
+        "example": "Abstract classes can provide shared base logic while interfaces declare capabilities or behaviors.",
+        "keyPoints": [
+          "extends",
+          "implements",
+          "Constructors",
+          "Fields",
+          "Multiple inheritance"
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "oops-static",
+    "title": "Static Data Member and Function",
+    "topics": [
+      {
+        "id": "static-data-member",
+        "title": "Static Data Member",
+        "learn": "A static data member is shared by all objects of a class and is allocated only once.",
+        "example": "static int count;",
+        "keyPoints": [
+          "Shared",
+          "Allocated once",
+          "All objects"
+        ]
+      },
+      {
+        "id": "static-member-function",
+        "title": "Static Member Function",
+        "learn": "A static member function belongs to the class rather than an object, can be called without an object, and can directly access static members.",
+        "example": "ClassName::showCount() in C++.",
+        "keyPoints": [
+          "Class-level",
+          "No object required",
+          "Static members"
+        ]
+      }
+    ]
+  }
+]

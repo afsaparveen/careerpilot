@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 2 - DBMS Architecture</title>
+
+    <link rel="stylesheet"
+          href="../css/chapter2.css">
+
+</head>
+
+<body>
+
+<div class="chapter-container">
+
+
+    <!-- =========================
+         BACK TO DASHBOARD
+    ========================== -->
+
+    <a href="dbms.html" class="back-btn">
+        ← Back to DBMS Dashboard
+    </a>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="chapter-header">
+
+        <div class="chapter-label">
+            CHAPTER 2
+        </div>
+
+        <h1>
+            DBMS Architecture
+        </h1>
+
+        <p class="chapter-description">
+            Learn how database system components are
+            organized and how they communicate with
+            each other.
+        </p>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-container">
+
+            <div class="progress-info">
+
+                <span>
+                    Topic Progress
+                </span>
+
+                <span id="progressText">
+                    0 / 6
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         STUDY SECTION
+    ========================== -->
+
+    <main id="studySection">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-label">
+                    LEARN
+                </div>
+
+                <h2>
+                    Chapter 2 Topics
+                </h2>
+
+            </div>
+
+            <p>
+                Study all 6 topics and mark each one
+                as completed.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             TOPIC 1
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 1
+            </div>
+
+            <h3>
+                What is DBMS Architecture?
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    DBMS architecture describes where
+                    the different software components of
+                    a database system are located and how
+                    these components communicate with
+                    each other.
+                </p>
+
+                <p>
+                    It helps in designing a database system
+                    according to requirements such as
+                    <strong>performance, security and
+                    scalability.</strong>
+                </p>
+
+                <p>
+                    A database system can contain
+                    components such as a client,
+                    application server and database server.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Example
+                </div>
+
+                <p>
+                    A student application sends a request
+                    to an application server. The
+                    application server communicates with
+                    the database server to retrieve the
+                    student's information.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        Describes the organization of
+                        DBMS components.
+                    </li>
+
+                    <li>
+                        Describes communication between
+                        components.
+                    </li>
+
+                    <li>
+                        Architecture affects performance.
+                    </li>
+
+                    <li>
+                        Architecture affects security.
+                    </li>
+
+                    <li>
+                        Architecture affects scalability.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic1">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             TOPIC 2
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 2
+            </div>
+
+            <h3>
+                One-Tier Architecture
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    In a <strong>one-tier architecture</strong>,
+                    the user interface and database engine
+                    run on the same machine.
+                </p>
+
+                <p>
+                    There is no separate application
+                    server between the user and database.
+                </p>
+
+                <p>
+                    It is simple to set up and is suitable
+                    for a single-user environment.
+                </p>
+
+            </div>
+
+
+            <div class="architecture-diagram">
+
+                <div class="diagram-box">
+                    User Interface
+                </div>
+
+                <div class="diagram-arrow">
+                    ↕
+                </div>
+
+                <div class="diagram-box">
+                    Database Engine
+                </div>
+
+                <div class="diagram-note">
+                    Same Machine
+                </div>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Example
+                </div>
+
+                <p>
+                    A Python application using SQLite
+                    runs on one computer. Both the
+                    application and database are on the
+                    same machine.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        UI and database run on the
+                        same machine.
+                    </li>
+
+                    <li>
+                        Simple architecture.
+                    </li>
+
+                    <li>
+                        Suitable for a single-user
+                        environment.
+                    </li>
+
+                    <li>
+                        No separate application server.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic2">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             TOPIC 3
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 3
+            </div>
+
+            <h3>
+                Two-Tier Architecture
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    In a <strong>two-tier architecture</strong>,
+                    a client application communicates
+                    directly with a dedicated database
+                    server.
+                </p>
+
+                <p>
+                    The client contains the user interface
+                    and application-side functionality,
+                    while the database server manages
+                    the stored data.
+                </p>
+
+                <p>
+                    Technologies such as
+                    <strong>ODBC</strong> and
+                    <strong>JDBC</strong> can be used
+                    to manage database connections.
+                </p>
+
+            </div>
+
+
+            <div class="architecture-diagram">
+
+                <div class="diagram-box">
+                    Client
+                </div>
+
+                <div class="diagram-arrow">
+                    →
+                </div>
+
+                <div class="diagram-box">
+                    Database Server
+                </div>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Example
+                </div>
+
+                <p>
+                    A Java desktop application directly
+                    connects to a MySQL database server
+                    to store and retrieve student records.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        Client directly communicates
+                        with database server.
+                    </li>
+
+                    <li>
+                        Multiple users can connect.
+                    </li>
+
+                    <li>
+                        JDBC or ODBC can manage
+                        database connections.
+                    </li>
+
+                    <li>
+                        Database is directly exposed
+                        to clients.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic3">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             TOPIC 4
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 4
+            </div>
+
+            <h3>
+                Three-Tier Architecture
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    In a <strong>three-tier architecture</strong>,
+                    the client does not communicate
+                    directly with the database.
+                </p>
+
+                <p>
+                    Instead, an
+                    <strong>application server</strong>
+                    is placed between the client and
+                    database server.
+                </p>
+
+                <p>
+                    The three layers are:
+                </p>
+
+                <ol>
+
+                    <li>
+                        <strong>Presentation Layer</strong>
+                        — user interface.
+                    </li>
+
+                    <li>
+                        <strong>Application Layer</strong>
+                        — business logic and security.
+                    </li>
+
+                    <li>
+                        <strong>Database Layer</strong>
+                        — stores and manages data.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+            <div class="architecture-diagram">
+
+                <div class="diagram-box">
+                    Client
+                </div>
+
+                <div class="diagram-arrow">
+                    →
+                </div>
+
+                <div class="diagram-box">
+                    Application Server
+                </div>
+
+                <div class="diagram-arrow">
+                    →
+                </div>
+
+                <div class="diagram-box">
+                    Database Server
+                </div>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Example
+                </div>
+
+                <p>
+                    A mobile application sends a request
+                    to a Node.js application server.
+                    The server performs authentication
+                    and business logic before accessing
+                    the PostgreSQL database.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        Client does not directly access
+                        the database.
+                    </li>
+
+                    <li>
+                        Application server is between
+                        client and database.
+                    </li>
+
+                    <li>
+                        Business logic can be centralized.
+                    </li>
+
+                    <li>
+                        Security can be centralized.
+                    </li>
+
+                    <li>
+                        Database remains shielded.
+                    </li>
+
+                    <li>
+                        Clients can remain lightweight.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic4">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             COMPARISON
+        ========================== -->
+
+        <div class="comparison-card">
+
+            <h3>
+                One-Tier vs Two-Tier vs Three-Tier
+            </h3>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Architecture
+                            </th>
+
+                            <th>
+                                Communication
+                            </th>
+
+                            <th>
+                                Example
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    One-Tier
+                                </strong>
+                            </td>
+
+                            <td>
+                                UI + Database
+                                on same machine
+                            </td>
+
+                            <td>
+                                Python + SQLite
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Two-Tier
+                                </strong>
+                            </td>
+
+                            <td>
+                                Client → Database
+                            </td>
+
+                            <td>
+                                Java → MySQL
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Three-Tier
+                                </strong>
+                            </td>
+
+                            <td>
+                                Client → Application
+                                Server → Database
+                            </td>
+
+                            <td>
+                                Mobile App → Node.js
+                                → PostgreSQL
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             TOPIC 5
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 5
+            </div>
+
+            <h3>
+                Distributed Databases
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    A <strong>distributed database</strong>
+                    stores segments of data on two or more
+                    geographically separated servers.
+                </p>
+
+                <p>
+                    Although data is stored across
+                    multiple servers, the system can
+                    present the data as one logical
+                    database.
+                </p>
+
+                <p>
+                    Distributed databases are useful
+                    when an organization has systems
+                    operating from different locations.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Example
+                </div>
+
+                <p>
+                    An educational organization has
+                    campuses in different cities.
+                    Each campus can maintain local
+                    attendance data while the complete
+                    system operates as one logical database.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        Data can be stored on multiple
+                        servers.
+                    </li>
+
+                    <li>
+                        Servers may be geographically
+                        separated.
+                    </li>
+
+                    <li>
+                        System can appear as one
+                        logical database.
+                    </li>
+
+                    <li>
+                        Data may be synchronized between
+                        servers.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic5">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             TOPIC 6
+        ========================== -->
+
+        <article class="topic-card">
+
+            <div class="topic-number">
+                TOPIC 6
+            </div>
+
+            <h3>
+                CAP Theorem
+            </h3>
+
+
+            <div class="learn-content">
+
+                <p>
+                    CAP theorem is important when
+                    discussing distributed systems.
+                </p>
+
+                <p>
+                    CAP stands for:
+                </p>
+
+
+                <div class="cap-grid">
+
+                    <div class="cap-item">
+
+                        <strong>
+                            C
+                        </strong>
+
+                        <span>
+                            Consistency
+                        </span>
+
+                    </div>
+
+
+                    <div class="cap-item">
+
+                        <strong>
+                            A
+                        </strong>
+
+                        <span>
+                            Availability
+                        </span>
+
+                    </div>
+
+
+                    <div class="cap-item">
+
+                        <strong>
+                            P
+                        </strong>
+
+                        <span>
+                            Partition Tolerance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h4>
+                    Consistency
+                </h4>
+
+                <p>
+                    Every node reflects identical data
+                    at a given moment.
+                </p>
+
+
+                <h4>
+                    Availability
+                </h4>
+
+                <p>
+                    Every request receives a timely
+                    response, although the returned data
+                    may not always be the most recent.
+                </p>
+
+
+                <h4>
+                    Partition Tolerance
+                </h4>
+
+                <p>
+                    The system continues operating even
+                    when communication between nodes
+                    is disrupted.
+                </p>
+
+            </div>
+
+
+            <div class="example-box">
+
+                <div class="example-title">
+                    Examples
+                </div>
+
+                <p>
+                    For financial applications,
+                    consistency is important because
+                    monetary data should not diverge.
+                </p>
+
+                <p>
+                    For a digital notice-board website,
+                    availability may be important because
+                    showing an older notice can be preferable
+                    to making the website unavailable.
+                </p>
+
+            </div>
+
+
+            <div class="key-points">
+
+                <div class="key-title">
+                    Key Points
+                </div>
+
+                <ul>
+
+                    <li>
+                        C = Consistency.
+                    </li>
+
+                    <li>
+                        A = Availability.
+                    </li>
+
+                    <li>
+                        P = Partition Tolerance.
+                    </li>
+
+                    <li>
+                        CAP is important in distributed
+                        systems.
+                    </li>
+
+                    <li>
+                        There is a trade-off involving
+                        consistency and availability.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                data-topic="topic6">
+
+                Mark as Completed
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =========================
+             ALL TOPICS COMPLETED
+        ========================== -->
+
+        <section
+            id="allTopicsMessage"
+            class="completion-message hidden">
+
+            <div class="completion-icon">
+            </div>
+
+            <h2>
+                All Chapter 2 Topics Completed!
+            </h2>
+
+            <p>
+                You completed all 6 topics.
+                Now take the Chapter 2 test.
+            </p>
+
+            <button
+                id="startTestButton"
+                class="primary-btn">
+
+                Start Chapter 2 Test →
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         TEST SECTION
+    ========================== -->
+
+    <section
+        id="testSection"
+        class="test-section hidden">
+
+        <div class="test-header">
+
+            <div class="section-label">
+                CHAPTER TEST
+            </div>
+
+            <h2>
+                Chapter 2 Test
+            </h2>
+
+            <p>
+                Answer all 15 questions.
+                You need <strong>75%</strong>
+                or above to pass.
+            </p>
+
+        </div>
+
+
+        <form id="testForm">
+
+            <div id="questionsContainer"></div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Submit Test
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =========================
+         RESULT
+    ========================== -->
+
+    <section
+        id="resultSection"
+        class="result-section hidden">
+
+        <div id="resultIcon"></div>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultMessage"></p>
+
+
+        <div class="score-box">
+
+            <span>
+                Your Score
+            </span>
+
+            <strong id="scoreText"></strong>
+
+        </div>
+
+
+        <button
+            id="retryButton"
+            class="secondary-btn">
+
+            Retry Test
+
+        </button>
+
+
+        <!-- THIS OPENS YOUR
+             ALREADY CREATED CHAPTER 3 -->
+
+        
+            id="nextChapterButton"
+            href="chapter3.html"
+            class="primary-btn hidden">
+
+            Continue to Chapter 3 →
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<script src="../js/technical/chapter2.js"></script>
+
+</body>
+
+</html>

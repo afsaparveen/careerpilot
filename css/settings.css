@@ -1,0 +1,810 @@
+/* =====================================================
+   CAREERPILOT SETTINGS
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f7f7ff;
+
+    color: #1f2937;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.settings-navbar {
+    min-height: 72px;
+
+    padding: 0 5%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom:
+        1px solid #ececf5;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.settings-logo {
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color: #5b21b6;
+
+    white-space: nowrap;
+}
+
+
+.settings-logo span {
+    color: #ec4899;
+}
+
+
+.settings-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.settings-nav a {
+    text-decoration: none;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+}
+
+
+.settings-nav a:hover {
+    background: #f3e8ff;
+
+    color: #6d28d9;
+}
+
+
+.back-profile-button {
+    text-decoration: none;
+
+    color: #7c3aed;
+
+    border:
+        1px solid #ddd6fe;
+
+    background: #faf5ff;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.settings-container {
+    width: min(900px, 92%);
+
+    margin: 0 auto;
+
+    padding: 42px 0 70px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.settings-header {
+    margin-bottom: 25px;
+}
+
+
+.settings-label {
+    color: #7c3aed;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.settings-header h1 {
+    margin: 6px 0;
+
+    font-size: 32px;
+
+    color: #111827;
+}
+
+
+.settings-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.settings-card {
+    background: white;
+
+    border:
+        1px solid #ececf5;
+
+    border-radius: 21px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(31, 41, 55, 0.03);
+}
+
+
+.settings-card-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-label {
+    color: #7c3aed;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.settings-card-heading h2 {
+    margin: 5px 0 0;
+
+    font-size: 21px;
+
+    color: #111827;
+}
+
+
+.settings-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    background: #f3e8ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   SETTING ROW
+===================================================== */
+
+.settings-options {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.setting-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid #f0f0f6;
+}
+
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+
+.setting-info {
+    flex: 1;
+}
+
+
+.setting-info strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+
+.setting-info p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SWITCH
+===================================================== */
+
+.switch {
+    position: relative;
+
+    display: inline-block;
+
+    width: 48px;
+
+    height: 26px;
+
+    flex-shrink: 0;
+}
+
+
+.switch input {
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #d1d5db;
+
+    border-radius: 30px;
+
+    transition: 0.2s;
+}
+
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 1px 4px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.switch input:checked + .slider {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+}
+
+
+.switch input:checked + .slider::before {
+    transform:
+        translateX(22px);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.save-settings-button,
+.primary-small-button {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+
+
+.save-settings-button {
+    padding: 12px 19px;
+
+    font-size: 13px;
+
+    margin-top: 18px;
+}
+
+
+.primary-small-button {
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+
+.secondary-button {
+    border:
+        1px solid #ddd6fe;
+
+    background: #faf5ff;
+
+    color: #6d28d9;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.secondary-button:hover {
+    background: #f3e8ff;
+}
+
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.settings-message {
+    min-height: 18px;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.settings-message.success {
+    color: #15803d;
+}
+
+
+.settings-message.error {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.security-section {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.security-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid #f0f0f6;
+}
+
+
+.security-item strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+
+.security-item p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.security-form {
+    background: #fafaff;
+
+    border:
+        1px solid #ececf5;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    margin: 15px 0;
+}
+
+
+.security-form label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.security-form input {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    margin-bottom: 12px;
+
+    border:
+        1px solid #dddff0;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.security-form input:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.1);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   DANGER
+===================================================== */
+
+.danger-card {
+    border-color: #fecaca;
+}
+
+
+.danger-label {
+    color: #dc2626;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.danger-icon {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+.danger-action-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid #f3f4f6;
+}
+
+
+.danger-action-row:last-child {
+    border-bottom: none;
+}
+
+
+.danger-action-row strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+
+.danger-action-row p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.delete-button {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.delete-button:hover {
+    background: #fee2e2;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-settings {
+    background: #111827;
+
+    color: #f9fafb;
+}
+
+
+body.dark-settings
+.settings-navbar,
+body.dark-settings
+.settings-card {
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-settings
+.settings-header h1,
+body.dark-settings
+.settings-card-heading h2,
+body.dark-settings
+.setting-info strong,
+body.dark-settings
+.security-item strong,
+body.dark-settings
+.danger-action-row strong {
+    color: #f9fafb;
+}
+
+
+body.dark-settings
+.settings-header p,
+body.dark-settings
+.setting-info p,
+body.dark-settings
+.security-item p,
+body.dark-settings
+.danger-action-row p {
+    color: #9ca3af;
+}
+
+
+body.dark-settings
+.setting-row,
+body.dark-settings
+.security-item,
+body.dark-settings
+.danger-action-row {
+    border-color: #374151;
+}
+
+
+body.dark-settings
+.security-form {
+    background: #111827;
+
+    border-color: #374151;
+}
+
+
+body.dark-settings
+.security-form input {
+    background: #1f2937;
+
+    color: white;
+
+    border-color: #4b5563;
+}
+
+
+/* =====================================================
+   COMPACT MODE
+===================================================== */
+
+body.compact-settings
+.settings-card {
+    padding: 18px;
+}
+
+
+body.compact-settings
+.setting-row {
+    padding: 11px 0;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .settings-nav {
+        display: none;
+    }
+
+
+    .settings-container {
+        width: 94%;
+
+        padding-top: 25px;
+    }
+
+
+    .security-item,
+    .danger-action-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .secondary-button,
+    .delete-button {
+        width: 100%;
+    }
+
+}

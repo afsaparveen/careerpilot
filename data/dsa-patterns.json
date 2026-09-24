@@ -1,0 +1,278 @@
+{
+  "patterns": [
+    {
+      "id": "two-pointers",
+      "name": "Two Pointers",
+      "level": "Beginner → Intermediate → Advanced",
+
+      "learn": {
+        "what": "Two pointers is a technique where two indexes move through a sequence according to a useful rule instead of repeatedly scanning the same elements.",
+
+        "recognize": [
+          "The input is sorted or can be sorted.",
+          "You need to find a pair or combination.",
+          "You compare values from two ends.",
+          "You need to process or compact elements efficiently."
+        ],
+
+        "oppositeDirection": "One pointer starts on the left and another on the right. Move one of them based on the condition you are trying to satisfy.",
+
+        "sameDirection": "Two pointers can move forward together. One may read elements while another tracks a position to place or keep a valid value.",
+
+        "mistakes": [
+          "Moving the wrong pointer.",
+          "Forgetting duplicate handling.",
+          "Using two pointers when the problem does not provide the right structure.",
+          "Ignoring whether sorting changes the problem."
+        ]
+      },
+
+      "stages": {
+        "beginner": {
+          "required": 3,
+          "problems": [
+            {
+              "id": "valid-palindrome",
+              "title": "Valid Palindrome",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/valid-palindrome/",
+              "why": "Learn the basic left-right pointer idea."
+            },
+            {
+              "id": "move-zeroes",
+              "title": "Move Zeroes",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/move-zeroes/",
+              "why": "Practice same-direction pointer movement."
+            },
+            {
+              "id": "two-sum-ii",
+              "title": "Two Sum II - Input Array Is Sorted",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+              "why": "Practice opposite-direction pointers on sorted input."
+            }
+          ]
+        },
+
+        "intermediate": {
+          "required": 3,
+          "problems": [
+            {
+              "id": "container-with-most-water",
+              "title": "Container With Most Water",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/container-with-most-water/",
+              "why": "Learn how pointer movement eliminates impossible choices."
+            },
+            {
+              "id": "3sum",
+              "title": "3Sum",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/3sum/",
+              "why": "Combine sorting with a fixed pointer and two-pointer search."
+            },
+            {
+              "id": "3sum-closest",
+              "title": "3Sum Closest",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/3sum-closest/",
+              "why": "Adapt the pointer decision rule to an optimization problem."
+            }
+          ]
+        },
+
+        "advanced": {
+          "required": 1,
+          "problems": [
+            {
+              "id": "trapping-rain-water",
+              "title": "Trapping Rain Water",
+              "difficulty": "Hard",
+              "url": "https://leetcode.com/problems/trapping-rain-water/",
+              "why": "Apply two-pointer reasoning to a more advanced optimization problem."
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "id": "sliding-window",
+      "name": "Sliding Window",
+      "level": "Beginner → Intermediate → Advanced",
+
+      "learn": {
+        "what": "Sliding Window maintains a moving range over an array or string so that information from the previous range can be reused.",
+
+        "recognize": [
+          "The problem asks about a contiguous subarray or substring.",
+          "You need a maximum, minimum, count or length over a moving range.",
+          "The current range can expand or shrink."
+        ],
+
+        "oppositeDirection": "Sliding Window usually does not use opposite-direction pointers. The left and right boundaries normally move forward.",
+
+        "sameDirection": "The right pointer expands the window and the left pointer shrinks it when the window becomes invalid.",
+
+        "mistakes": [
+          "Forgetting to remove the left element.",
+          "Not maintaining the window condition.",
+          "Confusing a substring/subarray with a subsequence."
+        ]
+      },
+
+      "stages": {
+        "beginner": {
+          "required": 3,
+          "problems": [
+            {
+              "id": "contains-duplicate-ii",
+              "title": "Contains Duplicate II",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/contains-duplicate-ii/",
+              "why": "Maintain a moving range with a set."
+            },
+            {
+              "id": "maximum-average-subarray-i",
+              "title": "Maximum Average Subarray I",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/maximum-average-subarray-i/",
+              "why": "Learn a fixed-size sliding window."
+            },
+            {
+              "id": "longest-substring-without-repeating-characters",
+              "title": "Longest Substring Without Repeating Characters",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+              "why": "Learn a variable-size window."
+            }
+          ]
+        },
+
+        "intermediate": {
+          "required": 2,
+          "problems": [
+            {
+              "id": "longest-repeating-character-replacement",
+              "title": "Longest Repeating Character Replacement",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+              "why": "Maintain a window using a frequency condition."
+            },
+            {
+              "id": "permutation-in-string",
+              "title": "Permutation in String",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/permutation-in-string/",
+              "why": "Use frequency tracking inside a fixed-size window."
+            }
+          ]
+        },
+
+        "advanced": {
+          "required": 1,
+          "problems": [
+            {
+              "id": "minimum-window-substring",
+              "title": "Minimum Window Substring",
+              "difficulty": "Hard",
+              "url": "https://leetcode.com/problems/minimum-window-substring/",
+              "why": "Master variable windows with multiple frequency constraints."
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "id": "binary-search",
+      "name": "Binary Search",
+      "level": "Beginner → Intermediate → Advanced",
+
+      "learn": {
+        "what": "Binary Search repeatedly cuts a sorted or monotonic search space in half.",
+
+        "recognize": [
+          "The data is sorted.",
+          "There is a monotonic yes/no condition.",
+          "You need to find a boundary or exact position.",
+          "A linear search would repeatedly examine too many values."
+        ],
+
+        "oppositeDirection": "Left and right boundaries represent the current search space.",
+
+        "sameDirection": "The search boundaries shrink toward the answer based on the middle value.",
+
+        "mistakes": [
+          "Incorrect middle calculation.",
+          "Incorrect boundary update.",
+          "Infinite loops.",
+          "Using binary search without a sorted or monotonic property."
+        ]
+      },
+
+      "stages": {
+        "beginner": {
+          "required": 3,
+          "problems": [
+            {
+              "id": "binary-search",
+              "title": "Binary Search",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/binary-search/",
+              "why": "Learn the core binary search template."
+            },
+            {
+              "id": "search-insert-position",
+              "title": "Search Insert Position",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/search-insert-position/",
+              "why": "Practice finding positions and boundaries."
+            },
+            {
+              "id": "sqrtx",
+              "title": "Sqrt(x)",
+              "difficulty": "Easy",
+              "url": "https://leetcode.com/problems/sqrtx/",
+              "why": "Use binary search on a numeric search space."
+            }
+          ]
+        },
+
+        "intermediate": {
+          "required": 2,
+          "problems": [
+            {
+              "id": "find-minimum-in-rotated-sorted-array",
+              "title": "Find Minimum in Rotated Sorted Array",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+              "why": "Reason about partially ordered search spaces."
+            },
+            {
+              "id": "search-in-rotated-sorted-array",
+              "title": "Search in Rotated Sorted Array",
+              "difficulty": "Medium",
+              "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+              "why": "Identify which half remains sorted."
+            }
+          ]
+        },
+
+        "advanced": {
+          "required": 1,
+          "problems": [
+            {
+              "id": "median-of-two-sorted-arrays",
+              "title": "Median of Two Sorted Arrays",
+              "difficulty": "Hard",
+              "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+              "why": "Apply binary-search partition reasoning to two arrays."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

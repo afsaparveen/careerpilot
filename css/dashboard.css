@@ -1,0 +1,1744 @@
+/* =========================================
+   CAREERPILOT AI - DASHBOARD
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7ff;
+    color: #1f2937;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.dashboard-navbar {
+    min-height: 72px;
+    padding: 0 5%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom: 1px solid #ececf5;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #5b21b6;
+    white-space: nowrap;
+}
+
+.dashboard-logo span {
+    color: #ec4899;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.dashboard-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dashboard-nav a {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none !important;
+
+    color: #6b7280 !important;
+
+    font-size: 14px !important;
+    font-weight: 600;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+.dashboard-nav a:hover {
+    background: #f3e8ff;
+    color: #6d28d9 !important;
+}
+
+.dashboard-nav a.active {
+    background: #f3e8ff;
+    color: #6d28d9 !important;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.dashboard-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-profile > span {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#logoutBtn {
+    border: none;
+    background: transparent;
+
+    color: #6b7280;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    color: #dc2626;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.dashboard-container {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 40px 0 70px;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-section {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.welcome-small {
+    margin: 0 0 6px;
+
+    color: #7c3aed;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+.welcome-section h1 {
+    margin: 0;
+
+    font-size: 34px;
+
+    color: #111827;
+}
+
+.welcome-description {
+    margin: 8px 0 0;
+
+    color: #6b7280;
+}
+
+.target-role-card {
+    min-width: 220px;
+
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ede9fe,
+            #fce7f3
+        );
+
+    border: 1px solid #e9d5ff;
+
+    box-shadow:
+        0 8px 25px rgba(
+            124,
+            58,
+            237,
+            0.08
+        );
+}
+
+.target-role-card span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #7c3aed;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.target-role-card strong {
+    color: #312e81;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    padding: 22px;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    border: 1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    box-shadow:
+        0 6px 22px
+        rgba(
+            31,
+            41,
+            55,
+            0.04
+        );
+}
+
+.stat-card small {
+    color: #6b7280;
+
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    margin: 5px 0 0;
+
+    color: #111827;
+
+    font-size: 25px;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    flex-shrink: 0;
+}
+
+.purple-card {
+    background: #f3e8ff;
+}
+
+.purple-card .stat-icon {
+    background: #ddd6fe;
+}
+
+.pink-card {
+    background: #fce7f3;
+}
+
+.pink-card .stat-icon {
+    background: #fbcfe8;
+}
+
+.blue-card {
+    background: #e0f2fe;
+}
+
+.blue-card .stat-icon {
+    background: #bae6fd;
+}
+
+.orange-card {
+    background: #ffedd5;
+}
+
+.orange-card .stat-icon {
+    background: #fed7aa;
+}
+
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 35px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    border: 1px solid #ececf5;
+
+    box-shadow:
+        0 8px 30px
+        rgba(
+            31,
+            41,
+            55,
+            0.05
+        );
+}
+
+.card-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.card-heading h2 {
+    margin: 5px 0 0;
+
+    font-size: 21px;
+
+    color: #111827;
+}
+
+.section-label {
+    color: #8b5cf6;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.card-emoji {
+    font-size: 25px;
+}
+
+
+/* =========================================
+   DAILY TASKS
+========================================= */
+
+.task-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 13px;
+
+    border-radius: 15px;
+
+    background: #fafafa;
+
+    border: 1px solid #f0f0f5;
+}
+
+.task-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.dsa-icon {
+    background: #ede9fe;
+}
+
+.aptitude-icon {
+    background: #fce7f3;
+}
+
+.technical-icon {
+    background: #e0f2fe;
+}
+
+.interview-icon {
+    background: #ffedd5;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-content strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+.task-content p {
+    margin: 3px 0 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.task-time {
+    color: #7c3aed;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.view-plan-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    text-decoration: none !important;
+
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    padding: 11px 17px;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LIVE SKILLS
+========================================= */
+
+.skill-progress {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.skill-row {
+    width: 100%;
+}
+
+.skill-name {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.skill-name span {
+    color: #374151;
+}
+
+.skill-name strong {
+    color: #7c3aed;
+}
+
+.skill-bar {
+    width: 100%;
+
+    height: 9px;
+
+    background: #eeeef5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.7s ease;
+}
+
+.js-fill {
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #a855f7
+        );
+}
+
+.dsa-fill {
+    background:
+        linear-gradient(
+            90deg,
+            #ec4899,
+            #f472b6
+        );
+}
+
+.sql-fill {
+    background:
+        linear-gradient(
+            90deg,
+            #0ea5e9,
+            #38bdf8
+        );
+}
+
+.dbms-fill {
+    background:
+        linear-gradient(
+            90deg,
+            #f97316,
+            #fb923c
+        );
+}
+
+.skill-summary {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eeeeF5;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    font-size: 11px;
+
+    color: #6b7280;
+}
+
+.skill-summary strong {
+    color: #7c3aed;
+}
+
+.skills-loading {
+    padding: 25px 10px;
+
+    text-align: center;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   CAREER MODULES
+   IMPORTANT: fixes screenshot problem
+========================================= */
+
+.modules-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 5px 0 0;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+.section-title p {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* GRID */
+
+.module-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 17px;
+}
+
+
+/* CARD */
+
+.module-card {
+    all: unset;
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    min-width: 0;
+
+    text-decoration: none !important;
+
+    color: #111827 !important;
+
+    background: #ffffff;
+
+    border: 1px solid #ececf5;
+
+    border-radius: 19px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+
+    font-family: inherit;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            31,
+            41,
+            55,
+            0.09
+        );
+
+    border-color: #ddd6fe;
+}
+
+
+/* ICON */
+
+.module-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+    flex-shrink: 0;
+}
+
+
+/* TEXT */
+
+.module-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.module-card h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.module-card p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* ARROW */
+
+.module-arrow {
+    margin-left: auto;
+
+    color: #9ca3af;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* MODULE COLORS */
+
+.dsa-module .module-icon {
+    background: #ede9fe;
+}
+
+.dsa-learning-dashboard-module .module-icon {
+    background: #e0e7ff;
+}
+
+.aptitude-module .module-icon {
+    background: #fce7f3;
+}
+
+.technical-module .module-icon {
+    background: #e0f2fe;
+}
+
+.interview-module .module-icon {
+    background: #ffedd5;
+}
+
+.resume-module .module-icon {
+    background: #dcfce7;
+}
+
+.roadmap-module .module-icon {
+    background: #fef3c7;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.bottom-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 22px;
+}
+
+.career-twin-card {
+    background:
+        linear-gradient(
+            135deg,
+            #faf5ff,
+            #ffffff
+        );
+}
+
+.career-twin-card > p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.twin-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    background: #f3e8ff;
+
+    color: #6d28d9;
+
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+/* =========================================
+   LIVE RESUME MATCH
+========================================= */
+
+.resume-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+}
+
+.resume-circle {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #7c3aed 0deg,
+            #ec4899 0deg,
+            #f3f4f6 0deg
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #7c3aed;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+.resume-circle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 59px;
+    height: 59px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+}
+
+.resume-circle {
+    z-index: 0;
+}
+
+.resume-circle::after {
+    z-index: -1;
+}
+
+.resume-status strong {
+    font-size: 14px;
+}
+
+.resume-status p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.resume-match-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 18px;
+}
+
+.resume-match-tag {
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    background: #f3e8ff;
+
+    color: #6d28d9;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.resume-match-tag.missing {
+    background: #fff1f2;
+
+    color: #be123c;
+}
+
+
+/* =========================================
+   CARD LINKS
+========================================= */
+
+.card-link {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    text-decoration: none !important;
+
+    color: #7c3aed !important;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.card-link:hover {
+    color: #ec4899 !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-nav {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .module-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .dashboard-container {
+        width: 94%;
+
+        padding-top: 25px;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .target-role-card {
+        min-width: 0;
+    }
+
+    .dashboard-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        display: block;
+    }
+
+    .section-title p {
+        margin-top: 8px;
+    }
+
+    .dashboard-navbar {
+        padding: 0 3%;
+    }
+
+    .dashboard-profile #logoutBtn {
+        display: none;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .task-item {
+        align-items: flex-start;
+    }
+
+    .task-time {
+        display: none;
+    }
+
+    .dashboard-logo {
+        font-size: 18px;
+    }
+
+}
+/* =====================================================
+   PROFILE DROPDOWN
+===================================================== */
+
+.profile-dropdown {
+    position: relative;
+}
+
+
+.profile-dropdown summary {
+    list-style: none;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+.profile-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.profile-dropdown summary:hover {
+    transform: scale(1.04);
+}
+
+
+.profile-dropdown-menu {
+    position: absolute;
+
+    top: 52px;
+
+    right: 0;
+
+    width: 285px;
+
+    background: white;
+
+    border:
+        1px solid #ececf5;
+
+    border-radius: 17px;
+
+    padding: 10px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(31, 41, 55, 0.15);
+
+    z-index: 1000;
+}
+
+
+.profile-menu-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+}
+
+
+.profile-menu-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.profile-menu-header strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.profile-menu-header span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+.profile-menu-divider {
+    height: 1px;
+
+    background: #f0f0f5;
+
+    margin: 7px 0;
+}
+
+
+.profile-dropdown-menu a,
+.profile-dropdown-menu button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 11px;
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.profile-dropdown-menu a:hover,
+.profile-dropdown-menu button:hover {
+    background: #f7f3ff;
+}
+
+
+.profile-dropdown-menu a > span,
+.profile-dropdown-menu button > span {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    background: #f3e8ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.profile-dropdown-menu a strong,
+.profile-dropdown-menu button strong {
+    display: block;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.profile-dropdown-menu a small {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+.profile-dropdown-menu button {
+    color: #dc2626;
+}
+
+
+.profile-dropdown-menu button > span {
+    background: #fef2f2;
+}
+
+
+.profile-dropdown-menu button strong {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   MOBILE PROFILE MENU
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .profile-dropdown-menu {
+        right: -8px;
+
+        width: 270px;
+    }
+
+
+    .dashboard-profile
+    #logoutBtn {
+        display: flex !important;
+    }
+
+}
+.careerpilot-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #17213f;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.careerpilot-logo:hover {
+    text-decoration: none;
+}
+
+.careerpilot-logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    );
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(124, 58, 237, 0.25);
+}
+
+.careerpilot-logo-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.careerpilot-logo-text {
+    color: #17213f;
+}
+
+.careerpilot-logo-text span {
+    color: #7c3aed;
+}
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f5f3ff;
+    color: #7c3aed;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    padding: 0;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   HAMBURGER THREE LINES
+===================================================== */
+
+.mobile-menu-toggle span {
+    display: block !important;
+
+    width: 22px !important;
+    height: 3px !important;
+
+    margin: 3px 0 !important;
+
+    padding: 0 !important;
+
+    background: #7c3aed !important;
+
+    border-radius: 3px;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-nav-menu {
+    display: none;
+}
+
+
+.mobile-nav-menu.open {
+    display: flex;
+
+    flex-direction: column;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    right: 0;
+
+    width: 100%;
+
+    padding: 10px 16px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeef5;
+
+    border-bottom: 1px solid #eeeef5;
+
+    box-shadow:
+        0 12px 30px
+        rgba(30, 30, 55, 0.10);
+
+    z-index: 9999;
+}
+
+
+.mobile-nav-menu a {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.mobile-nav-menu a:hover {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+
+.mobile-nav-menu a.active {
+    color: #7c3aed;
+
+    background: #f5f3ff;
+}
+
+
+/* =====================================================
+   MOBILE DASHBOARD NAVBAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-navbar {
+
+        position: relative;
+
+        min-height: 64px;
+
+        padding: 10px 12px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .dashboard-nav {
+        display: none !important;
+    }
+
+
+    /* Show hamburger */
+
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+
+
+    /* Keep profile visible */
+
+    .dashboard-profile {
+        display: flex !important;
+
+        align-items: center;
+
+        margin-left: 0;
+
+        flex-shrink: 0;
+    }
+
+
+    /* Keep AP visible */
+
+    .dashboard-profile > span,
+    .dashboard-profile summary {
+        display: flex !important;
+    }
+
+
+    /* Hide only logout text on mobile */
+
+    .dashboard-profile #logoutBtn {
+        display: none;
+    }
+
+
+    /* Profile circle */
+
+    .dashboard-profile > span,
+    .dashboard-profile summary {
+
+        width: 38px;
+
+        height: 38px;
+
+        border-radius: 50%;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    /* Make logo slightly smaller */
+
+    .careerpilot-logo {
+
+        gap: 8px;
+
+        font-size: 19px;
+    }
+
+
+    .careerpilot-logo-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        border-radius: 12px;
+    }
+
+
+    .careerpilot-logo-icon svg {
+
+        width: 22px;
+
+        height: 22px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .dashboard-navbar {
+
+        padding: 9px 10px;
+
+        gap: 6px;
+    }
+
+
+    .careerpilot-logo {
+
+        font-size: 18px;
+
+        gap: 7px;
+    }
+
+
+    .careerpilot-logo-icon {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+
+    .careerpilot-logo-icon svg {
+
+        width: 21px;
+
+        height: 21px;
+    }
+
+
+    .mobile-menu-toggle {
+    display: flex !important;
+
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+    .mobile-menu-toggle span {
+
+        width: 21px !important;
+
+        height: 3px !important;
+
+        margin: 3px 0 !important;
+    }
+
+
+    .dashboard-profile summary {
+
+        width: 38px;
+
+        height: 38px;
+    }
+}

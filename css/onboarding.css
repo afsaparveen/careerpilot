@@ -1,0 +1,986 @@
+/* =========================================================
+   CAREERPILOT AI
+   ONBOARDING
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.onboarding-page {
+
+    min-height: 100vh;
+
+    padding:
+        35px 20px 45px;
+
+    background:
+
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(
+                124,
+                92,
+                255,
+                0.16
+            ),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 95% 10%,
+            rgba(
+                236,
+                72,
+                153,
+                0.14
+            ),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f8f7ff,
+            #fff5fb
+        );
+
+    color:
+        #172033;
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.onboarding-header {
+
+    width:
+        min(1000px, 100%);
+
+    margin:
+        0 auto 22px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+}
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.onboarding-logo {
+
+    color:
+        #5b2be0;
+
+    font-size:
+        25px;
+
+    font-weight:
+        900;
+
+    text-decoration:
+        none;
+}
+
+
+.onboarding-logo span {
+
+    color:
+        #ec4899;
+}
+
+
+
+/* =========================================================
+   STEP INDICATOR
+========================================================= */
+
+.step-indicator {
+
+    color:
+        #667085;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+}
+
+
+.step-indicator span {
+
+    color:
+        #7c3aed;
+
+    font-weight:
+        900;
+}
+
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-container {
+
+    width:
+        min(1000px, 100%);
+
+    height:
+        9px;
+
+    margin:
+        0 auto 35px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        #e9e7f8;
+}
+
+
+.progress-bar {
+
+    width:
+        25%;
+
+    height:
+        100%;
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #5b2be0,
+            #8b3fe8,
+            #ec4899
+        );
+
+    transition:
+        width 0.35s ease;
+}
+
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.onboarding-card {
+
+    width:
+        100%;
+
+    max-width:
+        1000px;
+
+    min-height:
+        570px;
+
+    margin:
+        auto;
+
+    padding:
+        50px;
+
+    border:
+        1px solid
+        rgba(
+            124,
+            92,
+            255,
+            0.12
+        );
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(
+            86,
+            60,
+            180,
+            0.13
+        );
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.onboarding-step {
+
+    display:
+        none;
+}
+
+
+.onboarding-step.active {
+
+    display:
+        block;
+
+    animation:
+        stepAppear
+        0.3s ease;
+}
+
+
+@keyframes stepAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+
+/* =========================================================
+   STEP ICON
+========================================================= */
+
+.step-icon {
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        22px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        31px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ede9fe,
+            #fce7f3
+        );
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(
+            124,
+            92,
+            255,
+            0.10
+        );
+}
+
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.onboarding-step h1 {
+
+    margin:
+        0 0 14px;
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            46px
+        );
+
+    line-height:
+        1.1;
+
+    letter-spacing:
+        -1.5px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #4f2bc8,
+            #8b3fe8,
+            #ec4899
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.step-description {
+
+    max-width:
+        730px;
+
+    margin:
+        0 0 35px;
+
+    color:
+        #667085;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.7;
+}
+
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+
+    margin-bottom:
+        24px;
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    margin-bottom:
+        9px;
+
+    color:
+        #344054;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+}
+
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.form-group input,
+.form-group select {
+
+    width:
+        100%;
+
+    min-height:
+        55px;
+
+    padding:
+        0 16px;
+
+    border:
+        1.5px solid
+        #d8d1ff;
+
+    border-radius:
+        14px;
+
+    outline:
+        none;
+
+    background:
+        #fcfcff;
+
+    color:
+        #172033;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    transition:
+        border-color
+        0.2s ease,
+
+        box-shadow
+        0.2s ease,
+
+        background
+        0.2s ease;
+}
+
+
+.form-group input::placeholder {
+
+    color:
+        #98a2b3;
+}
+
+
+.form-group input:hover,
+.form-group select:hover {
+
+    border-color:
+        #a78bfa;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color:
+        #7c5cff;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(
+            124,
+            92,
+            255,
+            0.10
+        );
+}
+
+
+
+/* =========================================================
+   COMPANY / SKILLS GRID
+========================================================= */
+
+.company-grid,
+.skills-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        15px;
+
+    margin-bottom:
+        35px;
+}
+
+
+
+/* =========================================================
+   CHOICE CARDS
+========================================================= */
+
+.choice-card,
+.skill-card {
+
+    position:
+        relative;
+
+    cursor:
+        pointer;
+}
+
+
+.choice-card input,
+.skill-card input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+}
+
+
+.choice-card span,
+.skill-card span {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        65px;
+
+    padding:
+        15px;
+
+    text-align:
+        center;
+
+    border:
+        2px solid
+        #eee7ff;
+
+    border-radius:
+        15px;
+
+    background:
+        #fafaff;
+
+    color:
+        #344054;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+.choice-card:hover span,
+.skill-card:hover span {
+
+    border-color:
+        #c4b5fd;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.choice-card input:checked + span,
+.skill-card input:checked + span {
+
+    border-color:
+        #7c3aed;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ede9fe,
+            #fce7f3
+        );
+
+    color:
+        #5b21b6;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(
+            124,
+            58,
+            237,
+            0.13
+        );
+}
+
+
+
+/* =========================================================
+   BUTTON ROW
+========================================================= */
+
+.button-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    margin-top:
+        30px;
+}
+
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.next-btn,
+.finish-btn,
+.back-btn {
+
+    min-height:
+        54px;
+
+    padding:
+        0 25px;
+
+    border-radius:
+        14px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+
+/* =========================================================
+   NEXT / FINISH
+========================================================= */
+
+.next-btn,
+.finish-btn {
+
+    border:
+        none;
+
+    color:
+        #ffffff;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #5b2be0,
+            #8b3fe8,
+            #ec4899
+        );
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(
+            124,
+            92,
+            255,
+            0.23
+        );
+}
+
+
+.next-btn:hover,
+.finish-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 17px 35px
+        rgba(
+            124,
+            92,
+            255,
+            0.30
+        );
+}
+
+
+.next-btn:disabled,
+.finish-btn:disabled {
+
+    opacity:
+        0.6;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+}
+
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back-btn {
+
+    border:
+        1px solid
+        #ddd6fe;
+
+    background:
+        #ffffff;
+
+    color:
+        #5b21b6;
+}
+
+
+.back-btn:hover {
+
+    border-color:
+        #a78bfa;
+
+    background:
+        #faf8ff;
+
+    transform:
+        translateY(-1px);
+}
+
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#onboardingMessage {
+
+    min-height:
+        25px;
+
+    margin-top:
+        15px;
+
+    text-align:
+        center;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.onboarding-footer {
+
+    width:
+        min(1000px, 100%);
+
+    margin:
+        25px auto 0;
+
+    text-align:
+        center;
+
+    color:
+        #98a2b3;
+
+    font-size:
+        13px;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .onboarding-card {
+
+        padding:
+            35px 30px;
+    }
+
+
+    .company-grid,
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .onboarding-step h1 {
+
+        font-size:
+            34px;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .onboarding-page {
+
+        padding:
+            20px 12px 35px;
+    }
+
+
+    .onboarding-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            10px;
+    }
+
+
+    .onboarding-card {
+
+        min-height:
+            auto;
+
+        padding:
+            28px 20px;
+
+        border-radius:
+            22px;
+    }
+
+
+    .onboarding-step h1 {
+
+        font-size:
+            31px;
+
+        letter-spacing:
+            -1px;
+    }
+
+
+    .step-description {
+
+        font-size:
+            15px;
+    }
+
+
+    .company-grid,
+    .skills-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .button-row {
+
+        flex-direction:
+            column-reverse;
+
+        align-items:
+            stretch;
+    }
+
+
+    .next-btn,
+    .finish-btn,
+    .back-btn {
+
+        width:
+            100%;
+    }
+
+}

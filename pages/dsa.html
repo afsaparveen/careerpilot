@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Practice | CareerPilot</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dsa.css">
+
+    <!-- Subtle professional UI enhancements -->
+    <style>
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        #dailyTargetProgress {
+            background: linear-gradient(90deg, #059669, #10b981);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        .leetcode-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            background: #fffbeb;
+            color: #d97706;
+            border: 1px solid #fef3c7;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="dsa-navbar">
+
+    <a
+        href="dashboard.html"
+        class="careerpilot-logo"
+        aria-label="CareerPilot Home">
+
+        <span class="careerpilot-logo-icon">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path
+                    d="M12 3L4.5 20L12 16L19.5 20L12 3Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linejoin="round">
+                </path>
+
+                <path
+                    d="M12 3L12 17"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round">
+                </path>
+
+            </svg>
+
+        </span>
+
+        <span class="careerpilot-logo-text">
+            Career<span>Pilot</span>
+        </span>
+
+    </a>
+
+    <nav class="dsa-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+        <a href="dsa.html" class="active">
+            DSA
+        </a>
+
+        <a href="aptitude.html">
+            Aptitude
+        </a>
+
+        <a href="technical.html">
+            Technical
+        </a>
+
+        <a href="interview.html">
+            Interview
+        </a>
+
+    </nav>
+    <!-- MOBILE MENU BUTTON -->
+
+<button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+
+<!-- MOBILE MENU -->
+
+<nav class="mobile-nav-menu">
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="roadmap.html">
+        Roadmap
+    </a>
+
+    <a
+        href="dsa.html"
+        class="active">
+        DSA
+    </a>
+
+    <a href="aptitude.html">
+        Aptitude
+    </a>
+
+    <a href="technical.html">
+        Technical
+    </a>
+
+    <a href="interview.html">
+        Interview
+    </a>
+
+    <a href="companies.html">
+        Companies
+    </a>
+
+</nav>
+
+</header>
+
+
+<main class="dsa-page">
+
+
+    <!-- PAGE HEADER -->
+    <section class="dsa-header-section">
+
+        <p class="eyebrow">
+            DSA LEARNING PATH
+        </p>
+
+        <h1>
+            Master Data Structures & Algorithms
+        </h1>
+
+        <p class="subtitle">
+            Learn DSA patterns, practice real LeetCode
+            problems and track your progress pattern by pattern.
+        </p>
+
+    </section>
+
+
+
+    <!-- CURRENT PROGRESS -->
+    <section class="dsa-progress-card">
+
+        <div class="progress-top-row">
+
+            <div>
+                <div class="progress-label">
+                    CURRENT PATTERN
+                </div>
+
+                <div id="currentPatternName" class="progress-number">
+                    Two Pointers
+                </div>
+            </div>
+
+            <div id="progressPercent" class="progress-number">
+                0%
+            </div>
+
+        </div>
+
+        <div class="progress-track">
+            <div id="patternProgressBar" class="progress-fill"></div>
+        </div>
+
+        <div class="progress-meta">
+            <span id="progressCount">
+                0 / 15 problems
+            </span>
+
+            <span id="patternStatus">
+                In Progress
+            </span>
+        </div>
+
+        <p id="progressMessage">
+            15 problems remaining.
+        </p>
+
+    </section>
+
+
+
+    <!-- LESSON -->
+    <section class="dsa-lesson-card">
+
+        <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2>Learn the Pattern</h2>
+        </div>
+
+        <div class="lesson-grid">
+
+            <div class="lesson-item">
+                <h3>What is it?</h3>
+                <p id="lessonWhat"></p>
+            </div>
+
+            <div class="lesson-item">
+                <h3>How to Recognize</h3>
+                <p id="lessonRecognize"></p>
+            </div>
+
+            <div class="lesson-item">
+                <h3>How to Solve</h3>
+                <p id="lessonHow"></p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DAILY TARGET -->
+    <section class="daily-target-card">
+
+        <div class="daily-target-heading">
+            <h3>Today's Practice Target</h3>
+            <span id="dailyCompletedCount" class="daily-target-counter">
+                0 / 3
+            </span>
+        </div>
+
+        <div class="daily-target-bar">
+            <div id="dailyTargetProgress"></div>
+        </div>
+
+        <p id="dailyTargetMessage" class="daily-note">
+            Complete 3 problems today.
+        </p>
+
+    </section>
+
+
+
+    <!-- LEETCODE INTRO -->
+    <section class="leetcode-practice-card">
+
+        <div class="leetcode-practice-content">
+
+            <div class="leetcode-icon">
+                LC
+            </div>
+
+            <div>
+                <p class="eyebrow">
+                    LEETCODE PRACTICE
+                </p>
+
+                <h2>
+                    Practice Real Coding Problems
+                </h2>
+
+                <p>
+                    Every problem below has its own direct
+                    LeetCode link. Open the problem, solve it
+                    on LeetCode and return here to mark it solved.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROBLEM SECTION -->
+    <section class="dsa-problems-section">
+
+        <div class="stage-heading">
+            <div>
+                <p class="eyebrow">
+                    CURRENT PATTERN
+                </p>
+                <h2>LeetCode Problems</h2>
+            </div>
+
+            <span id="stageProgress" class="stage-progress">
+                0 / 15
+            </span>
+        </div>
+
+        <p>
+            Each problem below has its own Practice on LeetCode button.
+        </p>
+
+        <!-- ALL PROBLEMS APPEAR HERE -->
+        <div id="problemList" class="problem-list"></div>
+
+    </section>
+
+
+
+    <!-- NEXT PATTERN -->
+    <section class="next-pattern-card">
+
+        <p class="eyebrow">
+            NEXT PATTERN
+        </p>
+
+        <h2 id="nextPatternName">
+            Sliding Window
+        </h2>
+
+        <p id="nextPatternDescription">
+            Complete the current pattern to unlock the next pattern.
+        </p>
+
+        <button
+            id="nextPatternButton"
+            type="button"
+            class="primary-btn"
+            disabled
+        >
+            Locked
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="../js/dsa/dsa.js"
+></script>
+<script
+    src="../js/mobile-nav.js">
+</script>
+
+
+</body>
+
+</html>

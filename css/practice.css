@@ -1,0 +1,367 @@
+/* =========================================
+   CAREERPILOT AI - DAILY PRACTICE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7ff;
+    color: #1f2937;
+}
+
+.practice-container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 80px;
+}
+
+/* HEADER */
+
+.practice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.practice-header h1 {
+    margin: 8px 0;
+    font-size: 36px;
+    color: #111827;
+}
+
+.practice-header p {
+    max-width: 650px;
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.practice-date-card {
+    min-width: 180px;
+    padding: 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ede9fe, #fce7f3);
+    border: 1px solid #e9d5ff;
+}
+
+.practice-date-card span {
+    display: block;
+    color: #7c3aed;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.practice-date-card strong {
+    color: #312e81;
+    font-size: 16px;
+}
+
+/* SUMMARY */
+
+.practice-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.practice-stat {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 18px;
+    background: white;
+    border: 1px solid #ececf5;
+    border-radius: 18px;
+    box-shadow: 0 7px 24px rgba(31, 41, 55, 0.04);
+}
+
+.practice-stat > span {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3e8ff;
+    font-size: 20px;
+}
+
+.practice-stat:nth-child(2) > span {
+    background: #e0f2fe;
+}
+
+.practice-stat:nth-child(3) > span {
+    background: #fce7f3;
+}
+
+.practice-stat:nth-child(4) > span {
+    background: #ffedd5;
+}
+
+.practice-stat small {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+.practice-stat strong {
+    display: block;
+    margin-top: 4px;
+    color: #111827;
+    font-size: 14px;
+}
+
+/* DAILY PLAN */
+
+.daily-plan-card {
+    background: white;
+    border: 1px solid #ececf5;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 8px 28px rgba(31, 41, 55, 0.05);
+}
+
+.plan-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.plan-heading h2 {
+    margin: 6px 0 0;
+    font-size: 23px;
+    color: #111827;
+}
+
+#taskProgress {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #f3e8ff;
+    color: #7c3aed;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* TASK */
+
+.daily-task {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid #f0f0f5;
+}
+
+.daily-task:first-of-type {
+    border-top: none;
+}
+
+.task-check {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.task-check input {
+    position: absolute;
+    opacity: 0;
+}
+
+.task-check label {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ede9fe;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.daily-task:nth-of-type(2) .task-check label {
+    background: #fce7f3;
+}
+
+.daily-task:nth-of-type(3) .task-check label {
+    background: #e0f2fe;
+}
+
+.daily-task:nth-of-type(4) .task-check label {
+    background: #ffedd5;
+}
+
+.task-check input:checked + label {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+
+.daily-task-content {
+    flex: 1;
+}
+
+.task-category {
+    color: #8b5cf6;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.daily-task-content h3 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #111827;
+}
+
+.daily-task-content p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.task-duration {
+    padding: 7px 10px;
+    border-radius: 9px;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* COMPLETION */
+
+.daily-completion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #faf5ff, #fdf2f8);
+}
+
+.daily-completion strong {
+    color: #312e81;
+}
+
+.daily-completion p {
+    margin: 5px 0 0;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+#completionPercent {
+    font-size: 25px;
+    color: #7c3aed;
+}
+
+/* MOMENTUM */
+
+.momentum-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 22px;
+    padding: 25px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #faf5ff, #f0fdf4);
+    border: 1px solid #e6e0f5;
+}
+
+.momentum-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.momentum-card h2 {
+    margin: 6px 0;
+    font-size: 20px;
+    color: #312e81;
+}
+
+.momentum-card p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* COMPLETED TASK */
+
+.daily-task.completed .daily-task-content h3 {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.daily-task.completed .daily-task-content p {
+    color: #9ca3af;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .practice-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .practice-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .practice-date-card {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .practice-container {
+        width: 94%;
+        padding-top: 30px;
+    }
+
+    .practice-header h1 {
+        font-size: 29px;
+    }
+
+    .practice-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .daily-plan-card {
+        padding: 20px;
+    }
+
+    .daily-task {
+        align-items: flex-start;
+    }
+
+    .task-duration {
+        display: none;
+    }
+
+    .daily-completion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

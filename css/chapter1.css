@@ -1,0 +1,842 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #172554;
+
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+
+    height: 70px;
+
+    background: white;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+}
+
+
+.back-btn {
+
+    text-decoration: none;
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+}
+
+
+.back-btn:hover {
+
+    color: #1d4ed8;
+
+}
+
+
+.chapter-label {
+
+    color: #64748b;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 35px auto 70px;
+
+}
+
+
+/* =========================================
+   CHAPTER HEADER
+========================================= */
+
+.chapter-header {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, 0.06);
+
+}
+
+
+.chapter-number {
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.chapter-header h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.chapter-pages {
+
+    color: #64748b;
+
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-area {
+
+    margin-top: 25px;
+
+}
+
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+#progressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #2563eb;
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 26px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.section-title p {
+
+    color: #64748b;
+
+}
+
+
+/* =========================================
+   TOPIC CARD
+========================================= */
+
+.topic-card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid #e5e7eb;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.topic-card:hover {
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, 0.06);
+
+}
+
+
+.topic-card.completed {
+
+    border:
+        2px solid #22c55e;
+
+}
+
+
+/* =========================================
+   TOPIC HEADER
+========================================= */
+
+.topic-header {
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+}
+
+
+.topic-number {
+
+    min-width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+}
+
+
+.topic-content {
+
+    width: 100%;
+
+}
+
+
+.topic-content h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =========================================
+   CONTENT HEADINGS
+========================================= */
+
+.content-title {
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =========================================
+   LEARN
+========================================= */
+
+.learn-text {
+
+    color: #334155;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   EXAMPLE
+========================================= */
+
+.example-box {
+
+    background: #eff6ff;
+
+    border-left:
+        4px solid #2563eb;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    color: #334155;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   KEY POINTS
+========================================= */
+
+.key-points {
+
+    margin-left: 20px;
+
+    color: #334155;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   COMPLETE TOPIC BUTTON
+========================================= */
+
+.complete-btn {
+
+    margin-top: 20px;
+
+    padding:
+        11px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.complete-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.complete-btn.completed {
+
+    background: #16a34a;
+
+    cursor: default;
+
+}
+
+
+.completed-text {
+
+    color: #16a34a;
+
+    font-weight: 700;
+
+    margin-left: 10px;
+
+}
+
+
+/* =========================================
+   TEST SECTION
+========================================= */
+
+.test-section {
+
+    margin-top: 40px;
+
+    background: white;
+
+    border:
+        2px solid #2563eb;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+}
+
+
+.test-label {
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.test-header h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.test-header p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+.test-info {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 18px;
+
+    color: #475569;
+
+}
+
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
+.question-card {
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    margin-top: 20px;
+
+}
+
+
+.question-number {
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+
+.question-text {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.option {
+
+    display: block;
+
+    padding: 12px 15px;
+
+    margin-top: 9px;
+
+    background: white;
+
+    border:
+        1px solid #dbe2ea;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: #334155;
+
+}
+
+
+.option:hover {
+
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+
+}
+
+
+.option input {
+
+    margin-right: 10px;
+
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.submit-btn {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.submit-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result-section {
+
+    margin-top: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    text-align: center;
+
+}
+
+
+.result-icon {
+
+    font-size: 45px;
+
+}
+
+
+.result-section h2 {
+
+    margin: 10px 0;
+
+}
+
+
+.result-score {
+
+    font-size: 55px;
+
+    font-weight: 800;
+
+    margin: 15px 0;
+
+}
+
+
+#resultMessage {
+
+    color: #475569;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================
+   RESULT BUTTONS
+========================================= */
+
+.retry-btn,
+.next-btn {
+
+    padding:
+        13px 22px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin: 5px;
+
+}
+
+
+.retry-btn {
+
+    background: #64748b;
+
+}
+
+
+.retry-btn:hover {
+
+    background: #475569;
+
+}
+
+
+.next-btn {
+
+    background: #16a34a;
+
+}
+
+
+.next-btn:hover {
+
+    background: #15803d;
+
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+
+    background: white;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    color: #64748b;
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-box {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+
+        padding: 0 20px;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+    }
+
+
+    .chapter-header {
+
+        padding: 22px;
+
+    }
+
+
+    .chapter-header h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .topic-card {
+
+        padding: 20px;
+
+    }
+
+
+    .test-info {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+}
